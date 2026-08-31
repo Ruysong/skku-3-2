@@ -7,10 +7,13 @@
 - 학기: 2026년 2학기
 - iCampus 과목 링크: https://canvas.skku.edu/courses/74762
 
-## 바로가기
+## 1주차
 
-- [목차](./목차.md)
-- [1주차](./1주차/)`r`n- [텍스트](./텍스트/)
+- [SP00 Course Outline](<./1주차/SP00(CourseOutline)-(2026-2)-(SWE2001-41).pdf>)
+
+## 텍스트
+
+- [1주차 SP00 Course Outline](./텍스트/1주차-SP00-CourseOutline.md)
 
 ## 공지 누적
 
@@ -115,5 +118,6 @@
 모두 건강하게 한 학기 학업을 진행하기를 기대합니다.
 
 엄영익...
+
 
 

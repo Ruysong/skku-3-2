@@ -1,3 +1,6 @@
 
 # Browser partial downloads
 *.crdownload
+
+# Large downloaded textbook PDFs
+*libgen.li.pdf
