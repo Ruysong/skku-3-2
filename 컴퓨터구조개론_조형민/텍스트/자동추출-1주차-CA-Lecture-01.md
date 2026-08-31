@@ -6,7 +6,11 @@
 - 원본: ../1주차/CA_Lecture_01.pdf
 - 주차: 1주차
 - 정리일: 2026-08-31
-- 방식: PDF에서 페이지별 텍스트를 자동 추출해 원문 보존 중심으로 정리
+- 방식: PDF 내부 텍스트 레이어 자동 추출본. OCR/눈검수 완료본 아님
+
+## 주의
+
+이 파일은 PDF 내부 텍스트 레이어를 자동 추출한 1차본입니다. 이미지로 들어간 글자, 도식 속 텍스트, 수식, 표 일부는 누락될 수 있습니다. 완전본은 원본 PDF를 보며 OCR/눈검수 후 별도로 확정합니다.
 
 ## Page 1
 
@@ -164,6 +168,10 @@ Week 15 12/7, 12/9 Arithmetic for Computers / QnA session Chapter 3
 Week 16 12/14, 12/16 Final Exam (12/14, Tue) All covered chapters
 ```
 
+## 주의
+
+이 파일은 PDF 내부 텍스트 레이어를 자동 추출한 1차본입니다. 이미지로 들어간 글자, 도식 속 텍스트, 수식, 표 일부는 누락될 수 있습니다. 완전본은 원본 PDF를 보며 OCR/눈검수 후 별도로 확정합니다.
+
 ## Page 10
 
 ```text
@@ -182,6 +190,10 @@ Simple (reduced) instruction set
 
 ```
 
+## 주의
+
+이 파일은 PDF 내부 텍스트 레이어를 자동 추출한 1차본입니다. 이미지로 들어간 글자, 도식 속 텍스트, 수식, 표 일부는 누락될 수 있습니다. 완전본은 원본 PDF를 보며 OCR/눈검수 후 별도로 확정합니다.
+
 ## Page 11
 
 ```text
@@ -199,6 +211,10 @@ The basic principles are similar
 ARM ISA is not free
 
 ```
+
+## 주의
+
+이 파일은 PDF 내부 텍스트 레이어를 자동 추출한 1차본입니다. 이미지로 들어간 글자, 도식 속 텍스트, 수식, 표 일부는 누락될 수 있습니다. 완전본은 원본 PDF를 보며 OCR/눈검수 후 별도로 확정합니다.
 
 ## Page 12
 
@@ -224,6 +240,10 @@ Complexity
 
 ```
 
+## 주의
+
+이 파일은 PDF 내부 텍스트 레이어를 자동 추출한 1차본입니다. 이미지로 들어간 글자, 도식 속 텍스트, 수식, 표 일부는 누락될 수 있습니다. 완전본은 원본 PDF를 보며 OCR/눈검수 후 별도로 확정합니다.
+
 ## Page 13
 
 ```text
@@ -242,6 +262,10 @@ Details TBA
 
 ```
 
+## 주의
+
+이 파일은 PDF 내부 텍스트 레이어를 자동 추출한 1차본입니다. 이미지로 들어간 글자, 도식 속 텍스트, 수식, 표 일부는 누락될 수 있습니다. 완전본은 원본 PDF를 보며 OCR/눈검수 후 별도로 확정합니다.
+
 ## Page 14
 
 ```text
@@ -254,6 +278,10 @@ Human interaction
 
 Chapter 1 — Computer Abstractions and Technology — 14
 ```
+
+## 주의
+
+이 파일은 PDF 내부 텍스트 레이어를 자동 추출한 1차본입니다. 이미지로 들어간 글자, 도식 속 텍스트, 수식, 표 일부는 누락될 수 있습니다. 완전본은 원본 PDF를 보며 OCR/눈검수 후 별도로 확정합니다.
 
 ## Page 15
 
@@ -268,6 +296,10 @@ Basic building block is not so different from personal computers
 Google datacenter
 Chapter 1 — Computer Abstractions and Technology — 15
 ```
+
+## 주의
+
+이 파일은 PDF 내부 텍스트 레이어를 자동 추출한 1차본입니다. 이미지로 들어간 글자, 도식 속 텍스트, 수식, 표 일부는 누락될 수 있습니다. 완전본은 원본 PDF를 보며 OCR/눈검수 후 별도로 확정합니다.
 
 ## Page 16
 
@@ -298,6 +330,10 @@ Compared to a normal PC (Intel i5): 21,984,000×
 Chapter 1 — Computer Abstractions and Technology — 16
 ```
 
+## 주의
+
+이 파일은 PDF 내부 텍스트 레이어를 자동 추출한 1차본입니다. 이미지로 들어간 글자, 도식 속 텍스트, 수식, 표 일부는 누락될 수 있습니다. 완전본은 원본 PDF를 보며 OCR/눈검수 후 별도로 확정합니다.
+
 ## Page 17
 
 ```text
@@ -315,6 +351,10 @@ EEPROM: Storage
 USIM
 [www.extremetech.com] Chapter 1 — Computer Abstractions and Technology — 17
 ```
+
+## 주의
+
+이 파일은 PDF 내부 텍스트 레이어를 자동 추출한 1차본입니다. 이미지로 들어간 글자, 도식 속 텍스트, 수식, 표 일부는 누락될 수 있습니다. 완전본은 원본 PDF를 보며 OCR/눈검수 후 별도로 확정합니다.
 
 ## Page 18
 
@@ -338,6 +378,10 @@ Processing with the many computer systems over the network
 
 Chapter 1 — Computer Abstractions and Technology — 18
 ```
+
+## 주의
+
+이 파일은 PDF 내부 텍스트 레이어를 자동 추출한 1차본입니다. 이미지로 들어간 글자, 도식 속 텍스트, 수식, 표 일부는 누락될 수 있습니다. 완전본은 원본 PDF를 보며 OCR/눈검수 후 별도로 확정합니다.
 
 ## Page 19
 
@@ -611,3 +655,4 @@ Apple A12X
 [wikichip.org]
 Chapter 1 — Computer Abstractions and Technology — 37
 ```
+

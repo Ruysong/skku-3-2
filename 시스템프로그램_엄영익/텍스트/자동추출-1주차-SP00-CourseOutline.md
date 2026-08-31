@@ -6,7 +6,11 @@
 - 원본: ../1주차/SP00(CourseOutline)-(2026-2)-(SWE2001-41).pdf
 - 주차: 1주차
 - 정리일: 2026-08-31
-- 방식: PDF에서 페이지별 텍스트를 자동 추출해 원문 보존 중심으로 정리
+- 방식: PDF 내부 텍스트 레이어 자동 추출본. OCR/눈검수 완료본 아님
+
+## 주의
+
+이 파일은 PDF 내부 텍스트 레이어를 자동 추출한 1차본입니다. 이미지로 들어간 글자, 도식 속 텍스트, 수식, 표 일부는 누락될 수 있습니다. 완전본은 원본 PDF를 보며 OCR/눈검수 후 별도로 확정합니다.
 
 ## Page 1
 
@@ -146,6 +150,10 @@ Basic knowledge on UNIX/Linux systems
 Systems Programming, by Young Ik Eom, SKKU 9
 ```
 
+## 주의
+
+이 파일은 PDF 내부 텍스트 레이어를 자동 추출한 1차본입니다. 이미지로 들어간 글자, 도식 속 텍스트, 수식, 표 일부는 누락될 수 있습니다. 완전본은 원본 PDF를 보며 OCR/눈검수 후 별도로 확정합니다.
+
 ## Page 10
 
 ```text
@@ -162,6 +170,10 @@ http://csapp.cs.cmu.edu
 Systems Programming, by Young Ik Eom, SKKU 10
 ```
 
+## 주의
+
+이 파일은 PDF 내부 텍스트 레이어를 자동 추출한 1차본입니다. 이미지로 들어간 글자, 도식 속 텍스트, 수식, 표 일부는 누락될 수 있습니다. 완전본은 원본 PDF를 보며 OCR/눈검수 후 별도로 확정합니다.
+
 ## Page 11
 
 ```text
@@ -174,6 +186,10 @@ B. Kernighan and D. Ritchie,
 Prentice Hall, 1988.
 Systems Programming, by Young Ik Eom, SKKU 11
 ```
+
+## 주의
+
+이 파일은 PDF 내부 텍스트 레이어를 자동 추출한 1차본입니다. 이미지로 들어간 글자, 도식 속 텍스트, 수식, 표 일부는 누락될 수 있습니다. 완전본은 원본 PDF를 보며 OCR/눈검수 후 별도로 확정합니다.
 
 ## Page 12
 
@@ -192,6 +208,10 @@ and take the quiz when it is imposed
 Systems Programming, by Young Ik Eom, SKKU 12
 ```
 
+## 주의
+
+이 파일은 PDF 내부 텍스트 레이어를 자동 추출한 1차본입니다. 이미지로 들어간 글자, 도식 속 텍스트, 수식, 표 일부는 누락될 수 있습니다. 완전본은 원본 PDF를 보며 OCR/눈검수 후 별도로 확정합니다.
+
 ## Page 13
 
 ```text
@@ -205,6 +225,10 @@ will receive full credit
 day delay
 Systems Programming, by Young Ik Eom, SKKU 13
 ```
+
+## 주의
+
+이 파일은 PDF 내부 텍스트 레이어를 자동 추출한 1차본입니다. 이미지로 들어간 글자, 도식 속 텍스트, 수식, 표 일부는 누락될 수 있습니다. 완전본은 원본 PDF를 보며 OCR/눈검수 후 별도로 확정합니다.
 
 ## Page 14
 
@@ -226,9 +250,14 @@ by copying, retyping, looking at, or supplying a file
 Systems Programming, by Young Ik Eom, SKKU 14
 ```
 
+## 주의
+
+이 파일은 PDF 내부 텍스트 레이어를 자동 추출한 1차본입니다. 이미지로 들어간 글자, 도식 속 텍스트, 수식, 표 일부는 누락될 수 있습니다. 완전본은 원본 PDF를 보며 OCR/눈검수 후 별도로 확정합니다.
+
 ## Page 15
 
 ```text
 Any Questions?
 Systems Programming, by Young Ik Eom, SKKU 15
 ```
+

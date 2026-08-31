@@ -13,7 +13,7 @@
 
 ## 텍스트
 
-- [1주차 SP00 Course Outline](./텍스트/1주차-SP00-CourseOutline.md)
+- [1주차 SP00 Course Outline](./텍스트/자동추출-1주차-SP00-CourseOutline.md)
 
 ## 공지 누적
 
@@ -118,6 +118,8 @@
 모두 건강하게 한 학기 학업을 진행하기를 기대합니다.
 
 엄영익...
+
+
 
 
 
