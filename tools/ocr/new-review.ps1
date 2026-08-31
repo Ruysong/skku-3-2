@@ -86,8 +86,8 @@ $script = Join-Path $repoRoot "tools\ocr\ocr-pages.js"
 if ($LASTEXITCODE -ne 0) { throw "OCR failed with exit code $LASTEXITCODE" }
 
 $ocrJson = Get-Content -LiteralPath (Join-Path $ocrDir "ocr-pages.json") -Raw | ConvertFrom-Json
-$targetDir = Join-Path $repoRoot (Join-Path $Course "텍스트")
-$targetName = "$(Convert-ToSlug $Week)-$(Convert-ToSlug $baseName).md"
+$targetDir = Join-Path $repoRoot (Join-Path $Course $Week)
+$targetName = "transcript-$(Convert-ToSlug $baseName).md"
 $targetPath = Join-Path $targetDir $targetName
 $sourceRelative = [IO.Path]::GetRelativePath($repoRoot, $pdfPath).Replace('\', '/')
 $today = Get-Date -Format "yyyy-MM-dd"
@@ -154,5 +154,3 @@ Write-Host $htmlPath
 Write-Host ""
 Write-Host "After manual verification, run:"
 Write-Host ".\tools\ocr\export-verified.ps1 -Review `"$reviewPath`""
-
-

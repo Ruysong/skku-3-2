@@ -1,18 +1,18 @@
 # SKKU 3-2
 
-2026년 2학기 과목별 공지, 과제, 시험범위, 강의자료를 정리한 저장소입니다. 과목 폴더 안에는 `1주차`, `2주차`처럼 주차별 자료를 바로 보이게 두고, 눈검수/OCR 검수를 마친 Markdown 텍스트만 `텍스트/`에 따로 쌓아갑니다.
+2026년 2학기 과목별 공지, 과제, 퀴즈, 시험범위, 강의자료를 정리한 저장소입니다. 과목 폴더 안에는 `1주차`, `2주차`처럼 주차별 자료를 바로 보이게 두고, 긴 공부 정리는 각 주차의 `study.md`에 둡니다.
 
 ## 과목
 
-| 과목 | 과목 폴더 | 현재 자료 |
-| --- | --- | --- |
-| 시스템프로그래밍실습 - 한환수 | [README](./시스템프로그래밍실습_한환수/README.md) | 1주차 |
-| 시스템프로그램 - 엄영익 | [README](./시스템프로그램_엄영익/README.md) | 1주차 |
-| 알고리즘개론 - 김형식 | [README](./알고리즘개론_김형식/README.md) | 1주차 |
-| 운영체제 - 신동군 | [README](./운영체제_신동군/README.md) | 1주차 |
-| 캡스톤설계프로젝트 - 타메르 | [README](./캡스톤설계프로젝트_타메르/README.md) | 1주차 |
-| 컴공세 | [README](./컴공세/README.md) | 1주차 |
-| 컴퓨터구조개론 - 조형민 | [README](./컴퓨터구조개론_조형민/README.md) | 1주차 |
+| 과목 | 과목 홈 | 공지 | 과제/퀴즈 | 현재 자료 |
+| --- | --- | --- | --- | --- |
+| 시스템프로그래밍실습 - 한환수 | [README](./시스템프로그래밍실습_한환수/README.md) | [notices](./시스템프로그래밍실습_한환수/notices.md) | [assignments](./시스템프로그래밍실습_한환수/assignments.md) | 1주차 |
+| 시스템프로그램 - 엄영익 | [README](./시스템프로그램_엄영익/README.md) | [notices](./시스템프로그램_엄영익/notices.md) | [assignments](./시스템프로그램_엄영익/assignments.md) | 1주차 |
+| 알고리즘개론 - 김형식 | [README](./알고리즘개론_김형식/README.md) | [notices](./알고리즘개론_김형식/notices.md) | [assignments](./알고리즘개론_김형식/assignments.md) | 1주차 |
+| 운영체제 - 신동군 | [README](./운영체제_신동군/README.md) | [notices](./운영체제_신동군/notices.md) | [assignments](./운영체제_신동군/assignments.md) | 1주차 |
+| 캡스톤설계프로젝트 - 타메르 | [README](./캡스톤설계프로젝트_타메르/README.md) | [notices](./캡스톤설계프로젝트_타메르/notices.md) | [assignments](./캡스톤설계프로젝트_타메르/assignments.md) | 1주차 |
+| 컴공세 | [README](./컴공세/README.md) | [notices](./컴공세/notices.md) | [assignments](./컴공세/assignments.md) | 1주차 |
+| 컴퓨터구조개론 - 조형민 | [README](./컴퓨터구조개론_조형민/README.md) | [notices](./컴퓨터구조개론_조형민/notices.md) | [assignments](./컴퓨터구조개론_조형민/assignments.md) | 1주차 |
 
 ## 전체 관리
 
@@ -27,44 +27,65 @@
 ├── README.md
 ├── protocol.md
 ├── tasks.md
+├── tools/
+│   └── ocr/
 ├── 시스템프로그래밍실습_한환수/
 │   ├── README.md
+│   ├── notices.md
+│   ├── assignments.md
 │   └── 1주차/
+│       └── study.md
 ├── 시스템프로그램_엄영익/
 │   ├── README.md
+│   ├── notices.md
+│   ├── assignments.md
 │   └── 1주차/
+│       ├── study.md
 │       └── SP00(CourseOutline)-(2026-2)-(SWE2001-41).pdf
 ├── 알고리즘개론_김형식/
 │   ├── README.md
+│   ├── notices.md
+│   ├── assignments.md
 │   └── 1주차/
+│       ├── study.md
 │       ├── induction_교수님추천 참고예제.pdf
 │       ├── lec00_overview.pdf
 │       └── lec01_preliminaries.pdf
 ├── 운영체제_신동군/
 │   ├── README.md
+│   ├── notices.md
+│   ├── assignments.md
 │   └── 1주차/
+│       ├── study.md
 │       └── OS01-OS intro.pdf
 ├── 캡스톤설계프로젝트_타메르/
 │   ├── README.md
+│   ├── notices.md
+│   ├── assignments.md
 │   └── 1주차/
+│       └── study.md
 ├── 컴공세/
 │   ├── README.md
+│   ├── notices.md
+│   ├── assignments.md
 │   └── 1주차/
+│       └── study.md
 └── 컴퓨터구조개론_조형민/
     ├── README.md
+    ├── notices.md
+    ├── assignments.md
     └── 1주차/
+        ├── study.md
         └── CA_Lecture_01.pdf
 ```
 
 ## 정리 원칙
 
-- 공지사항은 요약, 체크리스트, 원문을 함께 보관합니다.
-- 과목별 원본 자료와 과제 관리는 `1주차/`, `2주차/`처럼 과목 바로 아래 주차 폴더에 둡니다.
-- `텍스트/`에는 눈검수 또는 OCR 검수를 마친 Markdown만 둡니다.
-- 단순 자동 추출본은 저장소에 올리지 않습니다.
-- 텍스트화할 때는 페이지/슬라이드 번호를 남기고 원문 텍스트 보존을 우선합니다.
+- 과목 `README.md`는 대문처럼 짧게 유지합니다.
+- 공지 원문과 핵심 체크는 `notices.md`에 둡니다.
+- 과제, 퀴즈, 마감, 평가 비율, 제출처는 `assignments.md`에 둡니다.
+- 주차별 공부 흐름과 파일별 의미는 `주차/study.md`에 둡니다.
+- 전문 텍스트화가 필요할 때만 `주차/transcript-자료명.md`를 추가합니다.
 - 시험범위, 과제 조건, 퀴즈 일정은 공지나 자료에 명시된 내용을 기준으로 정리합니다.
 - 파일이나 폴더 구조가 바뀌면 이 루트 README.md의 저장소 구조도 함께 갱신합니다.
 - 자세한 운영 방식은 [정리 프로토콜](./protocol.md)을 따릅니다.
-
-
