@@ -5,3 +5,7 @@
 # Large downloaded textbook PDFs
 *libgen.li.pdf
 tmp/
+# OCR language/cache data
+*.traineddata*
+tools/ocr/tessdata/*
+!tools/ocr/tessdata/README.md
