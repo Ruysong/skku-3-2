@@ -10,3 +10,7 @@
 
 - [ ] 시스템프로그램: 수업자료실에서 lecture note 다운로드
 - [ ] 시스템프로그램: 첫 주 오프라인 수업에서 추가 안내 확인
+- [ ] 알고리즘개론: 2026-09-13 23:59까지 1주차 강의콘텐츠 수강
+- [ ] 알고리즘개론: 2026-09-13 23:59까지 [Quiz] Algorithms and Computation 응시
+- [ ] 알고리즘개론: weak induction vs strong induction 참고자료 확인
+- [ ] 알고리즘개론: MIT 강의/Preliminaries/Algorithms and Computation 기반으로 퀴즈 준비
