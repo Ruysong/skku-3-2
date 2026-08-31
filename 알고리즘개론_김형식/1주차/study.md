@@ -4,11 +4,38 @@
 
 1주차는 알고리즘 과목의 방향을 잡는 주차입니다. `lec00_overview`는 이 수업을 왜 듣는지, 무엇을 평가하는지, 알고리즘을 왜 AI 시대에도 배워야 하는지 보여주는 개요 자료이고, `lec01_preliminaries`는 앞으로 알고리즘을 증명하고 분석할 때 필요한 기초 언어를 정리한 자료입니다. `induction_교수님추천 참고예제.pdf`는 약한 귀납법과 강한 귀납법을 헷갈리지 않게 예제로 보라는 보조자료입니다.
 
+현재 이 문서는 교수님 PDF/공지 기반의 1주차 학습지도입니다. MIT 강의 본문을 직접 듣고 적은 내용 정리는 아직 없고, 수요일 자습 때 같은 파일의 `MIT 강의 내용 정리` 섹션에 이어서 채웁니다.
+
 ## 자료 파일
 
 - `./lec00_overview.pdf`: 과목 오리엔테이션 + 알고리즘의 의미 + 최대 부분배열 예시 + 수업 운영/평가 방식
 - `./lec01_preliminaries.pdf`: 귀납법, 알고리즘의 조건, 계산 모델, 수행시간, 점근적 성능, 입력 크기, 경우 분석
 - `./induction_교수님추천 참고예제.pdf`: Cornell CS 2800의 귀납법 예제 노트. weak induction과 strong induction 비교용
+
+## MIT OCW 참고 자료
+
+교수님이 수업 참고 강의로 안내한 것으로 보이는 큰 원천은 MIT OCW `6.006 Introduction to Algorithms, Spring 2020`입니다. iCampus 1주차의 `[Quiz] Algorithms and Computation`과 직접 맞물리는 자료는 MIT OCW `Lecture 1: Algorithms and Computation`입니다.
+
+- MIT OCW course: <https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/>
+- Lecture videos 목록: <https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/video_galleries/lecture-videos/>
+- Lecture 1: Algorithms and Computation: <https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-1-algorithms-and-computation/>
+- Lecture notes 목록: <https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/lecture-notes/>
+- Resource index: <https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/resource-index/>
+
+정리 방식은 `미리 전부 복사`가 아니라 `주차별로 필요한 MIT 자료를 study.md에 연결하고, 실제로 본 뒤 핵심 내용을 누적`하는 쪽으로 갑니다. 그래야 저장소가 안 복잡해지고, 교수님 수업 범위와 MIT 참고 범위가 섞여서 과장되는 일을 막을 수 있습니다.
+
+## MIT 강의 내용 정리
+
+아직 없음. 2026-09-02 수요일 자습 때 `Lecture 1: Algorithms and Computation` 영상을 보고 여기에 직접 정리합니다.
+
+정리할 때는 아래 순서만 채우면 됩니다.
+
+- 강의에서 정의한 computational problem
+- algorithm을 어떻게 모델링하는지
+- correctness를 어떻게 설명하는지
+- efficiency와 asymptotic analysis가 어디서 나오는지
+- data structure가 왜 같이 등장하는지
+- iCampus 퀴즈에 바로 연결될 만한 표현/예시
 
 ## iCampus 강의콘텐츠
 
@@ -215,5 +242,6 @@ strong induction은 m < k step들이 true라고 가정하고, kth step이 true�
 ## 구두 안내/해석 메모
 
 - 교수님이 MIT 강의를 보고 퀴즈를 풀고 준비해오라고 안내하셨음.
+- 현재 파일에 있는 개념 정리는 교수님 PDF 기반 정리이고, MIT `Lecture 1: Algorithms and Computation` 본문 필기는 아직 추가하지 않았음.
 - 1주차 콘텐츠 마감이 모두 2026-09-13 23:59로 잡혀 있으므로, 첫 주차 자료는 2주차 끝까지 처리하는 일정으로 보임.
 - 다만 제출처나 추가 제출 방식은 아직 명확히 확인된 내용이 없으므로, iCampus 공지/과제 및 평가/GradeScope를 계속 확인해야 함.

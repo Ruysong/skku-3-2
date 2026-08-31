@@ -11,7 +11,7 @@
 - 2026-09-13 23:59까지 1주차 강의콘텐츠 수강
 - 2026-09-13 23:59까지 [Quiz] Algorithms and Computation 응시
 - weak induction vs strong induction 참고자료 확인
-- MIT 강의/Preliminaries/Algorithms and Computation 기반으로 퀴즈 준비
+- MIT OCW `Lecture 1: Algorithms and Computation`을 보고 퀴즈 준비
 
 ## 주차별 자료
 
@@ -30,4 +30,5 @@
 - 공지는 notices.md에 원문과 핵심 체크를 누적합니다.
 - 과제, 퀴즈, 제출처, 평가 비율은 assignments.md에 따로 관리합니다.
 - 주차별 공부 흐름과 파일별 의미는 각 주차의 study.md에 정리합니다.
+- MIT 강의 필기는 별도 파일로 흩뜨리지 않고 해당 주차 `study.md`에 누적합니다.
 - PDF/PPT 전문 텍스트화가 필요할 때만 같은 주차 폴더에 transcript-자료명.md를 추가합니다.
