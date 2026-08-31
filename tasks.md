@@ -14,3 +14,7 @@
 - [ ] 알고리즘개론: 2026-09-13 23:59까지 [Quiz] Algorithms and Computation 응시
 - [ ] 알고리즘개론: weak induction vs strong induction 참고자료 확인
 - [ ] 알고리즘개론: MIT 강의/Preliminaries/Algorithms and Computation 기반으로 퀴즈 준비
+- [ ] 컴퓨터구조개론: 출석 기준 확인하고 결석 횟수 관리
+- [ ] 컴퓨터구조개론: PA 1 스펙/마감/제출처 공지 확인
+- [ ] 컴퓨터구조개론: iCampus Q&A/discussion thread 위치 확인
+- [ ] 컴퓨터구조개론: Midterm/Final 정확한 일정 추후 공지로 재확인
