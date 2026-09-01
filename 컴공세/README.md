@@ -11,13 +11,13 @@
 - 1주차 세미나 자료: `End-to-End Speech Interface for Conversational AI`
 - 강의콘텐츠에 올라온 사전 녹화 세미나를 기간 안에 시청
 - 피드백 리포트 제출 여부 확인
-- 리포트 파일명은 `학번_이름.docx` 또는 `학번_이름.pdf` 형식
+- 1주차 리포트 파일 생성됨: `2024315329_송준혁.docx`, `2024315329_송준혁.pdf`
 
 ## 주차별 자료
 
 | 주차 | 관리 문서 | 원본/세미나 자료 |
 | --- | --- | --- |
-| 1주차 | [study.md](./1주차/study.md) | End-to-End Speech Interface (Prof. Kyuhong Shim).pdf |
+| 1주차 | [study.md](./1주차/study.md) | End-to-End Speech Interface (Prof. Kyuhong Shim).pdf<br>2024315329_송준혁.docx/pdf |
 
 ## 바로 기억할 것
 

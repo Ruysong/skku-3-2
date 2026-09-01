@@ -69,8 +69,12 @@
 │   ├── README.md
 │   ├── notices.md
 │   ├── assignments.md
+│   ├── 2026_Feedback_report_template.docx
 │   └── 1주차/
-│       └── study.md
+│       ├── study.md
+│       ├── End-to-End Speech Interface (Prof. Kyuhong Shim).pdf
+│       ├── 2024315329_송준혁.docx
+│       └── 2024315329_송준혁.pdf
 └── 컴퓨터구조개론_조형민/
     ├── README.md
     ├── notices.md

@@ -9,8 +9,8 @@
 - [ ] 강의콘텐츠에서 1주차 세미나 영상이 열렸는지 확인
 - [ ] 영상이 있으면 기간 안에 시청
 - [ ] 세미나 주제/발표자/핵심 내용을 이 파일에 간단히 정리
-- [ ] 교수님 템플릿 기준으로 피드백 리포트 작성
-- [ ] 파일명을 `학번_이름.docx` 또는 `학번_이름.pdf` 형식으로 맞춤
+- [x] 교수님 템플릿 기준으로 피드백 리포트 작성
+- [x] 파일명을 `학번_이름.docx` 또는 `학번_이름.pdf` 형식으로 맞춤
 - [ ] iCampus 지정 제출처에 제출
 - [ ] `assignments.md`의 1주차 상태를 제출 완료로 변경
 
@@ -26,15 +26,25 @@
 
 ### 들은 내용
 
-아직 없음.
+- 모든 입력 신호를 token sequence로 볼 수 있다는 관점 소개
+- text/image/speech token을 MLLM이 처리하는 흐름
+- pipeline 방식(STT -> LLM -> TTS)과 end-to-end speech generation 방식 비교
+- end-to-end speech GenAI의 challenge: speech token 수, heavy encoder, latency, personalization, deepfake/ethics, hallucination, on-device/privacy
+
+### 생성된 리포트 파일
+
+- `2024315329_송준혁.docx`
+- `2024315329_송준혁.pdf`
 
 ### 느낀 점/피드백
 
-아직 없음.
+리포트에는 end-to-end speech interface가 더 자연스러운 대화형 AI로 이어질 수 있지만, 지연시간, 안정성, 개인정보, deepfake 같은 문제가 함께 해결되어야 한다는 방향으로 plain하게 정리했습니다.
 
-### 리포트에 넣을 후보 문장
+### 리포트에 넣은 핵심 문장
 
-아직 없음.
+- Modern generative AI systems can treat many kinds of information as tokens.
+- A pipelined speech system is easier to build and debug, but STT errors and loss of paralinguistic information can affect the entire system.
+- End-to-end SpeechLM systems seem promising, but they still face latency, personalization, hallucination, privacy, and ethical challenges.
 
 ## 운영 메모
 
