@@ -34,7 +34,8 @@
 │   ├── notices.md
 │   ├── assignments.md
 │   └── 1주차/
-│       └── study.md
+│       ├── study.md
+│       └── week1-course_overview.pdf
 ├── 시스템프로그램_엄영익/
 │   ├── README.md
 │   ├── notices.md
