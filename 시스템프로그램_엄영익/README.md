@@ -24,7 +24,7 @@
 
 | 주차 | 공부 정리 | 원본 자료 |
 | --- | --- | --- |
-| 1주차 | [study.md](./1주차/study.md) | SP00(CourseOutline)-(2026-2)-(SWE2001-41).pdf |
+| 1주차 | [study.md](./1주차/study.md) | SP00(CourseOutline)-(2026-2)-(SWE2001-41).pdf / SP01-FC.pdf |
 
 ## 바로 기억할 것
 
