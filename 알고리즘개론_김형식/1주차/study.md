@@ -4,7 +4,7 @@
 
 1주차는 알고리즘 과목의 방향을 잡는 주차입니다. `lec00_overview`는 이 수업을 왜 듣는지, 무엇을 평가하는지, 알고리즘을 왜 AI 시대에도 배워야 하는지 보여주는 개요 자료이고, `lec01_preliminaries`는 앞으로 알고리즘을 증명하고 분석할 때 필요한 기초 언어를 정리한 자료입니다. `induction_교수님추천 참고예제.pdf`는 약한 귀납법과 강한 귀납법을 헷갈리지 않게 예제로 보라는 보조자료입니다.
 
-현재 이 문서는 교수님 PDF/공지 기반의 1주차 학습지도입니다. MIT 강의 본문을 직접 듣고 적은 내용 정리는 아직 없고, 수요일 자습 때 같은 파일의 `MIT 강의 내용 정리` 섹션에 이어서 채웁니다.
+현재 이 문서는 교수님 PDF/공지 기반의 1주차 학습지도에 MIT 6.006 `Lecture 1: Algorithms and Computation` 수강 정리까지 병합한 최종 복습본입니다. 이번 주 퀴즈 대비는 이 파일의 `MIT 강의 수강 후 정리`와 `퀴즈 대비 체크포인트`를 먼저 보면 됩니다.
 
 ## 자료 파일
 
@@ -24,18 +24,365 @@
 
 정리 방식은 `미리 전부 복사`가 아니라 `주차별로 필요한 MIT 자료를 study.md에 연결하고, 실제로 본 뒤 핵심 내용을 누적`하는 쪽으로 갑니다. 그래야 저장소가 안 복잡해지고, 교수님 수업 범위와 MIT 참고 범위가 섞여서 과장되는 일을 막을 수 있습니다.
 
-## MIT 강의 내용 정리
+## MIT 강의 수강 후 정리: Lecture 1. Algorithms and Computation
 
-아직 없음. 2026-09-02 수요일 자습 때 `Lecture 1: Algorithms and Computation` 영상을 보고 여기에 직접 정리합니다.
+이번 MIT 6.006 Lecture 1의 핵심은 알고리즘 공부가 단순 코딩이 아니라는 점입니다. 강의는 처음부터 끝까지 `Problem -> Algorithm -> Correctness -> Efficiency -> Model of Computation -> Data Structure` 순서로 전개됩니다. 즉 먼저 무엇을 풀어야 하는지 정확히 정의하고, 그 문제를 푸는 절차를 만들고, 그 절차가 모든 valid input에서 맞는지 증명하고, 얼마나 효율적인지 분석하며, 마지막으로 그 분석을 가능하게 하는 계산 모델과 자료구조로 넘어갑니다.
 
-정리할 때는 아래 순서만 채우면 됩니다.
+```text
+Computational Problem
+        |
+        v
+Algorithm
+        |
+        v
+Correctness Proof
+        |
+        v
+Efficiency Analysis
+        |
+        v
+Model of Computation: Word RAM
+        |
+        v
+Data Structures
+        |
+        v
+Efficient Algorithms
+```
 
-- 강의에서 정의한 computational problem
-- algorithm을 어떻게 모델링하는지
-- correctness를 어떻게 설명하는지
-- efficiency와 asymptotic analysis가 어디서 나오는지
-- data structure가 왜 같이 등장하는지
-- iCampus 퀴즈에 바로 연결될 만한 표현/예시
+## 1. 알고리즘 수업의 목표
+
+MIT 강의가 제시하는 알고리즘 수업의 목표는 세 가지입니다.
+
+- Solve computational problems
+- Prove correctness
+- Argue efficiency
+
+여기서 중요한 것은 `solve`만으로 끝나지 않는다는 점입니다. 알고리즘은 어떤 문제를 푸는 방법이지만, 알고리즘 수업에서는 그 방법이 왜 항상 맞는지와 왜 충분히 빠른지도 함께 말해야 합니다. 몇 개의 테스트 케이스를 맞혔다고 해서 알고리즘이 correct하다고 할 수 없고, 작은 입력에서 빨라 보인다고 해서 efficient하다고 할 수도 없습니다.
+
+그래서 이 강의의 기본 사고 흐름은 다음입니다.
+
+```text
+무엇을 계산해야 하는가?
+        |
+어떻게 계산할 것인가?
+        |
+왜 항상 올바른가?
+        |
+얼마나 효율적인가?
+```
+
+이 흐름은 교수님 PDF의 `preliminaries`와도 잘 맞습니다. 교수님 자료가 귀납법, 알고리즘 조건, RAM 모델, 입력 크기, 점근적 분석을 먼저 깔아두는 이유도 결국 이 네 질문에 답하기 위해서입니다.
+
+## 2. Computational Problem
+
+Computational problem은 “입력에 대해 어떤 출력이 올바른지”를 정의하는 것입니다. 아직 어떻게 계산할지는 말하지 않습니다. 예를 들어 “배열에서 값 5가 들어 있는 index 하나를 반환하라”는 problem이고, 왼쪽부터 찾을지, binary search를 쓸지, hash table을 쓸지는 algorithm의 영역입니다.
+
+강의에서는 problem을 input space와 output space 사이의 binary relation으로 봅니다.
+
+```text
+Input Space I
+Output Space O
+Problem R subset I x O
+```
+
+`(x, y) in R`이라는 말은 입력 `x`에 대해 출력 `y`가 올바른 답이라는 뜻입니다. Problem을 function이 아니라 relation으로 정의하는 이유는 하나의 input에 correct output이 여러 개 있을 수 있기 때문입니다. 예를 들어 배열 `[2, 5, 7, 5, 9]`에서 값 `5`의 index 하나를 반환하라는 문제라면, index `1`도 맞고 index `3`도 맞습니다.
+
+그래서 problem specification은 보통 predicate로 씁니다. Predicate는 입력과 출력이 주어졌을 때 그 출력이 올바른지 판정하는 조건입니다.
+
+```text
+Input  : A, target value 5
+Output : i
+Correct if A[i] == 5
+```
+
+알고리즘 문제를 풀 때는 제일 먼저 이 predicate를 명확히 해야 합니다. predicate가 흐리면 correctness proof도 흐려지고, algorithm이 무엇을 보장해야 하는지도 불분명해집니다.
+
+## 3. Instance와 arbitrarily sized input
+
+Problem instance는 특정한 하나의 입력입니다. 예를 들어 `A = [10, 7, 4, 3]`은 하나의 instance입니다. 하지만 알고리즘 수업은 특정 instance 하나를 손으로 푸는 데 관심이 있는 것이 아니라, 임의 크기의 입력을 처리하는 general problem을 푸는 데 관심이 있습니다.
+
+강의에서 이 점은 arbitrarily sized input으로 연결됩니다. 알고리즘의 설명 자체는 finite하고 고정되어 있지만, 입력 크기 `n`은 100일 수도 있고, 1000일 수도 있고, 훨씬 클 수도 있습니다. 따라서 loop, recursion, induction, asymptotic analysis가 자연스럽게 등장합니다.
+
+## 4. Birthday Problem
+
+Lecture 1의 대표 예제는 birthday problem입니다. 학생들을 조사하면서 같은 birth time을 가진 pair가 있는지 찾는 문제입니다. 일반적인 생일만 생각하면 가능한 생일이 365개이고 학생이 365명을 넘으면 pigeonhole principle에 의해 반드시 같은 생일이 존재합니다. 하지만 강의에서는 확률 문제가 아니라 실제 입력을 받아 match가 있는지 확실히 판정하는 deterministic algorithm을 원합니다.
+
+문제의 핵심은 다음입니다.
+
+```text
+Input  : students and their birth times
+Output : matching pair if one exists, otherwise NONE
+Correct if returned pair has the same birth time, or NONE is returned only when no pair exists
+```
+
+이 예제가 좋은 이유는 problem, algorithm, correctness, efficiency, data structure가 모두 연결되기 때문입니다. 같은 birth time이 있는지 확인하려면 이전에 본 birth time들을 record에 저장해야 하고, 그 record를 어떻게 구현하느냐에 따라 효율성이 달라집니다.
+
+## 5. Algorithm
+
+Problem이 “무엇이 올바른 답인가”라면, algorithm은 “그 답을 어떻게 계산할 것인가”입니다. 강의에서는 algorithm을 수학적으로 function처럼 봅니다.
+
+```text
+Algorithm A: I -> O
+```
+
+Problem은 하나의 input에 여러 correct output을 허용할 수 있지만, algorithm을 실제로 한 번 실행하면 하나의 output이 나옵니다. 따라서 algorithm `A`가 problem `R`을 solve한다는 것은 모든 valid input `x`에 대해 `(x, A(x)) in R`이라는 뜻입니다.
+
+여기서 function이라는 말은 functional programming의 pure function을 뜻하는 것이 아닙니다. 내부에서 상태 변경이나 I/O가 일어나는지 여부가 핵심이 아니라, 최종적으로 input 하나에 output 하나를 대응시키는 수학적 관점이 핵심입니다.
+
+## 6. Birthday Algorithm
+
+Birthday problem의 가장 직접적인 알고리즘은 record를 유지하면서 학생을 하나씩 보는 방식입니다.
+
+```text
+Maintain an initially empty record R.
+
+For each student s:
+    b = birthday of s
+
+    if b is already in R:
+        return matching pair
+
+    add (b, s) to R
+
+return NONE
+```
+
+이 알고리즘은 record를 어떻게 구현하는지 아직 정하지 않은 high-level procedure입니다. 하지만 같은 수업을 듣는 사람이 구현할 수 있을 만큼 충분히 명확합니다. 알고리즘 답안은 항상 실제 C++ 코드일 필요는 없지만, “적절히 찾아서 반환한다”처럼 모호해서는 안 됩니다.
+
+## 7. Correctness와 induction
+
+알고리즘을 제시했다고 끝이 아닙니다. 다음 질문은 “왜 이 알고리즘이 항상 맞는가?”입니다. 테스트는 proof가 아닙니다. 입력 10개, 100개, 10000개에서 맞아도 그 다음 입력에서 틀릴 수 있습니다. 모든 valid input에서 맞는다는 주장은 논리적 증명이 필요합니다.
+
+강의는 loop와 recursion이 arbitrarily large input을 finite code로 처리하는 방식이라고 설명하고, 이런 반복 구조의 correctness를 보이는 자연스러운 도구가 induction이라고 연결합니다.
+
+귀납법의 기본 구조는 다음입니다.
+
+```text
+Predicate P(k)를 정의한다.
+Base case를 보인다.
+Inductive hypothesis를 세운다.
+Inductive step에서 P(k) -> P(k+1)을 보인다.
+결론적으로 모든 k에 대해 P(k)가 성립한다.
+```
+
+Birthday algorithm의 proof에서는 다음과 같은 명제를 잡습니다.
+
+```text
+P(k): 첫 k명의 학생 안에 match가 존재하면,
+      알고리즘은 k+1번째 학생을 조사하기 전에 이미 match를 반환한다.
+```
+
+Base case는 `k = 0`입니다. 첫 0명 안에는 match가 존재할 수 없으므로 implication의 전제가 거짓입니다. 따라서 vacuous truth로 참입니다.
+
+Inductive step에서는 두 경우로 나눕니다.
+
+- 첫 `k`명 안에 이미 match가 있다면, induction hypothesis에 의해 알고리즘은 이미 match를 반환했습니다.
+- 첫 `k`명 안에는 match가 없지만 첫 `k+1`명 안에는 match가 있다면, 새로운 match는 반드시 `k+1`번째 학생을 포함합니다. 알고리즘은 `k+1`번째 학생의 birthday를 이전 record와 비교하므로 match를 발견합니다.
+
+이렇게 `P(k) -> P(k+1)`을 보이고, 모든 학생을 다 본 뒤 match가 있으면 반환하고 없으면 `NONE`을 반환한다는 correctness 결론으로 갑니다.
+
+## 8. Efficiency
+
+Correct algorithm이라고 끝이 아닙니다. 같은 문제를 푸는 correct algorithm이 여러 개라면, 더 efficient한 algorithm을 원합니다. 실제 실행 시간을 초 단위로 직접 비교하는 것은 공정하지 않습니다. CPU, OS, compiler, cache, implementation, input distribution 같은 변수가 너무 많기 때문입니다.
+
+그래서 알고리즘 분석에서는 fundamental operation을 세고, input size `n`에 따른 operation count의 growth를 봅니다. 이때 중요한 것은 정확한 초가 아니라 `T(n)`이 어떤 속도로 증가하는가입니다.
+
+```text
+T(n) = number of fundamental operations as a function of input size n
+```
+
+Input size도 문제마다 다릅니다. 배열은 보통 원소 개수 `n`, matrix는 `n x n`이면 대략 `n^2`, graph는 보통 `|V| + |E|`로 봅니다. 따라서 복잡도를 말하기 전에 무엇을 input size로 보는지 먼저 정해야 합니다.
+
+## 9. Asymptotic notation
+
+Lecture 1에서는 Big-O, Big-Omega, Big-Theta의 역할을 구분합니다.
+
+| 표기 | 의미 | 직관 |
+| --- | --- | --- |
+| `O(f(n))` | upper bound | 이 정도보다 더 빨리 커지지는 않는다 |
+| `Omega(f(n))` | lower bound | 적어도 이 정도는 든다 |
+| `Theta(f(n))` | tight bound | 위아래가 같은 성장률로 묶인다 |
+
+주의할 점은 Big-O가 정확히 몇 번 연산한다는 뜻이 아니라는 것입니다. 예를 들어 `3n + 100`도 `O(n)`입니다. 중요한 것은 큰 입력에서 dominant term이 무엇인지입니다.
+
+대표 성장률은 다음 순서로 기억하면 됩니다.
+
+```text
+1 < log n < n < n log n < n^2 < polynomial higher powers < exponential
+```
+
+MIT 6.006 맥락에서 efficient algorithm은 대체로 polynomial time algorithm을 뜻합니다. Exponential time은 작은 입력에서는 돌아갈 수 있어도 입력이 조금 커지면 현실적으로 어렵습니다.
+
+## 10. Word RAM model
+
+Efficiency를 분석하려면 계산 모델이 필요합니다. Lecture 1의 모델은 Word RAM입니다. RAM은 Random Access Memory이고, memory의 임의 주소에 constant time으로 접근할 수 있다고 가정합니다. Memory는 bit들로 이루어져 있고, 보통 byte-addressable입니다.
+
+```text
+1 byte = 8 bits
+word = CPU가 자연스럽게 한 번에 처리하는 고정 크기 데이터 단위
+```
+
+32-bit address와 byte-addressable memory를 가정하면 가능한 주소 수는 `2^32`개이고, 각 주소가 1 byte를 가리키므로 약 4 GiB의 address space가 됩니다. 64-bit에서는 address space가 훨씬 커집니다.
+
+Word RAM에서는 word 단위의 기본 arithmetic, logical operation, comparison, memory access 등을 constant time으로 모델링합니다. 물론 현실에서는 cache나 memory hierarchy 때문에 모든 접근 비용이 완전히 같지는 않지만, 알고리즘의 큰 성장률을 보기 위해 단순화합니다.
+
+## 11. Data Structure로 연결
+
+CPU는 한 번에 constant amount of information만 처리한다고 봅니다. 따라서 `n`개의 데이터를 전부 읽어야 한다면 최소한 `Omega(n)`이 필요하고, 단순 순회로 `O(n)`에 가능하므로 `Theta(n)`입니다.
+
+여기서 data structure가 등장합니다. 현실에서는 많은 데이터를 저장하고, 그 데이터에 대해 search, insert, delete, find minimum, access 같은 operation을 빠르게 해야 합니다. 자료구조는 데이터를 담는 통이 아니라, 필요한 operation들을 효율적으로 지원하도록 데이터를 조직하는 방식입니다.
+
+Birthday algorithm에서 record를 단순 배열로 구현하면, 새 학생의 birth time이 이전 record에 있는지 확인하기 위해 이전 항목을 하나씩 검사해야 합니다. 최악의 경우 비교 횟수는 다음과 같습니다.
+
+```text
+0 + 1 + 2 + ... + (n - 1) = n(n - 1) / 2 = Theta(n^2)
+```
+
+하지만 더 좋은 data structure를 쓰면 record lookup을 더 빠르게 만들 수 있습니다. 앞으로 배우는 sorting, hash table 같은 도구가 바로 이런 효율성 개선과 연결됩니다.
+
+## 12. 앞으로의 MIT 6.006 흐름
+
+강의 마지막은 전체 과목의 큰 단원을 소개합니다.
+
+```text
+Data Structures / Sorting
+        |
+Graphs / Shortest Paths
+        |
+Dynamic Programming
+```
+
+알고리즘 문제를 해결하는 방식은 크게 두 가지입니다. 하나는 현재 문제를 이미 해결 방법을 아는 문제로 reduction하는 것이고, 다른 하나는 recursive structure 등을 이용해 새로운 algorithm design을 하는 것입니다. 이 첫 강의는 그 모든 내용을 시작하기 전에 problem, algorithm, correctness, efficiency라는 언어를 맞추는 역할입니다.
+
+## Lecture 1 핵심 용어표
+
+| 영어 | 한국어 | 핵심 의미 |
+| --- | --- | --- |
+| Computational Problem | 계산 문제 | input과 correct output 사이의 relation |
+| Input Space | 입력 공간 | 가능한 모든 입력 |
+| Output Space | 출력 공간 | 가능한 모든 출력 |
+| Binary Relation | 이항 관계 | input과 올바른 output 사이의 관계 |
+| Predicate | 술어/조건 | output이 correct인지 판정하는 조건 |
+| Problem Instance | 문제 인스턴스 | 특정한 하나의 입력 |
+| Algorithm | 알고리즘 | input에서 output을 계산하는 절차 |
+| Correctness | 정확성 | 모든 valid input에서 올바른 답을 반환함 |
+| Proof | 증명 | correctness를 논리적으로 보이는 것 |
+| Induction | 귀납법 | 반복/재귀 구조의 정확성을 증명하는 방법 |
+| Base Case | 기저 사례 | induction의 시작점 |
+| Inductive Hypothesis | 귀납 가설 | `P(k)`가 참이라고 가정 |
+| Inductive Step | 귀납 단계 | `P(k) -> P(k+1)` 증명 |
+| Efficiency | 효율성 | 필요한 계산 자원의 정도 |
+| Fundamental Operation | 기본 연산 | 계산 모델에서 기본 단위가 되는 연산 |
+| Input Size | 입력 크기 | 입력을 표현하는 정보량 |
+| Asymptotic Analysis | 점근적 분석 | input 증가에 따른 growth 분석 |
+| Big-O | 빅오 | upper bound |
+| Big-Omega | 빅오메가 | lower bound |
+| Big-Theta | 빅세타 | tight bound |
+| Model of Computation | 계산 모델 | 어떤 연산을 어떤 비용으로 볼지 정의 |
+| Word RAM | 워드 램 | word 단위 기본 연산과 random access를 constant time으로 보는 모델 |
+| Data Structure | 자료구조 | 데이터를 저장하고 필요한 operation을 효율적으로 지원하는 구조 |
+| Reduction | 환원 | 문제를 이미 아는 다른 문제로 변환 |
+| Dynamic Programming | 동적 계획법 | subproblem 결과를 재사용하는 설계 방식 |
+
+## 반드시 구분할 것
+
+### Problem vs Algorithm
+
+```text
+Problem   = 무엇이 정답인가?
+Algorithm = 정답을 어떻게 찾는가?
+```
+
+### Problem Relation vs Algorithm Function
+
+```text
+Problem:
+하나의 input에 여러 correct output 가능
+
+Algorithm:
+하나의 input에 실제 output 하나 생성
+```
+
+### Correctness vs Efficiency
+
+```text
+Correctness = 답이 항상 맞는가?
+Efficiency  = 얼마나 적은 계산으로 답을 구하는가?
+```
+
+### Actual Running Time vs Asymptotic Complexity
+
+```text
+Actual running time:
+CPU, compiler, OS, cache, implementation 등에 영향받음
+
+Asymptotic complexity:
+input size 대비 operation count의 growth를 추상화
+```
+
+### Word vs Byte
+
+```text
+1 byte = 8 bits
+word = architecture가 자연스럽게 처리하는 고정 크기 단위
+```
+
+## 시험 직전 압축 노트
+
+```text
+Algorithmics
+= Problem Definition
++ Algorithm Design
++ Correctness Proof
++ Efficiency Analysis
+
+Computational Problem
+= Input과 Correct Output 사이의 Binary Relation.
+
+Algorithm A가 Problem R을 solve하려면
+모든 valid x에 대해 (x, A(x)) in R.
+
+Test는 proof가 아니다.
+Loop/recursion의 correctness에는 induction이 자연스럽다.
+
+Birthday proof의 핵심 P(k):
+첫 k명 안에 match가 있으면
+k+1번째 학생을 보기 전에 이미 match를 반환했다.
+
+Efficiency는 seconds가 아니라
+input size n에 따른 fundamental operations의 growth로 본다.
+
+O(f(n))     = upper bound
+Omega(f(n)) = lower bound
+Theta(f(n)) = tight bound
+
+1 < log n < n < n log n < n^2 < poly < exponential
+
+Word RAM에서는 word 단위 기본 연산과 memory access를 constant time으로 본다.
+
+Data Structure는 많은 데이터를 저장하면서
+Search / Insert / Delete 같은 operation을 빠르게 지원하는 방법이다.
+```
+
+## MIT 강의 기반 이해 확인 문제
+
+- 왜 computational problem은 function이 아니라 binary relation으로 정의하는가?
+- Problem과 algorithm의 차이를 예 하나로 설명할 수 있는가?
+- Algorithm을 mathematical function이라고 할 때, functional programming의 pure function과 무엇이 다른가?
+- Birthday algorithm의 pseudocode를 말할 수 있는가?
+- Birthday algorithm correctness proof에서 `P(k)`를 어떻게 잡는가?
+- 왜 `k = 0` base case가 vacuous truth로 성립하는가?
+- 첫 `k`명 안에는 match가 없는데 첫 `k+1`명 안에는 match가 있으면, 왜 새 match는 `k+1`번째 학생을 포함해야 하는가?
+- 실제 초 단위 running time이 아니라 fundamental operation을 세는 이유는 무엇인가?
+- Matrix와 graph에서 input size를 어떻게 잡는가?
+- `O`, `Omega`, `Theta`의 차이를 설명할 수 있는가?
+- Growth rate `1, log n, n, n log n, n^2, exponential`을 작은 순서대로 나열할 수 있는가?
+- Word RAM에서 word, byte, address, random access가 각각 무엇을 뜻하는가?
+- 32-bit byte-addressable memory에서 왜 약 4 GiB address space가 나오는가?
+- Birthday record를 단순 배열로 구현하면 왜 `Theta(n^2)`가 되는가?
+- Data structure 선택이 algorithm efficiency에 왜 직접 영향을 주는가?
+
 
 ## iCampus 강의콘텐츠
 
@@ -242,6 +589,6 @@ strong induction은 m < k step들이 true라고 가정하고, kth step이 true�
 ## 구두 안내/해석 메모
 
 - 교수님이 MIT 강의를 보고 퀴즈를 풀고 준비해오라고 안내하셨음.
-- 현재 파일에 있는 개념 정리는 교수님 PDF 기반 정리이고, MIT `Lecture 1: Algorithms and Computation` 본문 필기는 아직 추가하지 않았음.
+- MIT `Lecture 1: Algorithms and Computation` 수강 정리까지 `MIT 강의 수강 후 정리` 섹션에 반영했음.
 - 1주차 콘텐츠 마감이 모두 2026-09-13 23:59로 잡혀 있으므로, 첫 주차 자료는 2주차 끝까지 처리하는 일정으로 보임.
 - 다만 제출처나 추가 제출 방식은 아직 명확히 확인된 내용이 없으므로, iCampus 공지/과제 및 평가/GradeScope를 계속 확인해야 함.

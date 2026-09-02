@@ -67,9 +67,9 @@
 
 ### 할 일
 
-- [ ] 알고리즘개론: MIT `Algorithms and Computation` 관련 강의 보기
+- [x] 알고리즘개론: MIT `Algorithms and Computation` 강의 정리본 `1주차/study.md` 반영
 - [ ] 알고리즘개론: iCampus 1주차 콘텐츠 중 남은 항목 확인
-- [ ] 알고리즘개론: `1주차/study.md`의 퀴즈 대비 체크포인트 훑기
+- [x] 알고리즘개론: `1주차/study.md`에 MIT 강의 퀴즈 대비 체크포인트 보강
 - [ ] 알고리즘개론: `[Quiz] Algorithms and Computation` 응시 또는 응시 직전까지 준비
 - [ ] 알고리즘개론: weak induction vs strong induction 참고자료 다시 확인
 - [x] 컴퓨터구조개론: 수요일 수업 복습 노트 `1주차/study.md` 반영
