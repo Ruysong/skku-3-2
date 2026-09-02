@@ -4,6 +4,128 @@
 
 1주차 첫 번째 수업은 컴퓨터구조개론 전체의 입구입니다. `CA_Lecture_01.pdf`는 과목 운영 안내와 Chapter 1 `Computer Abstractions and Technology`를 함께 다룹니다. 앞부분에서는 평가 방식, 출석, 녹화강의, 질문 채널, 교재, 주차별 계획, 프로그래밍 과제 방향을 안내하고, 뒷부분에서는 컴퓨터를 추상화 계층으로 이해하는 법, RISC-V를 쓰는 이유, 컴퓨터 종류, 클라우드/모바일 시대, 컴퓨터구조의 7가지 큰 아이디어, ISA/ABI/CPU 내부 구성을 훑습니다.
 
+## 수업 후 복습 지도 (2026-09-02)
+
+오늘 수업 복습 기준으로 1주차 `Computer Abstractions and Technology`는 아래 흐름으로 잡으면 됩니다. PDF 1~37페이지는 과목 운영 안내에서 시작해, 왜 RISC-V를 쓰는지, 컴퓨터를 어떤 추상화 계층으로 볼지, 그리고 CPU 내부가 어떤 기본 부품으로 이루어지는지까지 한 번에 연결합니다.
+
+```text
+             [Software]
+
+Application
+    |
+High-Level Language (C/C++)
+    | Compiler
+Assembly Language
+    | Assembler
+Machine Code
+
+    |
+
+======================
+         ISA
+ Software <-> Hardware
+ x86 / ARM / RISC-V
+======================
+
+    |
+
+          [CPU]
+
+Control
+   |
+Registers <-> ALU
+     |
+  Datapath
+     |
+   Cache
+     |
+   DRAM
+
+    |
+
+Microarchitecture
+    |
+Circuit
+    |
+Transistors
+```
+
+### 이번 1주차에서 진짜 중요한 우선순위
+
+#### 1순위 - 반드시 이해
+
+- 수업 목표: hardware가 software를 어떻게 실행하는지, computer performance를 무엇이 결정하는지 이해
+- RISC-V: open standard ISA이고, 수업과 PA에서 기준이 되는 instruction set architecture
+- ISA: software와 hardware 사이의 instruction interface
+- ABI: ISA에 OS/system software interface까지 포함한 binary 실행 약속
+- High-level language -> assembly -> machine code 흐름
+- CPU 내부 기본 요소: register, ALU, datapath, control, cache
+- Seven Great Ideas: abstraction, common case fast, parallelism, pipelining, prediction, memory hierarchy, redundancy
+
+#### 2순위 - 흐름 이해
+
+- x86 이름과 backward compatibility가 시장 지배력과 복잡성을 함께 만든다는 점
+- personal computer, server, supercomputer, embedded computer의 목적 차이
+- post-PC era에서 PMD와 cloud computing이 왜 중요해졌는지
+- RISC-V simulator PA가 단발 숙제가 아니라 누적형 프로젝트라는 점
+- 실제 processor는 Intel i7, Apple A12X처럼 매우 복잡하므로 abstraction을 통해 단순 모델부터 배운다는 점
+
+#### 3순위 - 예시로 감 잡기
+
+- USIM 같은 작은 embedded computer도 computer architecture의 대상이 될 수 있음
+- cloud storage, cloud server, cloud VM은 processing/storage가 local machine 밖으로 확장되는 예시
+- ALU 예시: register의 `3`과 `7`을 ALU가 더해 `10`을 만들고 다른 register에 저장
+- prediction은 맞으면 빠르지만 틀리면 이미 한 일을 취소하는 비용이 생김
+- redundancy는 dependability를 높이기 위한 방법이고, dependability 자체가 목표
+
+### PDF 전체를 한 문장으로 연결
+
+고급언어로 작성한 프로그램은 compiler와 assembler를 거쳐 machine code가 되고, machine code의 의미는 ISA가 정합니다. CPU는 ISA가 요구하는 동작을 microarchitecture로 구현하며, 내부에서는 register가 값을 잠시 들고, ALU가 산술/논리 계산을 수행하고, datapath가 데이터를 이동시키고, control이 각 부품의 동작을 지시합니다. 실제 하드웨어는 매우 복잡하므로, 수업은 abstraction을 통해 위에서 아래로 내려가며 이해합니다.
+
+### ISA / Microarchitecture / CPU 관계
+
+```text
+ISA
+= 무엇을 해야 하는지에 대한 규칙
+
+Microarchitecture
+= 그 규칙을 내부에서 어떻게 구현할지
+
+CPU
+= 그 구현이 실제로 들어간 hardware
+```
+
+핵심은 `ISA = WHAT`, `Microarchitecture = HOW`, `CPU = actual hardware`입니다. RISC-V는 특정 물리 컴퓨터가 아니라 ISA이고, Intel/AMD는 회사이며, x86은 ISA family입니다. ARM도 ISA family이고, RISC-V는 license fee 없이 쓸 수 있는 open ISA라는 점이 중요합니다.
+
+### Seven Great Ideas 한 줄 암기
+
+| 개념 | 한 줄 의미 |
+| --- | --- |
+| Abstraction | 복잡한 하위 구현을 숨겨 단순한 모델로 다룸 |
+| Make the Common Case Fast | 자주 발생하는 경우를 우선 빠르게 만듦 |
+| Parallelism | 여러 작업을 동시에 수행 |
+| Pipelining | 작업 단계를 나누고 여러 작업의 단계를 겹쳐 수행 |
+| Prediction | 결과를 기다리지 않고 예상해서 먼저 실행 |
+| Memory Hierarchy | 작고 빠른 메모리와 크고 느린 메모리를 계층적으로 조합 |
+| Dependability via Redundancy | 중복을 사용해 시스템 신뢰성을 높임 |
+
+### 시험 직전 최소 암기
+
+- `RISC-V`: open ISA
+- `ISA`: software와 hardware 사이의 instruction interface
+- `ABI`: ISA + OS/system software interface
+- `Microarchitecture`: ISA를 실제 내부 구조로 구현하는 방법
+- `Compiler`: high-level language를 lower-level code로 변환
+- `Assembler`: assembly language를 machine code로 변환
+- `Register`: CPU 내부 temporary data storage
+- `ALU`: arithmetic/logic operation 수행
+- `Datapath`: data가 이동하고 처리되는 경로
+- `Control`: component의 동작을 지시
+- `Cache`: 자주 쓰는 data를 빠르게 접근하기 위한 저장공간
+- `Prediction`: 예상해서 먼저 실행, 틀리면 비용 발생
+- `Pipelining`: stage를 겹쳐 실행
+- `Parallelism`: 여러 작업을 동시에 실행
+- `Redundancy`: 중복으로 dependability 향상
 ## 자료 파일
 
 - `./CA_Lecture_01.pdf`: 1주차 첫 번째 강의자료. 과목 운영 안내와 Chapter 1 도입 내용을 포함합니다.

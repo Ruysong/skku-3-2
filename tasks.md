@@ -72,7 +72,7 @@
 - [ ] 알고리즘개론: `1주차/study.md`의 퀴즈 대비 체크포인트 훑기
 - [ ] 알고리즘개론: `[Quiz] Algorithms and Computation` 응시 또는 응시 직전까지 준비
 - [ ] 알고리즘개론: weak induction vs strong induction 참고자료 다시 확인
-- [ ] 컴퓨터구조개론: 수요일 수업 듣고 `1주차/study.md`에 빠진 공지/강조점 있으면 추가
+- [x] 컴퓨터구조개론: 수요일 수업 복습 노트 `1주차/study.md` 반영
 - [ ] 컴퓨터구조개론: PA 1 또는 discussion thread 공지가 새로 열렸는지 확인
 - [ ] 컴공세: 수요일 온라인 세미나 콘텐츠/리포트 제출처 확인
 - [x] 운영체제: 1주차 온라인 강의 수강 완료, Intro 노트 `study.md` 반영
