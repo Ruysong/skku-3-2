@@ -4,6 +4,77 @@
 
 1주차 `OS01-OS intro.pdf`는 운영체제 과목 전체의 지도입니다. 앞부분은 수업 운영과 평가 방식, 교재, 선수지식을 설명하고, 본문은 운영체제가 왜 필요한지와 운영체제가 제공하는 핵심 기능을 소개합니다. 핵심 축은 CPU virtualization, memory virtualization, concurrency, persistence입니다. 운영체제는 프로그램을 쉽게 실행하게 만들고, 여러 프로그램이 CPU와 메모리와 디스크를 함께 쓰게 하며, system call과 protection을 통해 user program과 hardware 사이의 안전한 경계를 만듭니다.
 
+## 수강 후 내 연결 지도 (2026-09-02)
+
+운체 Intro 24페이지는 아래 구조로 거의 정리됩니다. 세부 용어를 따로 외우기 전에, 먼저 OS가 어떤 축으로 전체 시스템을 잡아주는지 이 그림을 기준으로 복습합니다.
+
+```text
+                    Operating System
+                           |
+        -------------------+-------------------
+        |                  |                  |
+  Virtualization     Resource Management    Protection
+        |                  |                  |
+        |            CPU / Memory / Disk    User/Kernel
+        |                  관리               Mode
+   -----+-----                                  |
+   |         |                                Trap
+CPU Virt. Memory Virt.                         |
+   |         |                            System Call
+Process   Virtual Address
+Scheduling     |
+               MMU
+               |
+        Physical Memory
+
+        Concurrency
+             |
+           Thread
+             |
+        Shared State
+             |
+        Lock/Semaphore
+
+        Persistence
+             |
+        File System
+             |
+         I/O Device
+             |
+      Interrupt / DMA
+```
+
+### 이번 Intro에서 진짜 중요한 우선순위
+
+#### 1순위 - 반드시 이해
+
+- OS = Virtualizer + Resource Manager
+- Process
+- CPU Virtualization
+- Memory Virtualization
+- Virtual Address vs Physical Address
+- Concurrency
+- System Call
+
+#### 2순위 - 흐름 이해
+
+- File System
+- Persistence
+- I/O
+- Interrupt
+- DMA
+- User Mode / Kernel Mode
+- Trap
+
+#### 3순위 - 역사적 맥락
+
+- Multiprogramming
+- UNIX
+- BSD
+- Linux
+- NeXTStep -> macOS
+
+역사는 세부 연도 암기보다 `Protection`, `Multiprogramming`, `UNIX`가 왜 중요한지 이해하는 정도로 잡습니다. 이번 주 Intro의 핵심은 결국 운영체제가 hardware를 직접 노출하지 않고, virtualization과 protection을 통해 여러 program이 안전하고 효율적으로 resource를 공유하게 만드는 구조입니다.
 ## 원본 자료
 
 - `OS01-OS intro.pdf`: 운영체제 1주차 도입 강의 자료
