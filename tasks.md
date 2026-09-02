@@ -25,7 +25,7 @@
 - [ ] 시스템프로그램: 수업자료실에서 lecture note 다운로드
 - [ ] 시스템프로그램: 첫 주 오프라인 수업에서 추가 안내 확인
 - [ ] 알고리즘개론: 2026-09-13 23:59까지 1주차 강의콘텐츠 수강
-- [ ] 알고리즘개론: 2026-09-13 23:59까지 [Quiz] Algorithms and Computation 응시
+- [x] 알고리즘개론: 2026-09-02 [Quiz] Algorithms and Computation 응시 및 답안 복기
 - [ ] 알고리즘개론: weak induction vs strong induction 참고자료 확인
 - [ ] 알고리즘개론: MIT OCW `Lecture 1: Algorithms and Computation` 보고 퀴즈 준비
 - [ ] 컴퓨터구조개론: 출석 기준 확인하고 결석 횟수 관리
@@ -70,7 +70,7 @@
 - [x] 알고리즘개론: MIT `Algorithms and Computation` 강의 정리본 `1주차/study.md` 반영
 - [ ] 알고리즘개론: iCampus 1주차 콘텐츠 중 남은 항목 확인
 - [x] 알고리즘개론: `1주차/study.md`에 MIT 강의 퀴즈 대비 체크포인트 보강
-- [ ] 알고리즘개론: `[Quiz] Algorithms and Computation` 응시 또는 응시 직전까지 준비
+- [x] 알고리즘개론: `[Quiz] Algorithms and Computation` 응시 완료, 답안 복기 `study.md` 반영
 - [ ] 알고리즘개론: weak induction vs strong induction 참고자료 다시 확인
 - [x] 컴퓨터구조개론: 수요일 수업 복습 노트 `1주차/study.md` 반영
 - [ ] 컴퓨터구조개론: PA 1 또는 discussion thread 공지가 새로 열렸는지 확인

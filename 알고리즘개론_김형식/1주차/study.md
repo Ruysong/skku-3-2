@@ -536,6 +536,60 @@ Weak induction은 보통 `n`에서 성립한다고 가정하고 `n+1`에서 성�
 
 Best case는 가장 운 좋은 입력에서의 수행시간입니다. Average case는 평균적인 입력에서의 기대 수행시간인데, 평균 입력을 어떻게 정의하는지가 어렵습니다. Worst case는 가장 나쁜 입력에서도 보장되는 수행시간입니다. 알고리즘 수업에서는 보통 worst case가 안정적인 분석 기준으로 중요합니다. 퀴즈나 시험에서도 “보장”이라는 단어가 나오면 worst case를 먼저 떠올리면 좋습니다.
 
+## 실제 퀴즈 복기 (2026-09-02)
+
+출처: iCampus `[Quiz] Algorithms and Computation`
+
+이번 퀴즈는 MIT 6.006 Lecture 1의 핵심 네 가지를 그대로 확인하는 형식이었습니다. 제출 답안의 핵심 방향은 모두 맞습니다. 저장용 정리에서는 원래 답안의 의미를 유지하되, `kk`, `k+1k+1`, `O(1)O(1)`처럼 붙어버린 수식 표기만 `k`, `k+1`, `O(1)`로 정리합니다.
+
+### Q1. Describe the algorithm to solve the birthday problem.
+
+Keep a record of the birthdays of students.
+
+Ask each student for their birthday one by one. For each student, check if the birthday is already in the record.
+
+- If it is already in the record, return the two students with the same birthday.
+- If it is not in the record, add the birthday to the record.
+- If there is no match after checking all students, return `no match`.
+
+복습 포인트: 이 답안은 `maintain record -> check previous birthdays -> return pair or add -> return no match` 흐름을 잘 잡았습니다. 더 엄밀하게 쓰면 record에는 birthday뿐 아니라 그 birthday를 가진 학생 정보도 함께 저장해야 pair를 반환할 수 있습니다.
+
+### Q2. Describe what method is used to prove the correctness of the algorithm for the birthday problem.
+
+We use mathematical induction.
+
+First, we prove a base case. Then, we assume the algorithm works for the first `k` students. This is the induction hypothesis. Finally, we prove that it also works for `k+1` students.
+
+Therefore, the algorithm works for any number of students.
+
+복습 포인트: 큰 방향은 맞습니다. MIT 강의 기준으로 더 정확히 쓰면 `P(k): 첫 k명 안에 match가 있으면 k+1번째 학생을 보기 전에 이미 match를 반환했다`처럼 induction predicate를 명확히 잡는 것이 좋습니다.
+
+### Q3. Explain why we do not measure the execution time of programs to analyze the efficiency of algorithms.
+
+We do not use the actual execution time because different computers have different speeds.
+
+The same algorithm can run faster on a powerful computer and slower on a weak computer.
+
+Instead, we count the number of basic operations performed by the algorithm. This helps us compare algorithms more fairly.
+
+복습 포인트: 정답 방향이 좋습니다. 실제 seconds는 hardware, OS, compiler, implementation, cache 상태 등에 영향을 받기 때문에 algorithm 자체의 growth를 비교하기 어렵습니다. 그래서 input size에 따른 fundamental operation count를 봅니다.
+
+### Q4. What is the assumption of the RAM model?
+
+RAM means Random Access Memory.
+
+The main assumption is that the computer can access any location in memory in constant time, `O(1)`.
+
+In other words, accessing one memory location takes the same amount of time, no matter where the location is.
+
+복습 포인트: 핵심은 정확합니다. MIT 강의의 Word RAM 맥락까지 붙이면, word 단위 basic operation과 memory access를 constant time으로 모델링한다고 정리할 수 있습니다.
+
+### 퀴즈에서 확인된 이번 주 진짜 범위
+
+- Birthday problem algorithm
+- Correctness proof method: mathematical induction
+- Execution time 대신 basic/fundamental operations를 세는 이유
+- RAM model과 constant-time random access assumption
 ## 퀴즈 대비 체크포인트
 
 - 알고리즘의 정의를 입력, 출력, 계산 절차 관점에서 설명할 수 있는가
