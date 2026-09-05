@@ -62,3 +62,32 @@ If you have any questions, please feel free to contact me via i-Campus message.
 
 Thank you.
 Jaebin Lee
+## 2026-09-05 Financial Support Contents
+
+### 핵심 체크
+
+- 캡스톤 수업의 financial support 관련 안내 영상이 업로드됨.
+- financial support 세부 안내 파일도 공지에 첨부됨.
+- 영상과 첨부 파일을 모두 carefully review하라고 안내됨.
+- 첨부 원본은 `1주차/financial-support/`에 보관.
+
+### 첨부 파일
+
+- `Capstone Design Financial Support.zip`: 원본 압축 파일
+- `붙임1. 2026학년도 2학기 캡스톤디자인 지원사업(실습비).hwp`: 실습비 지원사업 안내
+- `붙임3. [서식8] 실습비 청구서 (1).xlsx`: 월별 실습비 청구 내역 엑셀 서식
+- `붙임4. 참여학과 총괄표 (1).hwp`: 참여학과 총괄표
+- `붙임5. 캡스톤디자인 청구서 작성법 (1).pdf`: 청구서 작성법 안내 PDF
+
+### 원문
+
+Dear Students,
+
+I have uploaded a video about financial support for this class. Please watch the video for more information.
+
+I have also attached files in this announcement that provide detailed information about the financial support.
+
+Please review both the video and the attached files carefully.
+
+Best regards,
+Jaebin Lee

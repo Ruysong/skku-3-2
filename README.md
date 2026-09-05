@@ -10,7 +10,7 @@
 | 시스템프로그램 - 엄영익 | [README](./시스템프로그램_엄영익/README.md) | [notices](./시스템프로그램_엄영익/notices.md) | [assignments](./시스템프로그램_엄영익/assignments.md) | 1주차 |
 | 알고리즘개론 - 김형식 | [README](./알고리즘개론_김형식/README.md) | [notices](./알고리즘개론_김형식/notices.md) | [assignments](./알고리즘개론_김형식/assignments.md) | 1주차 |
 | 운영체제 - 신동군 | [README](./운영체제_신동군/README.md) | [notices](./운영체제_신동군/notices.md) | [assignments](./운영체제_신동군/assignments.md) | 1주차 |
-| 캡스톤설계프로젝트 - 타메르 | [README](./캡스톤설계프로젝트_타메르/README.md) | [notices](./캡스톤설계프로젝트_타메르/notices.md) | [assignments](./캡스톤설계프로젝트_타메르/assignments.md) | 1주차 |
+| 캡스톤설계프로젝트 - 타메르 | [README](./캡스톤설계프로젝트_타메르/README.md) | [notices](./캡스톤설계프로젝트_타메르/notices.md) | [assignments](./캡스톤설계프로젝트_타메르/assignments.md) | 1주차, financial support |
 | 컴공세 | [README](./컴공세/README.md) | [notices](./컴공세/notices.md) | [assignments](./컴공세/assignments.md) | 1주차 |
 | 컴퓨터구조개론 - 조형민 | [README](./컴퓨터구조개론_조형민/README.md) | [notices](./컴퓨터구조개론_조형민/notices.md) | [assignments](./컴퓨터구조개론_조형민/assignments.md) | 1주차 |
 
@@ -64,7 +64,14 @@
 │   ├── notices.md
 │   ├── assignments.md
 │   └── 1주차/
-│       └── study.md
+│       ├── study.md
+│       └── financial-support/
+│           ├── README.md
+│           ├── Capstone Design Financial Support.zip
+│           ├── 붙임1. 2026학년도 2학기 캡스톤디자인 지원사업(실습비).hwp
+│           ├── 붙임3. [서식8] 실습비 청구서 (1).xlsx
+│           ├── 붙임4. 참여학과 총괄표 (1).hwp
+│           └── 붙임5. 캡스톤디자인 청구서 작성법 (1).pdf
 ├── 컴공세/
 │   ├── README.md
 │   ├── notices.md
