@@ -18,6 +18,7 @@
 | 주차 | 공부 정리 | 원본 자료 |
 | --- | --- | --- |
 | 1주차 | [study.md](./1주차/study.md) | lec00_overview.pdf<br>lec01_preliminaries.pdf<br>induction_교수님추천 참고예제.pdf |
+| 2주차 | [study.md](./2주차/study.md) | 아직 등록된 원본 자료 없음 |
 
 ## 바로 기억할 것
 

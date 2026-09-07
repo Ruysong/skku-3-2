@@ -18,6 +18,7 @@
 | 주차 | 관리 문서 | 원본/세미나 자료 |
 | --- | --- | --- |
 | 1주차 | [study.md](./1주차/study.md) | End-to-End Speech Interface (Prof. Kyuhong Shim).pdf<br>2024315329_송준혁.docx/pdf |
+| 2주차 | [study.md](./2주차/study.md) | 아직 등록된 원본 자료 없음 |
 
 ## 바로 기억할 것
 
