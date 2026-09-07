@@ -15,45 +15,485 @@
 
 2주차의 핵심은 컴퓨터구조에서 "빠르다"는 말을 감으로 쓰지 않고, 실행 시간, 처리량, 클럭, 명령어 수, CPI, 벤치마크, 전력 한계, 병렬화 한계까지 포함해서 정량적으로 설명하는 것이다. 1주차가 컴퓨터 시스템의 큰 구성과 기술 배경을 잡았다면, 2주차는 그 시스템을 평가하는 언어를 만든다.
 
-## 전체 흐름
+## 2주차 전체 구조도
+
+이번 2주차는 `Performance`가 중심이고, 앞의 반도체 제조 파트부터 뒤의 Amdahl's Law까지 사실 하나의 이야기로 이어진다. 자료 전체 흐름은 그대로 `반도체 -> 성능 정의 -> CPU 성능 공식 -> benchmark -> power wall -> multicore -> Amdahl's Law` 순서다.
 
 ```text
-Semiconductor Technologies
+┌───────────────────────────────────────────────────────────┐
+│                  WEEK 2 : PERFORMANCE                     │
+│                                                           │
+│  핵심 질문: "컴퓨터가 빠르다"를 어떻게 숫자로 설명하지?    │
+└──────────────────────────┬────────────────────────────────┘
+                           │
+                           ▼
+
+                 [1. Semiconductor Technology]
+                실제 CPU는 반도체 위에 만들어짐
+                           │
+                           ▼
+        Old System ──────────────── Modern SoC
+        여러 chip 사용              기능을 한 chip에 통합
+        느린 chip 통신              빠름 / 전력↓ / 신뢰성↑
+                           │
+                           ▼
+
+                 [2. IC Manufacturing]
+       Silicon → Wafer → Die → Test → Package
+                           │
+              ┌────────────┴────────────┐
+              ▼                         ▼
+            Yield                    Die Area
+      정상 동작 die의 비율          chip 하나의 크기
+              │                         │
+              └────────────┬────────────┘
+                           ▼
+                     Cost per Die
+        = Wafer Cost / (Dies per Wafer × Yield)
+
+        큰 Die
+          ↓
+        wafer에서 적게 나옴
+          +
+        defect 맞을 확률 증가
+          ↓
+        Yield ↓
+          ↓
+        Cost ↑↑
+                           │
+                           ▼
+
+                       [Chiplet]
+             거대한 die 하나 대신
+          여러 개의 작은 die를 연결
+             → yield / cost 개선
+
+════════════════════════ PERFORMANCE ════════════════════════
+
+                           ▼
+
+              [3. What does "FAST" mean?]
+
+                 Performance는 두 관점
+
+          Response Time                  Throughput
+          = Latency                      = tasks / time
+          하나 끝나는 시간               일정 시간에 몇 개 처리?
+
+          PC / 개인 사용자               Server에 중요
+                           │
+                           ▼
+
+                [4. Relative Performance]
+
+                Performance = 1 / Execution Time
+
+                    실행시간 ↓
+                       ↓
+                    성능 ↑
+
+      "A가 B보다 몇 배 빠른가?"
+
+           Performance_A / Performance_B
+                 =
+             Time_B / Time_A
+
+                           │
+                           ▼
+
+              [5. What affects Performance?]
+
+      Algorithm
+      "얼마나 많은 computation이 필요한가?"
+                  │
+                  ▼
+      Language / Compiler / ISA
+      "몇 개 instruction으로 바뀌는가?"
+                  │
+                  ▼
+      Processor / Memory
+      "각 instruction이 얼마나 빨리 실행되는가?"
+                  │
+                  ▼
+      I/O
+      "입출력은 얼마나 빠른가?"
+
+                           │
+                           ▼
+
+════════════════════ CPU PERFORMANCE CORE ═══════════════════
+
+                  [6. CPU Clock]
+
+             ┌───────┐     ┌───────┐
+Clock ───────┘       └─────┘       └────
+
+     Clock Cycle Time = 한 cycle에 걸리는 시간
+     Clock Rate       = 1초에 몇 cycle?
+
+            Cycle Time = 1 / Clock Rate
+
+예:
+4 GHz
+= 1초에 4 × 10^9 cycles
+= 1 cycle = 0.25 ns
+
+                           │
+                           ▼
+
+                [7. CPU Time]
+
+        CPU Time
+        = Clock Cycles × Cycle Time
+
+또는
+
+        CPU Time
+        = Clock Cycles / Clock Rate
+
+즉 빠르게 하려면
+
+       cycles ↓       또는       clock rate ↑
+
+BUT 둘 사이에는 trade-off가 있음.
+
+"GHz만 높으면 무조건 빠르다"는 말은 틀림.
+
+                           │
+                           ▼
+
+              [8. IC + CPI]
+
+IC
+= Instruction Count
+= 프로그램이 실행한 instruction 개수
+
+CPI
+= Cycles Per Instruction
+= instruction 하나당 평균 몇 cycle?
+
+                Clock Cycles
+                      =
+                    IC × CPI
+
+                           │
+                           ▼
+
+            이번 주 최중요 공식
+
+      CPU Time = IC × CPI × Cycle Time
+
+                    또는
+
+      CPU Time = IC × CPI / Clock Rate
+
+             ┌────────┬────────┬───────────┐
+             │        │        │
+             ▼        ▼        ▼
+            IC       CPI    Cycle Time
+           명령수    명령당    한 cycle
+                    cycle      시간
+
+        이 3개가 합쳐져 실제 CPU Time 결정
+
+                           │
+                           ▼
+
+                [9. Average CPI]
+
+Instruction마다 CPI가 다를 수 있음
+
+ADD : CPI 1
+LOAD: CPI 2
+MUL : CPI 4
+
+그래서 단순히 `(1 + 2 + 4) / 3`이 아니라 실행 빈도를 반영함.
+
+Average CPI
+= Σ(CPI_i × IC_i) / Total IC
+
+→ 많이 실행되는 instruction이 더 중요함.
+
+                           │
+                           ▼
+
+══════════════════════ MEASUREMENT ══════════════════════════
+
+                   [10. Benchmark]
+
+"그래서 실제 컴퓨터는 뭘 돌려서 비교하지?"
+
+                   Benchmark
+        = 성능 측정용 프로그램 / workload
+
+예:
+SPEC      → CPU
+TPC       → Database
+LINPACK   → Supercomputer
+3DMark    → Graphics
+
+                           │
+                           ▼
+
+                    [SPECratio]
+
+       SPECratio = Reference Time / Measured Time
+
+             높을수록 빠름
+
+예:
+Reference = 100 sec
+Computer  = 50 sec
+
+SPECratio = 100 / 50 = 2
+
+→ reference보다 2배 빠름
+
+                           │
+                           ▼
+
+                [11. Geometric Mean]
+
+여러 benchmark ratio를 하나로 합칠 때
+
+Arithmetic Mean보다 Geometric Mean을 사용
+
+        (ratio_1 × ratio_2 × ... × ratio_n)^(1/n)
+
+→ 상대적 performance ratio를 평균낼 때 사용
+
+                           │
+                           ▼
+
+════════════════════ WHY NOT JUST GHz? ══════════════════════
+
+                    [12. Power Wall]
+
+예전:
+transistor ↓
+clock ↑
+CPU 빨라짐 ↑
+
+하지만...
+
+Power ∝ C × V^2 × Frequency
+
+Frequency ↑
+     ↓
+Power ↑
+     ↓
+Heat ↑
+     ↓
+Cooling / Reliability 문제
+
+          → clock을 계속 올릴 수 없음
+
+                           │
+                           ▼
+
+                [13. Multicore]
+
+        "한 core를 계속 더 빠르게"
+                    ↓ 한계
+
+        "core를 여러 개 쓰자"
+
+          Core 1      Core 2
+             \         /
+              \       /
+              Parallel Work
+
+하지만
+
+cores ↑ ≠ 프로그램 자동으로 빨라짐
+
+Software가 일을 병렬화해야 함.
+
+Task division
+Load balancing
+Communication
+Synchronization
+
+                           │
+                           ▼
+
+                  GPU / Accelerator
+
+GPU
+= 많은 비슷한 계산을 동시에 처리
+
+Accelerator
+= 특정 workload에 특화
+
+NPU
+= Neural Processing Unit
+= Neural Network 계산 특화
+
+                           │
+                           ▼
+
+══════════════════ PARALLELISM HAS A LIMIT ══════════════════
+
+                 [14. Amdahl's Law]
+
+프로그램 전체를 빨리 만들 수 있는 게 아님.
+
+Program
+┌───────────────────────────────────┐
+│ Parallelizable │ Serial Part      │
+│ 80%            │ 20%              │
+└───────────────────────────────────┘
+
+80%를 아무리 빨리 만들어도
+20%는 그대로 남음.
+
+        New Time
+        =
+        Improved Part / Speedup
+        +
+        Unaffected Part
+
+따라서 일부를 무한히 빠르게 해도 전체 speedup에는 한계가 있다.
+
+                 ↓
+
+       Make the Common Case Fast
+```
+
+## 이번 주 정중앙 공식
+
+앞의 `Wafer / Die / Yield / Chiplet`은 CPU라는 물건을 현실적으로 어떻게 만드는지에 대한 배경이고, 그 이후부터 성능 분석 본체가 시작된다. 이번 주 정중앙은 아래 그림이다.
+
+```text
+               PERFORMANCE
+
+                   │
+                   ▼
+          Execution Time
+                   │
+         Performance = 1/T
+                   │
+                   ▼
+              CPU Time
+                   │
+          ┌────────┴────────┐
+          ▼                 ▼
+     Clock Cycles        Cycle Time
+          │
+          ▼
+       IC × CPI
+          │
+          ▼
+
+CPU Time = IC × CPI × Cycle Time
+```
+
+이 그림 하나가 이번 주의 중심이다. 자료에서도 CPU Time을 `IC × CPI × Clock Cycle Time`, 또는 `IC × CPI / Clock Rate`로 정리한다.
+
+## 1주차와 연결
+
+지난주에는 컴퓨터 시스템이 여러 계층으로 내려간다는 큰 그림을 봤다.
+
+```text
+C/C++
+ ↓
+Assembly
+ ↓
+Machine Code
+ ↓
+ISA
+ ↓
+CPU
+```
+
+이번 주에는 그 계층들을 성능 숫자로 연결한다.
+
+```text
+C/C++
+ ↓
+Compiler / ISA
+ ↓
+"몇 instruction 나오지?"
         ↓
-Old Computer Systems vs Modern SoC
+       IC
+
+CPU Microarchitecture
         ↓
-Integrated Circuit Manufacturing
+"instruction 하나에 몇 cycle?"
         ↓
-Die / Wafer / Yield / Cost per Die
+       CPI
+
+Circuit / Clock
         ↓
-Chip Size, Defect, Chiplet
+"한 cycle이 몇 초?"
         ↓
+   Cycle Time
+```
+
+결국 아래 식으로 모인다.
+
+```text
+                  IC
+                   ×
+                  CPI
+                   ×
+              Cycle Time
+                   =
+                CPU Time
+```
+
+즉 2주차는 1주차에서 배운 각 계층을 성능 숫자로 연결하는 주차다. ISA는 IC/CPI에 영향을 주고, processor와 memory system은 instruction 실행 속도에 영향을 주고, 반도체 공정과 clock은 cycle time과 power limit에 영향을 준다.
+
+## 예습/복습용 8문장
+
+간단한 영어 설명으로도 말할 수 있게 이 정도는 바로 튀어나오면 좋다.
+
+```text
 Performance
+= how fast the computer finishes work.
+
+Response time
+= time for one task.
+
+Throughput
+= how many tasks finish in a given time.
+
+Clock rate
+= how many clock cycles happen per second.
+
+IC
+= how many instructions the program executes.
+
+CPI
+= average cycles needed for one instruction.
+
+CPU Time
+= IC × CPI × Cycle Time.
+
+Amdahl's Law
+= speeding up only one part has a limit
+  because the unchanged part still remains.
+```
+
+마지막 큰 스토리는 이렇다.
+
+```text
+We want a faster CPU
         ↓
-Response Time vs Throughput
+reduce IC / CPI / Cycle Time
         ↓
-Relative Performance = 1 / Execution Time
-        ↓
-What Affects Performance
-        ↓
-CPU Time = Cycles × Cycle Time = Cycles / Clock Rate
-        ↓
-Instruction Count, CPI, Clock Rate
-        ↓
-CPU Time = IC × CPI × Clock Cycle Time
-        ↓
-Benchmark and SPECratio
-        ↓
-Geometric Mean
+but increasing clock rate causes power and heat problems
         ↓
 Power Wall
         ↓
-Multicore / GPU / Accelerator
+use Multicore / GPU / Accelerator
+        ↓
+but not all programs can run in parallel
         ↓
 Amdahl's Law
 ```
 
-이 흐름을 머리에 넣고 PDF를 보면, 각 페이지가 따로 노는 내용이 아니라 "컴퓨터를 어떻게 만들고, 그 결과물을 어떻게 성능으로 판단하며, 왜 단순히 클럭만 올리는 시대가 끝났는가"라는 한 가지 이야기로 이어진다.
+예습 우선순위는 `CPU Time 공식 > IC/CPI/Clock 이해 > Response Time vs Throughput > Amdahl > Yield/Chiplet > Benchmark` 순서로 잡으면 된다.
 
 ## 1. Semiconductor Technologies
 
