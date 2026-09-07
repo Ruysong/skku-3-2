@@ -5,25 +5,28 @@
 - [공지](./notices.md)
 - [과제/퀴즈](./assignments.md)
 - [1주차 학습지도](./1주차/study.md)
+- [2주차 학습지도](./2주차/study.md)
 
 ## 이번 주
 
-- 2026-09-13 23:59까지 1주차 강의콘텐츠 수강
-- 2026-09-13 23:59까지 [Quiz] Algorithms and Computation 응시
-- weak induction vs strong induction 참고자료 확인
-- MIT OCW `Lecture 1: Algorithms and Computation`을 보고 퀴즈 준비
+- 2주차 교수님 자료: `Performance Analysis.pdf`, `Merge Sort.pdf`, `big_o.pdf`
+- 핵심 흐름: Sorting -> Insertion Sort -> Running Time -> O/Omega/Theta -> Merge Sort
+- MIT 강의는 수요일에 따로 듣고 `2주차/study.md`에 추가 예정
+- 1주차 잔여 항목: weak induction vs strong induction 참고자료 확인
 
 ## 주차별 자료
 
 | 주차 | 공부 정리 | 원본 자료 |
 | --- | --- | --- |
 | 1주차 | [study.md](./1주차/study.md) | lec00_overview.pdf<br>lec01_preliminaries.pdf<br>induction_교수님추천 참고예제.pdf |
-| 2주차 | [study.md](./2주차/study.md) | 아직 등록된 원본 자료 없음 |
+| 2주차 | [study.md](./2주차/study.md) | Performance Analysis.pdf<br>Merge Sort.pdf<br>big_o.pdf |
 
 ## 바로 기억할 것
 
+- 2주차는 sorting과 performance analysis가 중심이고, insertion sort와 merge sort를 비교합니다.
+
 - Preliminaries는 본격적인 알고리즘 분석 전에 필요한 귀납법, 계산 모델, 수행시간, 입력 크기, 경우 분석을 맞추는 예비 개념입니다.
-- 1주차 퀴즈는 4문제 4점이며, 2026-09-13 23:59까지 열려 있습니다.
+- 1주차 퀴즈는 2026-09-02 응시 완료했고, 답안 복기는 `1주차/study.md`에 있습니다.
 - 평가 비율은 PA 20%, Midterm 30%, Final 30%, Quiz 15%, Attendance/Participation 5%입니다.
 
 ## 운영 메모

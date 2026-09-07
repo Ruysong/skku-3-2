@@ -8,7 +8,7 @@
 | --- | --- | --- | --- | --- |
 | 시스템프로그래밍실습 - 한환수 | [README](./시스템프로그래밍실습_한환수/README.md) | [notices](./시스템프로그래밍실습_한환수/notices.md) | [assignments](./시스템프로그래밍실습_한환수/assignments.md) | 1주차, 2주차 |
 | 시스템프로그램 - 엄영익 | [README](./시스템프로그램_엄영익/README.md) | [notices](./시스템프로그램_엄영익/notices.md) | [assignments](./시스템프로그램_엄영익/assignments.md) | 1주차, 2주차 |
-| 알고리즘개론 - 김형식 | [README](./알고리즘개론_김형식/README.md) | [notices](./알고리즘개론_김형식/notices.md) | [assignments](./알고리즘개론_김형식/assignments.md) | 1주차, 2주차 |
+| 알고리즘개론 - 김형식 | [README](./알고리즘개론_김형식/README.md) | [notices](./알고리즘개론_김형식/notices.md) | [assignments](./알고리즘개론_김형식/assignments.md) | 1주차, 2주차 sorting/performance |
 | 운영체제 - 신동군 | [README](./운영체제_신동군/README.md) | [notices](./운영체제_신동군/notices.md) | [assignments](./운영체제_신동군/assignments.md) | 1주차, 2주차 |
 | 캡스톤설계프로젝트 - 타메르 | [README](./캡스톤설계프로젝트_타메르/README.md) | [notices](./캡스톤설계프로젝트_타메르/notices.md) | [assignments](./캡스톤설계프로젝트_타메르/assignments.md) | 1주차, 2주차, financial support |
 | 컴공세 | [README](./컴공세/README.md) | [notices](./컴공세/notices.md) | [assignments](./컴공세/assignments.md) | 1주차, 2주차 |
@@ -50,11 +50,16 @@
 │   ├── README.md
 │   ├── notices.md
 │   ├── assignments.md
-│   └── 1주차/
+│   ├── 1주차/
+│   │   ├── study.md
+│   │   ├── induction_교수님추천 참고예제.pdf
+│   │   ├── lec00_overview.pdf
+│   │   └── lec01_preliminaries.pdf
+│   └── 2주차/
 │       ├── study.md
-│       ├── induction_교수님추천 참고예제.pdf
-│       ├── lec00_overview.pdf
-│       └── lec01_preliminaries.pdf
+│       ├── Performance Analysis.pdf
+│       ├── Merge Sort.pdf
+│       └── big_o.pdf
 ├── 운영체제_신동군/
 │   ├── README.md
 │   ├── notices.md
