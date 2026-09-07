@@ -12,7 +12,7 @@
 | 운영체제 - 신동군 | [README](./운영체제_신동군/README.md) | [notices](./운영체제_신동군/notices.md) | [assignments](./운영체제_신동군/assignments.md) | 1주차, 2주차 |
 | 캡스톤설계프로젝트 - 타메르 | [README](./캡스톤설계프로젝트_타메르/README.md) | [notices](./캡스톤설계프로젝트_타메르/notices.md) | [assignments](./캡스톤설계프로젝트_타메르/assignments.md) | 1주차, 2주차, financial support |
 | 컴공세 | [README](./컴공세/README.md) | [notices](./컴공세/notices.md) | [assignments](./컴공세/assignments.md) | 1주차, 2주차 |
-| 컴퓨터구조개론 - 조형민 | [README](./컴퓨터구조개론_조형민/README.md) | [notices](./컴퓨터구조개론_조형민/notices.md) | [assignments](./컴퓨터구조개론_조형민/assignments.md) | 1주차, 2주차 |
+| 컴퓨터구조개론 - 조형민 | [README](./컴퓨터구조개론_조형민/README.md) | [notices](./컴퓨터구조개론_조형민/notices.md) | [assignments](./컴퓨터구조개론_조형민/assignments.md) | 1주차, 2주차 performance |
 
 ## 전체 관리
 
@@ -94,9 +94,12 @@
     ├── README.md
     ├── notices.md
     ├── assignments.md
-    └── 1주차/
+    ├── 1주차/
+    │   ├── study.md
+    │   └── CA_Lecture_01.pdf
+    └── 2주차/
         ├── study.md
-        └── CA_Lecture_01.pdf
+        └── CA_Lecture_02.pdf
 ```
 
 ## 정리 원칙

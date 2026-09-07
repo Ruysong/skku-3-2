@@ -5,20 +5,22 @@
 - [공지](./notices.md)
 - [과제/퀴즈](./assignments.md)
 - [1주차 학습지도](./1주차/study.md)
+- [2주차 학습지도](./2주차/study.md)
 
 ## 이번 주
 
-- `CA_Lecture_01.pdf`로 강의 시작 안내와 Chapter 1 도입 내용 확인
-- 평가 비율, 출석 기준, 녹화강의 정책, 질문 채널 확인
-- RISC-V를 기준 ISA로 쓰는 이유 파악
-- Chapter 1의 `Computer Abstractions and Technology` 큰 그림 잡기
+- `CA_Lecture_02.pdf`로 Chapter 1 Performance 범위 확인
+- 반도체 공정, die/wafer/yield, cost per die 관계 정리
+- response time, throughput, relative performance 개념 정리
+- `CPU Time = IC × CPI × Clock Cycle Time` 공식과 예제 계산 연습
+- benchmark, SPECratio, geometric mean, power wall, Amdahl's Law 흐름 정리
 
 ## 주차별 자료
 
 | 주차 | 공부 정리 | 원본 자료 |
 | --- | --- | --- |
 | 1주차 | [study.md](./1주차/study.md) | CA_Lecture_01.pdf |
-| 2주차 | [study.md](./2주차/study.md) | 아직 등록된 원본 자료 없음 |
+| 2주차 | [study.md](./2주차/study.md) | CA_Lecture_02.pdf |
 
 ## 바로 기억할 것
 
@@ -27,6 +29,7 @@
 - 녹화강의는 iCampus에 올라오지만 출석 대체가 아닙니다.
 - PA는 RISC-V simulator를 단계적으로 만드는 방향이며 총 3개 예정입니다.
 - 마지막 PA는 1만라인 프로젝트 과제와 연결된다고 안내되었습니다.
+- 2주차는 performance 장으로, `CPU Time = IC × CPI × Clock Cycle Time`과 Amdahl's Law 계산이 핵심입니다.
 
 ## 운영 메모
 

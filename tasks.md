@@ -162,7 +162,7 @@
 - [ ] 알고리즘개론: PA 또는 GradeScope 제출처 열렸는지 확인
 - [ ] 알고리즘개론: weak induction vs strong induction 참고자료 처리 여부 확인
 - [ ] 알고리즘개론: MIT 강의는 수요일 수강 후 2주차 study에 추가
-- [ ] 컴퓨터구조개론: Week 2 Performance 자료/공지 확인
+- [x] 컴퓨터구조개론: Week 2 Performance 자료 확인 및 `2주차/study.md` 정리
 - [ ] 컴퓨터구조개론: PA 1 공지 또는 RISC-V simulator 관련 공지 확인
 
 ### 이번 주 전체 체크
