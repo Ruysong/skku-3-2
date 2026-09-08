@@ -22,6 +22,672 @@ reproducible debugging record (gdb.txt, stdout.txt)
 
 이번 주 Lab Exercise의 본질도 여기에 있습니다. `main.c`, `plus.c`, `minus.c`를 각각 object file로 만들고, linker로 `w2.out`을 만든 뒤, GDB에서 함수가 반환한 값을 register 수준에서 확인합니다. 마지막에는 불필요한 build 결과물은 빼고 source와 기록만 남긴 `week2.tar.zst`를 iCampus에 제출합니다.
 
+## 빠른 복습 요약 (사용자 정리)
+
+SYSTEM PROGRAMMING LAB — WEEK 2 최종 요약노트
+0. 전체 목차
+WEEK 2
+│
+├─ 1. Terminal / Shell / Command Line
+│
+├─ 2. Linux Filesystem / Path
+│   ├─ Absolute Path
+│   ├─ Relative Path
+│   └─ .  ..  ~  /
+│
+├─ 3. Linux Commands
+│   ├─ man / echo / date / ps
+│   ├─ pwd / cd / ls
+│   ├─ mkdir / rmdir / mv
+│   ├─ cp / rm
+│   ├─ cat / head / tail / grep
+│   └─ tar
+│
+├─ 4. Compiler / GCC
+│   ├─ Optimization Level
+│   ├─ GCC Procedure
+│   ├─ -o
+│   ├─ -save-temps
+│   ├─ -E
+│   ├─ -S
+│   ├─ -c
+│   └─ Linking
+│
+├─ 5. Error / Bug / Debugging
+│
+├─ 6. GDB
+│   ├─ Breakpoint
+│   ├─ run
+│   ├─ next / step
+│   ├─ continue
+│   ├─ variable
+│   ├─ register
+│   └─ stack / backtrace
+│
+└─ 7. Week 2 Lab
+    ├─ .c → .o
+    ├─ link → w2.out
+    ├─ GDB
+    ├─ stdout.txt
+    ├─ gdb.txt
+    └─ week2.tar.zst
+
+교안은 Linux command → GCC → GDB → Lab 순서로 진행한다.
+
+1. Linux 기본 구조
+Path 기호
+기호	의미	암기
+/	Root Directory	파일시스템 최상위
+~	Home Directory	내 집
+.	Current Directory	여기
+..	Parent Directory	한 단계 위
+
+네 환경:
+
+~ = /home/spl
+
+예:
+
+cd ~
+cd ..
+./w2.out
+
+교안에서 absolute/relative path와 ., .., ~를 설명한다.
+
+2. Linux 명령어 암기표
+명령	원래 의미	기능
+man	manual	설명서
+echo	echo	문자열 출력
+date	date	날짜/시간
+ps	Process Status	프로세스 보기
+pwd	Print Working Directory	현재 경로
+cd	Change Directory	디렉터리 이동
+ls	list	파일 목록
+mkdir	Make Directory	디렉터리 생성
+rmdir	Remove Directory	빈 디렉터리 삭제
+cp	copy	복사
+mv	move	이동 / 이름 변경
+rm	remove	삭제
+cat	concatenate	파일 내용 출력/연결
+head	head	앞부분
+tail	tail	뒷부분
+grep	pattern 검색 명령	문자열/패턴 검색
+tar	Tape Archive	파일 묶기
+
+교안에서 이 명령들을 순서대로 다룬다.
+
+기능별 암기
+위치
+pwd cd ls
+
+파일 조작
+mkdir cp mv rm rmdir
+
+내용 보기
+cat head tail grep
+
+관리
+man ps tar
+3. Program vs Process
+Program
+= 저장되어 있는 실행파일
+
+Process
+= 실행 중인 프로그램
+
+예:
+
+w2.out
+= program
+
+./w2.out 실행 중
+= process
+
+ps = Process Status
+
+4. GCC 전체 구조 🔥
+
+GCC = GNU Compiler Collection
+
+C source
+  .c
+   │
+   │ Preprocessor
+   ▼
+  .i
+   │
+   │ Compiler
+   ▼
+  .s
+   │
+   │ Assembler
+   ▼
+  .o
+   │
+   │ Linker
+   ▼
+Executable
+
+교안의 GCC procedure가 바로 이 흐름이다.
+
+5. 각 파일 상태
+파일	상태
+.c	원본 C source
+.i	전처리가 끝난 C source
+.s	Assembly source
+.o	Machine code를 포함한 Object file
+executable	링크까지 끝난 실행파일
+.i 전처리에서 하는 것
+
+대표적으로:
+
+#include 처리
+macro 치환
+comment 제거
+
+교안은 -E를 통해 preprocessed source를 확인하도록 설명한다.
+
+6. GCC 암기법 🔥
+파일 순서
+I S O
+
+.i → .s → .o
+옵션 순서
+E S C
+
+-E → -S → -c
+암기
+ISO ↔ ESC
+
+그리고:
+
+-E
+→ preprocessing까지만
+
+-S
+→ assembly까지
+
+-c
+→ object file까지만
+→ linking 하지 않음
+
+교안의 옵션 설명과 대응한다.
+
+7. GCC 주요 옵션
+옵션	의미
+-E	전처리 후 멈춤
+-S	Assembly 생성 후 멈춤
+-c	Object 생성 후 멈춤
+-o name	Output 파일 이름 지정
+-save-temps	.i .s .o 중간파일 보존
+-ggdb	GDB용 debugging 정보 포함
+-O0	Optimization Level 0
+
+교안에서 -o, -save-temps, -E, -S, -c를 각각 설명한다.
+
+절대 혼동 금지
+-o
+소문자 o
+= output
+
+-O0
+대문자 O + 숫자 0
+= optimization level zero
+8. Optimization Level
+최적화 약함                         최적화 강함
+   ↓                                    ↓
+
+-O0 → -O1 → -O2 → -O3
+옵션	핵심
+-O0	최적화 끔 / debugging 쉬움
+-O1	기본 최적화
+-O2	더 많은 최적화
+-O3	강한 실행속도 최적화
+-Og	debugging 친화적 최적화
+-Os	code size 최적화
+
+교안은 각 optimization level의 의미와 debugging 시 -O0을 설명한다.
+
+핵심 이유
+Optimization ↑
+→ 원래 C 코드와 실제 machine code의 대응이 달라질 수 있음
+→ debugging 어려워짐
+
+따라서 실습:
+-ggdb + -O0
+9. Linking 🔥
+
+각 파일을 따로 compile:
+
+main.c      plus.c      minus.c
+  ↓           ↓            ↓
+main.o      plus.o      minus.o
+   \          |          /
+    \         |         /
+          Linker
+             ↓
+           w2.out
+
+Linker:
+
+여러 Object file 사이의 함수/심볼 참조를 연결해서 실행파일을 만든다.
+
+교안도 여러 object file이 linker를 통해 executable이 되는 구조를 보여준다.
+
+이번 실습
+gcc -ggdb -c -O0 main.c
+gcc -ggdb -c -O0 plus.c
+gcc -ggdb -c -O0 minus.c
+
+gcc -O0 main.o plus.o minus.o -o w2.out
+
+10. ISA vs Executable
+
+이 부분은 교안 바깥 연결 개념.
+
+ISA = Instruction Set Architecture
+
+예:
+
+x86-64
+ARM64
+RISC-V
+
+ISA는:
+
+CPU가 이해할 수 있는 instruction의 규칙/체계
+
+Executable:
+
+해당 architecture에서 실행할 machine code 등을 담은 실제 파일
+
+ISA
+= 언어의 규칙
+
+Executable
+= 그 규칙으로 작성된 실제 프로그램
+
+둘은 같은 게 아님.
+
+11. Error / Bug
+Error
+├─ Syntax Error
+│   └─ 문법 오류
+│
+└─ Semantic / Logic Error
+    └─ 실행은 되지만 의미/논리 잘못됨
+
+Bug 예:
+
+잘못된 결과
+Infinite Loop
+Segmentation Fault
+
+교안은 syntax error와 semantic/logic error를 구분하고 debugging 방법을 소개한다.
+
+12. Debugging / GDB
+
+GDB = GNU Debugger
+
+일반 실행
+
+START ─────────────→ END
+
+
+GDB
+
+START
+ ↓
+Breakpoint 🛑
+ ↓
+상태 관찰
+ ↓
+한 줄 실행
+ ↓
+계속 실행
+ ↓
+END
+
+GDB에서는 source line, assembly, variable/register, stack frame 등을 볼 수 있다.
+
+13. Breakpoint
+Break + Point
+= 멈추는 지점
+break plus
+
+→ plus 함수에 도착하면 실행을 멈춤.
+
+14. GDB 필수 명령어 🔥
+명령	축약	의미
+run	r	실행
+list	l	source 보기
+break	b	breakpoint
+next	n	다음 줄, 함수 내부 X
+step	s	다음 줄, 함수 내부 O
+continue	c	다음 breakpoint까지 계속
+print	p	변수 값
+quit	q	종료
+backtrace	bt	함수 호출 경로
+info registers	-	register 확인
+
+교안 기본 GDB 명령표에 해당 내용이 나온다.
+
+15. next vs step 🔥🔥
+
+현재:
+
+r = plus(a, b);
+next
+plus 내부 실행
+   ↓
+내부에는 안 들어감
+   ↓
+다음 줄
+step
+plus 호출
+   ↓
+plus 함수 내부로 들어감
+
+암기:
+
+NEXT
+= 넘어간다
+
+STEP
+= 직접 한 발 들어간다
+16. Register / rax
+
+Register:
+
+CPU 내부의 매우 빠른 작은 저장공간.
+
+이번 x86-64 실습에서는 함수 반환값을 확인하기 위해:
+
+info registers rax
+
+를 사용한다. 교안에서도 x64에서는 rax, 다른 architecture에서는 r0 또는 x0를 확인하도록 한다.
+
+plus(100,80)
+→ 180
+
+minus(100,80)
+→ 20
+17. Stack / Backtrace
+main()
+  ↓
+plus()
+
+개념적으로:
+
+Stack
+
+┌─────────┐
+│ plus    │ ← 현재
+├─────────┤
+│ main    │
+└─────────┘
+backtrace
+
+또는:
+
+bt
+
+→ 어떤 함수 호출을 거쳐 현재 위치까지 왔는지 확인.
+
+18. Argument와 run
+
+이번 main.c:
+
+int main(int argc, char* argv[])
+
+실행:
+
+run 100 80
+
+그러면:
+
+argc = 3
+
+argv[0] = 프로그램 이름
+argv[1] = "100"
+argv[2] = "80"
+
+run만 하면 이번 프로그램은 입력을 기다리지 않고 Usage를 출력하고 종료한다. 교안 코드가 argc != 3이면 바로 종료하도록 작성되어 있기 때문이다.
+
+19. stdin / stdout / stderr
+
+이 부분은 앞으로 시스템 프로그래밍에서 계속 나올 개념.
+
+stdin
+= Standard Input
+= 표준 입력
+
+stdout
+= Standard Output
+= 표준 출력
+
+stderr
+= Standard Error
+= 표준 오류
+
+암기:
+
+IN / OUT / ERR
+20. > Redirection
+run 100 80 > stdout.txt
+
+>:
+
+Output Redirection
+
+원래
+
+program
+  ↓ stdout
+terminal
+
+
+> 사용
+
+program
+  ↓ stdout
+stdout.txt
+
+이번 실습 결과:
+
+180
+20
+
+이 stdout.txt에 들어간다.
+
+21. gdb.txt vs stdout.txt 🔥
+GDB가 보여준 내용
+        ↓
+     gdb.txt
+
+
+프로그램의 printf 출력
+        ↓
+    stdout.txt
+
+GDB logging:
+
+set logging enabled on
+
+교안 실습에서 logging을 켜도록 요구한다.
+
+22. Week 2 Lab 최종 구조
+main.c
+plus.c
+minus.c
+   │
+   │ gcc -ggdb -c -O0
+   ▼
+main.o
+plus.o
+minus.o
+   │
+   │ Link
+   ▼
+w2.out
+   │
+   │ GDB
+   ▼
+break plus
+break minus
+run 100 80 > stdout.txt
+rax 확인
+logging
+   │
+   ├── gdb.txt
+   └── stdout.txt
+
+그리고 .o, w2.out 제거 후:
+
+week2/
+├── main.c
+├── plus.c
+├── minus.c
+├── gdb.txt
+└── stdout.txt
+
+교안 제출 과정도 object와 executable을 삭제한 뒤 archive를 생성하도록 한다.
+
+23. 최종 압축
+tar -cav -f week2.tar.zst week2/
+
+결과:
+
+week2.tar.zst
+
+iCampus 제출 파일.
+
+🔥 최종 암기장
+[PATH]
+
+/   = root
+~   = home
+.   = current
+..  = parent
+
+./w2.out = 현재 폴더의 w2.out
+/w2.out  = root에 있는 w2.out
+[LINUX]
+
+pwd = Print Working Directory
+cd  = Change Directory
+ls  = List
+
+mkdir = Make Directory
+cp    = Copy
+mv    = Move
+rm    = Remove
+
+cat   = Concatenate
+head  = 앞
+tail  = 뒤
+grep  = 검색
+
+ps    = Process Status
+man   = Manual
+tar   = Tape Archive
+[GCC]
+
+GNU Compiler Collection
+
+.c
+ ↓ Preprocessor
+.i
+ ↓ Compiler
+.s
+ ↓ Assembler
+.o
+ ↓ Linker
+Executable
+파일 = ISO
+
+.i
+.s
+.o
+
+옵션 = ESC
+
+-E
+-S
+-c
+-o  = output
+-O0 = Optimization Level 0
+
+-ggdb
+= GDB용 debugging information
+[GDB]
+
+GNU Debugger
+
+b = break
+r = run
+l = list
+n = next
+s = step
+c = continue
+p = print
+q = quit
+
+bt = backtrace
+NEXT
+= 함수 안 안 들어감
+
+STEP
+= 함수 안 들어감
+Breakpoint
+= 실행을 멈추는 지점
+
+Register
+= CPU 내부의 빠른 저장공간
+
+rax
+= 이번 x86-64 실습에서
+  함수 반환값 확인에 사용
+stdin  = Standard Input
+stdout = Standard Output
+stderr = Standard Error
+
+> = Output Redirection
+gdb.txt
+= GDB 로그
+
+stdout.txt
+= 프로그램 printf 결과
+최종 한 장 구조도
+                 SYSTEM PROGRAMMING WEEK 2
+                           │
+         ┌─────────────────┼─────────────────┐
+         │                 │                 │
+       LINUX              GCC               GDB
+         │                 │                 │
+   Files / Paths        Build             Debug
+         │                 │                 │
+ / ~ . ..            .c source         executable
+         │                 │                 │
+ pwd cd ls          Preprocessor         run
+ mkdir cp mv rm          │                 │
+ cat grep                .i             breakpoint
+ ps man tar               │                 │
+                      Compiler          STOP 🛑
+                          │                 │
+                         .s          inspect state
+                          │          ├─ variable
+                      Assembler      ├─ register
+                          │          └─ stack
+                         .o              │
+                          │          next / step
+                       Linker             │
+                          │           continue
+                     executable           │
+                          └──────→─────── END
+
+---
+
 ## 원본 자료와 범위
 
 - 원본: `./week2-gcc&gdb.pdf`
