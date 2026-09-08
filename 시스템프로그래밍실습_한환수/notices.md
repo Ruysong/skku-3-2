@@ -70,3 +70,62 @@ Cheating이 아닌 것으로 안내된 것:
 - Ubuntu 22.04 이상 사용 가능, 그보다 오래된 버전은 권장되지 않습니다.
 - VMware, UTM, native Linux server/computer는 허용됩니다.
 - 다른 distro나 WSL2는 자기 책임으로 사용해야 하며, 환경 차이 때문에 감점 가능성이 있습니다.
+
+## 2026-09-08 ARCS System Programming Lab 기준 페이지
+
+출처: <https://arcs.skku.edu/Courses/SWPractice2>
+
+ARCS는 이 과목의 장기 운영 정보를 확인할 수 있는 연구실/수업 페이지다. 강의 슬라이드는 iCampus에 올라온다는 안내가 명시되어 있으므로, 매주 실제 수업 자료와 주간 제출 지시는 iCampus를 우선하고, 아래의 학기 전체 일정과 PA 마감은 ARCS 기준으로 관리한다.
+
+### 과목 기본 정보
+
+| 항목 | 내용 |
+| --- | --- |
+| 과목 | SWE2024 System Programming Lab, C language 실습 |
+| 수업 | 화요일 18:00-21:45 |
+| 장소 | 85702 |
+| 담당 | 한환수 교수님 |
+| TA | Gwangbin Rhee, Jinseok Park |
+| 참고서 | Computer Systems: A Programmer's Perspective, 3rd ed. |
+
+### 학기 주제 흐름과 고정 일정
+
+| 주차 | 주제 | 비고 |
+| --- | --- | --- |
+| 1 | Course Introduction, Linux Install, Vim |  |
+| 2 | Compiling, debugging codes in Linux |  |
+| 3 | Git usage, Makefile, Shell scripts |  |
+| 4 | Basic file I/O system calls | PA#1 연결 |
+| 5 | Creating, managing process |  |
+| 6 | Sending and handling signals | PA#2 연결 |
+| 7 | IPC: pipe, redirection |  |
+| 8 | Midterm week | 수업 없음 |
+| 9 | System V IPC: shared memory, named pipe, message queue |  |
+| 10 | Basic client/server program using socket | PA#3 연결 |
+| 11 | Pthread API |  |
+| 12 | Multi-process, multi-thread programming |  |
+| 13 | Synchronization: mutex, conditional variables |  |
+| 14 | Linux daemon programming |  |
+| 15 | Study Week | 수업 없음 |
+| 16 | Final Exam | 20:00-21:30 |
+
+### ARCS에 명시된 Programming Assignment 마감
+
+| 과제 | 주제 | 마감 |
+| --- | --- | --- |
+| PA#1 | File I/O | 2026-10-04 일요일 23:59 |
+| PA#2 | Command-line shell | 2026-11-01 일요일 23:59 |
+| PA#3 | Server-client programming | 2026-12-06 일요일 23:59 |
+
+### 평가 비율 재확인
+
+- Attendance 10%
+- Weekly Lab Assignments 15%
+- Programming Assignments 45%: PA#1 10%, PA#2 15%, PA#3 20%
+- Final Exam 30%
+
+### 바로 쓸 운영 판단
+
+- ARCS는 주제 흐름과 큰 마감을 미리 보는 곳이다.
+- iCampus의 주차별 PDF, 과제 페이지, 공지가 실제 제출 형식과 세부 마감의 최종 기준이다.
+- 2주차 이후에는 화요일 수업 전 iCampus에서 해당 주 Lab Exercise 제출처를 확인하고, 같은 날 23:59 마감 여부를 먼저 체크한다.

@@ -5,22 +5,21 @@
 - [공지](./notices.md)
 - [과제/실습](./assignments.md)
 - [1주차 학습지도](./1주차/study.md)
+- [2주차 학습지도](./2주차/study.md)
 
 ## 이번 주
 
-- 1주차 자료: `week1-course_overview.pdf`
-- Ubuntu VM 또는 Linux 실습 환경 준비
-- Vim으로 `hello.c` 작성 연습
-- 1주차 Lab Exercise 제출: `Hello, Linux!` 실행 화면 스크린샷
-- 제출 파일명: `STUDENT ID_w1.png`
-- 제출 마감: 2026-09-08 23:59
+- 2주차 자료: `week2-gcc&gdb.pdf`
+- 주제: Linux command line, GCC compile/link 과정, GDB debugging
+- 2주차 Lab Exercise: `week2.tar.zst`를 iCampus에 제출
+- 마감: 2026-09-08 23:59, 지각 제출 불가
 
 ## 주차별 자료
 
 | 주차 | 공부 정리 | 원본 자료 |
 | --- | --- | --- |
 | 1주차 | [study.md](./1주차/study.md) | week1-course_overview.pdf |
-| 2주차 | [study.md](./2주차/study.md) | 아직 등록된 원본 자료 없음 |
+| 2주차 | [study.md](./2주차/study.md) | week2-gcc&gdb.pdf |
 
 ## 바로 기억할 것
 
@@ -29,6 +28,7 @@
 - iCampus는 공지, 강의콘텐츠, 주간 실습 제출, Programming Assignment 제출, Q&A board에 사용합니다.
 - 평가는 출석 10%, Lab exercise 15%, Programming assignments 45%, Final exam 30%입니다.
 - 결석은 최대 2회까지 허용되고, 4회 결석 시 자동 F입니다.
+- 장기 일정과 PA 마감은 ARCS의 System Programming Lab 페이지를 함께 확인합니다. 강의 슬라이드는 iCampus가 기준입니다.
 
 ## 운영 메모
 

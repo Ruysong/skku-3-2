@@ -60,8 +60,8 @@
 
 | 주차 | Lab Exercise | 제출 상태 | 마감/메모 |
 | --- | --- | --- | --- |
-| 1주차 | `hello.c` 작성 후 실행 스크린샷 제출 | 미제출 | 2026-09-08 23:59 |
-| 2주차 | 미확인 | 미제출 |  |
+| 1주차 | `hello.c` 작성 후 실행 스크린샷 제출 | 제출 완료 | 2026-09-08 23:59 |
+| 2주차 | GCC object file/link + GDB logging 실습 | 미제출 | 2026-09-08 23:59, `week2.tar.zst`, 지각 제출 불가 |
 | 3주차 | 미확인 | 미제출 |  |
 | 4주차 | 미확인 | 미제출 |  |
 | 5주차 | 미확인 | 미제출 |  |
@@ -76,3 +76,42 @@
 | 14주차 | 미확인 | 미제출 |  |
 | 15주차 | No class | 해당 없음 |  |
 | 16주차 | Final Exam | 해당 없음 |  |
+
+## 2주차 Lab Exercise
+
+출처: `2주차/week2-gcc&gdb.pdf`, pp.31-36
+
+| 항목 | 내용 |
+| --- | --- |
+| 작업 폴더 | 원하는 위치에 `week2/` 생성 |
+| 소스 | 제공된 구조의 `main.c`와 본인이 작성한 `plus.c`, `minus.c` |
+| object file | `-ggdb -c -O0` 옵션으로 `plus.o`, `minus.o`, `main.o` 생성 |
+| executable | object file을 link해 `w2.out` 생성 (`-O0`) |
+| GDB | `plus`, `minus`에 breakpoint 설정 후 입력 `100 80`으로 실행 |
+| 확인 | 각 함수의 반환값을 `rax`에서 확인. non-x64는 `r0` 또는 `x0` 사용 |
+| 로그 | GDB 시작 뒤 `set logging enabled on`으로 기록. 예시에는 `gdb.txt`, `stdout.txt`가 제시됨 |
+| 제출물 | object file과 executable을 지운 뒤 `week2/`를 `week2.tar.zst`로 archive |
+| 제출 | iCampus에 `week2.tar.zst` 제출 |
+| 마감 | 2026-09-08 화요일 23:59, no late submission |
+
+### 제출 전 체크
+
+- [ ] `week2/`에 `main.c`, `plus.c`, `minus.c`가 있다.
+- [ ] `plus.o`, `minus.o`, `main.o`를 거쳐 `w2.out`을 만들었다.
+- [ ] GDB에서 `plus`, `minus` breakpoint와 `100 80` 실행을 확인했다.
+- [ ] 실행 출력과 register 반환값이 일치한다.
+- [ ] GDB logging 결과와 stdout redirection 결과를 확인했다.
+- [ ] archive 전 `*.o`, `w2.out`을 삭제했다.
+- [ ] `week2.tar.zst`를 열어 비어 있지 않은지 확인했다.
+- [ ] iCampus에 archive 파일을 제출했다.
+- [ ] WSL/Docker/ARM 등 표준 환경이 아니라면 iCampus comment에 환경을 썼다.
+
+## Programming Assignment 확정 일정
+
+출처: ARCS System Programming Lab course page. 세부 스펙과 제출 형식은 iCampus 공지를 우선한다.
+
+| 과제 | 주제 | 배점 | 마감 |
+| --- | --- | --- | --- |
+| PA#1 | File I/O | 10% | 2026-10-04 일요일 23:59 |
+| PA#2 | Command-line shell | 15% | 2026-11-01 일요일 23:59 |
+| PA#3 | Server-client programming | 20% | 2026-12-06 일요일 23:59 |
