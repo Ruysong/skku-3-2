@@ -8,14 +8,14 @@
 
 ## 이번 주
 
-1주차는 운영체제 과목의 도입 자료가 올라와 있습니다. 세부 학습지도는 PDF 확인 후 보강합니다.
+2주차는 CPU virtualization의 mechanism과 process abstraction 자료가 올라와 있습니다. 퀴즈는 매주 운영된다는 수업 구두 안내를 기준으로, 매주 iCampus의 실제 일정과 범위를 확인합니다.
 
 ## 주차별 자료
 
 | 주차 | 공부 정리 | 원본 자료 |
 | --- | --- | --- |
 | 1주차 | [study.md](./1주차/study.md) | OS01-OS intro.pdf |
-| 2주차 | [study.md](./2주차/study.md) | 아직 등록된 원본 자료 없음 |
+| 2주차 | [study.md](./2주차/study.md) | OS02-LimitedDirectExecution.pdf, OS03-Process.pdf |
 
 ## 운영 메모
 
