@@ -21,6 +21,13 @@
 | [Quiz] Algorithms and Computation | 4점 | MIT 강의/iCampus 영상/1주차 자료 확인 후 응시 | 완료: 2026-09-02, 답안 복기 study.md 반영 |
 | weak induction vs strong induction | 0점 | Cornell induction 예제 노트 확인 | 미완료 |
 
+## 2주차 과제/퀴즈
+
+| 항목 | 배점 | 마감 | 제출물/자료 | 상태 |
+| --- | ---: | --- | --- | --- |
+| Prove the following statements | 5점 | 2026-09-13 23:59 | `2주차/Junhyuk Song_Prove the following statements.docx`, `.pdf` | 제출 완료: 2026-09-09 |
+| [Quiz] Prove the correctness of the Insertion Sort algorithm using Loop Invariant | 1점 | 2026-09-13 23:59 | 파일 업로드형 퀴즈. `2주차/JunhyukSong_Prove the correctness of the Insertion Sort algorithm using Loop Invariant.docx`, `.pdf` | 제출 완료: 2026-09-09 |
+| [Programming] Merge sorting | 5점 | 2026-09-20 23:59 | 과제 안내와 입출력 예시: `Assingmnet/Assignment01-3.pdf`, `hw1_input-2.txt`, `hw1_output-1.txt` | 미제출 |
 ## 확인 필요
 
 - GradeScope나 iCampus에 PA 제출처가 열리는지 확인
