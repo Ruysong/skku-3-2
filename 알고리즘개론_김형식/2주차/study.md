@@ -61,6 +61,1008 @@ Initialization, Maintenance, Termination
 "지금까지 처리한 부분에 대해 무엇이 항상 참인가?"
 ```
 
+## Bubble Sort 보조강의: Loop Invariant와 Correctness
+
+### Loop Invariant and Proof of Correctness
+
+#### Bubble Sort Example
+
+---
+
+#### 1. Proof of Correctness
+
+알고리즘을 테스트해서 몇 개의 입력에서 올바른 결과가 나왔다고 해도, 그것만으로 모든 입력에서 알고리즘이 정확하다고 할 수는 없다.
+
+예를 들어 정렬 알고리즘에 여러 배열을 넣어 모두 올바르게 정렬되었다고 해도 가능한 모든 입력을 테스트할 수는 없다.
+
+따라서 알고리즘의 correctness를 보이기 위해 **mathematical proof**를 사용한다.
+
+##### Empirical Testing
+
+특정 입력에 대해 결과를 확인한다.
+
+```text
+input  → algorithm → output
+```
+
+장점:
+
+* 실제 구현 오류를 찾을 수 있음
+
+한계:
+
+* 모든 가능한 입력을 확인할 수 없음
+* 일반적인 correctness를 증명하지 못함
+
+##### Proof of Correctness
+
+알고리즘이 specification을 만족한다는 것을 논리적으로 증명한다.
+
+목표:
+
+$$
+\text{For every valid input, the algorithm produces a correct output.}
+$$
+
+
+
+---
+
+### 2. Sorting Problem의 Formal Specification
+
+정렬 문제의 입력을 다음 sequence라고 하자.
+
+$$
+A=(a_1,a_2,\ldots,a_n)
+$$
+
+출력은 다음 sequence이다.
+
+$$
+A'=(a'_1,a'_2,\ldots,a'_n)
+$$
+
+올바른 sorting output은 두 조건을 만족해야 한다.
+
+---
+
+#### 2.1 Permutation Condition
+
+출력은 입력의 **permutation**이어야 한다.
+
+즉:
+
+* 원래 있던 모든 원소가 존재해야 한다.
+* 새로운 원소가 추가되면 안 된다.
+* 기존 원소가 사라지면 안 된다.
+
+예:
+
+```text
+Input:
+[4, 1, 3, 2]
+
+Valid permutation:
+[1, 2, 3, 4]
+
+Invalid:
+[1, 2, 3, 5]
+```
+
+Permutation은 원소들의 **order만 바뀔 수 있음**을 의미한다.
+
+---
+
+#### 2.2 Sorted Order Condition
+
+Ascending order에서는:
+
+$$
+a'_1\le a'_2\le\cdots\le a'_n
+$$
+
+이어야 한다.
+
+따라서 sorting correctness는:
+
+$$
+\boxed{
+\text{Permutation}+\text{Sorted Order}
+}
+$$
+
+이다.
+
+---
+
+### 3. Loop Invariant
+
+#### Definition
+
+**Loop invariant**는 loop가 진행되는 동안 특정 시점마다 항상 참으로 유지되는 property이다.
+
+보통 다음 형태로 생각할 수 있다.
+
+> At the beginning or end of every iteration, some property remains true.
+
+Loop invariant는 실제 코드가 아니다.
+
+코드의 상태에 대해 성립하는 **logical statement**이다.
+
+예:
+
+```text
+"현재까지 확인한 원소 중 최대값이 max에 저장되어 있다."
+```
+
+---
+
+### 4. Loop Invariant Proof의 기본 구조
+
+Loop invariant를 이용한 correctness proof는 보통 세 단계로 구성된다.
+
+$$
+\boxed{
+\text{Initialization}
+\rightarrow
+\text{Maintenance}
+\rightarrow
+\text{Termination}
+}
+$$
+
+---
+
+#### 4.1 Initialization
+
+첫 iteration이 시작되기 전에 invariant가 참임을 보인다.
+
+질문:
+
+> Is the invariant true before the loop starts?
+
+Mathematical induction의 **base case**와 대응된다.
+
+---
+
+#### 4.2 Maintenance
+
+어떤 iteration 전에 invariant가 참이라고 가정한다.
+
+그 iteration을 실행한 후에도 invariant가 다시 참임을 보인다.
+
+즉:
+
+$$
+P(k)\Rightarrow P(k+1)
+$$
+
+질문:
+
+> If the invariant is true before one iteration, is it still true before the next iteration?
+
+Mathematical induction의 **inductive step**과 대응된다.
+
+---
+
+#### 4.3 Termination
+
+Loop가 끝났을 때 invariant가 알고리즘의 원하는 결과를 의미한다는 것을 보인다.
+
+질문:
+
+> When the loop terminates, does the invariant imply the final goal?
+
+이 단계가 있어야 loop invariant가 실제 algorithm correctness와 연결된다.
+
+---
+
+### 5. Loop Invariant와 Mathematical Induction
+
+두 증명 구조는 매우 유사하다.
+
+| Mathematical Induction | Loop Invariant                    |
+| ---------------------- | --------------------------------- |
+| Base Case              | Initialization                    |
+| Inductive Hypothesis   | invariant가 현재 iteration에서 참이라고 가정 |
+| Inductive Step         | Maintenance                       |
+| 모든 \(k\)에 대해 성립        | 모든 iteration에서 성립                 |
+| —                      | Termination으로 알고리즘 결과와 연결         |
+
+따라서 loop invariant proof는 **induction을 반복문 상태에 적용한 형태**로 볼 수 있다.
+
+---
+
+### 6. Bubble Sort
+
+Bubble Sort는 adjacent elements를 반복적으로 비교한다.
+
+두 원소가 잘못된 순서이면 swap한다.
+
+##### Pseudocode
+
+$$
+A=(a_1,\ldots,a_n)
+$$
+
+```text
+for i = 1 to n - 1
+
+    for j = 1 to n - i
+
+        if A[j] > A[j+1]
+            swap A[j], A[j+1]
+```
+
+Bubble Sort의 핵심 operation은:
+
+```text
+compare A[j] and A[j+1]
+
+if A[j] > A[j+1]
+    swap
+```
+
+이다.
+
+---
+
+### 7. Bubble Sort의 기본 동작
+
+예:
+
+```text
+[2, 7, 3, 4, 0, 1]
+```
+
+첫 pass를 보자.
+
+```text
+2 7
+→ correct order
+```
+
+```text
+7 3
+→ swap
+
+[2, 3, 7, 4, 0, 1]
+```
+
+```text
+7 4
+→ swap
+
+[2, 3, 4, 7, 0, 1]
+```
+
+```text
+7 0
+→ swap
+```
+
+```text
+7 1
+→ swap
+```
+
+결과:
+
+```text
+[2, 3, 4, 0, 1, 7]
+```
+
+전체 배열은 아직 sorted가 아니다.
+
+하지만:
+
+$$
+7=\max(A)
+$$
+
+이고 마지막 위치에 있다.
+
+즉:
+
+> 한 pass가 끝날 때 maximum 하나가 자신의 final position에 도착한다.
+
+---
+
+### 8. 왜 Nested Loop에 Invariant가 두 개인가
+
+Bubble Sort에는 두 개의 nested loop가 있다.
+
+```text
+outer loop: i
+
+    inner loop: j
+```
+
+따라서 각각에 대해 invariant를 설정할 수 있다.
+
+증명 순서는 일반적으로:
+
+$$
+\boxed{
+\text{Inner Loop}
+\rightarrow
+\text{Outer Loop}
+\rightarrow
+\text{Whole Algorithm}
+}
+$$
+
+이다.
+
+Inner loop의 결과를 먼저 증명한 후, 그 결과를 outer loop 증명에 사용한다.
+
+---
+
+### 9. Inner Loop Invariant
+
+#### Statement
+
+Inner loop iteration \(j\)가 끝난 후:
+
+$$
+\boxed{
+\max(A[1],\ldots,A[j+1])
+\text{ is in position }j+1
+}
+$$
+
+즉:
+
+> 지금까지 확인한 원소들의 maximum이 현재 확인 범위의 가장 오른쪽 위치에 있다.
+
+수식으로:
+
+$$
+A[j+1]
+=
+\max(A[1],A[2],\ldots,A[j+1])
+$$
+
+
+
+---
+
+### 10. Inner Loop Invariant의 직관
+
+Inner loop는 다음과 같이 동작한다.
+
+```text
+A1 vs A2
+     ↓
+larger one moves right
+
+winner vs A3
+     ↓
+larger one moves right
+
+winner vs A4
+     ↓
+larger one moves right
+```
+
+따라서 maximum so far가 계속 오른쪽으로 이동한다.
+
+---
+
+### 11. Inner Loop Proof
+
+#### 11.1 Initialization
+
+Inner loop는 실제로 \(j=1\)에서 시작한다.
+
+Loop 시작 전 상태를 \(j=0\)이라고 생각한다.
+
+Invariant에 \(j=0\)을 대입하면:
+
+$$
+A[1...1]
+$$
+
+을 고려하게 된다.
+
+원소가 하나뿐이므로:
+
+$$
+\max(A[1])=A[1]
+$$
+
+이고 그 원소는 position 1에 있다.
+
+따라서 invariant는 처음에 성립한다.
+
+---
+
+#### 11.2 Inductive Hypothesis
+
+Iteration \(j\)가 끝난 후 invariant가 참이라고 가정한다.
+
+즉:
+
+$$
+A[j+1]
+=
+\max(A[1...j+1])
+$$
+
+이다.
+
+현재 상태:
+
+```text
+A1 A2 ... A(j+1) | A(j+2)
+                 ↑
+          maximum so far
+```
+
+---
+
+#### 11.3 Maintenance
+
+다음 iteration에서는:
+
+$$
+A[j+1]
+$$
+
+과:
+
+$$
+A[j+2]
+$$
+
+를 비교한다.
+
+새로운 범위:
+
+$$
+A[1...j+2]
+$$
+
+의 maximum은 반드시 둘 중 하나이다.
+
+$$
+A[j+1]
+$$
+
+또는
+
+$$
+A[j+2]
+$$
+
+이다.
+
+왜냐하면 기존 범위의 maximum은 이미 \(A[j+1]\)에 있기 때문이다.
+
+Bubble Sort는 이 두 값을 비교하여 더 큰 값을 오른쪽에 둔다.
+
+따라서 iteration \(j+1\) 후:
+
+$$
+A[j+2]
+=
+\max(A[1...j+2])
+$$
+
+가 된다.
+
+즉:
+
+$$
+P(j)\Rightarrow P(j+1)
+$$
+
+이다.
+
+---
+
+### 12. Inner Loop Termination
+
+Inner loop가 끝까지 실행되면 현재 active subarray 전체를 확인한 것이다.
+
+Inner invariant에 의해:
+
+> active subarray의 maximum이 그 subarray의 가장 오른쪽 위치에 있다.
+
+따라서 한 번의 inner loop 전체 실행은:
+
+$$
+\boxed{
+\text{largest remaining element}
+\rightarrow
+\text{rightmost unsorted position}
+}
+$$
+
+의 효과를 가진다.
+
+---
+
+### 13. Outer Loop Invariant
+
+#### Statement
+
+Outer loop iteration \(i\)가 끝난 후:
+
+$$
+\boxed{
+\text{The }i\text{ largest elements are in their correct final positions.}
+}
+$$
+
+더 정확하게는 가장 큰 \(i\)개의 원소가:
+
+$$
+n-i+1,\ldots,n
+$$
+
+위치에 ascending order로 존재한다.
+
+---
+
+### 14. Outer Loop Invariant의 의미
+
+##### \(i=1\)
+
+가장 큰 원소 하나가:
+
+$$
+n
+$$
+
+위치에 있다.
+
+```text
+[ ? ? ? ? | MAX ]
+```
+
+##### \(i=2\)
+
+가장 큰 원소 두 개가:
+
+$$
+n-1,n
+$$
+
+위치에 있다.
+
+```text
+[ ? ? ? | 2nd MAX | MAX ]
+```
+
+##### \(i=3\)
+
+```text
+[ ? ? | 3rd MAX | 2nd MAX | MAX ]
+```
+
+즉 outer loop가 한 번 실행될 때마다 오른쪽의 sorted/fixed 영역이 하나씩 커진다.
+
+
+
+---
+
+### 15. 왜 Inner Loop 범위가 줄어드는가
+
+Iteration \(i\)가 끝난 후 오른쪽의 \(i\)개 원소는 이미 final position에 있다.
+
+따라서 다음 pass에서 그 부분을 다시 비교할 필요가 없다.
+
+그래서 inner loop 범위는:
+
+$$
+1\le j\le n-i
+$$
+
+가 된다.
+
+예:
+
+```text
+i = 1 → j = 1 ... n-1
+i = 2 → j = 1 ... n-2
+i = 3 → j = 1 ... n-3
+```
+
+
+
+---
+
+### 16. Outer Loop Proof
+
+#### 16.1 Initialization
+
+Outer loop가 시작되기 전:
+
+$$
+i=0
+$$
+
+이라고 생각한다.
+
+Invariant는:
+
+> 가장 큰 0개의 원소가 correct final position에 있다.
+
+가 된다.
+
+아무것도 주장하지 않는 상태이므로 참이다.
+
+이와 같은 경우를 **vacuously true**라고 한다.
+
+---
+
+#### 16.2 Inductive Hypothesis
+
+Iteration \(i\)가 끝난 후 invariant가 참이라고 가정한다.
+
+즉:
+
+> 가장 큰 \(i\)개의 원소가 이미 올바른 위치에 있다.
+
+구조:
+
+```text
+[ unsorted / active part | fixed part ]
+                         ←-- i --→
+```
+
+---
+
+#### 16.3 Maintenance
+
+다음 iteration \(i+1\)에서는 기존에 fixed된 \(i\)개 원소는 건드리지 않는다.
+
+남은 active part에서 가장 큰 원소 하나를 찾아 다음 final position에 놓으면 된다.
+
+그 위치는:
+
+$$
+n-i
+$$
+
+이다.
+
+Inner loop invariant에 의해:
+
+> inner loop는 active part의 maximum을 그 오른쪽 끝으로 이동시킨다.
+
+따라서:
+
+```text
+Before:
+
+[ active part | ✓ ✓ ✓ ]
+              ← i →
+
+After one pass:
+
+[ smaller active part | ✓ | ✓ ✓ ✓ ]
+                      new   previous i
+```
+
+결과적으로 가장 큰:
+
+$$
+i+1
+$$
+
+개의 원소가 correct final positions에 있게 된다.
+
+따라서:
+
+$$
+P(i)\Rightarrow P(i+1)
+$$
+
+이다.
+
+---
+
+### 17. Outer Loop Termination
+
+Outer loop는:
+
+$$
+n-1
+$$
+
+번 실행된다.
+
+따라서 종료 시 outer invariant에 의해:
+
+> 가장 큰 \(n-1\)개의 원소가 correct final positions에 있다.
+
+그 위치는:
+
+$$
+2,\ldots,n
+$$
+
+이다.
+
+---
+
+### 18. 마지막 남은 한 원소
+
+전체 원소는 \(n\)개이고 \(n-1\)개가 이미 올바른 위치에 있다.
+
+그러면 남은 원소는 하나뿐이다.
+
+그 원소는 minimum이며 position 1에 있어야 한다.
+
+따라서:
+
+$$
+a_1\le a_2\le\cdots\le a_n
+$$
+
+이 성립한다.
+
+즉 전체 배열은 ascending order이다.
+
+---
+
+### 19. Permutation Preservation
+
+Bubble Sort의 유일한 데이터 변경 연산은 swap이다.
+
+```text
+x, y
+↓
+y, x
+```
+
+Swap은:
+
+* 원소를 삭제하지 않는다.
+* 새 원소를 추가하지 않는다.
+* 원소의 값 자체를 바꾸지 않는다.
+* 위치만 바꾼다.
+
+따라서 Bubble Sort의 output은 항상 input의 permutation이다.
+
+Sorting specification의 첫 번째 조건도 만족한다.
+
+---
+
+### 20. Bubble Sort Correctness Theorem
+
+Bubble Sort가 끝난 후:
+
+##### Property 1
+
+Output은 input의 permutation이다.
+
+##### Property 2
+
+Output은 ascending order이다.
+
+따라서:
+
+$$
+\boxed{
+\text{Bubble Sort correctly solves the sorting problem.}
+}
+$$
+
+---
+
+### 21. 전체 Proof Structure
+
+```text
+Sorting Specification
+        │
+        │ permutation
+        │ + ascending order
+        ▼
+Bubble Sort
+        │
+        ▼
+Inner Loop Invariant
+        │
+        │ max so far
+        │ moves right
+        ▼
+Inner Loop Terminates
+        │
+        │ maximum of active part
+        │ reaches final position
+        ▼
+Outer Loop Invariant
+        │
+        │ largest i elements
+        │ are fixed
+        ▼
+Outer Loop Terminates
+        │
+        │ largest n-1 fixed
+        ▼
+Last remaining element
+= minimum
+= position 1
+        │
+        ▼
+All elements sorted
+        │
+        +
+Swaps preserve permutation
+        │
+        ▼
+Bubble Sort is Correct
+```
+
+---
+
+### 22. 핵심 Invariants
+
+#### Inner Loop
+
+$$
+\boxed{
+A[j+1]
+=
+\max(A[1...j+1])
+}
+$$
+
+Meaning:
+
+> After iteration \(j\), the maximum element seen so far is at position \(j+1\).
+
+---
+
+#### Outer Loop
+
+$$
+\boxed{
+\text{After iteration }i,
+\text{ the }i\text{ largest elements occupy positions }
+n-i+1,\ldots,n
+}
+$$
+
+Meaning:
+
+> After \(i\) passes, the \(i\) largest elements are already in their final positions.
+
+---
+
+### 23. Proof Template for Any Loop
+
+Loop invariant problems에서는 다음 template을 사용할 수 있다.
+
+#### Step 1 — Choose an Invariant
+
+반복 과정에서 계속 유지되는 meaningful property를 찾는다.
+
+좋은 invariant는 최종 목표와 연결되어야 한다.
+
+---
+
+#### Step 2 — Initialization
+
+Loop 시작 전에 invariant가 참임을 보인다.
+
+---
+
+#### Step 3 — Maintenance
+
+Invariant가 현재 iteration에서 참이라고 가정한다.
+
+Loop body를 실행한 후에도 참임을 보인다.
+
+$$
+P(k)\Rightarrow P(k+1)
+$$
+
+---
+
+#### Step 4 — Termination
+
+Loop 종료 조건을 invariant에 대입한다.
+
+그 결과가 algorithm specification을 만족하는지 확인한다.
+
+---
+
+### 24. Nested Loop Proof Template
+
+Nested loop에서는 일반적으로:
+
+```text
+Inner Loop Invariant
+        ↓
+prove inner loop behavior
+        ↓
+Outer Loop Invariant
+        ↓
+use inner result
+        ↓
+prove outer loop behavior
+        ↓
+Termination
+        ↓
+prove whole algorithm
+```
+
+순서로 접근한다.
+
+---
+
+### 25. Correctness와 Complexity는 다른 문제
+
+Correctness:
+
+> Does the algorithm always produce the right answer?
+
+Complexity:
+
+> How much time or space does the algorithm use?
+
+Bubble Sort가 correct하다는 사실과 Bubble Sort가 빠르다는 것은 별개의 문제다.
+
+이 proof는 Bubble Sort가 **correct**하다는 것을 보여주는 것이며, runtime analysis는 별도의 분석이다. 영상 자료 역시 correctness 증명 후 runtime은 다음 분석으로 분리한다.
+
+---
+
+### 26. Final Summary
+
+##### Loop Invariant
+
+반복문이 진행되는 동안 계속 유지되는 property.
+
+##### Proof Structure
+
+$$
+\boxed{
+Initialization
+\rightarrow
+Maintenance
+\rightarrow
+Termination
+}
+$$
+
+##### Bubble Sort Inner Invariant
+
+$$
+\boxed{
+\text{maximum so far is at the rightmost checked position}
+}
+$$
+
+##### Bubble Sort Outer Invariant
+
+$$
+\boxed{
+\text{after }i\text{ passes, the largest }i\text{ elements are fixed}
+}
+$$
+
+##### Final Correctness
+
+$$
+\boxed{
+\text{permutation}
++
+\text{ascending order}
+=
+\text{correct sorting}
+}
+$$
+
+따라서:
+
+$$
+\boxed{\text{Bubble Sort is correct.}}
+$$
+
 ## 상태
 
 - 2026-09-07 월요일 알고리즘 수업 기준 2주차 자료 3개 반영.
