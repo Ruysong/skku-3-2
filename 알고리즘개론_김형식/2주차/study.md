@@ -6,6 +6,61 @@
 
 이번 주 교수님 자료는 세 파일입니다. `Performance Analysis.pdf`가 메인 앞부분이고, `Merge Sort.pdf`가 메인 뒷부분입니다. `big_o.pdf`는 새로운 큰 단원이라기보다 Big O와 code complexity를 보충하는 참고자료로 보면 됩니다. MIT 강의는 수요일에 따로 듣고 추가 업데이트하는 것으로 둡니다.
 
+## Loop Invariant 3분 영상
+
+이 보조 영상의 목적은 반복문으로 만든 알고리즘이 **정말 정답을 반환한다는 사실**을 증명하는 방법을 잡는 것이다. 실행 시간이 아니라 correctness를 다루며, 이번 주 Insertion Sort correctness 퀴즈의 직접적인 준비물이다.
+
+### 핵심: Initialization -> Maintenance -> Termination
+
+Loop invariant는 반복문이 진행되는 동안 특정 시점마다 항상 참인 명제(Boolean property)다. 좋은 invariant는 보통 **"지금까지 처리한 구간에서 무엇이 이미 보장되었는가?"**를 말한다.
+
+```text
+Initialization -> Maintenance -> Termination
+첫 반복 직전        한 번 실행해도 유지        종료 시 정답으로 연결
+```
+
+1. **Initialization**: 첫 iteration이 시작되기 직전에 invariant가 참임을 보인다.
+2. **Maintenance**: 어떤 iteration `k` 전에는 invariant가 참이라고 가정하고, 그 iteration을 실행한 뒤 다음 iteration `k + 1` 전에도 참임을 보인다. 수학적 귀납법의 inductive step과 같은 모양이다.
+3. **Termination**: loop가 끝나는 시점의 invariant가 알고리즘이 원하는 최종 결과를 뜻함을 보인다.
+
+### 영상 예제: 배열에서 최댓값 찾기
+
+```text
+max = A[0]
+for i = 1 ... n - 1:
+    if A[i] > max:
+        max = A[i]
+return max
+```
+
+이 코드의 invariant는 다음 한 문장이다.
+
+> 반복문이 `i`번째 원소를 처리하기 직전에, `max`는 이미 확인한 구간 `A[0 ... i - 1]`의 최댓값이다.
+
+```text
+처리 완료한 구간            아직 확인하지 않은 구간
+[ 0 ........ i - 1 ] | [ i ........ n - 1 ]
+            ^
+      max는 왼쪽 구간의 최대값
+```
+
+- **Initialization**: 처음 `i = 1`, `max = A[0]`이다. 이미 확인한 구간은 원소 하나인 `A[0]`뿐이므로 `max`는 그 구간의 최댓값이다.
+- **Maintenance**: `A[k]`를 확인한다. `A[k] > max`이면 `max`를 `A[k]`로 바꾸고, 아니면 기존 `max`를 유지한다. 어느 경우든 처리 뒤 `max`는 `A[0 ... k]`의 최댓값이므로 invariant가 다음 iteration에도 유지된다.
+- **Termination**: 종료 시 `i = n`이다. invariant에 의해 `max`는 `A[0 ... n - 1]`, 즉 배열 전체의 최댓값이다. 따라서 반환값이 정확하다.
+
+### Insertion Sort에 연결
+
+Insertion Sort의 outer loop에는 같은 틀을 쓴다.
+
+> 각 outer-loop iteration `i`가 시작될 때, 앞부분 `A[0 ... i - 1]`은 원래 그 위치에 있던 원소들로 이루어진 오름차순 정렬 구간이다.
+
+따라서 퀴즈나 서술형에서는 이 invariant를 먼저 명확히 쓰고, `Initialization -> Maintenance -> Termination` 순서로 증명하면 된다. 이번 주 증명의 핵심 암기 문장은 두 개다.
+
+```text
+Initialization, Maintenance, Termination
+"지금까지 처리한 부분에 대해 무엇이 항상 참인가?"
+```
+
 ## 상태
 
 - 2026-09-07 월요일 알고리즘 수업 기준 2주차 자료 3개 반영.
