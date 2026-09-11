@@ -4,7 +4,7 @@
 
 - Team project course.
 - 시험 없음.
-- 4인 팀 구성 예정.
+- Proposal Template 기준 최소 3명, 최대 4명 팀. 첫 공지는 4인 팀 구성을 안내.
 - idea부터 final demonstration까지 complete system을 설계하고 구현하는 프로젝트 과목.
 - software 또는 hardware project idea 모두 가능.
 
@@ -16,6 +16,35 @@
 - 교수님 course 안내 영상 1개 시청.
 - TA course support 안내 영상 1개 시청.
 - 두 영상을 모두 이번 주 수업 대체로 시청해야 함.
+
+## 2주차 Proposal submission
+
+출처: iCampus `Proposal submission` 과제, 2026-09-09 공개
+
+| 항목 | 내용 |
+| --- | --- |
+| 마감 | 2026-09-20 23:59 |
+| 배점 | 10점 |
+| 제출 방식 | 파일 업로드 |
+| 제출자 | 팀당 1명만 제출 |
+| 제출 뒤 | 교수님이 다음 주 각 팀 form의 세부사항을 확인 |
+| 양식 | `Capstone Design-Proposal-Template2026.docx` |
+
+### 반드시 포함할 내용
+
+- Problem statement: 문제, 중요성, 필요성, 기존 해결의 부족함과 선행 해결 사례.
+- Proposed solution: 전체 architecture 또는 scenario, 세부 활동/파트, 담당자, 필요한 기술.
+- Workflow: W5 이후 활동의 주차별 timeline.
+- Semester-end outcome: 최종 software/hardware 산출물.
+- Template 항목: 500단어 이내 summary, 200단어 이내 problem statement, related works, proposed solution, main functions, roles/time plan, 팀원 명단.
+
+### 상태
+
+- [ ] 3~4명 팀 확정
+- [ ] 팀 대표 제출자 결정
+- [ ] 문제와 관련 work 조사 완료
+- [ ] architecture, 핵심 기능, 역할, 주차별 workflow 작성
+- [ ] 2026-09-20 23:59 전 팀 대표 1명 제출
 
 ## 팀 구성 준비
 

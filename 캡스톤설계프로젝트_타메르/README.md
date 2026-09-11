@@ -13,19 +13,21 @@
 - 이번 주 수업 대체로 두 영상을 모두 시청해야 함.
 - Financial support 안내 영상과 첨부자료도 확인해야 함.
 - 오프라인 수업은 2026-09-11 금요일 재개 예정.
+- Proposal submission: 팀당 한 명이 2026-09-20 23:59까지 제안서 파일을 제출.
+- 팀 제안서 양식은 Capstone Design-Proposal-Template2026.docx; 템플릿상 팀 인원은 3~4명.
 
 ## 주차별 자료
 
 | 주차 | 공부 정리 | 원본 자료 |
 | --- | --- | --- |
 | 1주차 | [study.md](./1주차/study.md) | 교수님/TA 안내 영상 예정, [financial-support](./1주차/financial-support/README.md) |
-| 2주차 | [study.md](./2주차/study.md) | 아직 등록된 원본 자료 없음 |
+| 2주차 | [study.md](./2주차/study.md) | `CapstoneDesign-Lecture1.pdf`, Proposal Template, Proposal submission |
 
 ## 바로 기억할 것
 
 - Project-based, team-oriented course.
 - 시험 없음.
-- 4인 팀 구성 예정.
+- 팀 인원: Proposal Template 기준 3~4명, 4명 구성 권장.
 - 첫 오프라인 수업에서 관심 프로젝트/아이디어를 공유하고 팀 매칭 예정.
 - 실습비 지원/정산 자료는 `1주차/financial-support/`에 보관.
 

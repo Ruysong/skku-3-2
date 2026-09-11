@@ -91,3 +91,42 @@ Please review both the video and the attached files carefully.
 
 Best regards,
 Jaebin Lee
+
+## 2026-09-09 Proposal submission
+
+### 핵심 체크
+
+- 팀 proposal 파일 업로드 과제 공개.
+- 마감: 2026-09-20 23:59, 배점 10점.
+- 팀 과제이므로 팀당 한 명만 제출.
+- 제출 뒤 교수님이 다음 주 각 팀의 form 세부사항을 확인.
+- 문제 정의, 기존 해결 조사, architecture/scenario, 역할, 기술, W5 이후 workflow, 학기 말 software/hardware 결과물을 포함해야 함.
+- 양식은 `Capstone Design-Proposal-Template2026.docx`.
+
+### 원문
+
+Dear student,
+
+As we discussed last week, we are going to ask the teams to submit their proposals.
+
+This is a team assignment, meaning that **only one team member should submit the proposal here**.
+
+After the teams submit their forms, I will check with each team on the further details included in the form next week.
+
+Several teams asked me about the contents of the Form, and here are the main points you should include:
+
+**- Problem statement**
+
+- What is the issue that you are addressing, and why does it matter?
+- Why is what you propose necessary?
+- Why hasn't this issue been addressed sufficiently in the past? Explain who else worked on the problem.
+
+**- Proposed solution**
+
+- Explain the overall architecture of your idea. Or what is the overall scenario of your project
+- What are the specific activities/parts involved in your project? Who will do each part?
+- What are the technical details required to accomplish the project?
+- Present a timeline of activities "workflow" (week5: do task 1, week 6: do task 2, etc.)
+- What specific outcomes (software/hardware) will be achieved by the end of the semester?
+
+Thank you.
