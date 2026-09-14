@@ -6,6 +6,7 @@
 - [과제/퀴즈](./assignments.md)
 - [1주차 학습지도](./1주차/study.md)
 - [2주차 학습지도](./2주차/study.md)
+- [3주차 학습지도](./3주차/study.md)
 
 ## 이번 주
 
@@ -20,6 +21,7 @@
 | --- | --- | --- |
 | 1주차 | [study.md](./1주차/study.md) | lec00_overview.pdf<br>lec01_preliminaries.pdf<br>induction_교수님추천 참고예제.pdf |
 | 2주차 | [study.md](./2주차/study.md) | Performance Analysis.pdf<br>Merge Sort.pdf<br>big_o.pdf |
+| 3주차 | [study.md](./3주차/study.md) | 원본 자료 확인 대기 |
 
 ## 바로 기억할 것
 

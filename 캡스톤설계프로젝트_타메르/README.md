@@ -5,6 +5,8 @@
 - [공지](./notices.md)
 - [과제/퀴즈](./assignments.md)
 - [1주차 학습지도](./1주차/study.md)
+- [2주차 학습지도](./2주차/study.md)
+- [3주차 학습지도](./3주차/study.md)
 
 ## 이번 주
 
@@ -22,6 +24,7 @@
 | --- | --- | --- |
 | 1주차 | [study.md](./1주차/study.md) | 교수님/TA 안내 영상 예정, [financial-support](./1주차/financial-support/README.md) |
 | 2주차 | [study.md](./2주차/study.md) | `CapstoneDesign-Lecture1.pdf`, Proposal Template, Proposal submission |
+| 3주차 | [study.md](./3주차/study.md) | 팀 구성/프로젝트/Proposal 진행 |
 
 ## 바로 기억할 것
 

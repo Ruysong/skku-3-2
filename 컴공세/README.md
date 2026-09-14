@@ -5,6 +5,8 @@
 - [공지](./notices.md)
 - [과제/리포트](./assignments.md)
 - [1주차 관리](./1주차/study.md)
+- [2주차 관리](./2주차/study.md)
+- [3주차 관리](./3주차/study.md)
 
 ## 이번 주
 
@@ -19,6 +21,7 @@
 | --- | --- | --- |
 | 1주차 | [study.md](./1주차/study.md) | End-to-End Speech Interface (Prof. Kyuhong Shim).pdf<br>2024315329_송준혁.docx/pdf |
 | 2주차 | [study.md](./2주차/study.md) | 아직 등록된 원본 자료 없음 |
+| 3주차 | [study.md](./3주차/study.md) | 세미나 자료 확인 대기 |
 
 ## 바로 기억할 것
 

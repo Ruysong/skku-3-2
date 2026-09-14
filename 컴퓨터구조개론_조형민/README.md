@@ -6,6 +6,7 @@
 - [과제/퀴즈](./assignments.md)
 - [1주차 학습지도](./1주차/study.md)
 - [2주차 학습지도](./2주차/study.md)
+- [3주차 학습지도](./3주차/study.md)
 
 ## 이번 주
 
@@ -21,6 +22,7 @@
 | --- | --- | --- |
 | 1주차 | [study.md](./1주차/study.md) | CA_Lecture_01.pdf |
 | 2주차 | [study.md](./2주차/study.md) | CA_Lecture_02.pdf |
+| 3주차 | [study.md](./3주차/study.md) | CA_Lecture_03.pdf |
 
 ## 바로 기억할 것
 

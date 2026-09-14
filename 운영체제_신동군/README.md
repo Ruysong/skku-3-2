@@ -5,6 +5,8 @@
 - [공지](./notices.md)
 - [과제/퀴즈](./assignments.md)
 - [1주차 학습지도](./1주차/study.md)
+- [2주차 학습지도](./2주차/study.md)
+- [3주차 학습지도](./3주차/study.md)
 
 ## 이번 주
 
@@ -16,6 +18,7 @@
 | --- | --- | --- |
 | 1주차 | [study.md](./1주차/study.md) | OS01-OS intro.pdf |
 | 2주차 | [study.md](./2주차/study.md) | OS02-LimitedDirectExecution.pdf, OS03-Process.pdf |
+| 3주차 | [study.md](./3주차/study.md) | 원본 자료 확인 대기 |
 
 ## 운영 메모
 

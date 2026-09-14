@@ -12,6 +12,8 @@
 - [공지](./notices.md)
 - [과제/퀴즈](./assignments.md)
 - [1주차 학습지도](./1주차/study.md)
+- [2주차 학습지도](./2주차/study.md)
+- [3주차 학습지도](./3주차/study.md)
 
 ## 이번 주
 
@@ -26,6 +28,7 @@
 | --- | --- | --- |
 | 1주차 | [study.md](./1주차/study.md) | SP00(CourseOutline)-(2026-2)-(SWE2001-41).pdf / SP01-FC.pdf |
 | 2주차 | [study.md](./2주차/study.md) | 아직 등록된 원본 자료 없음 |
+| 3주차 | [study.md](./3주차/study.md) | 원본 자료 확인 대기 |
 
 ## 바로 기억할 것
 

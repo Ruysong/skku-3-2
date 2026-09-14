@@ -6,6 +6,7 @@
 - [과제/실습](./assignments.md)
 - [1주차 학습지도](./1주차/study.md)
 - [2주차 학습지도](./2주차/study.md)
+- [3주차 학습지도](./3주차/study.md)
 
 ## 이번 주
 
@@ -20,6 +21,7 @@
 | --- | --- | --- |
 | 1주차 | [study.md](./1주차/study.md) | week1-course_overview.pdf |
 | 2주차 | [study.md](./2주차/study.md) | week2-gcc&gdb.pdf |
+| 3주차 | [study.md](./3주차/study.md) | 원본 자료 확인 대기 |
 
 ## 바로 기억할 것
 
