@@ -15,3 +15,18 @@
 
 - 주차별 퀴즈의 정확한 날짜, 시간, 범위, 응시 방식은 iCampus 공식 공지를 다시 확인해야 함.
 - xv6 과제의 세부 스펙, 마감일, 제출처, 채점 방식은 과제 공지가 올라오면 `assignments.md`에 확정 반영.
+
+## 2026-09-17 Project 0 Makefile 변경
+
+- UI 서버 컴파일러 업데이트로 make qemu-nox가 정상 실행되지 않을 수 있음.
+- xv6-public clone 뒤 실습 전, Makefile **74행과 160행**의 gcc를 **gcc-11**로 변경.
+- 적용 순서: clone -> Makefile 두 곳 수정 -> make qemu-nox로 boot 확인.
+
+## 2026-09-17 Project 제출 절차 변경
+
+- 기존 ~swe3004/bin/submit 대신 **~swe3004_41/bin/submit** 사용.
+- PA0 제출: ~swe3004_41/bin/submit pa0 xv6-public
+- PA0 PDF의 이전 제출 명령보다 이 9/17 공지가 우선.
+- 제출은 여러 번 가능하지만 마지막 제출본만 채점.
+- 추가 VPN 계정 등록은 완료. 설치 보안 이슈는 교내 IT 팀에 문의.
+- VPN 안내: https://vpninfo.skku.edu/

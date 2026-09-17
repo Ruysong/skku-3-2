@@ -4,6 +4,7 @@
 
 - [공지](./notices.md)
 - [과제/퀴즈](./assignments.md)
+- [PA0 - xv6 부팅](./Assignment/PA0-booting-xv6.md)
 - [1주차 학습지도](./1주차/study.md)
 - [2주차 학습지도](./2주차/study.md)
 - [3주차 학습지도](./3주차/study.md)
