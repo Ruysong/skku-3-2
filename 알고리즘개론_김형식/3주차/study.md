@@ -1,5 +1,29 @@
 # 알고리즘개론 - 김형식 3주차 스터디
 
+## 빠른 목차
+
+이 문서는 3주차 원본 콘텐츠를 한 파일에 모은 학습용 교안이다. 아래 표에서 먼저 **어떤 수업/외부자료의 내용인지** 확인하고, 필요한 Part만 골라 읽으면 된다.
+
+| Part | 원본 콘텐츠 | 이 문서의 범위 | 공부할 때 쓰는 용도 |
+| --- | --- | --- | --- |
+| A | iCampus: Solving recurrences, 04_SolvingRecurrences | 점화식의 의미와 공통 꼴 | 이번 주 전체 출발점 |
+| B | iCampus: 05_Substitution, 06_Recursion, 07_Master | Substitution, Recursion Tree, Master Method 선택 | 점화식 문제 풀이 |
+| C | 외부 영상: 3.2.1 Asymptotic Notation | ~, little-o, Big-O의 기본 관계 | 점근 표기 정의와 증명 |
+| D | 외부 읽을거리 + 점근표기 보강 | Big-O의 엄밀한 정의, limsup, Theta 관계 | O와 o가 헷갈릴 때 |
+| E | 외부 영상: Proving the Master Theorem | 재귀트리와 등비급수로 Master 정리 유도 | Master 공식이 왜 맞는지 |
+| F | iCampus 강의 + 이번 주 과제 | 일반 Master Method, regularity, 과제 2개 연결 | 제출물 복습 |
+| G | 이번 주 퀴즈 대비 | 흔한 함정과 영어 답안 뼈대 | 시험·퀴즈 직전 |
+| H | iCampus: 8. Binary Heaps | Priority Queue, Heap, Heap Sort, build heap | Binary Heap 영상·퀴즈 |
+
+## 권장 학습 순서
+
+1. 처음 공부: Part A → Part B → Part C → Part E
+2. 점근 표기가 헷갈릴 때: Part C → Part D
+3. 과제나 서술형 복습: Part F → Part G
+4. Binary Heap 공부: Part H만 독립적으로 읽기
+
+---
+
 ## 0. 이번 주 범위와 자료 상태
 
 이번 주는 재귀 알고리즘의 실행 시간을 분석하는 방법을 한 덩어리로 배우는 주차다. Merge Sort에서 이미 본 “재귀로 쪼개고 다시 합친다”는 구조를 일반화해, 어떤 점화식이 어떤 성장률을 갖는지 설명한다.
@@ -29,6 +53,8 @@ O, Theta, o, ~ 로 결과의 성장 관계를 정확히 표현
 Binary Heap과 Heap 퀴즈는 아직 이 문서에 합치지 않는다. 그건 재귀 분석의 연장이 아니라 다음 자료구조 단원의 새 내용이므로, 실제 강의자료를 본 뒤 이 문서 뒤에 별도 장으로 추가한다.
 
 ---
+
+# Part A. [iCampus 강의] Solving Recurrences
 
 ## 1. 왜 실행 시간을 “점화식”으로 쓰는가
 
@@ -70,6 +96,8 @@ T(n) = aT(n / b) + f(n)
 `a`, `b`, `f(n)`을 분리해 읽는 습관이 중요하다. 문제에서 주어진 의사코드를 보면 “재귀 호출이 몇 개인가”, “각 호출의 입력이 얼마나 줄어드는가”, “루프/merge/복사 등 현재 호출의 추가 비용은 무엇인가”를 각각 표시한다.
 
 ---
+
+# Part B. [iCampus 강의] Substitution / Recursion Tree / Master Method
 
 ## 2. 점화식을 푸는 세 가지 관점
 
@@ -150,6 +178,8 @@ Master Theorem은 `aT(n/b)+f(n)` 꼴에만 쓰는 도구다. 매우 편하지만
 `T(n/3)+T(2n/3)+n`처럼 부분문제 크기가 다르면 Master Theorem을 쓰지 않고 Recursion Tree나 다른 경계 방법을 택한다. 도구 선택 자체가 문제 풀이의 일부다.
 
 ---
+
+# Part C. [외부 보조영상] 3.2.1 Asymptotic Notation
 
 ## 3. 점근 표기법: 알고리즘 성장률을 비교하는 네 관계
 
@@ -249,7 +279,7 @@ iff for every c > 0,
 - 이런 의미에서 Little-o는 strict partial order(엄격한 부분 순서)처럼 동작한다.
 - `f=o(g)`이면 `f=O(g)`다. 반대는 성립하지 않는다. 예를 들어 `n=O(n)`이지만 `n`은 `o(n)`이 아니다.
 
-### 3.3 Big-O: `f=O(g)`
+### C3. Big-O: `f=O(g)` (외부 영상 개요)
 
 Big-O의 표준 정의는 극한이 아니라 상수 `c`, `n0`를 사용한다.
 
@@ -299,7 +329,9 @@ g(n) = 1
 
 따라서 Big-O를 “비율의 limit이 유한하면 되는 관계”라고만 외우면 틀릴 수 있다.
 
-### 3.4 limsup: 극한이 흔들릴 때 Big-O를 정확히 말하는 법
+# Part D. [외부 보조자료 심화] Big-O / limsup / Theta
+
+## D1. limsup: 극한이 흔들릴 때 Big-O를 정확히 말하는 법
 
 외부 읽을거리는 위 문제를 해결하려고 limit superior, 즉 `limsup`를 설명한다. 함수 `h(n)`에 대해
 
@@ -365,6 +397,8 @@ c1 g(n) <= f(n) <= c2 g(n)
 `Theta` 역시 reflexive, symmetric, transitive한 등가 관계다. 알고리즘 실행 시간을 정확한 차수까지 말했다면 가능하면 `O`보다 `Theta`를 쓰는 편이 정보량이 크다.
 
 ---
+
+# Part E. [외부 보조영상] Proving the Master Theorem
 
 ## 4. Master Theorem을 재귀트리에서 유도하기
 
@@ -523,6 +557,8 @@ f(n)과 기준항 중 무엇이 더 큰가?
 
 ---
 
+# Part F. [iCampus 강의와 과제 연결] Master Method 적용
+
 ## 5. 일반 Master Theorem의 시험용 형태
 
 일반형은 다음이다.
@@ -600,6 +636,8 @@ T(n) = 3T(n/4) + n log n
 답안을 쓸 때는 결과만 적지 않고 `a`, `b`, `f(n)`, 기준항, case 판단, 최종 `Theta`를 순서대로 쓰면 영어 문제에서도 논리가 드러난다.
 
 ---
+
+# Part G. [복습 · 퀴즈 대비] 함정과 영어 서술형
 
 ## 7. 이 주차에서 특히 헷갈리기 쉬운 것
 
@@ -695,9 +733,11 @@ Therefore, T(n) = Theta(...).
 
 ---
 
-# 10. Binary Heap: Priority Queue와 In-place Heap Sort
+# Part H. [iCampus 강의] 8. Binary Heaps
 
-## 10.1 이 단원은 무엇을 해결하는가
+## 10. Binary Heap: Priority Queue와 In-place Heap Sort
+
+### 10.1 이 단원은 무엇을 해결하는가
 
 Binary Heap은 우선순위 큐(priority queue)를 구현하는 자료구조다. 우선순위 큐는 모든 원소의 전체 정렬 순서를 항상 유지할 필요는 없고, 가장 우선순위가 높은 원소를 빠르게 꺼내는 것이 목표다.
 
@@ -723,7 +763,7 @@ Set interface 전체를 모두 빠르게 지원하려면 AVL tree처럼 강한 �
 
 ---
 
-## 10.2 Priority Queue 관점에서 기존 구조 비교
+### 10.2 Priority Queue 관점에서 기존 구조 비교
 
 강의는 Heap으로 바로 들어가기 전에, 같은 priority queue interface를 여러 구조로 구현해 본다.
 
@@ -750,7 +790,7 @@ binary heap:     insert and delete_max both log n
 
 ---
 
-## 10.3 Priority Queue Sort가 기존 정렬을 하나로 묶는 방식
+### 10.3 Priority Queue Sort가 기존 정렬을 하나로 묶는 방식
 
 어떤 priority queue 구현이든 다음 방식으로 정렬을 만들 수 있다.
 
@@ -773,21 +813,21 @@ delete_max는 큰 것부터 반환하므로, 그대로 받으면 내림차순이
 | Set AVL | AVL Sort |
 | binary heap | Heap Sort |
 
-### Unsorted array가 Selection Sort인 이유
+#### Unsorted array가 Selection Sort인 이유
 
 원소를 입력 순서대로 배열에 넣은 뒤, 매번 전체 배열을 훑어서 가장 큰 값을 찾는다. 그 max를 현재 범위의 맨 뒤 원소와 swap하고 범위를 하나 줄인다. 이것이 Selection Sort의 동작과 같다.
 
-### Sorted array가 Insertion Sort인 이유
+#### Sorted array가 Insertion Sort인 이유
 
 원소를 하나씩 넣을 때마다 현재 배열의 정렬 상태를 유지한다. 새 원소를 제자리까지 왼쪽으로 움직이는 과정이 Insertion Sort와 같다.
 
-### Heap이 만드는 Heap Sort의 목표
+#### Heap이 만드는 Heap Sort의 목표
 
 Heap은 n log n 비교 시간과 O(1) extra space를 함께 얻는다. Merge Sort는 Theta(n log n)이지만 보통 보조 배열이 필요하고, AVL Sort는 트리 노드와 pointer가 필요하다. Heap Sort는 입력 배열 자체를 Heap 저장공간과 최종 결과 저장공간으로 재사용한다.
 
 ---
 
-## 10.4 Complete Binary Tree: 배열로 표현할 수 있는 트리 모양
+### 10.4 Complete Binary Tree: 배열로 표현할 수 있는 트리 모양
 
 Heap은 임의의 binary tree가 아니다. Complete Binary Tree의 모양을 강제한다.
 
@@ -816,7 +856,7 @@ Complete Binary Tree는 노드 n개가 주어졌을 때 가능한 모양이 사�
 
 ---
 
-## 10.5 Level Order Array Representation
+### 10.5 Level Order Array Representation
 
 Complete Binary Tree의 노드를 level order, 즉 깊이가 얕은 것부터 왼쪽에서 오른쪽으로 배열에 적는다.
 
@@ -840,7 +880,7 @@ array value:           A B C D E F G H I
 
 이 때문에 Heap은 implicit data structure라고 부른다. 노드 안에 left, right, parent pointer를 저장하지 않고 원소 배열 하나만 저장한다.
 
-### 0-based index 공식
+#### 0-based index 공식
 
 이 강의와 일반적인 Python/C 배열은 0부터 인덱싱한다고 두면 다음이 성립한다.
 
@@ -863,7 +903,7 @@ right_child(i) < heap_size
 
 ---
 
-## 10.6 Max-Heap Property: 정렬된 배열이 아니라 부모가 더 큼
+### 10.6 Max-Heap Property: 정렬된 배열이 아니라 부모가 더 큼
 
 Complete Binary Tree의 모양만으로는 priority queue가 되지 않는다. key에 대한 조건을 하나 더 둔다.
 
@@ -901,7 +941,7 @@ key(parent(i)) >= key(i)
 
 Heap 배열은 완전히 정렬되어 있지 않다. 예를 들어 [20, 15, 17, 8, 10, 12, 6]은 valid max-heap이지만 배열 자체가 내림차순도 오름차순도 아니다.
 
-### Root가 maximum인 이유
+#### Root가 maximum인 이유
 
 Max-heap property가 각 edge에서만 성립해도, root는 전체 max다. 어떤 descendant로 가는 path를 따라가면
 
@@ -913,7 +953,7 @@ root >= child >= grandchild >= ... >= descendant
 
 그래서 find_max()는 Q[0]이고 시간은 Theta(1)이다.
 
-### Min-Heap
+#### Min-Heap
 
 Min-heap은 모든 부등호 방향을 뒤집은 구조다.
 
@@ -925,13 +965,13 @@ key(parent(i)) <= key(i)
 
 ---
 
-## 10.7 Insert: 끝에 추가하고 Heapify Up
+### 10.7 Insert: 끝에 추가하고 Heapify Up
 
 새 원소는 배열의 맨 끝에 append해야 complete binary tree 모양을 유지할 수 있다. 이것은 새 노드를 마지막 레벨의 가장 오른쪽 빈 칸에 넣는 것과 같다.
 
 하지만 새 key는 임의이므로 부모보다 커서 max-heap property를 깰 수 있다. 새 원소 외의 기존 노드들은 insertion 전부터 heap이었으므로, 문제는 새 원소에서 root로 올라가는 한 경로에만 있을 수 있다.
 
-### 알고리즘
+#### 알고리즘
 
 ~~~text
 insert(x)
@@ -959,19 +999,19 @@ before bubbling:
 
 22는 parent 8보다 크므로 swap한다. 그 뒤 22는 15보다 크므로 다시 swap한다. 마지막으로 20보다 크므로 root까지 올라간다. 각 swap은 현재 parent-child 관계를 고치고, 새 원소만 한 단계 위로 이동시킨다.
 
-### 왜 다른 부분은 망가지지 않는가
+#### 왜 다른 부분은 망가지지 않는가
 
 새 원소가 위로 올라갈 때, 아래로 내려가는 원래 parent는 새 원소를 제외한 자기 subtree의 원소보다 이미 크거나 같았다. 따라서 그 parent를 한 단계 아래로 내려도 그 subtree의 자식들과의 관계는 유지된다. 위쪽에는 새 원소만 새롭게 검사하면 된다.
 
 이 불변식 때문에 rotation이 필요 없다. 삽입 원소 하나만 ancestor path를 따라 bubble up하면 된다.
 
-### 시간복잡도
+#### 시간복잡도
 
 한 번의 swap에서 원소는 정확히 한 level 올라간다. complete tree의 높이가 Theta(log n)이므로 insert는 Theta(log n)이다. 동적 배열을 일반적으로 쓰면 resize 때문에 amortized라고 부르지만, Heap Sort처럼 고정 입력 배열을 쓰면 resize 자체가 없다.
 
 ---
 
-## 10.8 Delete Max: root를 마지막과 바꾸고 Heapify Down
+### 10.8 Delete Max: root를 마지막과 바꾸고 Heapify Down
 
 Max-heap의 maximum은 root Q[0]에 있다. 그러나 배열에서 효율적으로 삭제할 수 있는 위치는 맨 마지막뿐이다.
 
@@ -991,7 +1031,7 @@ delete_max()
 
 마지막 leaf를 root로 가져오면 complete shape는 유지된다. 다만 원래 아래쪽에 있던 비교적 작은 key가 root에 올라왔을 수 있으므로 max-heap property가 root에서 깨질 수 있다.
 
-### Heapify Down에서 왜 더 큰 자식과 바꾸는가
+#### Heapify Down에서 왜 더 큰 자식과 바꾸는가
 
 현재 위치 i의 두 child 중 key가 더 큰 child를 j라고 하자.
 
@@ -999,7 +1039,7 @@ delete_max()
 - Q[i] < Q[j]라면 Q[i]와 Q[j]를 swap한다.
 - 반드시 큰 child를 골라야 한다. 작은 child와 바꾸면 다른 child가 새 parent보다 더 클 수 있어 property가 남는다.
 
-### 알고리즘
+#### 알고리즘
 
 ~~~text
 max_heapify_down(i)
@@ -1027,7 +1067,7 @@ swap with 10:       10
 
 5와 swap하면 root가 5가 되어 10보다 작으므로 여전히 heap property가 깨진다. 10을 올리면 root 주변의 두 edge가 한 번에 맞고, 0만 그 아래에서 계속 검사하면 된다.
 
-### 시간복잡도와 정확성
+##### 시간복잡도와 정확성
 
 처음에는 last leaf 하나만 root로 이동했으므로, 다른 위치는 이미 올바른 heap이다. swap할 때마다 문제 원소 하나만 아래로 이동한다. leaf에 도달하거나 child들보다 크거나 같아지는 순간 멈추며 heap이 복구된다.
 
@@ -1035,7 +1075,7 @@ swap with 10:       10
 
 ---
 
-## 10.9 Heap Sort: 배열 자체를 Heap과 출력 공간으로 같이 쓰기
+### 10.9 Heap Sort: 배열 자체를 Heap과 출력 공간으로 같이 쓰기
 
 Heap Sort는 priority queue sort를 진짜 in-place로 만드는 방법이다. 별도의 dynamic array를 새로 만들지 않고, 원래 배열 A의 prefix를 현재 heap Q로 해석한다.
 
@@ -1066,7 +1106,7 @@ final:        [ smallest ... largest ]
 
 Max-heap을 쓰면 largest부터 배열의 오른쪽 끝에 확정되므로 최종 배열은 오름차순이다. Min-heap으로 같은 방식으로 끝에 밀어내면 내림차순이 되므로, 원하는 결과 방향을 생각해야 한다.
 
-### Heap Sort pseudocode
+#### Heap Sort pseudocode
 
 ~~~text
 heapsort(A)
@@ -1083,7 +1123,7 @@ heapsort(A)
 - 이미 확정된 정렬 영역: A[heap_size ... n-1]
 - heapify_down은 반드시 줄어든 heap_size 안에서만 수행한다. 뒤쪽 sorted suffix를 heap의 일부로 보면 안 된다.
 
-### Heap Sort 복잡도
+#### Heap Sort 복잡도
 
 - build: bottom-up 방식이면 Theta(n)
 - delete_max: n-1번, 각 Theta(log n)
@@ -1094,7 +1134,7 @@ Comparison model에서 정렬은 일반적으로 Omega(n log n) 비교가 필요
 
 ---
 
-## 10.10 Build Heap을 Theta(n)에 하는 Bottom-Up Trick
+### 10.10 Build Heap을 Theta(n)에 하는 Bottom-Up Trick
 
 원소를 하나씩 insert하면서 heapify up하면 각 삽입이 최대 Theta(log n)이므로 전체는 Theta(n log n)이다.
 
@@ -1114,7 +1154,7 @@ build_max_heap(A)
 
 0-based 배열에서 마지막 internal node는 parent(n - 1) = (n - 2) // 2다. leaf는 자식이 없으므로 이미 heap property를 만족한다. leaf의 부모부터 차례로 heapify down하면, 어떤 node를 처리할 때 그 children의 subtree는 이미 heap이다. 따라서 그 node만 내려 보내면 전체 subtree가 heap이 된다.
 
-### 왜 총합이 선형인가
+#### 왜 총합이 선형인가
 
 root 근처 node는 멀리 내려갈 수 있어 비싸지만 개수가 매우 적다. 반대로 leaf 근처 node는 매우 많지만 내려갈 높이가 거의 없다.
 
@@ -1132,11 +1172,11 @@ sum over h >= 0 of (n / 2^(h+1)) * h
 
 ---
 
-## 10.11 Heap의 핵심 불변식 두 개
+### 10.11 Heap의 핵심 불변식 두 개
 
 Heap을 구현·추적할 때는 아래 둘을 분리해서 본다.
 
-### 1. Shape invariant
+#### 1. Shape invariant
 
 배열의 처음 heap_size개 원소는 complete binary tree를 나타낸다.
 
@@ -1144,7 +1184,7 @@ Heap을 구현·추적할 때는 아래 둘을 분리해서 본다.
 - delete는 맨 뒤에서 제거한다.
 - 그래서 중간에 빈 칸이 생기지 않는다.
 
-### 2. Order invariant
+#### 2. Order invariant
 
 각 parent의 key는 child의 key보다 크거나 같다.
 
@@ -1156,7 +1196,7 @@ Heap을 구현·추적할 때는 아래 둘을 분리해서 본다.
 
 ---
 
-## 10.12 퀴즈에서 나올 법한 확인 포인트
+### 10.12 퀴즈에서 나올 법한 확인 포인트
 
 1. 배열을 트리로 읽기
    - 0-based index에서 parent, left child, right child를 계산할 수 있는가?
@@ -1190,7 +1230,7 @@ Heap을 구현·추적할 때는 아래 둘을 분리해서 본다.
 
 ---
 
-## 10.13 한 장 구조도
+### 10.13 한 장 구조도
 
 ~~~text
 Priority Queue
@@ -1228,7 +1268,7 @@ Bottom-up build: Theta(n)
 Heap Sort: Theta(n log n), in-place
 ~~~
 
-## 10.14 이번 주 3주차의 최종 연결
+### 10.14 이번 주 3주차의 최종 연결
 
 ~~~text
 Week 2
