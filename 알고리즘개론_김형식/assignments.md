@@ -41,3 +41,13 @@
 - 문항 수: 4문항
 - 답안 복기 위치: `1주차/study.md`의 `실제 퀴즈 복기 (2026-09-02)` 섹션
 - 확인된 범위: birthday problem algorithm, induction correctness proof, fundamental operation 기반 efficiency 분석, RAM model의 random access 가정
+
+
+## 3주차 퀴즈
+
+| 항목 | 배점 | 시작/마감 | 제출 방식 | 상태 |
+| --- | ---: | --- | --- | --- |
+| [Quiz] Binary Heaps | 4점 (4문항) | 시작 2026-09-20 21:00 / 마감 2026-09-27 23:59 | iCampus 서술형 퀴즈 | 시작됨, 답안 작성 전 |
+
+- 실제 출제 문항과 복습 범위는 `3주차/study.md`의 `10.12 공식 퀴즈`에 기록했다.
+- 범위: array 기반 priority queue의 insert/delete_max, priority queue sort, max binary heap의 insert, max binary heap의 delete_max.

@@ -1196,7 +1196,27 @@ Heap을 구현·추적할 때는 아래 둘을 분리해서 본다.
 
 ---
 
-### 10.12 퀴즈에서 나올 법한 확인 포인트
+### 10.12 공식 퀴즈: [Quiz] Binary Heaps
+
+**상태:** 2026-09-20 21:00 시작됨. 4문항, 총 4점, 마감은 2026-09-27 23:59다. 현재 답안은 아직 작성하지 않은 상태로 기록한다.
+
+이 아래 네 문항은 iCampus에 실제로 열린 퀴즈 원문이다. 나중에 복습할 때는 일반 예상 포인트보다 이 질문을 기준으로 답안을 준비한다.
+
+1. **Priority queue can be implemented by using an array. Explain how “insert” and “delete_max” operations work and analyze their time complexity.**
+2. **Describe a sorting algorithm using a priority queue and analyze its time complexity.**
+3. **Describe how the “insert” operation works in a max binary heap.**
+4. **Describe how the “delete_max” operation works in a max binary heap.**
+
+### 10.13 퀴즈 문항과 교안의 연결
+
+| 실제 문항 | 먼저 볼 교안 절 |
+| --- | --- |
+| 1. Array priority queue의 insert / delete_max | 10.2, 10.3 |
+| 2. Priority queue를 이용한 sorting | 10.3, 10.9 |
+| 3. Max binary heap insert | 10.7 |
+| 4. Max binary heap delete_max | 10.8 |
+
+### 10.14 퀴즈에서 나올 법한 확인 포인트
 
 1. 배열을 트리로 읽기
    - 0-based index에서 parent, left child, right child를 계산할 수 있는가?
@@ -1230,7 +1250,7 @@ Heap을 구현·추적할 때는 아래 둘을 분리해서 본다.
 
 ---
 
-### 10.13 한 장 구조도
+### 10.15 한 장 구조도
 
 ~~~text
 Priority Queue
@@ -1268,7 +1288,7 @@ Bottom-up build: Theta(n)
 Heap Sort: Theta(n log n), in-place
 ~~~
 
-### 10.14 이번 주 3주차의 최종 연결
+### 10.16 이번 주 3주차의 최종 연결
 
 ~~~text
 Week 2
