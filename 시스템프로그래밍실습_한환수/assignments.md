@@ -62,8 +62,8 @@
 | --- | --- | --- | --- |
 | 1주차 | `hello.c` 작성 후 실행 스크린샷 제출 | 제출 완료 | 2026-09-08 23:59 |
 | 2주차 | GCC object file/link + GDB logging 실습 | 미제출 | 2026-09-08 23:59, `week2.tar.zst`, 지각 제출 불가 |
-| 3주차 | 미확인 | 미제출 |  |
-| 4주차 | 미확인 | 미제출 |  |
+| 3주차 | Makefile + score.sh 자동 채점 실습 | 제출 상태 미확인 | STUDENTID_w3.tar.zst, iCampus 실제 마감 확인 |
+| 4주차 | Unix I/O로 Aladdin.txt.no 생성 | 제출 상태 미확인 | source + Makefile tar, iCampus 실제 마감 확인 |
 | 5주차 | 미확인 | 미제출 |  |
 | 6주차 | 미확인 | 미제출 |  |
 | 7주차 | 미확인 | 미제출 |  |
@@ -115,3 +115,40 @@
 | PA#1 | File I/O | 10% | 2026-10-04 일요일 23:59 |
 | PA#2 | Command-line shell | 15% | 2026-11-01 일요일 23:59 |
 | PA#3 | Server-client programming | 20% | 2026-12-06 일요일 23:59 |
+## 3주차 Lab Exercise
+
+출처: 3주차/week3-shell&makefile&git.pdf, pp.36-39
+
+| 항목 | 내용 |
+| --- | --- |
+| Exercise 1 | Makefile로 main.c, plus.c, minus.c를 build |
+| 필수 | variable 1개 이상, automatic variable 1개 이상, w3 rule, safe clean rule |
+| Exercise 2 | score.sh A B: make -> expected answer -> w3 output -> diff -> clean |
+| 정상 결과 | result.txt가 empty |
+| 제출 | main.c, plus.c, minus.c, Makefile, score.sh만 STUDENTID_w3.tar.zst로 제출 |
+
+## 4주차 Lab Exercise
+
+출처: 4주차/week4-file_io.pdf, pp.50-54
+
+| 항목 | 내용 |
+| --- | --- |
+| 목표 | 각 input text line 앞에 number space vertical-bar space를 붙여 input.no 생성 |
+| 제한 | Unix File I/O만 사용. Standard I/O/편의 변환 함수 사용은 0점 위험 |
+| 입력 | command-line txt filename |
+| 제출 | source code + Makefile을 tar로 묶어 iCampus 제출 |
+| 검증 | cat -e output으로 line ending과 line count 확인 |
+
+## PA1 - File Search
+
+출처: PA/PA_1/PA1.pdf
+
+| 항목 | 내용 |
+| --- | --- |
+| 목표 | arbitrary-size text file에서 interactive search를 수행하는 pa1 |
+| query | single word, multiple words, quoted phrase, word1*word2 |
+| memory | whole-file load 금지; line/word streaming 처리 |
+| output | query마다 한 줄, 결과 없어도 blank line, 순서대로 출력 |
+| build | Linux, Makefile이 pa1 binary 생성, hand-implemented header 최소 1개 |
+| 제출 | pa1 directory의 c/h/Makefile을 STUDENTID_pa1.tar.zst로 제출 |
+| deadline | 본문/ARCS는 2026-10-04 23:59. PDF의 2026-04-05 표기는 오류로 보여 iCampus timestamp 최종 확인 |
