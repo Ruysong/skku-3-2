@@ -7,13 +7,14 @@
 - [1주차 학습지도](./1주차/study.md)
 - [2주차 학습지도](./2주차/study.md)
 - [3주차 학습지도](./3주차/study.md)
+- [4주차 학습지도](./4주차/study.md)
+- [5주차 학습지도](./5주차/study.md)
 
 ## 이번 주
 
-- 2주차 교수님 자료: `Performance Analysis.pdf`, `Merge Sort.pdf`, `big_o.pdf`
-- 핵심 흐름: Sorting -> Insertion Sort -> Running Time -> O/Omega/Theta -> Merge Sort
-- MIT 강의는 수요일에 따로 듣고 `2주차/study.md`에 추가 예정
-- 1주차 잔여 항목: weak induction vs strong induction 참고자료 확인
+- 5주차 핵심: Linear Sorting - Counting Sort, Radix Sort, comparison sorting lower bound
+- 10/4 마감: Linear Sorting quiz(4점), `log(n!) = Theta(n log n)` 증명(1점)
+- 10/11 마감: Min-Max-Median Priority Queue 프로그래밍 과제(10점)
 
 ## 주차별 자료
 
@@ -21,11 +22,13 @@
 | --- | --- | --- |
 | 1주차 | [study.md](./1주차/study.md) | lec00_overview.pdf<br>lec01_preliminaries.pdf<br>induction_교수님추천 참고예제.pdf |
 | 2주차 | [study.md](./2주차/study.md) | Performance Analysis.pdf<br>Merge Sort.pdf<br>big_o.pdf |
-| 3주차 | [study.md](./3주차/study.md) | 원본 자료 확인 대기 |
+| 3주차 | [study.md](./3주차/study.md) | Solving Recurrences<br>Binary Heaps |
+| 4주차 | [study.md](./4주차/study.md) | Sorting<br>Hashing |
+| 5주차 | [study.md](./5주차/study.md) | Count Sort<br>Radix Sort<br>Linear Sorting |
 
 ## 바로 기억할 것
 
-- 2주차는 sorting과 performance analysis가 중심이고, insertion sort와 merge sort를 비교합니다.
+- 5주차는 Counting Sort와 Radix Sort를 통해 comparison sorting lower bound 밖에서 정렬하는 조건을 다룹니다.
 
 - Preliminaries는 본격적인 알고리즘 분석 전에 필요한 귀납법, 계산 모델, 수행시간, 입력 크기, 경우 분석을 맞추는 예비 개념입니다.
 - 1주차 퀴즈는 2026-09-02 응시 완료했고, 답안 복기는 `1주차/study.md`에 있습니다.
