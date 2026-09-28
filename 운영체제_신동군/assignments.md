@@ -37,3 +37,12 @@
 - [ ] make clean 실행
 - [ ] UI 서버의 xv6-public 디렉터리에서 새 제출 명령으로 제출
 - [ ] 제출 성공 및 마지막 제출본 확인
+## PA1 - System call
+
+- 상태: 명세 확인 완료, 구현 시작 전
+- 마감: **2026-10-07 (수) 23:59:59**
+- 형태: 개인 xv6 과제
+- 목표: `getnice(pid)`, `setnice(pid, value)`, `ps(pid)` system call 구현
+- 제출: UI 서버에서 `make clean` 후 `~swe3004_41/bin/submit pa1 xv6-public`
+- 유의: 마지막 제출본만 채점, 지각 제출은 하루당 25% 감점
+- 원본 명세: `Assignment/pa1/Project 1_26f.pdf`
