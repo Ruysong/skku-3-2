@@ -143,6 +143,8 @@
 
 출처: PA/PA_1/PA1.pdf
 
+- [내 구현 구조도](./PA/PA_1/architecture.md): `main.c`, `io.c`, `search.c`의 입력·검색·출력 흐름
+
 | 항목 | 내용 |
 | --- | --- |
 | 목표 | arbitrary-size text file에서 interactive search를 수행하는 pa1 |
