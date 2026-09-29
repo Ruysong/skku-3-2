@@ -21,7 +21,9 @@
 | --- | --- | --- |
 | 1주차 | [study.md](./1주차/study.md) | OS01-OS intro.pdf |
 | 2주차 | [study.md](./2주차/study.md) | OS02-LimitedDirectExecution.pdf, OS03-Process.pdf |
-| 3주차 | [study.md](./3주차/study.md) | 원본 자료 확인 대기 |
+| 3주차 | [study.md](./3주차/study.md) | OS04-Scheduling1.pdf |
+| 4주차 | [study.md](./4주차/study.md) | OS05-Scheduling2.pdf |
+| 5주차 | [study.md](./5주차/study.md) | OS06-Memory.pdf |
 
 ## 운영 메모
 
