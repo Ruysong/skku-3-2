@@ -152,3 +152,10 @@
 | build | Linux, Makefile이 pa1 binary 생성, hand-implemented header 최소 1개 |
 | 제출 | pa1 directory의 c/h/Makefile을 STUDENTID_pa1.tar.zst로 제출 |
 | deadline | 본문/ARCS는 2026-10-04 23:59. PDF의 2026-04-05 표기는 오류로 보여 iCampus timestamp 최종 확인 |
+
+### 제출 및 재검증 상태
+
+- 1차 제출 완료.
+- 마감 전 이번 주에 2~3시간을 따로 확보해, PA1 PDF와 본인 구현을 처음부터 대조하고 재시험한다.
+- 확인 순서: 네 query 형식별 결과 -> no-match/빈 줄/문장부호/대소문자 경계 -> `make clean` 후 재빌드 -> archive 내용 확인.
+- 사양과 다른 동작을 발견했을 때만 수정하고, 수정했다면 archive를 다시 만들어 재제출한다.
