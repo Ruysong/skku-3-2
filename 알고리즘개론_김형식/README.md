@@ -12,9 +12,8 @@
 
 ## 이번 주
 
-- 5주차 핵심: Linear Sorting - Counting Sort, Radix Sort, comparison sorting lower bound
-- 10/4 마감: Linear Sorting quiz(4점), `log(n!) = Theta(n log n)` 증명(1점)
-- 10/11 마감: Min-Max-Median Priority Queue 프로그래밍 과제(10점)
+- 5주차 예정 진도: Linear Sorting - Counting Sort, Radix Sort, comparison sorting lower bound
+- 최신 iCampus에서는 이 묶음을 6주차에 표시하고 10/5부터 공개, 퀴즈·증명·프로그래밍 과제를 모두 10/11 23:59에 마감
 
 ## 주차별 자료
 
@@ -28,7 +27,7 @@
 
 ## 바로 기억할 것
 
-- 5주차는 Counting Sort와 Radix Sort를 통해 comparison sorting lower bound 밖에서 정렬하는 조건을 다룹니다.
+- 5주차 예정 진도는 Counting Sort와 Radix Sort를 통해 comparison sorting lower bound 밖에서 정렬하는 조건을 다룹니다. 실제 iCampus 이용 기간은 10/5~10/11입니다.
 
 - Preliminaries는 본격적인 알고리즘 분석 전에 필요한 귀납법, 계산 모델, 수행시간, 입력 크기, 경우 분석을 맞추는 예비 개념입니다.
 - 1주차 퀴즈는 2026-09-02 응시 완료했고, 답안 복기는 `1주차/study.md`에 있습니다.

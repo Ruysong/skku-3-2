@@ -8,25 +8,25 @@
 - Part D. 제출 항목과 공부 순서
 - Part E. 자료 수령 후 추가할 상세 교안
 
-## Part A. 이번 주 iCampus 묶음과 마감
+## Part A. 5주차 진도와 변경된 iCampus 이용 기간
 
-학기 흐름 기준으로 이 폴더를 **5주차**로 관리한다. iCampus 화면에는 Count/Radix 자료가 `6주차`로 표시되기도 하지만, 이번 주에 열려 있는 Linear Sorting 묶음과 함께 공부한다.
+이 자료는 이번 **5주차 진도**로 파악했으나, 최신 iCampus 화면에서는 묶음 전체가 `6주차`에 들어가 있고 2026-10-05 00:00에 열려 2026-10-11 23:59에 종료된다. 한 주 연기된 것으로 보이지만 변경 이유는 확인되지 않았다. `Linear Sorting` 영상의 내부 출결 표기는 여전히 `5주차 2차시`다.
 
 | 콘텐츠 | 길이/형식 | 의미 | 마감 |
 | --- | --- | --- | --- |
-| Count sort | PDF + 교수 영상 19:18 | key 범위가 제한된 정수 정렬 | 10/4 23:59 |
-| Radix sort | PDF + 교수 영상 09:50 | stable sort를 자릿수별로 반복 | 10/4 23:59 |
-| Linear Sorting | 외부 강의 51:57 | comparison lower bound를 넘는 정렬의 조건 | 10/4 23:59 |
-| Lecture 7: Counting Sort, Radix Sort, Lower Bounds for ... | 외부 강의 52:09 | Count/Radix와 lower bound 연결 | 10/4 23:59 |
-| Linear Sorting quiz | 4문제, 4점 | 이번 주 확인 퀴즈 | 10/4 23:59 |
-| Prove that `log(n!) = Theta(n log n)` | 파일/서술 제출, 1점 | 비교정렬 lower bound의 핵심 보조정리 | 10/4 23:59 |
+| Count sort | PDF + 교수 영상 19:18 | key 범위가 제한된 정수 정렬 | 10/11 23:59 |
+| Radix sort | PDF + 교수 영상 09:50 | stable sort를 자릿수별로 반복 | 10/11 23:59 |
+| Linear Sorting | 외부 강의 51:57 | comparison lower bound를 넘는 정렬의 조건 | 10/11 23:59 |
+| Lecture 7: Counting Sort, Radix Sort, Lower Bounds for ... | 외부 강의 52:09 | Count/Radix와 lower bound 연결 | 10/11 23:59 |
+| Linear Sorting quiz | 4문제, 4점 | 정렬 내용 확인 퀴즈 | 10/11 23:59 |
+| Prove that `log(n!) = Theta(n log n)` | 파일/서술 제출, 1점 | 비교정렬 lower bound의 핵심 보조정리 | 10/11 23:59 |
 | Programming: Min-Max-Median Priority Queue | 프로그래밍 과제, 10점 | priority queue 응용 구현 | 10/11 23:59 |
 
 ---
 
 ## Part B. Linear Sorting: Counting Sort와 Radix Sort
 
-이번 주 질문은 다음과 같다.
+이번 진도의 질문은 다음과 같다.
 
 > 비교만 하는 정렬은 왜 `Omega(n log n)`보다 빨라질 수 없고, key의 구조를 이용하면 언제 더 빨라질 수 있는가?
 

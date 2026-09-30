@@ -52,13 +52,15 @@
 - 실제 출제 문항과 복습 범위는 `3주차/study.md`의 `10.12 공식 퀴즈`에 기록했다.
 - 범위: array 기반 priority queue의 insert/delete_max, priority queue sort, max binary heap의 insert, max binary heap의 delete_max.
 
-## 5주차 과제/퀴즈
+## 5주차 진도 - iCampus 이용 기간 변경
+
+최신 iCampus 화면에서는 아래 묶음이 `6주차`에 표시되며 2026-10-05 00:00부터 2026-10-11 23:59까지 이용 가능하다. 내용상 5주차 진도가 한 주 밀린 것으로 보이나 변경 이유는 확인되지 않았다.
 
 | 항목 | 배점 | 마감 | 제출 방식 | 상태 |
 | --- | ---: | --- | --- | --- |
-| Linear Sorting quiz | 4점, 4문제 | 2026-10-04 23:59 | iCampus 퀴즈 | 준비 전 |
-| Prove that `log(n!) = Theta(n log n)` | 1점 | 2026-10-04 23:59 | iCampus 파일/서술 제출 | 준비 전 |
+| Linear Sorting quiz | 4점, 4문제 | 2026-10-11 23:59 | iCampus 퀴즈 | 10/5 공개 예정 |
+| Prove that `log(n!) = Theta(n log n)` | 1점 | 2026-10-11 23:59 | iCampus 파일/서술 제출 | 10/5 공개 예정 |
 | [Programming] Min-Max-Median Priority Queue | 10점 | 2026-10-11 23:59 | iCampus 파일 업로드 | 명세 확인 대기 |
 
-- 이번 주 자료는 Count Sort, Radix Sort, Linear Sorting, comparison sorting lower bound를 함께 다룬다.
-- iCampus 화면의 콘텐츠 표기와 별개로, 학기 흐름 기준으로 저장소에서는 5주차로 관리한다.
+- Count Sort, Radix Sort, Linear Sorting, comparison sorting lower bound를 함께 다룬다.
+- 강의 진도 기록은 5주차에 유지하고 실제 수강·제출 일정은 iCampus의 10/5~10/11을 따른다.
