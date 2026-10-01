@@ -397,4 +397,5 @@ order 2: 16 KB
 - 상태: 2026-09-29 기준 5주차 Memory 강의 복습 완료
 - 원본: `OS06-Memory.pdf` (51 pages)
 - 개인 한 장 요약의 핵심: VA/PA 분리, base/bounds, fragmentation, virtual memory mapping, segmentation, free-space management
-- 다음: 2주차 묶음 퀴즈 범위와 Memory 개념 연결 복습
+- 2026-10-01: 2주치 묶음 퀴즈 응시 완료 (사용자 확인)
+- 다음: PA1 system call 구현·테스트, 10/7 마감
