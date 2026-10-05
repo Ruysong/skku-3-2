@@ -6,13 +6,12 @@
 
 | 과목 | 과목 홈 | 공지 | 과제/퀴즈 | 현재 자료 |
 | --- | --- | --- | --- | --- |
-| 시스템프로그래밍실습 - 한환수 | [README](./시스템프로그래밍실습_한환수/README.md) | [notices](./시스템프로그래밍실습_한환수/notices.md) | [assignments](./시스템프로그래밍실습_한환수/assignments.md) | 1주차, 2주차 |
-| 시스템프로그램 - 엄영익 | [README](./시스템프로그램_엄영익/README.md) | [notices](./시스템프로그램_엄영익/notices.md) | [assignments](./시스템프로그램_엄영익/assignments.md) | 1주차, 2주차 |
-| 알고리즘개론 - 김형식 | [README](./알고리즘개론_김형식/README.md) | [notices](./알고리즘개론_김형식/notices.md) | [assignments](./알고리즘개론_김형식/assignments.md) | 1주차, 2주차 sorting/performance |
-| 운영체제 - 신동군 | [README](./운영체제_신동군/README.md) | [notices](./운영체제_신동군/notices.md) | [assignments](./운영체제_신동군/assignments.md) | 1주차, 2주차 |
-| 캡스톤설계프로젝트 - 타메르 | [README](./캡스톤설계프로젝트_타메르/README.md) | [notices](./캡스톤설계프로젝트_타메르/notices.md) | [assignments](./캡스톤설계프로젝트_타메르/assignments.md) | 1주차, 2주차, financial support |
-| 컴공세 | [README](./컴공세/README.md) | [notices](./컴공세/notices.md) | [assignments](./컴공세/assignments.md) | 1주차, 2주차 |
-| 컴퓨터구조개론 - 조형민 | [README](./컴퓨터구조개론_조형민/README.md) | [notices](./컴퓨터구조개론_조형민/notices.md) | [assignments](./컴퓨터구조개론_조형민/assignments.md) | 1주차, 2주차 performance |
+| 시스템프로그래밍실습 - 한환수 | [README](./시스템프로그래밍실습_한환수/README.md) | [notices](./시스템프로그래밍실습_한환수/notices.md) | [assignments](./시스템프로그래밍실습_한환수/assignments.md) | 1~6주차 |
+| 시스템프로그램 - 엄영익 | [README](./시스템프로그램_엄영익/README.md) | [notices](./시스템프로그램_엄영익/notices.md) | [assignments](./시스템프로그램_엄영익/assignments.md) | 1~6주차 |
+| 알고리즘개론 - 김형식 | [README](./알고리즘개론_김형식/README.md) | [notices](./알고리즘개론_김형식/notices.md) | [assignments](./알고리즘개론_김형식/assignments.md) | 1~6주차 |
+| 운영체제 - 신동군 | [README](./운영체제_신동군/README.md) | [notices](./운영체제_신동군/notices.md) | [assignments](./운영체제_신동군/assignments.md) | 1~6주차 |
+| 캡스톤설계프로젝트 - 타메르 | [README](./캡스톤설계프로젝트_타메르/README.md) | [notices](./캡스톤설계프로젝트_타메르/notices.md) | [assignments](./캡스톤설계프로젝트_타메르/assignments.md) | 1~6주차, financial support |
+| 컴퓨터구조개론 - 조형민 | [README](./컴퓨터구조개론_조형민/README.md) | [notices](./컴퓨터구조개론_조형민/notices.md) | [assignments](./컴퓨터구조개론_조형민/assignments.md) | 1~6주차 |
 
 ## 전체 관리
 
@@ -22,7 +21,7 @@
 
 ## 저장소 구조
 
-각 과목에는 `2주차/study.md` 템플릿을 미리 만들어두었습니다. 새 자료가 들어오면 해당 주차 폴더에 원본과 정리를 누적합니다.
+각 과목의 주차별 `study.md`에서 수업 범위와 마감을 관리합니다. 새 자료가 들어오면 해당 주차 폴더에 원본과 정리를 누적합니다.
 
 
 ```text
@@ -80,16 +79,6 @@
 │           ├── 붙임3. [서식8] 실습비 청구서 (1).xlsx
 │           ├── 붙임4. 참여학과 총괄표 (1).hwp
 │           └── 붙임5. 캡스톤디자인 청구서 작성법 (1).pdf
-├── 컴공세/
-│   ├── README.md
-│   ├── notices.md
-│   ├── assignments.md
-│   ├── 2026_Feedback_report_template.docx
-│   └── 1주차/
-│       ├── study.md
-│       ├── End-to-End Speech Interface (Prof. Kyuhong Shim).pdf
-│       ├── 2024315329_송준혁.docx
-│       └── 2024315329_송준혁.pdf
 └── 컴퓨터구조개론_조형민/
     ├── README.md
     ├── notices.md
