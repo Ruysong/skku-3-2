@@ -10,10 +10,12 @@
 - [3주차 학습지도](./3주차/study.md)
 - [4주차 학습지도](./4주차/study.md)
 - [5주차 학습지도](./5주차/study.md)
+- [6주차 학습지도](./6주차/study.md)
 
-## 이번 주
+## 6주차
 
-2주차는 CPU virtualization의 mechanism과 process abstraction 자료가 올라와 있습니다. 퀴즈는 매주 운영된다는 수업 구두 안내를 기준으로, 매주 iCampus의 실제 일정과 범위를 확인합니다.
+- `OS07-Paging.pdf`가 6주차 폴더에 있다. 온라인 강의·퀴즈 범위는 iCampus에서 확인.
+- PA1 System call은 10/7(수) 23:59:59 마감. 제출 성공 여부 확인.
 
 ## 주차별 자료
 
@@ -24,6 +26,7 @@
 | 3주차 | [study.md](./3주차/study.md) | OS04-Scheduling1.pdf |
 | 4주차 | [study.md](./4주차/study.md) | OS05-Scheduling2.pdf |
 | 5주차 | [study.md](./5주차/study.md) | OS06-Memory.pdf |
+| 6주차 | [study.md](./6주차/study.md) | OS07-Paging.pdf |
 
 ## 운영 메모
 

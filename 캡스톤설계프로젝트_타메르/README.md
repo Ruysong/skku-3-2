@@ -9,16 +9,12 @@
 - [3주차 학습지도](./3주차/study.md)
 - [4주차 학습지도](./4주차/study.md)
 - [5주차 학습지도](./5주차/study.md)
+- [6주차 학습지도](./6주차/study.md)
 
-## 이번 주
+## 6주차
 
-- 이번 주 오프라인 수업은 화재 사고로 취소됨.
-- 교수님 course 안내 영상 1개와 TA course support 안내 영상 1개가 업로드될 예정.
-- 이번 주 수업 대체로 두 영상을 모두 시청해야 함.
-- Financial support 안내 영상과 첨부자료도 확인해야 함.
-- 오프라인 수업은 2026-09-11 금요일 재개 예정.
-- Proposal submission: 팀당 한 명이 2026-09-20 23:59까지 제안서 파일을 제출.
-- 팀 제안서 양식은 Capstone Design-Proposal-Template2026.docx; 템플릿상 팀 인원은 3~4명.
+- 10/2 제안 발표 피드백과 팀의 다음 구현 단계를 확인.
+- 금요일 수업 및 팀 회의에서 담당자와 산출물 기록.
 
 ## 주차별 자료
 
@@ -27,6 +23,9 @@
 | 1주차 | [study.md](./1주차/study.md) | 교수님/TA 안내 영상 예정, [financial-support](./1주차/financial-support/README.md) |
 | 2주차 | [study.md](./2주차/study.md) | `CapstoneDesign-Lecture1.pdf`, Proposal Template, Proposal submission |
 | 3주차 | [study.md](./3주차/study.md) | 팀 구성/프로젝트/Proposal 진행 |
+| 4주차 | [study.md](./4주차/study.md) | 제안서 진행 |
+| 5주차 | [study.md](./5주차/study.md) | RoverAid 제안 발표자료 |
+| 6주차 | [study.md](./6주차/study.md) | 제안 발표 피드백·팀 구현 계획 |
 
 ## 바로 기억할 것
 

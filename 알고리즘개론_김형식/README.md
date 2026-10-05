@@ -9,11 +9,12 @@
 - [3주차 학습지도](./3주차/study.md)
 - [4주차 학습지도](./4주차/study.md)
 - [5주차 학습지도](./5주차/study.md)
+- [6주차 학습지도](./6주차/study.md)
 
-## 이번 주
+## 6주차
 
-- 5주차 예정 진도: Linear Sorting - Counting Sort, Radix Sort, comparison sorting lower bound
-- 최신 iCampus에서는 이 묶음을 6주차에 표시하고 10/5부터 공개, 퀴즈·증명·프로그래밍 과제를 모두 10/11 23:59에 마감
+- iCampus 6주차에 열린 Linear Sorting 묶음은 [5주차 내용 정리](./5주차/study.md)와 [6주차 수강·제출 관리](./6주차/study.md)를 함께 본다.
+- Count Sort, Radix Sort, Linear Sorting 영상과 퀴즈·증명·프로그래밍 과제는 10/11 23:59 마감.
 
 ## 주차별 자료
 
@@ -24,6 +25,7 @@
 | 3주차 | [study.md](./3주차/study.md) | Solving Recurrences<br>Binary Heaps |
 | 4주차 | [study.md](./4주차/study.md) | Sorting<br>Hashing |
 | 5주차 | [study.md](./5주차/study.md) | Count Sort<br>Radix Sort<br>Linear Sorting |
+| 6주차 | [study.md](./6주차/study.md) | iCampus 6주차 수강·제출 관리; 내용 정리는 5주차에 연결 |
 
 ## 바로 기억할 것
 

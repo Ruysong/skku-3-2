@@ -9,14 +9,13 @@
 - [3주차 학습지도](./3주차/study.md)
 - [4주차 학습지도](./4주차/study.md)
 - [5주차 학습지도](./5주차/study.md)
+- [6주차 학습지도](./6주차/study.md)
 
-## 이번 주
+## 6주차
 
-- `CA_Lecture_02.pdf`로 Chapter 1 Performance 범위 확인
-- 반도체 공정, die/wafer/yield, cost per die 관계 정리
-- response time, throughput, relative performance 개념 정리
-- `CPU Time = IC × CPI × Clock Cycle Time` 공식과 예제 계산 연습
-- benchmark, SPECratio, geometric mean, power wall, Amdahl's Law 흐름 정리
+- 10/5 월요일 수업 없음. 10/7 수요일 새 진도 확인.
+- Project 0 선택 제출 연습은 10/9, Project 1 RISC-V Disassembly는 10/16 마감.
+- 중간고사 10/21. 실제 시험 범위 공지 확인.
 
 ## 주차별 자료
 
@@ -25,6 +24,9 @@
 | 1주차 | [study.md](./1주차/study.md) | CA_Lecture_01.pdf |
 | 2주차 | [study.md](./2주차/study.md) | CA_Lecture_02.pdf |
 | 3주차 | [study.md](./3주차/study.md) | CA_Lecture_03.pdf |
+| 4주차 | [study.md](./4주차/study.md) | study.md 참조 |
+| 5주차 | [study.md](./5주차/study.md) | CA_Lecture_05.pdf |
+| 6주차 | [study.md](./6주차/study.md) | 새 강의 원본 확인 대기; Project 0/1 일정 |
 
 ## 바로 기억할 것
 

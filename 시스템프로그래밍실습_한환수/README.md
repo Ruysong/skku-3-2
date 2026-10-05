@@ -9,13 +9,12 @@
 - [3주차 학습지도](./3주차/study.md)
 - [4주차 학습지도](./4주차/study.md)
 - [5주차 학습지도](./5주차/study.md)
+- [6주차 학습지도](./6주차/study.md)
 
-## 이번 주
+## 6주차
 
-- 2주차 자료: `week2-gcc&gdb.pdf`
-- 주제: Linux command line, GCC compile/link 과정, GDB debugging
-- 2주차 Lab Exercise: `week2.tar.zst`를 iCampus에 제출
-- 마감: 2026-09-08 23:59, 지각 제출 불가
+- 화요일 실습의 새 자료와 Lab Exercise 제출 조건을 확인.
+- PA1 File Search는 10/4 마감. 실제 마지막 제출본과 추가 Q&A를 복기.
 
 ## 주차별 자료
 
@@ -24,6 +23,9 @@
 | 1주차 | [study.md](./1주차/study.md) | week1-course_overview.pdf |
 | 2주차 | [study.md](./2주차/study.md) | week2-gcc&gdb.pdf |
 | 3주차 | [study.md](./3주차/study.md) | 원본 자료 확인 대기 |
+| 4주차 | [study.md](./4주차/study.md) | Unix I/O 실습 |
+| 5주차 | [study.md](./5주차/study.md) | week5-process.pdf, skeleton code |
+| 6주차 | [study.md](./6주차/study.md) | 새 실습 자료 확인 대기 |
 
 ## 바로 기억할 것
 
