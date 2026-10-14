@@ -1,0 +1,7 @@
+# Preserve byte-exact source snapshots and their recorded SHA-256 values.
+**/submitted/** -text
+# PDF cross-reference offsets and packaged originals must not be normalized.
+*.pdf binary
+*.pptx binary
+*.zip binary
+*.tar.zst binary

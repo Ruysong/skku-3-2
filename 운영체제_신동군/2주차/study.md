@@ -1,5 +1,7 @@
 # 운영체제 - 신동군 2주차 학습지도
 
+구현 연결: [PA1 프로세스 정보·시스템콜 교안(보고서 기반)](../Assignment/pa1/study.md).
+
 ## 한줄 결론
 
 2주차는 OS가 CPU를 여러 process에게 나눠 주면서도 통제권을 잃지 않는 방법을 다룹니다. 핵심은 **user mode와 kernel mode**, **system call/trap**, **timer interrupt**, **scheduler/context switch**이고, 그 통제를 받는 실행 단위가 **process**입니다. 즉 이 주차의 전체 이야기는 아래 한 줄로 연결됩니다.

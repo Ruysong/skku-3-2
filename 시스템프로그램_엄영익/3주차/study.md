@@ -1,5 +1,7 @@
 # 시스템프로그램 - 엄영익 3주차 학습지도
 
+제출물 연결: [Assignment 01 정수·부동소수점 범위와 최종 PDF](../Assignment/Assignment_1/study.md).
+
 ## 상태
 
 - 3주차 폴더와 학습 노트 준비 완료.

@@ -1,5 +1,7 @@
 # 시스템프로그램 - 엄영익 4주차 스터디
 
+제출물 연결: [Assignment 01의 Chap.2 범위](../Assignment/Assignment_1/study.md).
+
 ## 빠른 목차
 
 - 온라인 강의: 화요일에 공개되는 주차별 원본 콘텐츠

@@ -1,5 +1,7 @@
 # 알고리즘개론 6주차 (2026-10-05~10-11)
 
+구현·제출물 연결: [Min-Max-Median PQ 상세 교안](./pa-study.md), [log factorial 증명 목차](../proof-study.md).
+
 ## 이번 주 범위
 
 iCampus 6주차에 열린 Linear Sorting 묶음이다. 내용의 첫 학습지도는 [5주차 study](../5주차/study.md)에 있다. 주차 표기만 달라진 자료를 중복해서 옮기지 않는다.

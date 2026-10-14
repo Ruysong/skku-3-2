@@ -1,5 +1,7 @@
 # 시스템프로그래밍실습 - 3주차 스터디: Shell, Makefile, Git
 
+작성 코드 복습: [3주차 Makefile·비교 script 설명](../lab-study.md#3주차-makefile과-shell-script), [압축본 소스](./submitted/).
+
 ## 한 줄 결론
 
 3주차는 C program을 한 번 build하는 단계에서 나아가 Shell로 반복 작업을 자동화하고, Makefile로 dependency를 관리하고, Git으로 변경 이력을 남기는 주차다. 2주차의 gcc -> linker -> gdb 흐름을 재현 가능하게 만든다.

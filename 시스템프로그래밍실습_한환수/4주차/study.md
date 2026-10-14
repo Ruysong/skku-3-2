@@ -1,5 +1,7 @@
 # 시스템프로그래밍실습 - 4주차 스터디: File I/O
 
+작성 코드 복습: [4주차 줄 번호 구현 설명](../lab-study.md#4주차-file-io와-줄-번호), [PA1 검색기 상세](../PA/PA_1/study.md).
+
 ## 한 줄 결론
 
 4주차는 C program이 Linux kernel의 Unix I/O interface로 file에 접근하는 방법을 배우는 주차다. Pathname을 열어 file descriptor를 받고, byte를 read/write하며, current offset, error, metadata를 관리한다. Lab은 이 low-level I/O만 사용해 text file의 각 줄 앞에 line number를 붙이는 문제다.

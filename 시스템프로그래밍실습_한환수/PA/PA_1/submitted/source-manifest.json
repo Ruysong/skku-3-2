@@ -1,0 +1,44 @@
+{
+  "checked_on": "2026-10-14",
+  "origin": "시스템프로그래밍실습_한환수/VMShare/pa_1/2024315329_pa1.tar.zst",
+  "archive_sha256": "c20068e9681001d4eb8668bad4c7b289be69b016e075d6b377c0bb8794c90655",
+  "note": "Exact source snapshot of local submission archive; not an LMS upload receipt. Original archive and VMShare left unchanged.",
+  "files": [
+    {
+      "member": "pa1/Makefile",
+      "snapshot": "Makefile",
+      "sha256": "15bf912f7b7a9496b5b5187d936ff3805de00d8321e6bb3a097a63364e9289c0",
+      "bytes": 325
+    },
+    {
+      "member": "pa1/io.c",
+      "snapshot": "io.c",
+      "sha256": "8a8d81cb07da6377962444f0d5a80c1653aebfb0a27c6d02f997134e6fd3c60d",
+      "bytes": 1830
+    },
+    {
+      "member": "pa1/search.c",
+      "snapshot": "search.c",
+      "sha256": "111dcbedcdc816acf7a886b0aa7e3845a217384675a6511f6702eff06dac6a79",
+      "bytes": 12941
+    },
+    {
+      "member": "pa1/search.h",
+      "snapshot": "search.h",
+      "sha256": "5bfe5dea04ca6fab6ffdf5eabed95e717c9663d86e1c54e0ffca859f3cef872f",
+      "bytes": 461
+    },
+    {
+      "member": "pa1/main.c",
+      "snapshot": "main.c",
+      "sha256": "37bbd70f5e2c635a33d95099cfdb38ebf7fa805239af028690a55b71d0144e66",
+      "bytes": 1815
+    },
+    {
+      "member": "pa1/io.h",
+      "snapshot": "io.h",
+      "sha256": "e9a8b35a34c1f9e94df071163b9cdca25fd16e9b8765cc6a7cc84b81e3d19b48",
+      "bytes": 324
+    }
+  ]
+}

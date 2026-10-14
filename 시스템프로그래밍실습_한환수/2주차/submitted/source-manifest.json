@@ -1,0 +1,38 @@
+{
+  "checked_on": "2026-10-14",
+  "origin": "시스템프로그래밍실습_한환수/VMShare/week2.tar.zst",
+  "archive_sha256": "2693f0da2354c385d301359f2a2b28d1f2a8093216992047ba94249ad5ab15ed",
+  "note": "Exact source snapshot of local submission archive; not an LMS upload receipt. Original archive and VMShare left unchanged.",
+  "files": [
+    {
+      "member": "week2/stdout.txt",
+      "snapshot": "stdout.txt",
+      "sha256": "6e23966ec2961d3712aeb0c59c95b46a1c6d0b13b1df32f702c6388c34bce1c1",
+      "bytes": 8
+    },
+    {
+      "member": "week2/plus.c",
+      "snapshot": "plus.c",
+      "sha256": "8a4fcea45e75df7351bbb4839ed7c19b5ba555681bc0f015dbd502fbde98c8cd",
+      "bytes": 58
+    },
+    {
+      "member": "week2/gdb.txt",
+      "snapshot": "gdb.txt",
+      "sha256": "754e8abcfe4043ae06b9a295f2a676c44e2020e31e147fb54ed1ffff0c99ad86",
+      "bytes": 22522
+    },
+    {
+      "member": "week2/minus.c",
+      "snapshot": "minus.c",
+      "sha256": "6be4976d683d6d263de08d50dbf6f5a8ef27ffa8e27c134491c5850b60282c56",
+      "bytes": 60
+    },
+    {
+      "member": "week2/main.c",
+      "snapshot": "main.c",
+      "sha256": "f0b5b653ef8e650c394fe86a6127a08a7567138eb05e8dd56ba765eba8a82e66",
+      "bytes": 440
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # 시스템프로그래밍실습 - 한환수 5주차 스터디
 
+작성 코드 복습: [5주차 foreground shell 설명](../lab-study.md#5주차-process와-간단한-shell), [압축본의 완성 소스](./submitted/week5.c).
+
 ## 이번 주 상태
 
 - 오늘 5주차 실습 완료. 실습 원본 자료와 skeleton code는 로컬에 보관되어 있다.

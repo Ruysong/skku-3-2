@@ -1,0 +1,20 @@
+{
+  "checked_on": "2026-10-14",
+  "origin": "시스템프로그래밍실습_한환수/VMShare/week4/2024315329_w4.tar.zst",
+  "archive_sha256": "cd07175ae4ddab90b63942b9900382a1fed96146eff76f2f54b16e681e63f7a9",
+  "note": "Exact source snapshot of local submission archive; not an LMS upload receipt. Original archive and VMShare left unchanged.",
+  "files": [
+    {
+      "member": "week4/Makefile",
+      "snapshot": "Makefile",
+      "sha256": "2246dff34f8a1320c87a8c281d13b08afb14c89042cfe95c908231738870eb97",
+      "bytes": 143
+    },
+    {
+      "member": "week4/w4_skeleton_code.c",
+      "snapshot": "w4_skeleton_code.c",
+      "sha256": "aef1a9349a69482fc25d268d4dff9d56b39dcf65eecae9bffbe02bdf1237778c",
+      "bytes": 4756
+    }
+  ]
+}

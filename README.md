@@ -15,6 +15,7 @@
 
 ## 전체 관리
 
+- [전 과목 PA·구현 학습목차](./PA-학습목차.md)
 - [전체 할 일](./tasks.md)
 - [정리 프로토콜](./protocol.md)
 - [OCR 검수 엔진](./tools/ocr/README.md)
@@ -27,6 +28,7 @@
 ```text
 .
 ├── README.md
+├── PA-학습목차.md
 ├── protocol.md
 ├── tasks.md
 ├── tools/
@@ -90,6 +92,8 @@
         ├── study.md
         └── CA_Lecture_02.pdf
 ```
+
+PA 구현 설명은 각 과목의 `pa-study.md`에서 연결합니다. 개별 과제 `study.md`와 시프실 주차별 `submitted/` 소스 보관 구조는 [PA 학습목차](./PA-학습목차.md#보관-방식)에 정리되어 있습니다.
 
 ## 정리 원칙
 

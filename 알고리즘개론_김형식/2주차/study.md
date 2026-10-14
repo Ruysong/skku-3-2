@@ -1,5 +1,7 @@
 # 알고리즘개론 - 김형식 2주차 학습지도
 
+제출물 연결: [연결리스트 Merge Sort 구현](../Assingmnet/hw1/study.md), [증명 과제 복습목차](../proof-study.md).
+
 ## 한줄 결론
 
 2주차는 알고리즘 분석의 첫 본격 단원입니다. 지난주가 `Problem -> Algorithm -> Correctness -> Efficiency -> Model`이라는 기본 언어를 세팅한 주차였다면, 이번 주는 그중 `Efficiency`를 실제 정렬 문제에 적용합니다. 흐름은 `Sorting problem -> Insertion Sort -> Running Time -> Worst/Average/Best Case -> Asymptotic Analysis -> O/Omega/Theta/little-o -> Insertion Sort 분석 -> 더 빠른 정렬이 필요한 이유 -> Merge Sort -> Recurrence -> Recursion Tree -> Theta(n log n)`입니다.

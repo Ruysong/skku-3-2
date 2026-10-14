@@ -1,5 +1,7 @@
 # 운영체제 - 신동군 1주차 학습지도
 
+실습 연결: [PA0 부팅·제출 기록](../Assignment/PA0-booting-xv6.md), [과목 PA 목차](../pa-study.md).
+
 ## 한줄 결론
 
 1주차 `OS01-OS intro.pdf`는 운영체제 과목 전체의 지도입니다. 앞부분은 수업 운영과 평가 방식, 교재, 선수지식을 설명하고, 본문은 운영체제가 왜 필요한지와 운영체제가 제공하는 핵심 기능을 소개합니다. 핵심 축은 CPU virtualization, memory virtualization, concurrency, persistence입니다. 운영체제는 프로그램을 쉽게 실행하게 만들고, 여러 프로그램이 CPU와 메모리와 디스크를 함께 쓰게 하며, system call과 protection을 통해 user program과 hardware 사이의 안전한 경계를 만듭니다.
