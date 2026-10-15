@@ -15,6 +15,7 @@
 7. [선택 알고리즘의 실제 내용](#선택-알고리즘의-실제-내용)
 8. [PDF 기준 증명 체크리스트](#pdf-기준-증명-체크리스트)
 9. [MIT DP 영상 대본](#mit-dp-영상-대본)
+10. [Dynamic Programming 퀴즈 문항과 영어 답변](#dynamic-programming-퀴즈-문항과-영어-답변)
 
 ## 자료와 출처
 
@@ -24,7 +25,7 @@
 | 교수 영상 | Median_Order (18:27), Worst_case_linear_time (20:33) | 사용자 화면에 수강 완료. 대응 PDF는 확인했지만 이 두 영상의 실제 음성·대본은 미확인 |
 | 교수 영상 | Q5_LinearSorting (04:57) | 10/15 전달받은 화면에서 수강 완료. 10/18 마감. 중간고사 범위 포함 |
 | MIT 영상 | 15. Dynamic Programming, Part 1: SRTBOT, Fib, DAGs, Bowling (57:18) | 10/15 화면에서 수강 완료. [제공 대본 전문](./MIT-DP-Part1-script.txt) 확인·원본 보관. 중간고사 제외 |
-| 퀴즈 | Dynamic Programming, 4문항·4점 | 사용자 제공 화면 기준 10/18 23:59 마감, 완료 표시 없음. 중간고사 제외이나 제출 면제 공지는 아님 |
+| 퀴즈 | Dynamic Programming, 4문항·4점 | 10/15 18:41 시작 화면 확인. 아래 문항·영어 답변 보관, 제출 완료 미확인. 10/18 23:59 마감. 중간고사 제외이나 제출 면제 공지는 아님 |
 | 지난 주 교안 | [6주차 study](../6주차/study.md) | 두 MIT 선형 정렬 강의 및 Linear Sorting 퀴즈·사용자 답변 |
 
 자료 제목·수강 화면 기록과 강의 내용을 직접 읽고 정리한 결과를 구분한다. 각 영상 대본이 들어오면 교수 영상과 MIT 영상의 독립된 목차 아래 추가한다.
@@ -189,3 +190,65 @@ O(n) median black box로 필요한 한쪽만 선택하면 T(n)=T(n/2)+O(n)=O(n)�
 Bowling은 B(i)를 i부터 끝까지 남았을 때 최대 점수로 정의한다. B(i+1), v_i+B(i+1), v_i*v_(i+1)+B(i+2) 중 최댓값을 택하고 pair 항은 i+1<n일 때만 허용한다. B(n)=0, 마지막 하나는 max(0,v_(n-1)), 답은 B(0)이다. 역방향으로 각 suffix를 한 번 계산하면 word 연산 가정하에 O(n)이다. 마지막 위치에서 pair를 허용해 배열 밖을 읽지 않도록 한다.
 
 대본 전문은 보관했지만 이 DP 절은 자료 파악용 목차·핵심 요지이며 모든 발화를 다시 작성한 전문 교안은 아니다. 시험 우선 학습 대상과 분리한다.
+
+## Dynamic Programming 퀴즈 문항과 영어 답변
+
+### 출처와 상태
+
+- 출처: 사용자가 2026-10-15에 전달한 iCampus `Dynamic Programming` 퀴즈 화면 전문.
+- 시작 표시: 2026-10-15 18:41. 전달된 화면에는 네 문항 모두 아직 답변하지 않은 상태로 표시된다.
+- 배점: 각 1점, 총 4문항·4점.
+- 제출 마감: 2026-10-18 23:59, 한국 시간.
+- 아래 영어 답변은 이 대화에서 작성한 공부용 참고 답변이다. 공식 해설·채점 결과·실제 제출 답안으로 간주하지 않는다. 제출 완료는 미확인이다.
+- 이 퀴즈는 10/14 공식 공지에 따라 중간고사에서 제외된다. 퀴즈 제출 의무와 시험 제외는 별개다.
+
+### Q1. SRTBOT
+
+문제 원문:
+
+SRTBOT is a paradigm to solve a problem recursively. What is SRTBOT?
+
+영어 답변:
+
+SRTBOT is a framework for solving problems recursively. S stands for Subproblems: define the smaller problems. R stands for Relations: explain how a subproblem depends on smaller subproblems. T stands for Topological order: choose an order so that the needed smaller subproblems are solved first. B stands for Base cases: give answers to the smallest problems. O stands for Original problem: explain how to obtain the final answer. T stands for Time: analyze the number of subproblems and the work for each one.
+
+### Q2. Merge Sort와 Memoization
+
+문제 원문:
+
+Describe how merge sort can be represented by using the SRTBOT framework and explain why memorization is not helpful.
+
+영어 답변:
+
+In merge sort, each subproblem is to sort a subarray. The relation is to sort the left and right halves and then merge them. The topological order solves the smaller halves before merging them. The base case is a subarray with at most one element, which is already sorted. The original problem is to sort the entire array. The recurrence is T(n) = 2T(n/2) + O(n), so the running time is O(n log n). Memoization is not helpful because each recursive call handles a different subarray. There are no repeated subproblems whose saved answers could be reused.
+
+용어 메모: 문제의 `memorization`은 문맥상 계산 결과를 저장해 재사용하는 `memoization`을 가리킨다. 문제 원문은 수정하지 않았다.
+
+### Q3. Fibonacci의 Word-RAM 시간 분석
+
+문제 원문:
+
+Show that we can compute the nth Fibonacci number Fn in O(n + n^2/w) time where w is the word size of the compuation model.
+
+영어 답변:
+
+We compute Fibonacci numbers using F0 = 0, F1 = 1, and Fi = F(i-1) + F(i-2). We calculate them in increasing order, so each value is computed only once. However, large Fibonacci numbers do not fit in a single machine word. Since Fi is at most 2^i, it needs O(i) bits, or O(1 + i/w) words when each word contains w bits. Therefore, the addition needed to compute Fi takes O(1 + i/w) time. Summing this cost for all i up to n gives O(n + n²/w) total time.
+
+### Q4. Bowling Dynamic Programming
+
+문제 원문:
+
+Describe the dynamic programming algorithm to compute the Bowling problem and analyze its time complexity.
+
+영어 답변:
+
+Let B[i] be the maximum score obtainable from pin i to the end. At each position, we can skip the pin, take it alone, or take it together with the next pin. These choices give B[i+1], v[i] + B[i+1], and v[i] × v[i+1] + B[i+2], respectively. The third choice is allowed only when the next pin exists. We choose the maximum of the valid choices. The base case is B[n] = 0, meaning no pins remain. We compute the values from right to left, and the final answer is B[0]. There are n subproblems with constant work each, assuming constant-time arithmetic, so the algorithm takes O(n) time and O(n) space.
+
+### 대본 교안과의 연결
+
+| 문항 | 복습할 대본 구간 | 핵심 |
+| --- | --- | --- |
+| Q1 | 0:12~5:56 | SRTBOT 여섯 요소와 답안 구조 |
+| Q2 | 6:03~8:32, 13:40~20:35, 24:17~26:39 | Merge Sort의 부분문제, 중복 재계산과 memoization의 차이 |
+| Q3 | 8:41~24:11 | Fibonacci 재사용, 큰 정수의 비트 수, word 단위 덧셈 비용 합산 |
+| Q4 | 37:02~57:01 | suffix 정의, skip/single/pair 선택, 경계 조건, 역순 계산 |

@@ -74,3 +74,13 @@
 
 - Count Sort, Radix Sort, Linear Sorting, comparison sorting lower bound를 함께 다룬다.
 - 강의 진도 기록은 5주차에 유지하고 실제 수강·제출 일정은 iCampus의 10/5~10/11을 따른다.
+
+## 7주차 Dynamic Programming 퀴즈
+
+| 항목 | 배점 | 시작/마감 | 제출 방식 | 상태 |
+| --- | ---: | --- | --- | --- |
+| Dynamic Programming | 4점 (각 1점, 4문항) | 시작 표시 2026-10-15 18:41 / 마감 2026-10-18 23:59 | iCampus 서술형 퀴즈 | 실제 문항·대화에서 작성한 영어 참고 답변 보관. 제출 완료 미확인 |
+
+- [문항 원문과 쉬운 영어 답변](./7주차/study.md#dynamic-programming-퀴즈-문항과-영어-답변)을 함께 보관한다. 공식 정답이나 채점 결과가 아니다.
+- 문항: SRTBOT, Merge Sort와 memoization, Fibonacci의 `O(n + n^2/w)` 시간 증명, Bowling DP와 시간복잡도.
+- 10/14 최종 시험 공지에 따라 DP 내용과 이 온라인 퀴즈는 중간고사에서 제외된다. 제출 면제라는 뜻은 아니다.
