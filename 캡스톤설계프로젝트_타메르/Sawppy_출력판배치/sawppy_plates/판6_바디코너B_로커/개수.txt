@@ -1,0 +1,2 @@
+Body Corner.stl  x2  (슬라이서에서 복제)
+Rocker.stl  x2  (슬라이서에서 복제)

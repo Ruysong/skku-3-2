@@ -1,0 +1,12 @@
+ALADDIN:
+aladdin:
+unix
+jasmine aladdin
+aladdin jasmine
+here, here,
+"i can't"
+magic carpet
+"magic carpet"
+magic*carpet
+love
+PA1EXIT

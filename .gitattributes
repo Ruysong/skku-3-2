@@ -5,3 +5,7 @@
 *.pptx binary
 *.zip binary
 *.tar.zst binary
+*.docx binary
+*.xlsx binary
+*.hwp binary
+*.stl binary

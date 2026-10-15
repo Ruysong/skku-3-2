@@ -12,10 +12,16 @@
 - [4주차 학습지도](./4주차/study.md)
 - [5주차 학습지도](./5주차/study.md)
 - [6주차 학습지도](./6주차/study.md)
+- [7주차 학습지도](./7주차/study.md)
+
+## 7주차
+
+- [이번 주 자료와 시험 대비 연결](./7주차/study.md): Median and Order Statistics, 별도 DP 수강·퀴즈 묶음.
+- 저장된 공지 기준 10/12 대면 강의 없음. 중간고사 10/19, 공식 범위는 Median and Order Statistics까지·DP 제외.
 
 ## 6주차
 
-- iCampus 6주차에 열린 Linear Sorting 묶음은 [5주차 내용 정리](./5주차/study.md)와 [6주차 수강·제출 관리](./6주차/study.md)를 함께 본다.
+- iCampus 6주차에 열린 Linear Sorting 묶음은 [6주차 상세 교안](./6주차/study.md)에서 본다. Jason Ku의 `Linear Sorting`과 별도 `Lecture 7`을 각각 목차·시간대·예제별로 구분하고, 두 원문 대본과 실제 퀴즈·사용자 답변을 함께 보관한다. [초기 5주차 학습지도](./5주차/study.md)는 그대로 남긴다.
 - Count Sort, Radix Sort, Linear Sorting 영상과 퀴즈·증명·프로그래밍 과제는 10/11 23:59 마감.
 
 ## 주차별 자료
@@ -27,7 +33,8 @@
 | 3주차 | [study.md](./3주차/study.md) | Solving Recurrences<br>Binary Heaps |
 | 4주차 | [study.md](./4주차/study.md) | Sorting<br>Hashing |
 | 5주차 | [study.md](./5주차/study.md) | Count Sort<br>Radix Sort<br>Linear Sorting |
-| 6주차 | [study.md](./6주차/study.md) | iCampus 6주차 수강·제출 관리; 내용 정리는 5주차에 연결 |
+| 6주차 | [study.md](./6주차/study.md) | Count sort.pdf<br>Radix sort.pdf<br>MIT Linear Sorting·Lecture 7 개별 교안·원문 대본<br>Linear Sorting 퀴즈·사용자 답변<br>Priority Queue 과제·공개 예제 |
+| 7주차 | [study.md](./7주차/study.md) | Median/Order Statistics·DP 수강 목록 연결; 새 원본 대기 |
 
 ## 바로 기억할 것
 

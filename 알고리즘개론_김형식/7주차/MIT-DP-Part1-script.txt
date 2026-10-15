@@ -1,0 +1,1039 @@
+동영상 정보
+
+
+
+챕터
+
+스크립트
+동영상에서 검색
+Intro
+0:00
+[SQUEAKING] [RUSTLING] [CLICKING]
+0:12
+ERIK DEMAINE: All right, welcome back to 006. Today we start a totally new section of the class.
+0:18
+Up till now, we've mostly been showing you really cool and powerful algorithms, sorting algorithms,
+0:25
+graph algorithms, data structures, trees, lots of good stuff that you can apply to solve tons of algorithmic problems, either by reducing to the data
+0:34
+structures that we showed you, or reducing to graph problems that we showed you, or by modifying
+0:40
+those algorithms a bit. Today we're going to start a new section on algorithmic design--
+0:45
+how to, from scratch, come up with a polynomial time algorithm to solve a problem.
+0:52
+And in particular, we're going to talk about a algorithmic design paradigm called dynamic programming, which is extremely powerful.
+1:00
+It's probably the most powerful algorithmic design paradigm. Very general. Can solve lots of problems.
+1:06
+It's a particular type of recursive algorithm design. And in general, this class--
+1:14
+all of algorithms-- is about recursive algorithm design at some level, because we want to write
+1:19
+constant-sized pieces of code that solve problems of arbitrary size. We have some problem size n and we're
+1:25
+trying to write 100 lines of code or whatever, some constant amount that doesn't depend on the problem size.
+1:30
+We have one algorithm that solves all instances of the problem. And so we have to write code that is recursive or uses loops
+1:39
+or somehow reuses the instructions that we give the computer. And you may know you can convert any algorithm based
+1:46
+on loops into an algorithm using recursion. And we're going to take the recursive view today,
+1:51
+in particular because it fits very well with our proof-by-induction technique, which we've used throughout this class, but also because it gives us
+2:00
+some structure on how different subproblems relate in something called a subproblem graph, that we'll be talking about today.
+2:08
+And so we're going to start out with, in general, how do we design recursive algorithms? That's sort of the overall, encompassing everything.
+2:16
+We have thought very hard to come up with a cool acronym for this paradigm which we invented
+2:21
+called SRTBOT-- thanks, Jason. And so we'll talk-- it's not actually for sorting.
+2:27
+It's just an acronym for sub-problems, relations,
+2:33
+topological order, base case, original problem, and time.
+2:39
+But it's an acronym that will help you remember all the steps you need in order to specify
+2:44
+a recursive algorithm. And dynamic programming is going to build on this template by adding one new idea called
+SRTBOT
+2:52
+memoization, which is just the idea of reusing work that you've done before. And that's going to let us solve tons of problems.
+3:00
+And let's see. I don't-- let's get into it.
+3:05
+So we'll start out today with SRTBOT. So here is SRTBOT down the column here.
+3:13
+This is a recursive algorithm design paradigm. And in general, what we're going to do is take the problem that we actually want to solve
+3:20
+and split it up into lots of possible sub problems. And so the first part is to define what
+3:26
+the heck are the subproblems. In general, we'll want some polynomial number of them. But it's pretty open-ended what these look like.
+3:34
+And the hardest part, usually, in defining a recursive algorithm is figuring out what the sub problems should be.
+3:40
+Usually they're related to the problem you want to solve. Often the problem you want to solve-- this is actually near the last step--
+3:46
+the original problem you're trying to solve is often one of these sub problems. And then you use the smaller sub problems
+3:53
+in order to build up the final, original problem. But sometimes at the end, you need to take a bunch of subproblems and combine them
+4:00
+into your original problem. You can think-- one analogy you can think of here is divide and conquer algorithms,
+4:06
+which also had this kind of style. But more generally, we're going to relate different sub problem
+4:12
+solutions with some recursive structure-- some recurrence
+4:17
+relation. This is just a recursive algorithm that defines how to solve one problem in terms
+4:24
+of smaller sub-problems for some notion of smaller. And this is given by the topological order.
+4:31
+So if we think of the subproblems as a graph and we draw an edge between--
+4:37
+so the vertices of the graph are sub problems. The edges are the dependencies between those subproblems.
+4:42
+Then what we'd like is the topological ordering, the topological sort problem we talked about in the context
+4:48
+of DFS or DAG shortest paths. What we would like is that the subproblems and the calls--
+4:56
+the recursive calls between them in this recursive relation-- forms a DAG. We want it to be acyclic, otherwise
+5:02
+you have an infinite loop in your recursive calls. If you have a cycle, you'll never terminate.
+5:09
+And so to make sure that these dependencies between subproblems given by this recurrence relation
+5:15
+is acyclic, one way to do that is to specify a topological order.
+5:20
+Or you could prove it some other way. But often it's just a for loop to say, just do it in this order.
+5:27
+Then of course any recursive structure needs base cases. So that's a useful step not to forget.
+5:33
+We want to solve the original problem using these sub problems. And then we analyze a running time at the end.
+5:38
+So six easy steps. Actually, the hardest ones are these two,
+5:43
+which are interrelated. And what we're going to see over the next four lectures--
+5:49
+this is the first of four lectures on dynamic programming-- is lots of examples of applying this paradigm over and over together with the memoization
+5:56
+idea, which we'll get to soon. Let's see an example first of an algorithm we've already seen,
+Merge Sort
+6:03
+which is merge sort, so a divide and conquer algorithm, phrased with this structure of SRTBOT.
+6:09
+So for the sub problems-- so our original problem is to sort the elements of A.
+6:14
+And some sub-problems that we solve along the way are sorting different sub-arrays of A. So for every--
+6:21
+well, not for every i and j, but for some i and js, we sort the items from i up to j minus 1.
+6:28
+So I'm going to define that subproblem to be s of ij. So this is something that I might want to solve.
+6:34
+The original problem that I want to solve is s of 0 comma n, where n is the length of the array.
+6:40
+So that's what I actually care about in the end. But we're going to solve that by writing it recursively
+6:45
+in terms of sorting different sub-arrays as follows. This is the recurrence relation.
+6:51
+I've written it very simply here. Of course, there's a merge algorithm, which is somewhat complicated.
+6:57
+But as we saw the two finger linear time merge algorithm, given two sorted arrays--
+7:04
+so this is supposed to be the sorted array version of the items i through m. m
+7:09
+is the middle element between i and j and the sorted array of the items from m up to j.
+7:15
+If we merge those, that gives us the sorted array from i up to j.
+7:21
+And that's exactly what merge sort does. So in general, this relation is just
+7:28
+some algorithm for if you're given the solutions
+7:33
+to some smaller subproblems, how do I solve the subproblem
+7:38
+that I want to solve? And so we need to make sure that this problem is bigger
+7:46
+than the ones that we recursively call on and that we don't get an infinite cyclic loop of recursions.
+7:51
+And here our valid topological order is to say, solve these problems in order
+7:57
+where j minus i-- the length of the sub-array-- is increasing. And then you can check because m is strictly between i and j.
+8:05
+As long as we're not in a base case, then we know we can--
+8:11
+these subarrays will be smaller than this one. And so this increasing order gives us a valid topological order on all of the problems, all
+8:19
+the subproblems. We have a base case, which is if we don't want to sort anything, that's the empty array,
+8:25
+or at least in the original problem. And then running time is-- I mean, there's no better way to solve it than the recurrence
+8:32
+that we already saw how to solve. So this is just another way to think of n log n merge sort in this labeled framework of SRTBOT.
+Fib
+8:41
+Let's get to another problem that does not fit recursion so well.
+8:48
+But we can make it better. So this is-- we're going to start with a very simple problem, which
+8:54
+is computing Fibonacci numbers. It's really just a toy problem to illustrate a very powerful
+9:02
+idea, which is memoization. So the problem I'm interested in is I'm
+9:08
+given a particular number, n. And I want to compute the nth Fibonacci number.
+9:14
+And in case you forgot, the nth Fibonacci number is given by this recurrence. fn is fn minus 1 plus fn minus 2
+9:22
+with base case, let's say, f1 equals f2 equals 1.
+9:29
+And so we'd like to compute this. This seems-- this is a recurrence. So it seems very natural to write it
+9:36
+as a recursive algorithm. So let's try to do it. We start with what are the sub problems.
+9:41
+The obvious sub problems are just the various Fibonacci numbers, f i for i between 1 and n.
+9:55
+So there are n of these sub problems. Cool.
+10:01
+Let's see. We want a relation between them.
+10:07
+Well, maybe just to distinguish the problems from the Fibonacci numbers, let me write f of i.
+10:13
+This is a function, an algorithm we're going to define. And it's defined to be--
+10:18
+the goal we're trying to get is the ith Fibonacci number given i.
+10:23
+And then we can write the recurrence relation on these guys, just f of i equals f of i minus 1
+10:31
+plus f of i minus 2. So in other words, recursively compute those Fibonacci numbers
+10:37
+then add them together. That's an algorithm. Next is t for topological order.
+10:44
+Here, of course, we just want to compute
+10:51
+these in order of increasing i from the base case is up.
+10:57
+Another way I like to write this is as a for loop for i equals 1 to n.
+11:04
+We will see why. But this gives an explicit order to compute these sub problems.
+11:10
+And base case is just the same as the Fibonacci numbers,
+11:21
+but I guess I should write in parentheses. The original problem we want to solve is f of n.
+11:30
+And the time-- all right, here's where things get interesting or bad.
+11:35
+So what is the running time of this recursive algorithm? As I've stated it so far, the running time
+11:42
+is given by a recurrence. Let's write the recurrence.
+11:47
+So in order to compute f of n, I recursively compute f of i minus 1 or f of n minus 1 here.
+11:58
+And I recursively compute f of n minus 2.
+12:03
+So that will take t of n minus 2. This first step will take t of n minus 1. And now I need to solve this recurrence.
+12:11
+This is not a recurrence that falls to the master method. It doesn't have a divided by.
+12:17
+So we have to think about it a little bit. But we don't have to think about it too hard, because this recurrence is
+12:23
+the same as this recurrence, which is the same as this recurrence. I've written it three times now. And so the solution to this is the nth Fibonacci number.
+12:32
+Oh, sorry. It's a little bit worse because in addition to those recursions, I also spend constant time
+12:38
+to do the addition, maybe more than constant time. But if we just count the number of additions we do,
+12:44
+it will be plus 1 additions.
+12:51
+OK. But this is bigger than the nth Fibonacci number.
+12:58
+And if you know anything about Fibonacci numbers, they grow exponentially.
+13:03
+They're about golden ratio to the end. I'm wearing golden ratio, in case you forgot the number.
+13:09
+So that's bad, because golden ratio is bigger than 1. So this is exponential growth, as we know, especially
+13:16
+in this time, exponential growth is bad. In algorithms, exponential growth is bad, because we can only solve very small problems
+13:22
+with exponential growth. Very small n. So this is a terrible way to compute the nth Fibonacci
+13:28
+number-- exponential bad.
+Memoization
+13:40
+OK, so don't do this. But there's a very tiny tweak to this algorithm
+13:47
+that makes it really good, which is memoization.
+13:53
+And this is a big idea. It is the big idea of dynamic programming.
+13:59
+It's a funny word, probably made up by computer scientists.
+14:07
+Instead of memorization, it's memoization, because we're going to write things down in a memo pad.
+14:14
+It's the idea. And it's a very simple idea, which is just remember and reuse solutions to sub-problems.
+14:24
+14:35
+So let's draw the recursion tree for this recursive algorithm
+14:42
+as we've done it so far. So at the top, we-- let me make a little bit of space.
+14:48
+At the top we are calling f of n. And then that calls f of n minus 1 and f of n minus 2.
+14:59
+And it does an addition up here. And then this calls f of n minus 2.
+15:04
+And this calls f of n minus 3. This calls f of n minus 3.
+15:11
+And this calls f of n minus 4. OK.
+15:16
+And we notice that this sub problem is
+15:23
+the same as this sub problem. So to compute f of n minus 1, I need f of minus 3. And also to compute f of n minus 2 I need f of n minus 3.
+15:32
+So why are we computing it twice? Let's just do it once. When we solve it, let's write it in a table somewhere.
+15:39
+And then when we need it again, we'll just reuse that value. Question? AUDIENCE: What about the f of n minus 2?
+15:44
+ERIK DEMAINE: f of n minus 2 is also shared. So let me use a different symbol. f of n minus 2 is already here.
+15:53
+So this was at the same level. But we also get shared reuse between different levels. In fact, I wouldn't even call f of n minus 3
+15:59
+because this whole part doesn't need to be computed a second time. If I already computed it here, it
+16:05
+doesn't matter which one comes first. Let's say this one comes first. Once this is done, I can write it down and reuse it over here.
+16:11
+And then in here, we're going to call f of n minus three.
+16:18
+So there's still another computation of f of n minus 3. When that one's done, I won't need to do this recursively.
+Data Structure
+16:25
+OK, so magically this is going to make this algorithm efficient with this very simple tweak.
+16:32
+Let me write down the tweak more explicitly. I won't write code here. But just describe it as a data structure.
+16:41
+So we're going to maintain our good friend, the dictionary,
+16:47
+which is abstract data type or interface. We could use different data structures to do it.
+16:54
+But we're going to map some problems to their solutions, at least the ones that we've solved already.
+17:01
+And usually we can do this with just a direct access
+17:07
+array, though you could use a hash table. Just get expected bounce. So when we write the code for our recursive function--
+17:23
+so in general, once we have a sort bot description, we can turn this into code. We define f of i.
+Recursive Function
+17:30
+And it says am I in a base case? If so, return this. Otherwise, do this recursive call.
+17:36
+That's our recursive algorithm. But we're going to do a little more now. And first we're going to check whether this sub
+17:44
+problem that we're trying to solve has already been solved. And if so, we return that storage solution.
+17:55
+That's the easy case, but it might not exist.
+18:10
+And then we'll compute it in the usual way. So what the code then would look like to define f of i
+18:19
+is first we check is i in our data structure. This is usually called the memo.
+18:25
+So we say, is this sub-problem-- is i in my memo data structure?
+18:33
+If so just return memo of i. Done. No recursion necessary. Otherwise, check if I'm a base case.
+18:39
+If so, done. Otherwise, recurse. So recursively call f of i minus 1 and f of i minus 2.
+18:46
+And in this recursion, we can see that after we call f of i minus 1, in fact, it will have already computed f of i minus 2.
+18:52
+So while this call is recursive, this one will immediately terminate because i minus 2 will already be in the memo table.
+18:59
+And so if you think about what happens, in fact, we'll just have recursion down the left branch of this thing.
+19:07
+And all the right branches will be free. We can just look things up in the memo table. So what is the overall running time?
+19:14
+For Fibonacci, this should be order n.
+19:25
+Why is it order n? This is number of additions.
+19:31
+Come back to that in a second. In general, the way to analyze an algorithm
+19:39
+like this that uses memoization is we just count how many different sub-problems are there? Because once we solve the sub-problem,
+19:45
+we will never solve it again. That's the whole idea of a memo table. So we will solve each sub-problem at most once.
+19:51
+And so we just need to count, how much time does it take to solve every sub-problem? And here you can see it's constant.
+19:59
+Either it's a base case and it takes constant time or we recursively call these things.
+20:04
+But those are different sub-problems. So we're going to count those later. And then the work that's actually done by this recurrence is a single addition.
+20:12
+So in fact, it's n additions. To compute fn would be exactly n additions.
+20:20
+So it turns out to be very nice closed form in this case. It should be exactly n sub problems to compute f of n
+20:29
+because we started as dot at 1. And each one has one additional--
+20:35
+I guess not the base case. Maybe n minus 2. OK. Definitely order n.
+20:43
+Now, there's this one subtlety which-- let's forget about dynamic programming for a moment
+20:48
+and go back to good old lecture one and two, talking about the word ram model of computation.
+Word Ram Model
+20:55
+A question here that usually doesn't matter in this class. Usually we assume additions take constant time.
+21:01
+And we usually do that because it's usually true. And in general, our model is the w bit additions--
+21:09
+where w is our machine word size-- takes constant time.
+21:19
+But for this problem and this problem only, pretty much, for Fibonacci numbers, I happen to know that the Fibonacci
+21:25
+numbers grow exponentially. So to write them down actually requires theta n bits
+21:32
+because they are some constant to the n power. And so they're actually really big .
+21:38
+n is probably bigger than w. Usually you think of problems that are much bigger than 64
+21:44
+or whatever your word size happens to be. We do assume that w is at least log n. But n is probably bigger than w.
+21:51
+It might be bigger or smaller. We don't know. And in general, to do an n bit addition--
+21:57
+these are n bit additions-- is going to take ceiling of n over w time.
+22:07
+So in the end, we will spend this times n, because we have to do that, many of them,
+22:12
+which is n plus n squared over w time.
+22:18
+So a bit of a weird running time. But it's polynomial, whereas this original recursive
+22:23
+algorithm was exponential here. Using this one simple idea of just remembering the work we've done, suddenly this exponential time algorithm
+22:31
+becomes polynomial. Why? Because we have few sub problems. We had n sub problems.
+22:39
+And for each sub problem, we could write a recurrence relation that if we already knew the solutions to smaller sub
+22:46
+problems, we could compute this bigger problem very efficiently. This happened to be constant time or constant additions.
+22:56
+n over w time. But as long as this is polynomial and this is polynomial, we're happy,
+23:02
+because we have this nice formula that the time it takes
+23:07
+is, at most, the sum over all sub problems of the relation
+23:15
+time. So I'm referring to sub problems, like a number of them
+23:23
+and the time it takes to evaluate this, ignoring the recursive calls. That's important.
+23:28
+This is the non recursive part.
+23:38
+In the notes, I call this non-recursive work.
+23:45
+So this formula gives us a way to bound the running time of one of these algorithms
+23:52
+if we use memoization. Without memoization, this is not true, Fibonacci to exponential time.
+23:57
+But if we add memoization, we know that we only solve each sub-problem once. And so we just need to see, for each one,
+24:03
+how much did it cost me to compute it, assuming all the recursion work is free, because that's already taken into account by the summation.
+24:11
+So in particular, this summation is at most the number of sub-problems times the time per sub-problem, which in this case was order n.
+Merging Sort
+24:17
+We could try to apply that analysis to merge sort, because after all, this is also a recursive algorithm.
+24:23
+It happens to not benefit from memoization. But we could throw in memoization. It wouldn't hurt us.
+24:29
+But if you think about the call graph here, which is like s of 0 m, which calls s of m--
+24:38
+0 n over 2 and o of n over 2n and so on.
+24:45
+It has the same picture, but there's actually no common substructure here. You'll never see a repeated sub-problem,
+24:51
+because this range is completely disjoined from this range. But you could throw in memoization
+24:56
+and try to analyze in the same way and say, well, how many sub-problems are there? It looks like there's n choices for i and not quite n choices
+25:07
+but it's at most n squared different choices. In fact, it's the triangular number sum of i equals 1 to n
+25:16
+of i, different possible choices for inj. But this is theta n squared sub-problems,
+25:24
+which seems not so good. And then how much time are we spending per sub problem?
+25:29
+Well, to solve s of ij, we have to merge about that many elements.
+25:35
+We know merge takes linear time. And so this takes theta j minus i time to evaluate.
+25:43
+And so what we'd like to do is sum over all the sub problems of j minus i. This is the not triangular number
+25:51
+but the tetrahedral number, I guess. And so we end up that the running time is, at most, n cubed.
+25:58
+Great. So it's true that n log n is less than or equal to n cubed,
+26:05
+but obviously not terribly useful. This algorithm by the way we already know how to analyze it
+26:11
+is, indeed, n log n. And the running time turns out to be theta n log n.
+26:17
+So sometimes this equation is not what you want to use. But often it's good enough.
+26:22
+And especially if you just want to get a polynomial upper bound, then you can try to optimize it later. This will give you a polynomial upper
+26:28
+bound as long as the number of sub-problems is polynomial and the time per sub-problem is polynomial.
+26:34
+And indeed, n cubed is polynomial. It's not a great polynomial, but this is an alternate way
+26:39
+to analyze merge sort. Obviously don't do this for merge sort. But it illustrates the technique.
+26:47
+Good so far? Any questions? All right.
+26:52
+Let me remember where we are. Cool.
+26:58
+So the next thing I'd like to do is show you one more algorithm that we've already seen in this class that fits very
+27:04
+nicely into this structure-- arguably is a dynamic program-- and that is DAG shortest paths.
+27:13
+So just to close the loop here, when I say dynamic programming, I mean recursion with memoization.
+27:21
+I mean, we take-- we write a recursive piece of code,
+27:28
+which is like def f of some args, some sub-problem specification.
+27:38
+We check is the problem in the memo table?
+27:44
+If so, return memo of sub-problem.
+27:52
+And otherwise check if it's a base case
+28:01
+and solve it if it's a base case. And otherwise, write the recurrence recurse
+28:09
+via relation.
+28:14
+And set the memo table of the sub-problem
+28:20
+to be one of those things. OK, so this is the generic dynamic program.
+28:26
+And implicitly, I'm writing Fibonacci in that way.
+28:32
+And all of the dynamic programs have this implicit structure where I start with a memo table which is empty
+28:41
+and I always just check if I'm in the memo table. If I am, I return it. Otherwise I compute according to this recursive relation
+28:50
+by recursively calling f. And that's it. So this is every DP algorithm is going to have that structure.
+29:00
+And it's just using recursion and memoization together. OK, so now let's apply that technique
+29:06
+to think about the DAG shortest paths problem. The problem was, I give you a DAG.
+29:12
+I give you a source vertex, S-- single source shortest paths. Compute the shortest path weight from S to every vertex.
+29:20
+That's the goal of the problem. And we saw a way to solve that, which is DAG relaxation. I'm going to show you a different way, which turns out
+29:27
+to be basically the same, but upside down, or flipped left right, depending which way you direct your edges.
+29:35
+So what are our sub-problems? Well, here, actually, they're kind of spelled out for us. We want to compute delta and SV for all these.
+29:42
+So that is size of these sub-problems. That turns out to be enough for this overall problem.
+29:51
+And the original problem we want to solve is all of the sub-problems. We solve all the sub-problems, we're done.
+29:57
+And then we have-- I think we wrote this at some point during the DAG
+30:02
+shortest paths lecture-- we have a recursive relation saying that the shortest way to get from s to v
+30:09
+is the minimum of the shortest path to get to some vertex u plus the weight of the edge from u to v.
+30:16
+Why? Because if we look at a vertex v, unless we started there, we came from somewhere.
+30:23
+And so we can consider all of the possible choices for the previous vertex u.
+30:30
+And if you start at s and get to v, you must go through one of them. And so this is finding the best way among all the choices of u.
+30:39
+What's the best way to get to u? And then take the edge from u to v for all edges uv.
+30:44
+And this is adjacency minus. We don't usually think of that. Usually we look at adjacency plus the outgoing edges.
+30:51
+This is the incoming edges. And so u is an incoming-- uv is an incoming edge into v. OK, if we take that minimum--
+30:59
+and of course, possible there is no way to get to v. And so I'll also throw infinity into the set.
+31:06
+Take the min of that set. That will give me the shortest pathway in an acyclic graph from s to v. And great, this is recursive.
+31:13
+This was a sub problem. These are sub problems which are smaller, I guess.
+31:19
+There's no clear notion of smaller here, except we already know the clear notion of smaller
+31:25
+is the topological order of our DAG.
+31:30
+Because our graph is acyclic, we know it has a topological order. We know how to compute it with DFS.
+31:36
+And so that guarantees there's a topological order to compute these problems.
+31:41
+And in fact, the relationship between problems
+31:46
+is exactly the given graph, G. In order to compute the shortest pathway from s to v,
+31:54
+I need to know the shortest pathway from s to all of the incoming vertices to v. And so this is I guess in the call graph,
+32:02
+this vertex calls this vertex, but direct the edge this way
+32:07
+to say that this vertex requires-- this vertex needs to be computed before this one.
+32:14
+And so then I can complete them in a topological order. OK, we have a base case, which is delta of ss equals 0.
+32:22
+And the running time is, again, we can use this formula and say, let's just sum over all the sub problems of the non
+32:29
+recursive work in our recurrence relation and so it's computing this min. If I gave you these deltas for free
+32:38
+and I gave you these weights, which we know from our weight data structure, how long does it take to compute this min?
+32:44
+Well, however many things there are, however many numbers we're minning, which is the size of the incoming adjacency list plus 1
+32:52
+for that infinity. And so if you compute this sum, sum of incoming edges to every vertex, that's all the edges.
+33:00
+So this is v plus e. So in fact, this algorithm is morally the same algorithm
+33:09
+as the one that we saw on the DAG shortest path lecture, which was compute a topological order and process
+33:18
+vertices in that order and relax edges going out from vertices.
+33:23
+So here-- so in that algorithm, we would have tried to relax this edge if there was a better
+33:30
+path to v. And the first one certainly is better than infinity. So the first one we relax indeed.
+33:36
+The next edge, if this gave a better path from s to v, then we would relax that edge and update the way here
+33:42
+and do the same here. In the end, we're just computing this min in the relaxation algorithm but doing it step by step.
+33:48
+In the relaxation algorithm, DAG relaxation, for each incoming edge to v, we update d of e if it's better.
+33:58
+And so if you repeatedly update if you're better, that ends up computing a min.
+34:04
+OK, so this is the same algorithm just kind of flipped backwards. A funny thing, although we wrote down
+34:11
+the topological order of the sub problem graph here is the topological order of g,
+34:16
+because the sub-problem graph is g,
+34:22
+the algorithm doesn't actually have to compute one. It's doing it automatically for free. If you think about this algorithm,
+34:31
+generic dp algorithm, which is check whether we're in a memo table. If so, return.
+34:36
+Otherwise, recurse, or base case. This actually is a depth-first search
+34:43
+through the sub-problem graph-- technically through the reverse of the sub-problem graph.
+34:48
+If I draw an edge-- so from small to big--
+34:58
+so I'm just saying, I orient the edges from my smaller sub-problems to the ones that need it--
+35:04
+then I'm actually depth-first searching backwards in this graph because the bigger problem calls the smaller
+35:10
+problem. And the memo table is serving as the "have I visited this vertex
+35:16
+already" check in DFS. So this is actually a DFS algorithm. Plus we're doing some computation to actually solve
+35:24
+the sub-problems we care about. So implicit in this algorithm, we are doing a DFS, and at the same time, we're doing this shortest path
+35:32
+computation in the finishing order of that DFS traversal
+35:37
+because all the edges are backwards. This is the same as the reverse finishing order if the graph is forwards. So in the end, we're computing a topological order
+35:46
+because dynamic programming includes in it depth first search.
+35:52
+A lot of words. But it's kind of cool that this framework just
+35:57
+solves DAG shortest paths without much work. I mean, we did a lot of work in shortest paths
+36:04
+to prove that this relation is true. Once you know it's true, the algorithm part is pretty much free.
+36:11
+You just write down SRTBOT and you're done. OK.
+36:18
+This brings us to in general--
+36:24
+at this point we have seen two examples of dynamic programming. I guess technically merge sort you could think of as a dynamic program,
+36:30
+but it doesn't actually reuse anything. So it's not interesting. And indeed, that gave us a really bad bound. We've definitely seen DAG shortest paths and Fibonacci
+36:37
+numbers as two interesting examples. And what the next remainder of this lecture and the next three
+36:43
+lectures are going to be about is more and more examples of dynamic programming and how you
+36:48
+can use it to solve increasingly general problems. So far, we've just solved an easy problem and a problem
+36:53
+we already knew how to solve. Let's go to a new problem, which is bowling.
+37:02
+Bowling is popular in Boston. Boston likes to play candlepin bowling, which
+37:10
+is a bit unusual. Today we're going to play an even more unusual bowling game, one that I made up based on a bowling game
+37:19
+that Henry [INAUDIBLE] made up in 1908. So ancient bowling, I'll call it,
+37:26
+or I think linear bowling is what I might call it. I'll just call it bowling here.
+37:31
+And now I'm going to attempt to draw a bowling pin. Not bad. They might get progressively worse.
+37:39
+So imagine n identical bowling pins. Please pretend these are identical. And I have a ball which is approximately the same size
+37:49
+as a bowling pin. These bowling pins are pretty close together. I should have left a little gap here.
+37:54
+And you are a really good bowler. Now, unfortunately, these bowling pins are on a line.
+38:00
+And you're bowling from way down at infinity. So when you bowl, you can only hit one pin
+38:08
+or two pins or zero pins. But probably you want to hit some pins. So if you bowl straight out of pin,
+Bowling
+38:14
+you will just hit that one pin. And if you bowl in the middle between two pins,
+38:20
+you will knock down-- that's a ball, sorry-- you will knock down two pins.
+38:26
+And this is your model of bowling, model of computation. Now, what makes this interesting is that the pins have values.
+38:36
+Pin i has value-- this is obviously a toy problem, though this problem--
+38:44
+this type of bowling does go back to 1908, it was also a toy problem in that setting.
+38:50
+So each of these bowling pins has some number on it,
+38:55
+let's say 1, 9, 9--
+39:01
+I'll do a slightly more interesting example, maybe another one here and a 2 and a 5 and a 5, something
+39:11
+like this. OK. Or maybe make it a little more interesting.
+39:17
+Let's put some negative numbers on here. OK. And the model-- so you're at the carnival bowling.
+39:24
+Each pin has different-- potentially different values. And the model is if you hit one pin, i, then you get vi points.
+39:38
+So that's straight forward. To make it interesting, when you hit two pins, you get the product.
+39:45
+So if I hit two pins, it's always i and i plus 1 for some I. You get vi times vi plus 1 points.
+39:53
+This is the game you're playing. And it doesn't really matter that this is a product.
+40:00
+Product is just some weird function that's hard to imagine. If you stare at this long enough,
+40:07
+you should convince yourself that the optimal solution is probably to-- so, for each of these numbers, I could
+40:13
+leave it singleton or pair it with its left neighbor or pair it with its right neighbor. But the pairings can't overlap because once I hit a pin,
+40:19
+it's gone. It's knocked over. It disappears. So because of these nine, which are a very high value, what
+40:26
+I'd probably like to do is hit both of them together, so pair them up, because 9 times 9 is 81.
+40:32
+That's really big, much better than hitting them individually or hitting 9 times 1 or 9 times 2.
+40:37
+1 and 1 is kind of funny, because it's actually better to hit them individually. That will give you two points, whereas if I'd pair them up,
+40:43
+I only get one point. 2 and minus 5, that seems bad. Negative 10 points.
+40:48
+My goal is to maximize score.
+40:56
+Do you have to hit all the pins? Let's say no, you don't have to hit all the pins.
+41:02
+So I could skip the minus fives. But in fact, here, because they're adjacent,
+41:07
+minus 5 times minus 5 is good. That's 25 points. So the optimal solution for this particular instance
+41:14
+are to hit all the pins, these positive, these together, these together.
+41:19
+If I added, for example, another pin of minus 3 here, I would choose not to hit that pin.
+41:25
+Good question. So you just play until you are tired. When you decide to stop playing, how can I maximize your score?
+Algorithmic Design
+41:32
+There are many variations of this game. All of them-- basically any variation-- not literally every variation, but many,
+41:40
+many variations of this problem can all be solved quickly with dynamic programming. But let's solve this particular one.
+41:47
+OK.
+41:54
+So now we're really in algorithmic design mode. We need to think about SRTBOT.
+42:01
+And in particular, we need to think about what would the sub problems be here? And at this point, we don't have a lot of help.
+42:08
+So I should probably give you some tools. If I want to solve a problem like this, the input is a sequence of numbers.
+42:18
+It's a sequenced data structure. Maybe it's an array of numbers, which is this v array.
+42:23
+And let's see.
+42:28
+A general tool for sub-problem design
+42:39
+which will cover most of the problems-- maybe all of the problems that we see in this class
+42:45
+for dynamic programming. Here's a trick. If your input is a sequence, here are some good sub-problems
+43:03
+to consider.
+43:13
+We could do all prefixes.
+43:18
+So let's call the sequence x. So we could do x prefix means up to a given i for all i.
+43:27
+We could do all the suffixes, x from i onward for all i.
+43:34
+Or we could do substrings, which are the consecutive items
+43:41
+from i to j. I don't write subsequence here. Subsequence means you can omit items in the middle.
+43:46
+So substring you have to start in some position and do all the things up to j. So these are nice, easy to express in Python notation.
+43:55
+And these are great, because they're polynomial. If I have n things-- if the length of my sequence, x, is n,
+44:02
+then there are n prefixes-- technically n plus 1. So let's do theta n prefixes.
+44:08
+There are theta n suffixes. And there are theta n squared substrings
+44:14
+because there's n-- roughly n choices for i and j separately. Sorry?
+44:21
+Sub-sequences. Good. Right. I didn't write sub-sequences, because in fact, there are exponentially many sub sequences.
+44:26
+It's 2 to the n. For every item, I could choose it or not. So I don't want to parameterize--
+44:31
+I don't want my sub problems to be sub sequences because that's guaranteed-- well, then you're guaranteed
+44:37
+to get an exponential number of sub-problems, which is bad. We'd like to balance the numbers of sub-problems by polynomial.
+44:43
+So these are three natural ways to get polynomial bounds. Now, prefixes and suffixes are obviously better
+44:50
+because there's fewer of them, linear instead of quadratic. And usually almost every problem you encounter,
+44:56
+prefixes and suffixes are equally good. It doesn't really matter which one you choose. So maybe you'd like to think of--
+45:03
+well, we'll get to-- just choose whichever is more comfortable for you.
+Subproblems
+45:11
+But sometimes it's not enough. And we'll have to go to substrings. That won't be for another lecture or two.
+45:16
+Today I claim that prefixes or suffixes are enough to solve the bowling problem.
+45:24
+So what we're going to do is think about-- I prefer suffixes usually, because I like to work from left to right, from the beginning to the end.
+45:32
+So we're going to think of a suffix of the bowling pins. And so what is the sub-problem on a suffix?
+45:39
+Well, a natural version is just to solve the original problem, bowling. How do I maximize my score if all I were given
+45:46
+were these pins? Suppose the pins to the left of i didn't exist. How would I maximize my score on the remaining pins?
+45:53
+Or for this suffix, given these four pins, what would I do? And there's some weird sub problems here. If I just gave you the last pin, what would you do?
+46:00
+Nothing. That's clearly different from what I would do globally here. But I claim if I can solve all suffixes
+46:06
+I can solve my original problem, because one of the suffixes is the whole sequence.
+46:11
+So let's do it.
+46:18
+Sort by for bowling.
+46:26
+So here is our dynamic program. The sub-problems are suffixes.
+46:34
+So I'll write b of i is the maximum score we could get
+46:42
+possible with our starting--
+46:50
+if we started a game with pins i, i plus 1, up to n minus 1,
+47:00
+which is a suffix of the pins. Very important whenever you write a dynamic program to define what your sub-problems are.
+47:06
+Don't just say how to compute them, but first say what is the goal of the sub problem. This is a common mistake to forget to state
+47:13
+what you're trying to do. So now I have defined b of i.
+47:18
+Now, what is the original thing I'm trying to solve? You also put in SRTBOT--
+47:24
+you could put the O earlier, then it actually spells sort. So why don't I do that for fun.
+47:30
+The original problem we're trying to solve is b of 0,
+47:35
+because that is all of the pins. The suffix starting at 0 is everything. So if we can solve that, we're done.
+47:42
+Next is r for relate. This is the test of, did I get the sub-problems right,
+47:49
+is whether I can write a recurrence relation. So let's try to do it.
+47:54
+We want to compute b of i. So we have pin i here and then the remaining pins.
+48:04
+And the big idea here is to just think about--
+48:10
+the nice thing about suffixes is if I take off something from the beginning, I still have a suffix.
+48:15
+Remember, my goal is to take this sub-problem, which is suffix starting at i, and reduce it to a smaller sub problem, which means a smaller suffix.
+48:23
+So I'd like to clip off one or two items here. And then the remaining problem will be one of my sub problems.
+48:33
+I'll be able to recursively call b of something smaller than i-- or sorry, b of something larger than i
+48:39
+will be a smaller subsequence because we're starting later. OK, so what could I do?
+48:44
+Well, the idea is to just look at pin i and think, well, what could I do to pin i?
+48:50
+I could not hit it ever with a ball. I could skip it. That's one option. What would be my score then?
+48:57
+Well, if I skip pin i, that leaves the remaining pins,
+49:02
+which is just a smaller suffix. So that is b of i plus 1.
+49:08
+I'm going to write a max out here because I'd like to maximize my score. And one of the options is, forget about pin i.
+49:14
+Just solve the rest. Another option is I throw a ball. And I exactly hit pin i.
+49:21
+That's one thing I could do. And it would leave exactly the same remainder. So another option is b of i plus 1 plus vi.
+49:34
+Why would I prefer this over this? Well, if vi is negative, I'd prefer this.
+49:39
+But if vi is positive, I'd actually prefer this over that. So you can figure out which is better, just locally.
+49:47
+But then there's another thing I can do, which is maybe I hit this pin in a pair with some other pin.
+49:54
+Now, there's no pin to the left of this one. We're assuming we only have the suffix. And so the only other thing I can do is throw a ball
+50:01
+and hit i together with i plus 1. And then I get the product. Now, what pins remain?
+50:07
+i plus 2 on. Still a suffix. So if I remove one or two items, of course,
+50:12
+I still get a suffix-- in this case, b of i plus 2-- and then the number of points that I add on
+50:18
+are vi times vi plus 1. So this is a max of three things.
+50:26
+So how long does it take me to compute it? I claim constant time. If I don't count the time it takes
+50:31
+to compute these other sub problems, which are smaller because they are smaller suffixes further
+50:37
+to the right, then I'm doing a couple of additions-- product, max.
+50:42
+These are all nice numbers and I'll assume that they live in the w-bit word,
+50:48
+because we're only doing constant sized products. That's good. So this takes constant, constant non-recursive work.
+50:56
+How many sub problems are? Well, it's suffixes, so it's a linear number of sub problems. And so the time I'm going to end up
+51:03
+needing is number of sub problems, n, times the non-recursive work I do per sub problem, which
+51:11
+is constant. And so this is linear time. Great.
+51:16
+And I didn't finish SRTBOT, so there's another t, which is to make sure that there is a topological order and that is in decreasing i order.
+51:27
+Or I might write that as a for loop--
+51:33
+for i equals n, n minus 1. This is the order that I would compute my problems
+51:41
+because the suffix starting at n is the empty suffix. The suffix starting at 0, that's the one I actually
+51:46
+want to compute. That's the final suffix I should be computing. And then we have a b for base case,
+51:53
+which is that first case, b of n equals 0,
+52:00
+because there's no pins. So I don't get any points. Sad.
+BottomUp DP
+52:07
+OK, so this is it. We just take these components, plug them into this recursive, memoized algorithm,
+52:14
+and we have a linear time algorithm. I want to briefly mention a different way you could plug together those pieces, which is called bottom
+52:21
+up dp, which is--
+52:27
+let's do it for this example. So if I have--
+52:32
+let's see. Let me start with the base case, b of n equals 0.
+52:39
+But now it's an assignment. And I'm going to do for loop from the topological order for i equals n, n minus 1 to 0.
+52:49
+Now I'm going to do the relation, b of i equals max of b of i plus 1 and b of i plus 1 plus bi
+53:02
+and b of i plus 2 plus di vi plus 1.
+53:08
+Technically this only works if i is strictly less than n minus 1. So I should have an if i is less than minus 1 for that last part
+53:17
+because I can only do-- I can only hit two pins if there's at least two pins left. And then return b of 0.
+53:27
+So what I just did is a transformation from this SRTBOT template into a non-recursive algorithm, a
+53:35
+for loop algorithm, where I wrote my base case first. Then I did my topological order.
+53:43
+Then I did my relation. Then at the end, I did my--
+53:48
+not base case. The original problem. And provided you can write your topological order
+53:56
+as some for loops. This is actually a great way to write down a dp as code. If I were going to implement this algorithm,
+54:02
+I would write it this way, because this is super fast. No recursive calls. Just one for loop. In fact, this is almost a trivial algorithm.
+54:08
+It's amazing that this solves the bowling problem. It's in some sense considering every possible strategy I could
+54:16
+for bowling these pins. What we're using is what we like to call local brute force,
+54:22
+where when we think about pin i, we look at all of the possible things I could do to pin i,
+54:28
+here there's really only three options of what I could do. Now, normally, if I tried all the options for pin i
+54:34
+and then all the options for i plus 1 and i plus 2 and so on, that would be exponential. It'd be 3 times 3 times 3.
+54:40
+That's bad, but because I can reuse these sub problems, it turns out to only be linear time.
+54:47
+It's almost like magic. dp-- dp is essentially an idea of using local brute force.
+54:56
+55:02
+And by defining a small number of sub-problems up front-- and as long as I stay within those sub problems,
+55:09
+as long as I'm always recursing into this polynomial space, I end up only doing polynomial work,
+55:15
+even though I'm in some sense exploring exponentially many options. And it is because what I do to this pin
+55:22
+doesn't depend too much to what I do to a pin much later. There's a lot of intuition going on here for what--
+55:30
+when DP works. But we're going to see a lot more examples of that coming up.
+55:36
+And I just want to mention the intuition for how to write a recurrence like this is to think about-- in the case of suffixes,
+55:42
+you always want to think about the first item, or maybe the first couple of items. The case of prefixes, you always think about the last item.
+55:49
+And for substrings, it could be any item-- maybe in the middle. If I remove an item from the middle of a substring,
+55:54
+I get two substrings, so I can recurse. Here or in general, what we want to do
+56:00
+is identify some feature of the solution that if we knew that feature we would be done.
+56:06
+We would reduce to a smaller sub problem. In this case, we just say, well, what are the possible things I could do to the first pin?
+56:15
+There are three options. If I knew which option it was, I would be done. I could recurse and do my addition.
+56:21
+Now, I don't know which thing I want to do. So I just try them all and take the max. And if you're maximizing, you take the max.
+56:28
+If you're minimizing, you take the min. Sometimes you take an or or an and. There might be some combination function.
+56:34
+For optimization problems where you're trying to maximize or minimize something, like shortest paths you're trying to minimize,
+56:39
+we put them in here. So usually it's min or max. And this is extremely powerful.
+56:46
+All you need to do-- the hard part is this inspired design part where you say, what do I need to know that would
+56:54
+let me solve my problem? And if you can identify that and the number of choices for what you need to know is polynomial,
+57:01
+then you will be able to get a polynomial dynamic program. That's the intuition. You'll see a lot more examples in the next three lectures.
+57:10
+15. Dynamic Programming, Part 1: SRTBOT, Fib, DAGs, Bowling
+MIT OpenCourseWare
+MIT OpenCourseWare
+구독자 654만명
+
+구독
+
+2.3천
+
+
+공유
+
+조회수 152,505회  2021. 9. 14.  MIT 6.006 Introduction to Algorithms, Spring 2020
+MIT 6.006 Introduction to Algorithms, Spring 2020
+Instructor: Erik Demaine
+View the complete course: https://ocw.mit.edu/6-006S20
+YouTube Playlist:    • MIT 6.006 Introduction to Algorithms, Spri...  
+
+This is the first of four lectures on dynamic programing. This begins with how to solve a problem recursively and continues with three examples: Fibonacci, DAG shortest paths, and bowling.
+
+License: Creative Commons BY-NC-SA
+More information at https://ocw.mit.edu/terms
+More courses at https://ocw.mit.edu
+Support OCW at http://ow.ly/a1If50zVRlQ
+
+We encourage constructive comments and discussion on OCW’s YouTube and other social media channels. Personal attacks, hate speech, trolling, and inappropriate comments are not allowed and may be removed. More details at https://ocw.mit.edu/comments.
+MIT OpenCourseWare introduces the SRTBOT framework, a six-step paradigm designed for crafting efficient recursive algorithms. Through examples like Fibonacci numbers and merge sort, the concept of memoization is explored to optimize performance.
+요약
+
+콘텐츠 생성 방식
+자동 더빙

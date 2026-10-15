@@ -9,3 +9,11 @@ tmp/
 *.traineddata*
 tools/ocr/tessdata/*
 !tools/ocr/tessdata/README.md
+
+# Local IDE, build, and document-rendering caches
+.vs/
+*.vcxproj.user
+**/x64/Debug/
+.codex-finalizer-flow/
+__MACOSX/
+._*

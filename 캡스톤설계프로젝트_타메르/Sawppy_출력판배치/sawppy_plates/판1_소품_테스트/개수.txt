@@ -1,0 +1,5 @@
+Clip2n125.stl  x88  (슬라이서에서 복제)
+Clip3n20.stl  x12  (슬라이서에서 복제)
+Rod Support.stl  x2  (슬라이서에서 복제)
+DiffLink.stl  x2  (슬라이서에서 복제)
+Power Panel.stl  x1  (슬라이서에서 복제)

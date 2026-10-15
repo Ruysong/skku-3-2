@@ -12,6 +12,13 @@
 - [4주차 학습지도](./4주차/study.md)
 - [5주차 학습지도](./5주차/study.md)
 - [6주차 학습지도](./6주차/study.md)
+- [7주차 학습지도](./7주차/study.md)
+- [중간고사 준비 자료](./midterm-prep/목차.md): RISC-V 기출 3세트와 교수님 예제, 중복·MIPS 자료는 제외.
+
+## 7주차
+
+- [중간고사 예제와 Project 1 연결](./7주차/study.md). 이미 넣어둔 sample_midterm_withAnswers.pdf는 원본 유지.
+- Project 1은 10/16(금) 23:59:59 마감, 중간고사는 10/21(수).
 
 ## 6주차
 
@@ -29,6 +36,7 @@
 | 4주차 | [study.md](./4주차/study.md) | study.md 참조 |
 | 5주차 | [study.md](./5주차/study.md) | CA_Lecture_05.pdf |
 | 6주차 | [study.md](./6주차/study.md) | 새 강의 원본 확인 대기; Project 0/1 일정 |
+| 7주차 | [study.md](./7주차/study.md) | sample_midterm_withAnswers.pdf; Project 1 명세 연결 |
 
 ## 바로 기억할 것
 

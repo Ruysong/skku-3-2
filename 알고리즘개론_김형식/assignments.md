@@ -14,10 +14,13 @@
 
 ## 중간고사
 
-- 일정: **2026-10-19(월)**. 앞서 확인한 8주차 중간고사 주간의 월요일로 날짜를 계산했다.
-- 장소: **산학관 85613**.
-- 출처: 2026-09-30 사용자가 새로 올라온 시험 안내를 확인해 전달.
-- 시험 시각과 범위: 아직 전달받지 못함. 공지 원문을 확인하면 추가한다.
+- 일정: **2026-10-19(월) 10:30~11:45, 75분**. 10:30 전에 도착한다.
+- 장소: **산학협력센터 6층 85613**. 학번 끝자리 홀수 기준이며, 2024315329의 끝자리는 9다. 짝수는 85602다.
+- 출처: 사용자 제공 TA 중간고사 공지, **10/14 최종 업데이트**, 10/15 전달. 전문은 [공지 기록](./notices.md)에 보관한다.
+- 범위: **7주차까지 전부**, 대면에서 다루지 않은 온라인 강의 내용과 퀴즈도 포함.
+- 제외: **DP 내용과 DP 온라인 퀴즈(SRTBOT, Fibonacci, bowling)**만 제외.
+- **선형 정렬(Counting/Radix/Linear Sorting) 포함**. 10/05 구두 안내에서 변경되었다고 공지가 명시한다.
+- 퀴즈 답안 온라인 녹화 업로드 예정. 실제 업로드 여부는 별도 확인한다.
 
 ## 1주차 퀴즈/학습활동
 
@@ -34,7 +37,7 @@
 | --- | ---: | --- | --- | --- |
 | Prove the following statements | 5점 | 2026-09-13 23:59 | `2주차/Junhyuk Song_Prove the following statements.docx`, `.pdf` | 제출 완료: 2026-09-09 |
 | [Quiz] Prove the correctness of the Insertion Sort algorithm using Loop Invariant | 1점 | 2026-09-13 23:59 | 파일 업로드형 퀴즈. `2주차/JunhyukSong_Prove the correctness of the Insertion Sort algorithm using Loop Invariant.docx`, `.pdf` | 제출 완료: 2026-09-09 |
-| [Programming] Merge sorting | 5점 | 2026-09-20 23:59 | 과제 안내와 입출력 예시: `Assingmnet/Assignment01-3.pdf`, `hw1_input-2.txt`, `hw1_output-1.txt` | 미제출 |
+| [Programming] Merge sorting | 5점 | 2026-09-20 23:59 | 과제 안내와 입출력 예시: `Assingmnet/hw1/Assignment01-3.pdf`, `Assingmnet/hw1/hw1_input.txt`, `Assingmnet/hw1/hw1_output-1.txt` | 제출 완료 |
 ## 확인 필요
 
 - GradeScope나 iCampus에 PA 제출처가 열리는지 확인

@@ -82,6 +82,8 @@ tree height >= log2(n!)
 
 ## Part E. 자료 수령 후 추가할 상세 교안
 
+2026-10-10 전달받은 Jason Ku `5. Linear Sorting` 대본의 상세 교안은 [6주차 study의 Part B](../6주차/study.md#part-b-mit-linear-sorting-교안)에 정리했다. 해싱 복습, 결정 트리 하한, tuple 예제, 안정성, 버킷 방식 Counting Sort, Radix Sort를 포함한다. 이 파일의 초기 학습지도와 원본 PDF의 별도 전문 검수 여부는 구분한다.
+
 - Count Sort의 count/prefix sum/output placement 단계와 stable 조건
 - Radix Sort의 LSD/MSD 방식, base와 digit 수에 따른 복잡도
 - `log(n!)`의 upper/lower bound를 각각 보이는 증명

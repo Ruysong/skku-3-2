@@ -12,6 +12,12 @@
 - [4주차 학습지도](./4주차/study.md)
 - [5주차 학습지도](./5주차/study.md)
 - [6주차 학습지도](./6주차/study.md)
+- [7주차 학습지도](./7주차/study.md)
+
+## 7주차
+
+- [새 실습 자료·제출본 연결 공간](./7주차/study.md). VMShare 원본은 이동·덮어쓰기 없이 유지.
+- PA2 Command-line Shell은 11/1(일) 23:59 마감이며, 코드·Makefile 압축본과 PDF 보고서를 제출.
 
 ## 6주차
 
@@ -28,6 +34,7 @@
 | 4주차 | [study.md](./4주차/study.md) | Unix I/O 실습 |
 | 5주차 | [study.md](./5주차/study.md) | week5-process.pdf, skeleton code |
 | 6주차 | [study.md](./6주차/study.md) | 새 실습 자료 확인 대기 |
+| 7주차 | [study.md](./7주차/study.md) | 새 실습 원본 대기; PA2·VMShare 연결 |
 
 ## 바로 기억할 것
 

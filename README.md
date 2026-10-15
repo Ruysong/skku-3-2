@@ -6,12 +6,12 @@
 
 | 과목 | 과목 홈 | 공지 | 과제/퀴즈 | 현재 자료 |
 | --- | --- | --- | --- | --- |
-| 시스템프로그래밍실습 - 한환수 | [README](./시스템프로그래밍실습_한환수/README.md) | [notices](./시스템프로그래밍실습_한환수/notices.md) | [assignments](./시스템프로그래밍실습_한환수/assignments.md) | 1~6주차 |
-| 시스템프로그램 - 엄영익 | [README](./시스템프로그램_엄영익/README.md) | [notices](./시스템프로그램_엄영익/notices.md) | [assignments](./시스템프로그램_엄영익/assignments.md) | 1~6주차 |
-| 알고리즘개론 - 김형식 | [README](./알고리즘개론_김형식/README.md) | [notices](./알고리즘개론_김형식/notices.md) | [assignments](./알고리즘개론_김형식/assignments.md) | 1~6주차 |
-| 운영체제 - 신동군 | [README](./운영체제_신동군/README.md) | [notices](./운영체제_신동군/notices.md) | [assignments](./운영체제_신동군/assignments.md) | 1~6주차 |
-| 캡스톤설계프로젝트 - 타메르 | [README](./캡스톤설계프로젝트_타메르/README.md) | [notices](./캡스톤설계프로젝트_타메르/notices.md) | [assignments](./캡스톤설계프로젝트_타메르/assignments.md) | 1~6주차, financial support |
-| 컴퓨터구조개론 - 조형민 | [README](./컴퓨터구조개론_조형민/README.md) | [notices](./컴퓨터구조개론_조형민/notices.md) | [assignments](./컴퓨터구조개론_조형민/assignments.md) | 1~6주차 |
+| 시스템프로그래밍실습 - 한환수 | [README](./시스템프로그래밍실습_한환수/README.md) | [notices](./시스템프로그래밍실습_한환수/notices.md) | [assignments](./시스템프로그래밍실습_한환수/assignments.md) | 1~6주차, [7주차 세팅](./시스템프로그래밍실습_한환수/7주차/study.md) |
+| 시스템프로그램 - 엄영익 | [README](./시스템프로그램_엄영익/README.md) | [notices](./시스템프로그램_엄영익/notices.md) | [assignments](./시스템프로그램_엄영익/assignments.md) | 1~6주차, [7주차 세팅](./시스템프로그램_엄영익/7주차/study.md) |
+| 알고리즘개론 - 김형식 | [README](./알고리즘개론_김형식/README.md) | [notices](./알고리즘개론_김형식/notices.md) | [assignments](./알고리즘개론_김형식/assignments.md) | 1~6주차, [7주차 세팅](./알고리즘개론_김형식/7주차/study.md) |
+| 운영체제 - 신동군 | [README](./운영체제_신동군/README.md) | [notices](./운영체제_신동군/notices.md) | [assignments](./운영체제_신동군/assignments.md) | 1~6주차, [7주차 세팅](./운영체제_신동군/7주차/study.md) |
+| 캡스톤설계프로젝트 - 타메르 | [README](./캡스톤설계프로젝트_타메르/README.md) | [notices](./캡스톤설계프로젝트_타메르/notices.md) | [assignments](./캡스톤설계프로젝트_타메르/assignments.md) | 1~6주차, [7주차 세팅](./캡스톤설계프로젝트_타메르/7주차/study.md), financial support |
+| 컴퓨터구조개론 - 조형민 | [README](./컴퓨터구조개론_조형민/README.md) | [notices](./컴퓨터구조개론_조형민/notices.md) | [assignments](./컴퓨터구조개론_조형민/assignments.md) | 1~6주차, [7주차 세팅](./컴퓨터구조개론_조형민/7주차/study.md) |
 
 ## 전체 관리
 
@@ -37,16 +37,20 @@
 │   ├── README.md
 │   ├── notices.md
 │   ├── assignments.md
-│   └── 1주차/
-│       ├── study.md
-│       └── week1-course_overview.pdf
+│   ├── 1주차/
+│   │   ├── study.md
+│   │   └── week1-course_overview.pdf
+│   └── 7주차/
+│       └── study.md
 ├── 시스템프로그램_엄영익/
 │   ├── README.md
 │   ├── notices.md
 │   ├── assignments.md
-│   └── 1주차/
-│       ├── study.md
-│       └── SP00(CourseOutline)-(2026-2)-(SWE2001-41).pdf
+│   ├── 1주차/
+│   │   ├── study.md
+│   │   └── SP00(CourseOutline)-(2026-2)-(SWE2001-41).pdf
+│   └── 7주차/
+│       └── study.md
 ├── 알고리즘개론_김형식/
 │   ├── README.md
 │   ├── notices.md
@@ -56,41 +60,65 @@
 │   │   ├── induction_교수님추천 참고예제.pdf
 │   │   ├── lec00_overview.pdf
 │   │   └── lec01_preliminaries.pdf
-│   └── 2주차/
-│       ├── study.md
-│       ├── Performance Analysis.pdf
-│       ├── Merge Sort.pdf
-│       └── big_o.pdf
+│   ├── 2주차/
+│   │   ├── study.md
+│   │   ├── Performance Analysis.pdf
+│   │   ├── Merge Sort.pdf
+│   │   └── big_o.pdf
+│   ├── 6주차/
+│   │   ├── study.md
+│   │   ├── Count sort.pdf
+│   │   ├── Radix sort.pdf
+│   │   ├── MIT-Linear-Sorting-script.txt
+│   │   ├── MIT-Lecture-7-Sorting-script.txt
+│   │   ├── Assignment_Min_Max_Median_PQ.pdf
+│   │   └── PQ_Examples.zip
+│   └── 7주차/
+│       └── study.md
 ├── 운영체제_신동군/
 │   ├── README.md
 │   ├── notices.md
 │   ├── assignments.md
-│   └── 1주차/
+│   ├── 1주차/
+│   │   ├── study.md
+│   │   └── OS01-OS intro.pdf
+│   └── 7주차/
 │       ├── study.md
-│       └── OS01-OS intro.pdf
+│       └── OS08-PageReplacement.pdf
 ├── 캡스톤설계프로젝트_타메르/
 │   ├── README.md
 │   ├── notices.md
 │   ├── assignments.md
-│   └── 1주차/
-│       ├── study.md
-│       └── financial-support/
-│           ├── README.md
-│           ├── Capstone Design Financial Support.zip
-│           ├── 붙임1. 2026학년도 2학기 캡스톤디자인 지원사업(실습비).hwp
-│           ├── 붙임3. [서식8] 실습비 청구서 (1).xlsx
-│           ├── 붙임4. 참여학과 총괄표 (1).hwp
-│           └── 붙임5. 캡스톤디자인 청구서 작성법 (1).pdf
+│   ├── 1주차/
+│   │   ├── study.md
+│   │   └── financial-support/
+│   │       ├── README.md
+│   │       ├── Capstone Design Financial Support.zip
+│   │       ├── 붙임1. 2026학년도 2학기 캡스톤디자인 지원사업(실습비).hwp
+│   │       ├── 붙임3. [서식8] 실습비 청구서 (1).xlsx
+│   │       ├── 붙임4. 참여학과 총괄표 (1).hwp
+│   │       └── 붙임5. 캡스톤디자인 청구서 작성법 (1).pdf
+│   └── 7주차/
+│       └── study.md
 └── 컴퓨터구조개론_조형민/
     ├── README.md
     ├── notices.md
     ├── assignments.md
+    ├── midterm-prep/
+    │   ├── 목차.md
+    │   ├── 00-sample-midterm-with-answers.pdf
+    │   ├── 01-2022-fall-midterm-with-answers.pdf
+    │   ├── 02-2023-fall-midterm-with-answers.pdf
+    │   └── 03-2024-spring-midterm-with-answers.pdf
     ├── 1주차/
     │   ├── study.md
     │   └── CA_Lecture_01.pdf
-    └── 2주차/
+    ├── 2주차/
+    │   ├── study.md
+    │   └── CA_Lecture_02.pdf
+    └── 7주차/
         ├── study.md
-        └── CA_Lecture_02.pdf
+        └── sample_midterm_withAnswers.pdf
 ```
 
 PA 구현 설명은 각 과목의 `pa-study.md`에서 연결합니다. 개별 과제 `study.md`와 시프실 주차별 `submitted/` 소스 보관 구조는 [PA 학습목차](./PA-학습목차.md#보관-방식)에 정리되어 있습니다.

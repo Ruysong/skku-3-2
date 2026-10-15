@@ -1,0 +1,870 @@
+스크립트
+
+
+동영상에서 검색
+0:00
+The following content is provided under a Creative Commons license. Your support will help MIT OpenCourseWare continue
+0:06
+to offer high quality educational resources for free. To make a donation or view additional materials
+0:13
+from hundreds of MIT courses, visit MIT OpenCourseWare at ocw.mit.edu.
+0:22
+PROFESSOR: Last lecture on sorting. Yay.
+0:27
+And it's one of the coolest lectures on sorting, I would say. We're going to talk about linear-time sorting, when it's
+0:33
+possible and when it's not possible, and this lecture sort of follows the tried and tested
+0:40
+mathematical structure which is theorem, proof, counterexample.
+0:45
+So we're going to start with a theorem which is that sorting requires n lg n time at least in the worst case
+0:53
+and we're going to then prove that in fact, you can get away with linear time sometimes.
+1:00
+Both of these terms are correct, but they're slightly different models of computation. Remember models of computation from lecture two?
+1:06
+So we're going to talk about a new model of computation, which we've sort of been using for most algorithms lately,
+1:13
+called the comparison model. And it's a model of computations that's really useful for proving lower bounds which
+1:18
+we haven't done much of yet. We're going to prove two very simple lower bounds. One is that searching requires lg n time.
+1:24
+This is basically binary search is optimal. And the other is that sorting requires n lg n time. This is that merge sort is optimal.
+1:31
+And then we're going to break outside of that comparison model, work in a different model of computation, our more
+1:36
+usual RAM model, and show that in certain situations, we can get linear time.
+1:42
+So that's the plan. Let's start with this comparison model.
+1:49
+1:56
+So the idea in the comparison model is to restrict what kind of operations we can do to be comparisons.
+2:03
+It's very straightforward. All input items are black boxes, you could say,
+2:16
+in that you don't really know what they are. And a formal notion of black boxes
+2:22
+is something we talked about last class at the end, abstract data type. So it's a data structure, if you will.
+2:27
+Every item that you're given is a data structure. You want to sort them.
+2:32
+And the data structure supports a single operation which is compared to another one.
+2:38
+Only operation allowed-- I guess I should say plural actually--
+2:52
+are comparisons. I'm going to be nice and I'll let you do less than, less than
+3:01
+or equal to, greater than, whatever. I guess there's only one other. Well, there's two more, greater than or equal to and equals.
+3:09
+So you can do all the usual comparisons. You get a binary answer, yes or no, and those the only operations you're given.
+3:15
+And basically the last four lectures
+3:22
+have all been about algorithms in this model. So merge sort, it moves items around.
+3:27
+It's changing pointers to items, but the only way it manipulates items or evaluates them
+3:33
+is to compare one against the other. Heaps and heaps sort also only compare.
+3:40
+Binary search trees only compare. Everything we've been seeing so far is about comparisons.
+3:47
+And so all the algorithms we've seen so far are in this model and we're going to prove that they are optimal in this model.
+3:53
+That's the plan. I should also define the cost of an algorithm.
+3:58
+Time cost is just going to be the number of comparisons. This is the weird part, I guess, of the model.
+4:04
+So in everything we've done so far, we've been in, I guess,
+4:11
+pointer machine or RAM, either way. We've been showing binary search trees or AVL trees,
+4:17
+you can do order lg n time, in the regular notion of time. But in particular they do order lg n comparisons.
+4:24
+And what we're going to show on the-- this is only interesting from a lower bound perspective-- we're going to show that even if you just count comparisons,
+4:31
+you can do whatever other crazy things you want. You need lg n time to search. You need n lg n time to sort.
+4:38
+So that's our goal.
+4:49
+So to prove that we're going to introduce the notion of a decision tree.
+4:55
+5:09
+So the idea is the following: if we know that our algorithms are only comparing items, we can actually sort of draw
+5:17
+all the possible things that an algorithm could do, so any comparison algorithm.
+5:24
+5:31
+So this focusing in on comparisons lets us take a tree perspective of what our algorithm does--
+6:09
+all possible comparisons and their outcomes
+6:26
+and the resulting answer.
+6:32
+I think this would be a lot clearer if we look at an example-- binary search,
+6:42
+how you search a simple algorithm. Look at the middle compared to the item you're searching for go left or go right.
+6:49
+And our idea-- I didn't write it here--
+6:57
+is to look at a particular value of n, n being the size of your problem, so binary search,
+7:05
+you're searching among n items for another item. And I'm going to keep it simple, n equals three.
+7:15
+I think I'm going to go a little wide, use the whole board.
+7:22
+So n equals 3 we've got array, say
+7:28
+index turning at zero-- pretty simple binary search-- look in the middle, go left or go right.
+7:36
+But I'm going to write out this algorithm explicitly to say, all right, first thing I do is compare is A 1 less than x?
+7:47
+That's in all cases, no matter what the array is as long as n equals three, this is the first operation you do.
+7:52
+The answer is either yes or no.
+7:57
+If the answer is no, that means x is less than or equal to A 1,
+8:04
+so it's to the left. Then we compare with A 0. Is A 0 less than x?
+8:11
+Answer is either yes or no. If the answer is no, we're kind of done.
+8:19
+We know that x is over here or it might actually be equal to A 0.
+8:24
+If you want to figure out whether it's equal or less than, there will be one more step. But I'll just stop it here.
+8:29
+We'll say, well in this case, x is less than or equal to A 0. I'm going to put it in a box, say that's done
+8:35
+where the circles are the decisions. OK? If the answer is yes-- there's no to this question, yes
+8:42
+to this question-- then you know that x falls in between here. Probably need a wider box for this.
+8:49
+So we have A 0 is less than x-- that was the yes to this--
+8:56
+and the note of this means that x is less than or equal to A 1, and so we basically identified where x fits.
+9:02
+It's in between those two values, possibly equal to this one. Again, one more comparison, you could figure that out.
+9:07
+And then if x is to the right of A 1, so this is true,
+9:15
+then we check x against A 2 and the answer is either no or yes.
+9:28
+And in the no case-- well I've conveniently laid things out here, it's sequential-- in the yes case, x is bigger than A 2
+9:37
+so it's outside the array. It's to the right. That's the answer.
+9:44
+Set. Yeah. And in the other case, it's in between A 1 and A 2.
+9:50
+9:56
+It's a tedious process to write out an algorithm like this because a binary search-- it's not so bad-- but if you tried
+10:05
+to write a sorting algorithm out like this where the answers are down the bottom, here's the sorted order, and all the comparisons you do here,
+10:13
+the tree will actually be of exponential size. So you don't actually want to represent an algorithm like this unless you're just trying to analyze it.
+10:21
+But it's nice to think of an algorithm this way because you see all possible executions all at once.
+10:26
+10:32
+Let me talk about some features of this tree versus the algorithm. So every internal node-- actually,
+10:45
+I'm going to go over here.
+10:52
+So we have a decision tree and we
+10:58
+have an algorithm that decision tree represents.
+11:03
+And so when we have an internal node in the decision tree,
+11:09
+that corresponds to a binary decision in the algorithm.
+11:15
+In this case, we're only looking at comparisons.
+11:22
+Slight technical detail, decision trees are a little more general than comparisons. Could be any binary decision here and everything I say
+11:29
+will be true about any binary decision you make. Comparisons are the ones we kind of care about
+11:35
+because all of our algorithms are doing that. And then a leaf in this tree corresponds to-- it stores
+11:49
+or it represents that you've found the answer.
+11:54
+Maybe I'll say found.
+12:01
+When the algorithm terminates, returns some answer to the problem, that's what we write down here.
+12:08
+Here's where x is in this array and, yeah, we're done.
+12:16
+What else do we have? Here's some puzzles for you.
+12:25
+If I just wanted to look at a single execution of the algorithm, what does that correspond to in the tree?
+12:31
+Yeah. AUDIENCE: Going from the root all the way down to the leaf.
+12:38
+PROFESSOR: Going from the root down to a leaf. This is what I normally call a root-to-leaf path, technically
+12:43
+a downward root-to-leaf path. How about the running time of that execution?
+12:52
+How long does it take? Keep going? AUDIENCE: Lg n.
+12:58
+PROFESSOR: Lg n in binary search, but in general. AUDIENCE: The length of that path.
+13:04
+PROFESSOR: The length of that path. Yeah.
+13:11
+Got to make sure we get n cases right but I think it's correct, so if here is an execution of the algorithm, when x happens
+13:18
+to be between A 0 and A 1, we do one comparison here, a second comparison here, and then we're done.
+13:24
+So the cost was two and indeed the length of this path is two. So it works out, no off-by-one errors.
+13:33
+All right, now exciting one for us, what we care about all the time in this class
+13:39
+is worst-case running time. This is a feature of the entire algorithm.
+13:45
+What is the worst-case running time of a given decision tree? Yeah.
+13:50
+AUDIENCE: The height of the root, the height of the tree. PROFESSOR: The height of the root also called the height of the tree.
+13:55
+Yep.
+14:03
+Or the depth of the deepest leaf, whatever. So in this case all the leaves have the same level, but in general we care about the overall height.
+14:10
+How many levels in this tree are there? It's the number of levels minus one, technically.
+14:16
+But the length of longest root-to-leaf path is the definition of height.
+14:21
+Here it's two. In general we know for binary search it's lg n,
+14:27
+but given an arbitrary decision tree, we just have to figure out what the height of the tree is and we'll figure out the worst-case running time.
+14:32
+So this is why decision trees are interesting. Not because it means they're pretty I guess, but the reason
+14:39
+they're going to be useful is we have this kind of hard question which is how much time do you need to solve a problem?
+14:46
+And we're translating it into how low can you make your tree, which is a problem we know a lot about.
+14:53
+Trees are pretty simple. These are binary trees. They're rooted, and so we know lots of good things.
+15:00
+So let's prove some lower bounds.
+15:25
+So I claim that for searching-- maybe I should define the problem a little more formally--
+15:32
+I want to claim a lg n lower bound. So let's say for searching I have n preprocessed items.
+15:42
+15:49
+Then finding a given item among them in the comparison model,
+16:05
+so all you're allowed to do are compare items and other stuff, but the only things you're allowed to do with the items
+16:12
+is compare them.
+16:18
+Requires omega lg n comparisons in the worst case.
+16:25
+It's kind of tedious to write down these theorems, but for our first lower bounds, I thought I'd be super explicit.
+16:31
+I mentioned here that the items are preprocessed
+16:37
+to mean you could do whatever you want the items ahead of time, that's for free. So I can sort them in particular,
+16:42
+which lets me do binary search. I could build them into an AVL tree, could do lots of things,
+16:47
+but no matter what I do to find another item takes lg n time.
+16:57
+Can someone tell me why? Who doesn't have the lecture notes right in front them,
+17:04
+that would make it easy. This is a little more interesting,
+17:12
+but we had all the tools at our disposal now. We want to show that this at least lg n.
+17:20
+Why? Yeah. AUDIENCE: [INAUDIBLE] have a no or yes, right?
+17:26
+So it's-- PROFESSOR: Right. AUDIENCE: --omega lg n tree. PROFESSOR: OK. At each step, we only have a no or yes. That's a binary tree.
+17:32
+So that makes you think lg n. AUDIENCE: That's possible, it could be lg n.
+17:39
+PROFESSOR: Maximum actually could be arbitrarily large. You could do a linear search and the height will be m.
+17:44
+We care about the minimum of course. Why does it have to be-- why does the height of a tree
+17:50
+have to be at least lg n? There's one more thing we need to say. Yeah. AUDIENCE: The tree has to contain all possible--
+17:56
+PROFESSOR: Because the tree has to contain all possible-- answers, let's say. Yeah, exactly.
+18:02
+I think that's worth a pillow. See if I can do this-- oh!
+18:08
+Ouch. I knew it was only a matter of time. Sorry.
+18:14
+I'll pay you later. Damages.
+18:20
+At least I didn't hit a laptop or something.
+18:26
+All right, so decision tree is binary--
+18:34
+that was the first thing-- and it must have at least n leaves, one for each answer.
+18:47
+18:54
+At least. Now, at the leaf you have to know what the answer is, but there may be many leaves that have the same answer.
+19:01
+That's possible. And indeed that will happen not for binary search but typical algorithm.
+19:07
+There's multiple paths to get the same answer, so there may be more leaves than n.
+19:13
+And in fact, if you want to know this kind of thing, where x fits in this perspective, there's n plus 1 answers.
+19:21
+If you want to know is it equal or is it strictly between two things there's 2n plus 1 answers. But in all cases, there's at least n answers
+19:28
+and that's all I need. In particular there's-- say x exactly matches one
+19:34
+of the given items-- there's n items-- so you need to have at least n leaves.
+19:40
+Maybe have more, I don't care. But it I have a binary tree with at least n leaves, the height has to be at least lg n.
+19:47
+19:55
+We're done. The height is the worst-case running time. Super, super easy proof.
+20:01
+So easy, it's never been taught in 006 before.
+20:07
+But I think it's a good warm up for the next one which is sorting. Sorting is really the same thing.
+20:15
+It's not going to be any harder except that it's a little more
+20:21
+math but really not much more.
+20:27
+So now we know-- we just proved two useful facts-- one is that binary search is optimal in a comparison model,
+20:35
+the other is that binary search trees are actually a good way to solve a problem. If your goal is to solve search and all you're allowed to do
+20:42
+is comparisons, then you need lg n time. And so the search or next larger or next smaller, predecessor,
+20:51
+successor, in binary search trees need to take at least lg n time. No matter how you do it, even if you don't use a tree.
+20:59
+So this justifies why binary search trees are interesting, because again the comparison model, that's the best you can hope to do.
+21:07
+So that's comforting. That's why I like lower bounds and theoretical computer science in general because you know when you're done,
+21:14
+at least in a given model. Whenever-- we're never actually done, because we can always change the model.
+21:22
+At least we understand the limitations of comparisons. So for sorting, we claim a lower bound of n lg n.
+21:28
+You've heard n lg n a zillion times. You probably know this is true, but now we actually get to prove that it's true.
+21:36
+So we just follow the same strategy. Decision tree is binary. The question is how many leaves does it have to have?
+21:45
+So for sorting-- I didn't draw up an example--
+21:50
+I'm not going to draw an example of sorting because the trees get ginormous. Right? Because of the depth is n log n, the height is n log n,
+22:01
+then there's binary branching everywhere. That's a lot of nodes. Two to the n lg n is big.
+22:10
+More than two to the n even, so it's hard to draw a picture even for n equals 3.
+22:15
+You can do it. People have done it. I don't want to. I'm lazy.
+22:20
+But the internal nodes look just the same. You're comparing two items, A I verses
+22:26
+A J. I'll just draw the generic version. You have A I less than A J, question mark.
+22:34
+And then you'll have a no and a yes. So that's what a typical comparison looks like. Swaps don't appear here, because we're just
+22:42
+looking at the comparisons. And then when you get down to a leaf, a leaf-- this is the interesting part-- the leaf will look like this.
+22:54
+Well I took the original A 5 and that turned out to be the smallest element. Then-- maybe I'll write it this way--
+23:01
+then I have A 7, that turned out to be the next smallest element, then A 1 then A 0, whatever.
+23:13
+Hey, right at the end, somehow you know the sorted order and you can just write it down.
+23:18
+We're not charging for this. We're only charging for comparisons. So however, maybe you've done swaps,
+23:23
+in the end you know what the final order is and so you just write it down. And your goal is to make enough comparisons that you figure out
+23:31
+what the sorted order is. We claim the number of comparisons here has to be at least n lg n.
+23:38
+OK, why? Because the decision tree is binary and the number of leaves
+23:52
+has to be at least the number of possible answers. Could be more because each answer could appear
+23:58
+in several leaves and it probably will in a typical sorting algorithm. And how many possible answers are there?
+24:05
+Batter? AUDIENCE: n factorial. PROFESSOR: n factorial, number of permutations.
+24:12
+This is a permutation of the input sequence and if all the items you're given are distinct,
+24:18
+there will be n factorial permutations of them. So that's the worst case.
+24:25
+So n factorial. Now the tricky part is the algebra.
+24:32
+Say, oh, well then the height is at least lg base 2 of n factorial-- lg base 2 because it's a binary tree.
+24:41
+You can put a parentheses here if you want, they're not necessary.
+24:46
+So now I want to claim that this is n lg n. How do I do that?
+24:53
+Maybe you just know? Yeah. AUDIENCE: We can either use Stirling's approximation
+24:58
+or we could write it out as a sum [INAUDIBLE]
+25:03
+PROFESSOR: Wow, cool. All right, you could either use Stirling's approximation or write it out as a sum. I've never done it with it sum.
+25:10
+Let's do that, that sounds like fun. So, right? I like that because you know Stirling's-- it's like
+25:17
+you've got to know Stirling and that's kind of annoying. What if you don't know Sterling? But we all know the definition of factorial.
+25:23
+I mean, we learned in grade school just because it's fun, right? Oh, I guess we-- I mean we did because we're geeks.
+25:30
+And then we know the lg of our product is the sum of the lg's. So this is lg n plus lg n minus 1 plus lg 2 plus lg 1.
+25:44
+I think at this point it's easier to use summation notation, so sum of lg i.
+25:52
+OK now we've got to do sum, this is 1 to n I guess.
+25:57
+Now we need to know something about lg's, so it's not so easy. It's easy to show-- I mean, certainly this is at most n lg
+26:06
+n, but we need show that it's at least n lg n. That's a little trickier. I happen to know it's true.
+26:12
+But I'd know it even in the summation form
+26:17
+because I know that lg-- lg looks like this basically,
+26:23
+and so if you're adding up, you're taking the area under this curve right? Oh, look at these integrals.
+26:28
+Oh, integrals. Brings back memories. This is discrete math class, though, continuous stuff.
+26:35
+So you're adding up all these numbers, right? This is lg i over all the i's and basically all of them
+26:41
+have the same length. Like if you look at the last half, that would be one way to prove it.
+26:47
+Ah, it's fun, haven't done summations in so long. Good stuff. [? IS042 ?] material but applied to algorithms
+26:55
+and in algorithms it's fun because you could throw away constant factors and life is good.
+27:01
+We don't need exact answers really. You can find an exact answer, but let's say you look at the last half.
+27:08
+Those are all going to be basically lg n. You can prove that. So this is going to be at least the sum where
+27:15
+i equals n over 2 n of lg i.
+27:21
+Here I just throw away the first out of our two terms. And this is going to be at least sum i equals n over 2
+27:28
+to n of lg n over 2.
+27:34
+Each of these terms is bigger than lg n over 2 so if I just say, well, they're all lg n over 2 that's
+27:39
+going to give me something even smaller. Now the lg n over 2, that's just lg n minus 1.
+27:48
+I love this. It's going to give the right answer even. So that's an equals and so this equals n lg n minus n.
+27:58
+That summation I can do. All the terms are the same, sorry n over 2.
+28:05
+Not quite what I wanted. Close enough.
+28:10
+Sorry there is only n over 2 terms here, ignoring floors and ceilings. So I get n lg n divided by 2.
+28:18
+This is omega n lg n because this n term is smaller than n lg n.
+28:24
+So this one dominates. Doesn't matter if this one's negative, because it's smaller. This is omega n lg n.
+28:31
+We're done. Sorting is omega n lg n. Very easy. Who said summations?
+28:37
+All right. Why don't you come collect a pillow, I'm not going to throw that far. Afterwards.
+28:42
+OK. That's one way to do it. Another way to do it, if you happen to know Stirling's formula for n factorial-- n factorial
+28:50
+is about n over e to the n times square root of 2 pi n.
+28:56
+Right? If you do Taylor series approximation of n factorial, the first term, which is the most important term for us
+29:04
+because as the asymptotically dominating term is square root of 2 pi n times n over e to the n.
+29:09
+Hope I got that right. Yeah, clearly I've been studying.
+29:15
+You take lg's of that and you do the same thing of lg of a product is sum of the lg's and you end up
+29:21
+with-- the right answer is actually n lg n minus order n.
+29:28
+So I was off by a factor of 2 here. The linear term-- it does appear,
+29:34
+but it's smaller than this and this is also omega n lg n. If you don't care about constants, it doesn't matter.
+29:40
+If you care about constants, the constant is 1. Kind of nice. Easy to prove a one half.
+29:46
+And if you look at the lecture notes it works through that. But I think we've seen enough of that lower bound.
+29:53
+And that's the end of our lower bound topic. Any questions on that? So it's really easy.
+29:59
+Once you set up this framework of comparison trees and now
+30:05
+it becomes just a question of the height of a comparison tree. Comparison trees are binary.
+30:11
+Just count how many leaves do you have to have, take lg of that and you get a lower bound of that.
+30:16
+AUDIENCE: What is meant by n preprocessed items? PROFESSOR: Oh, yeah.
+30:22
+For searching I was trying to be careful and say, well, if I have n preprocessed items.
+30:27
+AUDIENCE: [INAUDIBLE] PROFESSOR: It means you can do whatever the heck you want. So here's the model.
+30:33
+I give you n items. You can do all pairwise comparisons between those items for free and then I give you a new item
+30:41
+and then I start charging for comparisons. So another way to say it is I only charge between for comparisons between x and the other items.
+30:50
+And even then you need lg n. AUDIENCE: [INAUDIBLE] case for sorting, right? PROFESSOR: With sorting they were not preprocessed.
+30:57
+Yeah, I didn't write the theorem. It's just sorting and given items, no preprocessing. AUDIENCE: What if there were preprocessing?
+31:03
+PROFESSOR: If they were preprocessed, you'd be done in zero comparisons. Yeah, exactly. This theorem is also true if I remove preprocessed,
+31:11
+but in fact then you need n time. Unfortunately this proof technique will only prove a lower bound of log n,
+31:17
+because even if these items were not preprocessed, then you have to do linear search basically.
+31:23
+So if you don't know anything about the items, you need linear time. But this proof will only prove a lower bound of log n.
+31:29
+So this technique, while cool and simple, does not always give you the right answer. It just gives you a lower bound.
+31:36
+May not be the right lower bound, may not be tight. So searching always requires lg n time and what's interesting
+31:42
+is it requires it even when you preprocess the items. Sorting, if you haven't preprocessed the items,
+31:49
+then it takes n lg n. Clear? Good. Now we get to the algorithms part of the lecture, always
+31:55
+the most fun. The moments you've been waiting for. Let me erase comparison trees.
+32:03
+Henceforth and I mean not only this lecture, but also the next three lectures which are about hashing,
+32:10
+we will not be in the comparison model because for comparison model, we're done.
+32:16
+We solved search, we solved sorting, n lg n three ways. I mean, how much more can we do?
+32:22
+So it's time to bump it up a notch, increase our model power.
+32:29
+We've talked about the RAM in particular, Random Access Machine, where memory is in array,
+32:35
+you can access anything in the array in constant time. We're going to use that power of the RAM to sort in linear time,
+32:45
+sometimes.
+32:52
+A more appropriate title for this section of this lecture would be integer sorting.
+32:57
+OK, so far we've been talking about comparison
+33:04
+sorting where the items you're given-- the only thing you know about them is that you can compare them in constant time.
+33:11
+But now we're going to think about the situation where the things that you're sorting are integers.
+33:16
+That's a big assumption but it's a practical assumption a lot of the time. If you're not sorting integers you can map whatever the heck
+33:23
+you're sorting into integers. And usually it's already been done because you're representing it on a computer.
+33:29
+You've already represented your thing is an integer of sorts. Bad pun.
+33:36
+This is an assumption. So we assume-- going to be a little more precise.
+33:43
+The keys you're sorting are integers.
+33:49
+There's still-- I'm going to put a little n here, remember there's n keys.
+33:58
+I'm also going to assume that they're in some range. And for convenience, I'm going to assume that they're all
+34:04
+non-negative-- it's not hard to deal with negative numbers, but it's just convenient to think
+34:09
+about non-negative numbers. So if you start at zero, there's some maximum value,
+34:15
+say k minus 1. So there's k different values they could be. K could be anything. It's a parameter.
+34:20
+We've always had n as a parameter, now we're going to also have k as a parameter.
+34:27
+And just for completeness-- and each fits in a word.
+34:36
+Remember the machine word of your RAM machine?
+34:42
+Words were the things that we could manipulate in constant time. Now this is a very reasonable assumption because we've been assuming so far
+34:48
+you can compare two keys to items in constant time. To get that for integers, you need
+34:54
+to assume that your integers are fitting in words. We usually don't state this assumption, but I thought I'd throw it in just for kicks.
+34:59
+So we've got a bunch of integers, each one fits in a word. I could compare them, that takes constant time, or I could add them or subtract them or multiply them or divide
+35:09
+them or do whatever the heck I want. It turns out you can do a lot more than comparisons
+35:24
+and it turns out this will help us.
+35:40
+I don't know if I want to tell you the answer here. For k-- not too big-- you can sort in linear time.
+35:49
+Believe it or not, this topic, integer sorting,
+35:56
+is still a major area of research. People are still trying to solve this problem. One conjecture is that even in all cases,
+36:05
+you can sort in linear time given any integers that fit in words. This is not yet solved.
+36:11
+Best algorithm is n times square root lg lg n with high probability.
+36:17
+So it's almost-- almost n. It's a lot better than n lg n. I'll just write that for fun case you can't parse in words.
+36:28
+This is the best algorithms to date. I would conjecture you can do linear time in all situations.
+36:34
+We're not going to cover this algorithm. That's a little beyond us. It's in advanced algorithms if you're interested, 6854.
+36:42
+But we're going to show that for a lot of cases of interest when k is not ginormous, it's really
+36:47
+easy to sort in linear time. All right? And our first algorithm to achieve this is counting sort.
+36:56
+Counting sort does not make any comparisons.
+37:03
+It only does other stuff. And it's going to depend on n.
+37:09
+It's going to depend on k. We'll get some running times not bad as long as k is not giant.
+37:14
+So as the name might suggest, what you do is count all the items.
+37:21
+So imagine I give you a bunch of keys like 3, 5 7, 5, 5, 3, 6,
+37:30
+whatever. I'd like to run through this array and say, ah, I see there are two 3's and there
+37:37
+are three 5's and there's one 6, and one 7, so how do I sort it?
+37:44
+I'd like to say, well 3 is smallest key and there's two of them, so I'll write two 3's, then there's three 5's so I'll write three 5's, and then there's a 6
+37:53
+and then there's a 7. That's the intuition. Now how do I-- how I do that with an algorithm?
+38:00
+Suggestions? Yeah? AUDIENCE: [INAUDIBLE]
+38:10
+PROFESSOR: Yeah. Allocate an array of memory, which is my counters-- I'm going to count each k.
+38:15
+I need an array of size k because there are k possible keys. Convenient those two terms start with the same letter.
+38:23
+And then I'll just-- whenever I see an-- I'm going to run through the items in order, when I see an item, I say, OK, well that's key 3.
+38:30
+I will look at index 3 of this array, increment that counter. Then I see 5, increment that counter.
+38:36
+I see 7, I see 5, I see 5, and by the end, I'll know that there are three 5's and two 3's and so on.
+38:43
+That's how I count. And then how do output the items?
+38:48
+You want to keep going? AUDIENCE: [INAUDIBLE]
+38:56
+PROFESSOR: Yeah, just traverse the array of counters and the array is already
+39:03
+written in order by key, so it's really easy. I mean I could draw this array for you if you like at 0, 1,
+39:10
+2 3. Here's the 3 position, it ends up with the value 2.
+39:15
+And if I just go through, a lot of these will have 0's in them, just skip those. When I find a non-zero entry, just
+39:21
+write-- oh, that means there's two 3's there, so I write 3, 3. OK, that algorithm would work but I'm not
+39:27
+going to even write it down, not even going to dignify it, because all it does is sort integers.
+39:35
+But there's a subtlety here which we're going to need in a moment, which is why I stress it, that really we have n items.
+39:42
+Each of them has a key, but it might have other stuff too that we'd like to bring along for the ride.
+39:48
+We'll see why we care about that in a moment. But it's also a typical situation, like you have a spreadsheet and you click sort by this column.
+39:57
+Well every row has a whole bunch of data but you're only trying to sort by one of those fields, that one column.
+40:04
+And that one field may be an integer, but there's all this other stuff you'd like to bring along. And when you say, oh, there are two 3's,
+40:11
+you know there's this 3, which you know maybe has a cloud around it.
+40:17
+There's this 3 which maybe has a heart around it. That's about the limit of my drawing abilities. And now say, oh, there are two 3's but which 3?
+40:24
+Should the cloud go first, should the heart go first? I mean I don't care which goes first, maybe-- I do, actually-- but I will in a moment.
+40:32
+That's another topic. But I'd like to bring that cloud somewhere. I want to put the cloud somewhere,
+40:37
+want to put the heart somewhere. All right, so here's a way to do all that. Basically the same algorithm but I'm just going to use lists.
+40:53
+Still have an array of k things but no longer counters,
+41:00
+now lists. They could be linked lists, they could be python lists. It won't matter for my purposes.
+41:06
+And then I'll say for j and range of n-- that'd
+41:14
+be super pythonic here-- I want to look at the list who's at index a of j and append a of j.
+41:32
+And then the output is going to be an empty list initially.
+41:39
+And then I iterate through the array their k values for that,
+41:47
+and I just say output, extend, list i.
+41:58
+OK. This is counting sort or a version of counting sort. In your textbook, you'll find a different version which
+42:03
+does not use lists, So it's probably more practical because it uses no data structures whatsoever except three arrays.
+42:10
+But it runs in the same amount of time and this is a lot easier I think to think about. This is more modern perspective, if you well.
+42:18
+For every item, if you'd look at them in the given order of your array, you see what it's key value is.
+42:24
+Maybe that's not exactly the same as the item, so it could be key of x is just x. But you know in python sort, for example,
+42:30
+you're given a key function. So you take that key value. The key is guaranteed to be an integer between 0
+42:36
+and k minus 1, so you look at the list, that numbered list, and you just add this item to the list.
+42:44
+OK. But the item is not just the key, it's everything-- whatever that data structure is--
+42:49
+and then you just go through the list and you concatenate them. OK. How long does this take?
+42:54
+How long does this step take?
+43:01
+N? Nope. Constant? Nope. OK.
+43:07
+Look at all the actions. It's order k time. To create an empty list takes constant time. They're k of them.
+43:12
+OK? How long does this step take, just the append?
+43:20
+Constant? Good. Remember, append is constant time from the Python model or your favorite model, anything.
+43:27
+We're assuming the key takes constant time because that's the word, so that's an assumption,
+43:33
+but in the normal assumption. So total time here is order n.
+43:39
+And this thing, well this takes basically the length of Li time.
+43:46
+And so when you add it up, maybe plus 1-- because to look at an empty list you still
+43:52
+need to look at it-- so you add it up and you get order sum of all the Li's is all the items.
+44:00
+And then you get plus 1 for each of them, so you get n plus k. n plus k is the running time of this algorithm.
+44:08
+Add those up. OK, so counting sort is order n plus k. So if k happens to be order n, this is linear time.
+44:16
+But as soon as it's a little bit bigger, you're in trouble. So counting sort's a good warm up, but it's not ultimately what we want.
+44:23
+44:31
+And a much cooler algorithm is called radix sort.
+44:40
+44:45
+It's going to use counting sort as the subroutine, which is why spent all this time on a mediocre algorithm.
+44:52
+And it's going to get a much larger range of k and it will still be linear time.
+45:00
+I'll tell you the answer.
+45:09
+K can be polynomial in n. So like if all your integers are between 0 and n to the 100,
+45:18
+you can sort them in n lg n time. That's a lot bigger. It's not just like 10 n.
+45:24
+I mean you could do 10 n here as well with counting sort. And it's not just like n lg n, but they can go all the way
+45:30
+to n to the 100, still be linear time. So that's what we're going to achieve.
+45:38
+The idea of radix sort is simple. It's actually kind of the Excel spreadsheet approach.
+45:44
+We're going to imagine we want to break each integer into a bunch of columns.
+45:51
+46:03
+How do we do that? Well, the way we normally write down numbers, except not necessarily in decimal, in some arbitrary base
+46:10
+b. So I say, oh, an integer in base b. Well then there's the least significant digit and then the next one and the next one
+46:16
+and the next one, some sequence of digits. And if I know that the maximum value is k,
+46:22
+I know that the number of digits, which I'm going to call-- for each number which I'm
+46:28
+going to call d, is just lg base b of k plus one, whatever.
+46:37
+We've got to be super precise here because if I'm in base b then that's what lg is, right?
+46:44
+So normally we think of lg base 2 because we're writing things in binary. Computer scientists normally think that way.
+46:50
+And fine, so now we decomposed our integer. I'm not going to actually compute this base b representation, because it would take a long time.
+46:57
+I'd have to spend n times lg k time to do that. I don't want to do that.
+47:03
+OK, but just imagine it that way. And then the algorithm as follows,
+47:08
+sort the integers, all of them, by the least significant digit.
+47:15
+47:20
+Sort by the next least significant digit. Dot, dot, dot, sort by the most significant digit.
+47:29
+So there are d iterations here, for d digits. Sort all the integers by the least significant,
+47:35
+all the integers by the next, and so on. It's like in your-- this is a useful technique in Excel,
+47:41
+if you want to sort by several columns-- or your favorite spreadsheet, doesn't have to be Excel, sorry-- you click on the least significant column first,
+47:50
+and then click on all the other columns in increasing order, you will sort by all of them, it turns out.
+47:55
+It's kind of magical that this works. I don't have a ton of time for an example.
+48:03
+Let me first analyze the algorithm. We'll see if we have time for an example. So there are d digits-- oh, and I'm
+48:12
+going to sort each of these sorts of using counting sort.
+48:18
+48:27
+This is I guess sort by digit using counting sort.
+48:33
+So how long does it take to sort using counting sort in this setting?
+48:43
+Normally, it's n plus k.
+48:48
+Here it is, n plus b. Good.
+48:57
+Because all of our digits are between 0 and b minus 1. So we're just sorting by digit.
+49:03
+Now here is where we're using this idea of a key. When we say key, I wanted our integers.
+49:08
+What we do is compute the digit we care about. So if we're in this step, the key function
+49:15
+will be compute the least significant digit, which is like taking it mod b to compute the most
+49:21
+significant digits like dividing by b to the power of d minus 1
+49:26
+or so. OK but it's a constant. You do one divide and one mod, the constant number
+49:32
+of operations. You can extract the digit in constant time. So the key function is constant time and so this works.
+49:38
+We don't have to actually write them all down, just compute them as we need them.
+49:44
+Cool I guess we could compute them ahead of time. It's not a big deal. Fine.
+49:51
+So that's each digit. So the total time is just that times
+49:57
+d because we have d steps. So it's n plus b times d.
+50:03
+Now d was that lg thing, lg base b of n.
+50:09
+I have this b. What should be b? You gotta love the English language.
+50:17
+What should I choose b to be, or not to be?
+50:22
+That's the question. Any suggestions? I want to minimize this, right? I want minimum running time.
+50:28
+So I'd like b to kind of large to make this base large. Sorry, this is not n, this is k.
+50:35
+I copied that wrong out of excitement. Just copying this over.
+50:40
+OK, I'd like b to be large, but I don't want it to be so large because I don't want it to be bigger than n so what should I set b to be?
+50:46
+AUDIENCE: N. PROFESSOR: N, good choice. It's a good trick whenever you have a sum of things you want to minimize,
+50:52
+usually it's when they're equal. Occasionally it's the extreme like when b is 0 or something.
+50:58
+B as 0 not a good plan. Base 0 is pretty slow.
+51:05
+So if I set-- I'll write it here-- you can prove it with a derivative or whatever.
+51:10
+This is going to be minimized when b is-- I'll be vague-- theta n.
+51:18
+So then it's going to come out to n times lg base n of k.
+51:26
+And lo and behold, when k is polynomial in n, it's k to some constant, then that will be linear.
+51:36
+So let me write that. If k equals n to the c, or say is at most n to the c,
+51:46
+then this is going to be order n times c. So if your integers are reasonably small,
+51:53
+you get a linear time sorting algorithm. And reasonably small means polynomial in n, in value.
+51:59
+That's kind of cool. That's radix sort. And we're out of time. There's an example in the textbook or in the notes how this works.
+52:05
+You could prove it by a simple induction.
+Lecture 7: Counting Sort, Radix Sort, Lower Bounds for Sorting
+MIT OpenCourseWare
+MIT OpenCourseWare
+구독자 653만명
+
+구독
+

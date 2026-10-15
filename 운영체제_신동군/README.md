@@ -13,6 +13,12 @@
 - [4주차 학습지도](./4주차/study.md)
 - [5주차 학습지도](./5주차/study.md)
 - [6주차 학습지도](./6주차/study.md)
+- [7주차 학습지도](./7주차/study.md)
+
+## 7주차
+
+- [Page Replacement 목차와 기존 Paging 연결](./7주차/study.md). OS08-PageReplacement.pdf 원본 유지.
+- PA1 코드·보고서는 사용자 제출 완료 확인. 다음 PA 명세·마감은 미확인. 중간고사는 사용자 확정 기준 11/5(목).
 
 ## 6주차
 
@@ -29,6 +35,7 @@
 | 4주차 | [study.md](./4주차/study.md) | OS05-Scheduling2.pdf |
 | 5주차 | [study.md](./5주차/study.md) | OS06-Memory.pdf |
 | 6주차 | [study.md](./6주차/study.md) | OS07-Paging.pdf |
+| 7주차 | [study.md](./7주차/study.md) | OS08-PageReplacement.pdf; 페이지별 탐색 목차 |
 
 ## 운영 메모
 

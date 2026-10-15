@@ -1,0 +1,51 @@
+Sawppy 출력 판 배치 (바퀴/휠허브/서보부품 제외, 19종 135개)
+
+[판1_소품_테스트]
+  - Clip2n125.stl  x88
+  - Clip3n20.stl  x12
+  - Rod Support.stl  x2
+  - DiffLink.stl  x2
+  - Power Panel.stl  x1
+
+[판2_조향너클A]
+  - Steering Knuckle.stl  x2
+
+[판3_조향너클B]
+  - Steering Knuckle.stl  x2
+
+[판4_고정너클_앞코너]
+  - Fixed Knuckle.stl  x2
+  - Front Corner.stl  x2
+
+[판5_뒤코너_바디코너A]
+  - Rear Corner.stl  x2
+  - Body Corner.stl  x2
+
+[판6_바디코너B_로커]
+  - Body Corner.stl  x2
+  - Rocker.stl  x2
+
+[판7_로커바디마운트]
+  - Rocker Body Mount.stl  x2
+
+[판8_차동_보기_배터리트레이]
+  - DiffBrace.stl  x2
+  - Bogie-Body.stl  x2
+  - Bogie-Wheels.stl  x2
+  - DiffEnd.stl  x2
+  - DiffUpper.stl  x1
+  - DiffLower.stl  x1
+  - Battery Tray.stl  x2
+
+[슬라이서 설정]
+  PLA / 레이어 0.2mm / 인필 20~25% / 벽 3줄
+  부품별 출력 방향·서포트는 출력가이드 폴더 참고
+
+[판9 - 서보/모터 부품 재설계 대기]
+  모터 마운트 x6, 조향 서보 브래킷 x4, 조향 커플러 x4
+  원본 STL 2종과 재설계 지시서(CADQUERY_TASK.md)를 판9 폴더에 넣어둠
+  모터·서보 실물 치수 측정 후 CadQuery로 생성
+
+[대체된 부품]
+  Wheel x6, Wheel Hub x6 → 시판 RC 바퀴 + 황동 육각 허브로 대체
+  LX-16A Bracket x10, Coupler x10 → 모터/서보 확정 후 재설계
