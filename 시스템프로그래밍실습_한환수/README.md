@@ -6,6 +6,7 @@
 
 - [공지](./notices.md)
 - [과제/실습](./assignments.md)
+- [PA2 스켈레톤 소스·Makefile](./PA/PA_2/pa2_skeleton_code/) · [PA2 Q&A](./PA/PA_2/qa.md)
 - [1주차 학습지도](./1주차/study.md)
 - [2주차 학습지도](./2주차/study.md)
 - [3주차 학습지도](./3주차/study.md)
@@ -13,6 +14,11 @@
 - [5주차 학습지도](./5주차/study.md)
 - [6주차 학습지도](./6주차/study.md)
 - [7주차 학습지도](./7주차/study.md)
+- [9주차 학습지도](./9주차/study.md)
+
+## 9주차 (10/26~11/1)
+
+- [이번 주 학습지도](./9주차/study.md): 9주차 실습 자료와 제출본을 준비하고, 주간 실습과 PA2를 구분한다.
 
 ## 7주차
 
@@ -35,6 +41,7 @@
 | 5주차 | [study.md](./5주차/study.md) | week5-process.pdf, skeleton code |
 | 6주차 | [study.md](./6주차/study.md) | 새 실습 자료 확인 대기 |
 | 7주차 | [study.md](./7주차/study.md) | 새 실습 원본 대기; PA2·VMShare 연결 |
+| 9주차 | [study.md](./9주차/study.md) | 주간 실습 자료 공간; PA2 11/1 마감 연결 |
 
 ## 바로 기억할 것
 

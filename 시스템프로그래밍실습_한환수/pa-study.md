@@ -7,7 +7,16 @@
 | 과제 | 확인 상태 | 학습 자료 |
 | --- | --- | --- |
 | PA1 파일 검색기 | 제출 압축본 소스 확인, 사용자 제출 완료 확인 | [상세 구현 교안](./PA/PA_1/study.md), [사용자 구조도](./PA/PA_1/architecture.md) |
-| PA2 shell | 과제 PDF는 있으나 별도 완성 코드 없음 | [PA2 명세](./PA/PA_2/PA2.pdf); 5·7주 실습은 기반 연습이지 PA2 완성본이 아님 |
+| PA2 shell | 교수님 스켈레톤 ZIP·소스·Makefile 및 Q&A 보관. TODO가 남은 제공 코드이며 완성 제출본과 구분 | [PA2 명세](./PA/PA_2/PA2.pdf), [스켈레톤 원본](./PA/PA_2/pa2_skeleton_code.zip), [소스](./PA/PA_2/pa2_skeleton_code/), [Q&A](./PA/PA_2/qa.md) |
+
+### PA2 스켈레톤 확인 (2026-10-28)
+
+- ZIP과 풀어둔 소스·헤더·Makefile 19개가 바이트 단위로 일치한다.
+- C·헤더 전체 1,897줄이며, 주석·빈 줄을 제외하면 1,388줄이다. Makefile 41줄은 별도다.
+- 셸 C·헤더 1,578줄, 명령어 C 파일 319줄. `pa2_echo.c`는 제공된 참고 예제이며 채점 대상이 아니라고 주석에 명시되어 있다.
+- lexer/parser, 작업 관리 기반, `jobs/fg/bg` 함수가 제공된다. `shell_src/pa2.c`에는 TODO 표시 18곳이 남아 있다.
+- 직접 구현할 핵심은 명령 실행, `cd/pwd/exit`, pipe·redirection, 시그널 처리 연결과 `head/tail/cat/cp/mv/rm` 6개 명령이다.
+- 줄 수는 제공 코드의 규모이며 본인 작성량이나 완성도를 뜻하지 않는다. 이번 보관에서는 코드를 수정하거나 Linux 빌드·실행 검증을 하지 않았다.
 
 ## 주차별 구현
 
@@ -20,6 +29,7 @@
 | 5 | fork/exec/wait 기반 foreground shell | [완성 week5.c](./5주차/submitted/week5.c) | [5주차 구현](./lab-study.md#5주차-process와-간단한-shell) |
 | 6 | 부모·자식 signal 요청/응답 | [완성 w6.c](./6주차/submitted/w6.c) | [6주차 구현](./lab-study.md#6주차-signal로-부모자식-통신) |
 | 7 | 단일 pipe 또는 redirection shell | [소스·helper·Makefile](./7주차/submitted/) | [7주차 구현](./lab-study.md#7주차-pipe와-redirection) |
+| 9 | System V 메시지 큐 기반 채팅·ACK | [VMShare 작업 소스](./VMShare/week9/w9.c), [Makefile](./VMShare/week9/Makefile), [제출용 압축본](./VMShare/week9/2024315329_w9.tar.zst) | [9주차 자료](./9주차/study.md). 압축본에는 Makefile과 w9.c가 있으며 LMS 제출 완료 여부는 별도 확인 |
 
 ## 버전 선택 규칙
 

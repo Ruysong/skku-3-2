@@ -1,5 +1,12 @@
 # 시스템프로그래밍실습 - 한환수 공지
 
+## 2026-10-27 보관: [PA2] Q&A (10/13 최신화)
+
+- 사용자 제공 공지 원문이며, 10/27은 보관일이다. 제목의 최신화 표기는 10/13이다.
+- 작성자: 박진석 TA.
+- [질답 9개 원문과 빠른 확인표](./PA/PA_2/qa.md)를 PA2 명세 옆에 보관했다.
+- [iCampus 원문](https://canvas.skku.edu/courses/75630/discussion_topics/651940).
+
 ## 2026-09-01 1주차 Course Overview
 
 출처: `1주차/week1-course_overview.pdf`
