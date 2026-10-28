@@ -13,7 +13,12 @@
 - [5주차 학습지도](./5주차/study.md)
 - [6주차 학습지도](./6주차/study.md)
 - [7주차 학습지도](./7주차/study.md)
+- [9주차 학습지도](./9주차/study.md)
 - [중간고사 준비 자료](./midterm-prep/목차.md): RISC-V 기출 3세트와 교수님 예제, 중복·MIPS 자료는 제외.
+
+## 9주차 (10/26~11/1)
+
+- [이번 주 학습지도](./9주차/study.md): I/O·DMA·Pipeline·Hazard를 다루는 84페이지 교안의 탐색 목차. 다음 PA 공지는 별도 확인.
 
 ## 7주차
 
@@ -37,6 +42,7 @@
 | 5주차 | [study.md](./5주차/study.md) | CA_Lecture_05.pdf |
 | 6주차 | [study.md](./6주차/study.md) | 새 강의 원본 확인 대기; Project 0/1 일정 |
 | 7주차 | [study.md](./7주차/study.md) | sample_midterm_withAnswers.pdf; Project 1 명세 연결 |
+| 9주차 | [study.md](./9주차/study.md) | CA_Lecture_09.pdf; 다음 Project 공지 수집 |
 
 ## 바로 기억할 것
 

@@ -6,6 +6,7 @@
 
 - [공지](./notices.md)
 - [과제/퀴즈](./assignments.md)
+- [중간고사 준비: 교안·퀴즈·기출 모음](./midterm-prep/목차.md)
 - [PA0 - xv6 부팅](./Assignment/PA0-booting-xv6.md)
 - [1주차 학습지도](./1주차/study.md)
 - [2주차 학습지도](./2주차/study.md)
@@ -14,6 +15,13 @@
 - [5주차 학습지도](./5주차/study.md)
 - [6주차 학습지도](./6주차/study.md)
 - [7주차 학습지도](./7주차/study.md)
+- [8주차 Thread 교안·퀴즈 목차](./8주차/study.md)
+- [9주차 학습지도](./9주차/study.md)
+
+## 9주차 (10/26~11/1)
+
+- [이번 주 학습지도](./9주차/study.md): OS10 Locks 22페이지 원본과 탐색 목차, 11/5 중간고사 준비 연결.
+- [PA2 CFS 명세·보고서](./pa-study.md): 보고서 2페이지 보관. 실제 xv6 수정 소스·서버 제출 기록과 구분한다.
 
 ## 7주차
 
@@ -36,6 +44,8 @@
 | 5주차 | [study.md](./5주차/study.md) | OS06-Memory.pdf |
 | 6주차 | [study.md](./6주차/study.md) | OS07-Paging.pdf |
 | 7주차 | [study.md](./7주차/study.md) | OS08-PageReplacement.pdf; 페이지별 탐색 목차 |
+| 8주차 | [study.md](./8주차/study.md) | OS09-Thread.pdf, OS09-Thread-Quiz.pdf |
+| 9주차 | [study.md](./9주차/study.md) | OS10-Locks.pdf; 11/5 중간고사 준비 연결 |
 
 ## 운영 메모
 

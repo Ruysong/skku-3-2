@@ -1,5 +1,71 @@
 # 알고리즘개론 공지
 
+## Merge Sort: Scores and Grading Criteria
+
+- 출처: [iCampus 원문](https://canvas.skku.edu/courses/76112/discussion_topics/655085)
+- 작성자: 김승호 TA. 사용자 제공 전문을 2026-10-28 저장소에 반영했으며 원문 게시일은 이 보관일과 구분한다.
+- 총점 5점: hidden tests 3점, 보고서·성능 분석 1점, loop invariant 1점.
+- 출력은 바이트 단위로 일치해야 하며, 시간·메모리·ANSI C 조건이 있다.
+- AI check의 O 표기와 실제 추가 감점·조치는 구분한다. 공지는 정책에 따라 점수에 영향을 줄 수 있다고 안내하며 개인별 최종 조치는 제시하지 않았다.
+- 채점 문의: kimsho98@naver.com, 10/30까지. 본인 점수는 채점표·LMS에서 별도 확인한다.
+
+### 사용자 제공 원문
+
+Hello everyone,
+
+Scores for the Merge Sort assignment are now available. Please check the attached file for your score and test cases. The grading criteria are described below.
+
+**Grading Criteria (Total: 5 points)**
+
+**1. Hidden test cases (3 points)**
+
+- Case 1 (0.3 pts): n = 1,000, stability check
+- Case 2 (0.3 pts): n = 10,000, many duplicate keys
+- Case 3 (0.5 pts): key is the last of 50 attributes, many empty values
+- Case 4 (0.5 pts): key is the first attribute, all values at the 15-character maximum
+- Case 5 (0.7 pts): n = 1,000,000
+- Case 6 (0.7 pts): n = 500,000, many duplicate keys
+
+A case is correct only if your hw1_output.txt is byte-for-byte identical to the expected output. Differences in whitespace or blank lines count as wrong. Your program must read hw1_input.txt and write hw1_output.txt in the working directory. Other file names produce no output.
+
+Time limits: 1 second for Cases 1–2, 2 seconds for Cases 3–4, and 5 seconds for Cases 5–6. Each case was run three times. To pass, every run had to be correct and the median running time had to be within the limit.
+
+Test environment: Ubuntu Linux with gcc, limited to 1 CPU core and 4 GB of memory.
+
+**2. Report and performance analysis (1 point)**
+
+Explanation of how your code works and an analysis of its time and space complexity.
+
+- 1: both are present and adequate
+- 0.5: one is missing or very brief
+- 0: no report
+
+**3. Loop invariants (1 point)**
+
+For each principal loop, including the merge loop, state the invariant and argue initialization, maintenance, and termination.
+
+- 1: complete
+- 0.5: the invariant is stated but the arguments are incomplete, or the merge loop is missing
+- 0: no invariants
+
+**Deductions**
+
+- ANSI C violation (−0.25): applied once if your code produces errors under `gcc -ansi -pedantic`. Warnings are not penalized. Your code was then compiled with plain gcc so the test cases could still be graded.
+- Not using merge sort on a linked list: total score 0
+- Compilation failure with plain gcc: 0 for the test cases
+- Missing source code or report: 0 for that part
+- Late submissions are marked on the score board and handled according to the course policy.
+
+**About the “AI check” column**
+
+The assignment included a mechanism to detect indiscriminate AI use. Submissions where such use was confirmed are marked with 'O'. **Please note that this may affect your score according to the course policy.**
+
+If you have any questions about your score, please contact me at [kimsho98@naver.com](mailto:kimsho98@naver.com) by October 30.
+
+Best regards,
+
+Seungho Kim
+
 ## 2026-10-14 업데이트: 중간고사 시간·강의실·범위 확정
 
 ### 핵심 체크

@@ -1,5 +1,11 @@
 # 알고리즘개론 과제/퀴즈
 
+## HW1 채점 공지 확인 (2026-10-28 보관)
+
+- [Merge Sort 채점 기준·AI check 안내 전문](./notices.md#merge-sort-scores-and-grading-criteria)
+- 총 5점: hidden tests 3점 + 보고서·성능 분석 1점 + loop invariant 1점.
+- 채점 문의는 공지 기준 10/30까지. 본인 점수·추가 조치는 채점표와 담당자 안내를 별도 확인한다.
+
 ## 평가 비율
 
 출처: 2026-08-31 수업 중 구두 안내 및 lec00_overview.pdf

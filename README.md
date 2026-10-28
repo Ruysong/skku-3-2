@@ -6,12 +6,12 @@
 
 | 과목 | 과목 홈 | 공지 | 과제/퀴즈 | 현재 자료 |
 | --- | --- | --- | --- | --- |
-| 시스템프로그래밍실습 - 한환수 | [README](./시스템프로그래밍실습_한환수/README.md) | [notices](./시스템프로그래밍실습_한환수/notices.md) | [assignments](./시스템프로그래밍실습_한환수/assignments.md) | 1~6주차, [7주차 세팅](./시스템프로그래밍실습_한환수/7주차/study.md) |
-| 시스템프로그램 - 엄영익 | [README](./시스템프로그램_엄영익/README.md) | [notices](./시스템프로그램_엄영익/notices.md) | [assignments](./시스템프로그램_엄영익/assignments.md) | 1~6주차, [7주차 세팅](./시스템프로그램_엄영익/7주차/study.md) |
-| 알고리즘개론 - 김형식 | [README](./알고리즘개론_김형식/README.md) | [notices](./알고리즘개론_김형식/notices.md) | [assignments](./알고리즘개론_김형식/assignments.md) | 1~6주차, [7주차 세팅](./알고리즘개론_김형식/7주차/study.md) |
-| 운영체제 - 신동군 | [README](./운영체제_신동군/README.md) | [notices](./운영체제_신동군/notices.md) | [assignments](./운영체제_신동군/assignments.md) | 1~6주차, [7주차 세팅](./운영체제_신동군/7주차/study.md) |
-| 캡스톤설계프로젝트 - 타메르 | [README](./캡스톤설계프로젝트_타메르/README.md) | [notices](./캡스톤설계프로젝트_타메르/notices.md) | [assignments](./캡스톤설계프로젝트_타메르/assignments.md) | 1~6주차, [7주차 세팅](./캡스톤설계프로젝트_타메르/7주차/study.md), financial support |
-| 컴퓨터구조개론 - 조형민 | [README](./컴퓨터구조개론_조형민/README.md) | [notices](./컴퓨터구조개론_조형민/notices.md) | [assignments](./컴퓨터구조개론_조형민/assignments.md) | 1~6주차, [7주차 세팅](./컴퓨터구조개론_조형민/7주차/study.md) |
+| 시스템프로그래밍실습 - 한환수 | [README](./시스템프로그래밍실습_한환수/README.md) | [notices](./시스템프로그래밍실습_한환수/notices.md) | [assignments](./시스템프로그래밍실습_한환수/assignments.md) | [9주차 세팅](./시스템프로그래밍실습_한환수/9주차/study.md) · 10/26~11/1 |
+| 시스템프로그램 - 엄영익 | [README](./시스템프로그램_엄영익/README.md) | [notices](./시스템프로그램_엄영익/notices.md) | [assignments](./시스템프로그램_엄영익/assignments.md) | [9주차 세팅](./시스템프로그램_엄영익/9주차/study.md) · 10/26~11/1 |
+| 알고리즘개론 - 김형식 | [README](./알고리즘개론_김형식/README.md) | [notices](./알고리즘개론_김형식/notices.md) | [assignments](./알고리즘개론_김형식/assignments.md) | [9주차 세팅](./알고리즘개론_김형식/9주차/study.md) · 10/26~11/1 |
+| 운영체제 - 신동군 | [README](./운영체제_신동군/README.md) | [notices](./운영체제_신동군/notices.md) | [assignments](./운영체제_신동군/assignments.md) | [9주차 세팅](./운영체제_신동군/9주차/study.md) · 10/26~11/1 |
+| 캡스톤설계프로젝트 - 타메르 | [README](./캡스톤설계프로젝트_타메르/README.md) | [notices](./캡스톤설계프로젝트_타메르/notices.md) | [assignments](./캡스톤설계프로젝트_타메르/assignments.md) | [9주차 세팅](./캡스톤설계프로젝트_타메르/9주차/study.md) · 10/26~11/1 |
+| 컴퓨터구조개론 - 조형민 | [README](./컴퓨터구조개론_조형민/README.md) | [notices](./컴퓨터구조개론_조형민/notices.md) | [assignments](./컴퓨터구조개론_조형민/assignments.md) | [9주차 세팅](./컴퓨터구조개론_조형민/9주차/study.md) · 10/26~11/1 |
 
 ## 전체 관리
 
@@ -19,6 +19,19 @@
 - [전체 할 일](./tasks.md)
 - [정리 프로토콜](./protocol.md)
 - [OCR 검수 엔진](./tools/ocr/README.md)
+
+## 2026-10-28 자료 반영
+
+- [시프실 PA·실습](./시스템프로그래밍실습_한환수/pa-study.md): PA2 스켈레톤·Q&A와 9주차 코드.
+- [시프 퀴즈 일정](./시스템프로그램_엄영익/assignments.md#후반부-퀴즈-일정) · [중간 기출 모음](./시스템프로그램_엄영익/midterm-prep/목차.md).
+- [알고리즘 MIT 노트](./알고리즘개론_김형식/MIT%20교안/목차.md) · [9주차 DP 목차](./알고리즘개론_김형식/9주차/study.md).
+- [운체 중간 준비 자료 39개](./운영체제_신동군/midterm-prep/목차.md) · [PA2 명세·보고서](./운영체제_신동군/Assignment/pa2/study.md).
+- [캡스톤 중간발표·진행 보고서](./캡스톤설계프로젝트_타메르/9주차/study.md).
+- [컴구 기출·문제 전용 파일](./컴퓨터구조개론_조형민/midterm-prep/목차.md) · [9주차 I/O·Pipeline 목차](./컴퓨터구조개론_조형민/9주차/study.md).
+
+이번 반영은 원본 보관·목차·링크·확정 일정 갱신이다. 새 자료의 전체 페이지 전문 교안화와 수강·제출 완료 확인까지 끝났다는 의미는 아니다. 아래 구조도는 주요 경로를 표시하며 추가 자료는 위 링크와 각 과목 홈에서 찾는다.
+
+점검 메모: 알고리즘 `5주차___/`는 기존 5주차 study와 내용이 같아 원래 `5주차/` 경로로 복구했다. 과목 홈·학습목차의 로컬 파일 링크를 확인했다. 별도로 가져온 Sawppy 출력 원문 가이드에는 재배치 전 STL·미보관 이미지의 상대경로가 남아 있으며, 이번 학습자료 동기화에서 외부 이미지 전체를 재수집하지 않았다.
 
 ## 저장소 구조
 
@@ -37,6 +50,8 @@
 │   ├── README.md
 │   ├── notices.md
 │   ├── assignments.md
+│   ├── 9주차/
+│   │   └── study.md
 │   ├── 1주차/
 │   │   ├── study.md
 │   │   └── week1-course_overview.pdf
@@ -46,6 +61,8 @@
 │   ├── README.md
 │   ├── notices.md
 │   ├── assignments.md
+│   ├── 9주차/
+│   │   └── study.md
 │   ├── 1주차/
 │   │   ├── study.md
 │   │   └── SP00(CourseOutline)-(2026-2)-(SWE2001-41).pdf
@@ -55,6 +72,8 @@
 │   ├── README.md
 │   ├── notices.md
 │   ├── assignments.md
+│   ├── 9주차/
+│   │   └── study.md
 │   ├── 1주차/
 │   │   ├── study.md
 │   │   ├── induction_교수님추천 참고예제.pdf
@@ -79,6 +98,8 @@
 │   ├── README.md
 │   ├── notices.md
 │   ├── assignments.md
+│   ├── 9주차/
+│   │   └── study.md
 │   ├── 1주차/
 │   │   ├── study.md
 │   │   └── OS01-OS intro.pdf
@@ -89,6 +110,8 @@
 │   ├── README.md
 │   ├── notices.md
 │   ├── assignments.md
+│   ├── 9주차/
+│   │   └── study.md
 │   ├── 1주차/
 │   │   ├── study.md
 │   │   └── financial-support/
@@ -104,6 +127,8 @@
     ├── README.md
     ├── notices.md
     ├── assignments.md
+    ├── 9주차/
+    │   └── study.md
     ├── midterm-prep/
     │   ├── 목차.md
     │   ├── 00-sample-midterm-with-answers.pdf

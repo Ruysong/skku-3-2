@@ -6,6 +6,7 @@
 
 - [공지](./notices.md)
 - [과제/퀴즈](./assignments.md)
+- [MIT 원본 강의 노트 5개와 주차 연결](./MIT%20교안/목차.md)
 - [1주차 학습지도](./1주차/study.md)
 - [2주차 학습지도](./2주차/study.md)
 - [3주차 학습지도](./3주차/study.md)
@@ -13,6 +14,12 @@
 - [5주차 학습지도](./5주차/study.md)
 - [6주차 학습지도](./6주차/study.md)
 - [7주차 학습지도](./7주차/study.md)
+- [9주차 학습지도](./9주차/study.md)
+
+## 9주차 (10/26~11/1)
+
+- [이번 주 학습지도](./9주차/study.md): 중간고사 이후 새 강의·MIT 보조 영상·퀴즈·PA를 출처별로 구분해 누적한다.
+- 현재 보관된 교수님 교안은 Dynamic Programming 69페이지이며 LCS와 0-1 Knapsack을 다룬다. 자료 보관·목차 확인과 상세 study 작성 상태는 구분한다.
 
 ## 7주차
 
@@ -35,6 +42,7 @@
 | 5주차 | [study.md](./5주차/study.md) | Count Sort<br>Radix Sort<br>Linear Sorting |
 | 6주차 | [study.md](./6주차/study.md) | Count sort.pdf<br>Radix sort.pdf<br>MIT Linear Sorting·Lecture 7 개별 교안·원문 대본<br>Linear Sorting 퀴즈·사용자 답변<br>Priority Queue 과제·공개 예제 |
 | 7주차 | [study.md](./7주차/study.md) | Median/Order Statistics·DP 수강 목록 연결; 새 원본 대기 |
+| 9주차 | [study.md](./9주차/study.md) | 중간 이후 교수님 교안·MIT 영상·퀴즈·PA 수집 |
 
 ## 바로 기억할 것
 
