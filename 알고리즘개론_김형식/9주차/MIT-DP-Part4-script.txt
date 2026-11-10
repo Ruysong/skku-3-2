@@ -1,0 +1,1184 @@
+
+동영상 정보
+
+
+
+챕터
+
+스크립트
+동영상에서 검색
+Introduction
+0:12
+all right welcome to the grand finale of dynamic programming in 6006 four of four today we are going to
+0:22
+focus in on a particular type of sub problem that we saw at the very beginning with fibonacci which is when
+0:27
+you have an integer input and a natural thing to do with that integer input is look at smaller versions of that integer
+0:35
+and this is going to lead us to a new notion called pseudo-polynomial time we've talked a lot in this class about
+0:40
+polynomial time being a good running time but pseudopolynomial is a pretty good running time and we'll talk about that
+0:47
+and it relates to these integers we'll only look at two exam new examples rod cutting and subset sum
+0:53
+but then we're going to review all the examples we've seen from kind of diagonal perspective so uh as usual
+1:01
+we're applying our swordbot framework with subproblems relations topological order base cases
+1:08
+original problem and time quick review uh we saw
+1:14
+so the hardest part is getting the right set of sub problems uh and there are some natural choices
+1:19
+for sequences we try prefixes suffixes substrings for integers like in fibonacci
+1:25
+there's a given number and you want to compute that at the nth fibonacci number what we ended up doing was solving
+1:32
+fibonacci numbers for all input numbers input integers between 0 and that number n or in this case
+1:40
+capital k and that's a general technique and we'll see two more examples of that today
+1:46
+otherwise we take products of these and often that's enough but sometimes we need to add more sub problems in what we
+1:52
+call sub problem expansion often with extra constraints that let us remember some state about the past
+2:00
+my canonical example that is the piano fingering where we had to remember what our fingering assignment was
+2:05
+in some sense from the previous step in order to compute the transition cost and this is very powerful technique you
+2:11
+can also use it to like play super mario brothers optimally if you have a constant size screen and all you need to remember is what's in the
+2:17
+constant size screen if everything outside that screen resets you can just add that state as a parameter to your sub problem
+2:24
+and you'll be able to solve solve super mario brothers
+2:29
+anyway very very useful and that was sort of the focus of last lecture we won't talk about it much here today and then
+2:36
+we relate these sub problems recursively and this is basically the test of whether your sub problem definition was correct is can you write down a
+2:42
+recurrence relation which is just a recursive algorithm and there's a nice general procedure for how
+2:49
+to come up with these relations which is to just think up some question about the sub-problem solution that if you knew
+2:54
+the answer reduced to smaller sub-problems and then you just locally brute force all the answers to that question
+2:59
+which i like to think of as guessing the answer correctly and then just directly calling the
+3:05
+recursive things but then at the end you have to pay for that guess by looping over all possible guesses in
+3:11
+order to guarantee that you actually find the right one
+3:16
+so once you identify this question it's very easy dp is all about just brute force anything that you want
+3:23
+and usually that leads to pretty good running time as long as the number of possible answers to that question is polynomial
+3:30
+then we need to check this relation is acyclic and then it it's often reduces to
+3:36
+finding a path like a shortest path or something in a dag the subproblem dag uh we need some base cases we need to
+3:42
+make sure we can solve the original problem using one or more sub problems and then we analyze the running time as
+3:47
+usually a number of subproblems times the amount of non-recursive work in the relation plus however much time it took us to
+3:53
+solve the original problem okay so that was our framework we've
+3:58
+seen it four times now slightly refined each time we've mostly added some
+4:03
+general techniques for sub problem definition and how to write relations
+Rod Cutting
+4:12
+so let's do a new example which is rod cutting
+4:18
+this will be pretty straightforward but it will serve as a contrast to the next example we talked about subset sum
+4:25
+so what is the problem the name rod coming comes from
+4:30
+the book clrs but it's actually a pretty practical problem
+4:36
+maybe not for cutting rods but you could imagine you you have some resource
+4:42
+of a given length i like to think because i have been uh wood hardwood shelf shopping recently i
+4:49
+like to think of you have a big plank of hardwood and you get some price for selling that length but you could also cut that plank
+4:56
+into multiple pieces of various lengths that sum to l and you could sell them individually
+5:03
+maybe you make more money that way that's what this problem is all about so you're given the value
+5:08
+of every possible length you could cut we're going to assume all links have to be integers and scale
+5:16
+so that that's true
+5:32
+so capital l here is the original length little l is a candidate length of a piece you
+5:38
+might cut and v of l is the value for cutting off a length uh l rod sub rod
+5:46
+and we're going to assume when we cut we don't lose any material uh you could probably adjust for that but it's not terribly interesting
+5:53
+and we want to know what is the best way to split up our big rod of length capital l into various
+5:59
+rods of small l length different potentially different lengths so i'll call this the max value
+6:05
+partition in mathematics this is called partition a bunch of numbers that sum to a given number
+6:19
+and we want to maximize the total value naturally so here's an example
+6:27
+let's say our original length is seven and we have this table
+6:35
+for lengths one two three four five six seven all the different lengths i'm
+6:42
+going to write down a value that's an integer
+6:47
+cutting off a route of that length and selling it select sell price
+6:54
+it's presumably monotonic but doesn't have to be maybe people really like buying powers
+6:59
+of two length or something and so those sell higher so it doesn't have to be monotonic but in this example it is
+7:07
+and so i have this route of length seven and i could sell it directly for 32 dollars let's say
+7:14
+but i could also split it into say uh one a length one rod and a length six or
+7:21
+a length one rod and two length threes or a length three and a four anything that sums to seven and
+7:29
+probably the most natural thing to do for this problem is like a heuristic this would be a greedy
+7:36
+bang for buck heuristic is what it's usually called is to take the ratio how much money do i get for a given
+7:41
+length divide v of l by l and try to maximize that that would sort of be if i had to pick a single item and
+7:47
+sell many of that type that would be the optimal thing to do so this has a ratio of one that's bad this has a ratio of
+7:53
+five that's better and you stare at it long enough i believe six is the best
+8:01
+has the highest ratio slightly more than uh i can't divide
+8:09
+um slightly better than um let's see slightly slightly worse than
+8:16
+four or was fourth the best
+8:21
+slightly worse than four what do you mean
+8:30
+oh slightly i see the ratio is slightly less than four thank you yeah uh which all of these others are
+8:37
+somewhat worse for example two uh if i double the 3 value i get 26 which is quite a
+8:43
+bit less than 31 and i guess the the closest competitor i
+8:48
+think is 2 because if you multiply this by 3 you get 30. so if i sold three
+8:53
+twos i get 30 but if i sell one six which is the same quantity i get 31 so slight improvement
+9:00
+and so this this item maximizes bank for buck that ratio and so one natural partition
+9:07
+is six plus one i sell one rod of length six and that leaves a rod of length one
+9:13
+and this will give me uh 31 for the six and one dollar which gives
+9:19
+me 32 dollars uh but this turns out to not be the best
+9:25
+which is actually the same as if you just sold it outright but in fact you can do better by selling
+9:31
+this is not obvious stare at it for a while a three and a four
+9:36
+also sums to 7 then we get 13 plus 18 which is
+9:43
+hopefully bigger 33 30 get this right nope i did not get it
+9:50
+right uh that's too small uh we're going to take these two and
+9:57
+sell 3 plus 2 plus 2. then i get 13 plus 10 plus 10 remember
+10:05
+two was a close competitor first for the ratio for six so it's a little better to sell twos
+10:10
+two twos and then a three because then we get thirty three dollars and that turns out to be the best for
+10:16
+this problem and it seems really tricky to figure this out in general there are
+10:21
+exponentially many different partitions can't afford to try them all question can i have negative values
+10:28
+can i have negative values in here uh i think that will work fine i'm not allowed to
+10:34
+have negative lengths or zero lengths i don't want zero length to actually give you something because then i just cut infinitely many zeros but uh the v
+10:42
+of l i think could be negative yeah do i have to use a whole bar
+10:47
+uh in this problem yes i think it wouldn't change much if you
+10:52
+didn't have to use the whole bar we can think about those after we write the dp so um let's
+11:01
+solve this with sort bot so what's the input to this problem well
+11:08
+we have uh i didn't mention this is an integer length
+11:16
+positive integer length so we have one input which is an integer
+11:23
+l and we have another input which is i guess it's like an array of integers
+11:30
+so this is a sequence and this is an integer so if we look at
+11:36
+our list of nice sub problems we could try prefixes or suffixes or substrings of
+11:43
+the value structure or we could try
+11:48
+for that integer smaller integers that's actually what i prefer i think the way to think about this is
+11:54
+to jump ahead to what do we want to what feature of the solution do we want to guess
+12:01
+and presumably we should think about what is some length of rod that we will cut and
+12:07
+sell okay so i have this big rod maybe i sell the whole thing maybe i cut off a thing
+12:12
+of size one and sell it maybe i cut off a thing of size two and sell it um but i have to sell
+12:18
+something unless i'm not selling anything and so uh that's there's only n
+12:25
+different or there's only l different choices for what uh rod lengths to cut off first and so we
+12:32
+can just brute force that in order l time so what problem do we get
+12:37
+if we cut off an integer of some small l length well we just get the same problem with a
+12:43
+rod of length capital l minus small l the values don't change
+12:51
+it happens that i won't use the big values if i cut off some amount of the the problem but i like to think of this
+12:56
+as we're just all we're doing is decreasing big l and so my sub problems are going to be
+13:02
+uh for each small l less than or equal to big l solve that
+13:08
+problem so x of l is max value partition
+13:20
+of uh length l little l for
+13:27
+little l equals zero one up to big l okay so just same problem
+13:34
+but with different choices for big l so this is using this integer sub problem now in this
+13:39
+example that happens to correspond to prefixes of the v array because if i only have length up
+13:46
+to little l that i really only need the prefix of the value array up to little l so you could think of it that
+13:52
+way that's also fine but i think this way is a little more generalizable
+13:58
+okay so i claim this is a good set of sub problems because i can write a recurrence relation which
+Recurrence
+14:06
+is actually pretty simple
+14:11
+like i said uh we want to choose
+14:21
+some piece so we're given a rod of length little l i want to choose how much of that rod to
+14:28
+sell in the next piece so i could cut off something of length one or i could sell the whole thing or
+14:34
+cut off any piece size in between and the money i will get for that is
+14:39
+whatever the value of that piece is plus recursively the maximum i can get
+14:44
+from all the remaining pieces sorry from the remaining length which is little l minus p
+14:52
+okay so very simple inside the formula just the value for the first piece we're guessing what is the first piece we'll
+14:58
+cut off and sell we get the value for that piece and then recursively we see what's the best we can do with
+15:04
+the remainder now we don't know what size the first piece should be so we just brute force it we try all possible
+15:10
+choices for p and take the max that we get out of this formula over that choice and that's guaranteed
+15:17
+to find the best overall because we must cut off some piece now
+15:24
+if you wanted to allow not selling anything in the case of negative numbers you could just add a
+15:29
+zero to this max and then you might stop early if there's nothing left
+15:34
+that's worth selling
+15:40
+okay topological order is very simple we just have these capital l different
+15:46
+problems and if you look at oh uh
+15:51
+yep so we're looking at l minus p p is always at least one so we're always strictly decreasing l in
+15:57
+this recursive call and so as long as i solve the problems in order of increasing little l i'll guarantee
+16:06
+that whenever i'm solving x of little l i'll have already solved all the things i need to call
+16:12
+so if you're writing a bottom up dp this would just be the for loop l equals zero up to big l
+16:19
+in that order this is equivalent to the statement
+16:27
+but the key is to check that this is acyclic because we're always referring to smaller l and so increasing l is a valid
+16:33
+topological order in this sub-problem uh dag defined here
+16:42
+where there's an edge from an earlier thing to evaluate to a later thing to evaluate
+16:48
+okay base case would be x of zero
+16:57
+that's the first thing we'll want to compute here and indeed this formula doesn't make much sense if i have
+17:03
+x of 0 because i can't choose a number p between 1 and 0. even non-strictly
+17:10
+and so what does it mean well if i have a rod of length 0 i can't get any money out of it so that's it it's a 0.
+17:18
+that's an assumption but a reasonable assumption you don't get something for nothing
+17:24
+okay then we have the original problem which is just the length l rod
+17:31
+and then the time to compute this thing how many sub problems are there capital
+17:36
+l plus one so we'll say theta l sub problems
+17:44
+and we'll multiply by uh the amount of time to evaluate this max
+17:49
+just a constant number of things in here not counting the recursive call and so it spent takes little l time little l is
+17:56
+certainly at most big l and so we'll say big o of big l time it's actually a triangular number
+18:04
+but it will only affect things by a constant factor so we get l squared time
+18:13
+and we're done so very simple straightforward dp at this point we've
+18:18
+seen much more complicated examples than this but it highlights a question which is
+18:26
+is uh theta l squared polynomial time
+18:43
+so is this a reasonable running time and i claim the answer is yes this is a
+18:48
+reasonable polynomial running time you might say well of course it's a polynomial look this is a polynomial l squared that's a quadratic polynomial
+18:56
+but it's a quadratic polynomial in l and we haven't really thought about this too hard but
+19:01
+what does it mean to be polynomial time um and this is a notion that's properly
+19:07
+called strongly polynomial time we won't worry about that strongly too much
+19:13
+in this class but if you look this up online you'll see the difference polynomial time means
+19:22
+that the running time is polynomial in the size of the input
+19:31
+and the size of the input is for our model measured in words
+19:40
+machine words remember our good old word ram w bit words it's been very useful because it lets us
+19:45
+assume things like adding two numbers is constant time as long as these numbers fit in a word as long as they're
+19:51
+at most w bits and generally we assume all the things we're manipulating fit in a machine word because that's
+19:56
+what the case where we normally work and so the natural way to
+20:02
+imp to measure the size of an input so in this example this problem rod cutting the input is a
+20:08
+single number l and this value array v of l which is
+20:13
+capital l numbers so i would say n integers and we've generally assumed
+20:20
+didn't mention integer value here as in throughout this class we assume
+20:26
+that all the integers unless otherwise specified fit in a word so we've got one word here
+20:31
+and l words here so the total size of the input to this problem is l plus one integers in this problem
+20:40
+input size is l plus one which we can think of as just
+20:46
+l that means theta l okay so i explicitly didn't want to use
+20:51
+n in this problem because usually we use the letter n for the problem size not quite always
+20:56
+but input size always means input size and so here we can compute it in terms of the specification it
+21:02
+involves l plus one word inputs and so polynomial time should be
+21:08
+polynomial in that input size in l plus one in our example so of course l squared is polynomial and
+21:15
+l plus one so good yes
+21:20
+okay the next example i'm going to show is going to be very similar but the answer will be no make it more
+21:26
+interesting but it'll still seem pretty reasonable so we'll come back to that
+21:34
+issue in a moment let me first show you uh what the subproblem dp looks like for
+21:39
+this problem again took me a while to draw so please admire
+21:45
+so this is the same example of of these values 1 10 13 18 20 31 32
+21:52
+drawn here on a graph it's the complete graph oriented uh in this increasing
+21:58
+way i think this is called a tournament in graph theory uh so we have the base case over here uh
+22:04
+this corresponds to a length zero rod where we get no money and over here we have our full rod of length seven and
+22:10
+i claim the best that we can do is uh 33 and what's happening here is for every
+22:17
+value like three that i could sell a rod of length three for 13
+22:22
+there's an edge that goes from each vertex to 1 3 higher
+22:29
+and those all have a weight of 13 on them and then what we're essentially trying
+22:35
+to do is find a longest path from here to here longest because we want to maximize the
+22:41
+sum of values that we get and we know if we negate all the weights that's the shortest path problem so we could solve that with shortest paths in
+22:47
+a dag but i've drawn here the shortest path tree from the base case um so it actually tells us
+22:55
+that if we had a rod of length seven the best thing to do is to sell it directly for thirty one
+23:02
+the bold lines here are the shortest path tree or the longest path tree i guess
+23:07
+and if we had something in length 10 we should sell it directly if we have something of length 20 we should sell one thing of length 2
+23:14
+and another thing of left sorry one thing of length 4 then we should sell one thing of length
+23:20
+10 of 2 and one of length two we get two times ten points
+23:25
+and for the 33 case we sell one thing of length two one thing of length two and then one thing of length three
+23:31
+is optimal so you can read lots of information from this and if you write down the dp code this
+23:37
+is effectively what it's computing from left to right
+23:43
+okay let's move on to our second problem today
+23:48
+which is subset sum
+24:02
+so here we are given let's say a multi-set
+24:16
+multiset means that i can repeat numbers so this is just a sequence of numbers but i'd like to use set notation because
+24:23
+i want to use subsets because it's subset sum um so this is of
+24:29
+n integers
+Decision Problem
+24:34
+and we're also given a target sum
+24:43
+and we want to know does any subset
+24:52
+sum to the target sum this is actually a similar problem to
+24:59
+rod cutting because rod cutting we also had to split up our number l into different values that summed to
+25:05
+capital l so capital t here is playing the role of capital l but
+25:10
+before we were allowed to cut into any lengths and so it was easy in particular l sums to l here
+25:17
+presumably t is not in this multiset and we need to find a combination of
+25:22
+numbers here that add up exactly to t sometimes that's possible sometimes it's not we're only allowed to use each
+25:28
+number once or as many times as it appears in the subset
+25:33
+okay so here's an example
+25:38
+say a equals two five seven eight nine
+25:47
+uh and two examples are t equals 21 and t equals 25
+25:53
+for that same set so can i get 21 out of these well this involves
+25:59
+arithmetic that's hard i think let's see if i add 7 and 8 i get
+26:09
+15 not quite what i want cheat look at my answer uh yeah
+26:16
+close i see five seven nine uh so this is a yes answer to the
+26:24
+question does there exist any subset because uh 5 7 and 9
+26:32
+sum to exactly 21 and t equals 25 i don't know a good way to prove to you
+26:38
+that there's no way to write 25 with these numbers other than i wrote a program that tried all subsets
+26:43
+and or you could write a program that runs the dp that we're about to give and it will
+26:49
+output no there's no succinct way as far as we know to prove to someone that the answer is no
+26:55
+for a given target sum there is a nice succinct way to prove the answer is yes i just give you a subset we'll talk more about that next lecture
+27:04
+but these are some examples of the question you might ask and the answer that we're looking for this is what we
+27:10
+call a decision problem in its original form we're just
+27:16
+interested in a yes or no answer uh it's a single bit
+27:27
+of course in the yes case we might actually want to find the set and we can do that as usual with parent pointers
+27:32
+just like in the bold lines over here we'll get to that in a moment um but this is a little bit different
+27:38
+from the most the problems we've been seeing with dynamic programming are optimization problems and we're trying to minimize or maximize
+27:44
+something and so we always put a min or a max on the outside in the relation here we're going to have to do something
+27:50
+that involves boolean values yes or no true or false okay so let's solve it this is actually
+27:58
+also going to be pretty straightforward um in that we can just use our standard sets of subproblems
+Subset Sum
+28:07
+so just like the previous problem we have on the one hand a sequence of integers
+28:13
+and on the other hand we're given a single integer t and what turns out to be right is to use
+28:21
+prefix prefixes or suffixes on this sequence and uh integers less than or
+28:28
+equal to t let's think about why
+28:38
+so that was sort bot for rod cutting this is swordbot
+28:44
+for subset sum
+28:51
+again i'll look for a look ahead to what feature of the solution should i
+28:57
+guess well i have these n numbers each of them could be
+29:02
+in my subset or not so i have this binary choice for each ai is it in s or not
+29:09
+that's a lot of questions to answer i can't answer them answer them all at once but i could just start with the first one and say well is a 0 an s
+29:16
+yes or no there's two answers locally brute force if i do that what happens to my
+29:24
+problem what new sub problems do i run into what do i want to recurse on well i've eliminated a zero that will leave a
+29:30
+suffix of the ai's so suffixes on capital a seem like a good idea
+29:36
+and what about my target sum well it depends if i put a zero in my set s
+29:43
+then the target sum for the remainder is t minus a0 so t went down
+29:50
+and so i need i need in my sub problems to represent smaller target sums also
+29:55
+so this is how you figure out what sub problems you should use don't you i mean you could just try prefixes on
+30:01
+this suffixes on this substrings on this and yes or no do i include smaller versions of t here but you can
+30:08
+also just think about try to write a recurrence relation first see what things you are naturally recursing on and then
+30:15
+formulate the sub problems that way so that's what i like to do
+30:24
+so i'm going to have a sub problem for each suffix uh so that's x of i
+30:30
+and for each target sum and i use these capital letters for the for the actual target sum so
+30:36
+that i can use lowercase letters for smaller versions of them so this is
+30:41
+going to be uh does any subset
+30:46
+remember don't first most important thing is to define what your sub problems are don't just
+30:51
+say it's the same problem but where i replace blah blah blah very it can be very ambiguous and so
+30:58
+uh does any subset s of the suffix a from i onwards
+31:06
+some to little t and we're going to have this sub problem
+31:12
+the other important thing is to say how many sub problems there are and what your
+31:17
+indices can vary over so i is going to be between
+31:23
+0 and n and t is going to be between 0
+31:32
+and big t okay so number of sub problems is n plus
+31:38
+one times t plus one or theta n times t cool now i claim i can write a
+31:44
+relation like i said by so we have this suffix from a
+31:50
+from i onwards in a and so i'm just going to because i'm looking at suffixes i want
+31:57
+to keep with suffixes so i should try to guess what happens to a of i because then what will remain is a of i
+32:02
+plus 1 onwards and a of i can either be in my subset s or not so there's two choices
+32:08
+so x of i t is going to be involve two things so there's an
+32:14
+operator here and then i have a set of two items which is
+32:20
+uh i could choose to not put a of i in my subset in that case
+32:28
+i've eliminated a of i and what remains is uh a of i plus 1 onwards and i didn't
+32:34
+change my target sum i i haven't put anything in s so i still want to achieve the same sum
+32:39
+so this is the case where a i is not in s
+32:45
+and then the other case is i put a of i in s
+32:52
+in that case again i've eliminated a of i and so what remains to figure out is what happens to a of i plus 1 onwards but now my target
+33:00
+sum is different because i put a number in my set and so among these items they should sum up to not little t
+33:07
+anymore but now little t minus what i just added which is a i so then if if in this sub problem i
+33:15
+get something that sums to t minus a i and then i add a i to that set i will get something that sums to
+33:20
+exactly t and so that's a valid solution to this problem and because we have brute forced
+33:28
+all possibilities there were only two uh if we combine these in the suitable way then
+33:34
+we will have considered all options
+33:39
+now what do we want here so this is normally i'd write max or min but this is a decision problem the
+33:45
+output is just yes or no so this is a yes or no answer this is a yes or no answer this is a yes or no answer
+33:51
+and so what i want is or
+33:57
+in python this would be called any just are any of these things true because if there's any way to construct
+34:04
+a set that sums to t then the answer to this is yes cool so very simple actually just this
+34:12
+is one of the simplest recurrences but we're solving what i think is a really impressive problem right we
+34:18
+we're asking is there any subset they're exactly two to the n subsets of a here um and we're in some sense
+34:26
+considering all two to the n of them but because we split it up into n local
+34:31
+choices that are binary and do them only one at a time
+34:36
+sort of this is the local brute force versus global brute force global brute force would be trial subsets sum them see which ones add up but we're
+34:44
+in some sense collapsing a lot of these choices be in reusing sub problems that's the whole
+34:49
+point of dynamic programming we're looking at uh for the the rest of the
+34:54
+of the sequence from i plus one onwards i don't really care exactly which subset you choose i only care what it sums to
+35:01
+and that collapses a lot of different options into the same thing i really just want to know is there any way to do it with exactly this
+35:07
+sum so i don't have to think i don't i don't need to keep track if if i said give me all of the
+35:13
+different subsets that sum to t that would be exponential time but because i'm just asking a yes or no question this choice
+35:20
+only takes constant time and we get to sum them instead of product then because we're using memorization that is
+35:27
+the beauty of dynamic programming and the this time analysis rule
+Topological Order
+35:33
+that we only have to sum over sub problems because we only compute each sub problem once so without memoization this would take
+35:40
+exponential time just like fibonacci with memorization magic i just think this is
+35:45
+beautiful so even though it's one of our simpler dps i think it's an impressive one
+35:54
+okay uh topological order well let's look at these function calls so here we
+36:00
+have to be a little bit careful when we call x recursively
+36:05
+we always increment i but sometimes we don't decrement t sometimes t doesn't go down so if i
+36:12
+wrote decreasing t here that would be bad because sometimes i call with the same value of
+36:19
+t and i don't want to get into i want to ensure that this has already been
+36:24
+computed when i try to compute this so i is the right thing and we should say decreasing i
+36:31
+it doesn't actually matter how we order with respect to t just any order that is decreasing
+36:38
+i will be good because these function calls always increase i
+36:44
+okay we need a base case base cases let's see
+36:52
+the natural given this aspect i think the natural thing is to have a base case when
+36:58
+my suffix is empty which is when i equals n so this is x
+37:05
+of uh n comma t for any
+37:11
+little t because we don't have a lot of control of how t is changing but this is easy so this is
+37:18
+saying if i give you no numbers what sums can you represent the only sum
+37:23
+i can represent is 0. okay so if t equals 0
+37:31
+then the answer is yes and otherwise the answer is no
+37:39
+so that's my base case and that's enough and we needed this base case because if
+37:44
+we wrote x of n comma t this would try to call x of n plus 1 which doesn't make sense but x of n call in as a natural
+37:53
+suffix which we only allowed i to go up to n and that's the empty suffix so this is enough we need the
+38:01
+original problem
+38:07
+uh which is the entire string from zero onwards and capital t for little t that's our
+38:15
+target sum and then the running time as i said there are n times t sub
+38:22
+problems theta and the amount of work we spend
+38:27
+for each one that isn't recursion is constant we just do a couple subtractions additions
+38:33
+do an or and recursive calls so constant time so n times t is the running time
+38:40
+of this algorithm let me show you an example as a subproblem tag
+Example
+38:50
+really helpful to see how these are hard to draw but they're easy to read
+38:56
+i think they're helpful to show what's really going on in this dp this remember every node here corresponds to a possible subproblem we
+39:02
+could have so we have the choices for little t on the top the choices for little i on the left so the original problem we
+39:09
+care about is i equals 0 t equals 6.
+39:14
+this is the same example that i showed you before where we have three or no it's a
+39:20
+different example sorry my new set a is three four three one
+39:26
+four numbers here my target value is six this is definitely possible i can add three and three
+39:31
+this shows that a doesn't have to be sorted we're not assuming anything about the order of a and we're allowed duplicate values and
+39:38
+we see indeed there's a y here for yes it is possible and how did i compute that
+39:43
+well i just drew a bunch of arrows so there's vertical arrows here always
+39:50
+going from each problem to the next one above it because we have this dependency x i of t
+39:57
+calls x of i plus 1 comma t so that's
+40:03
+the calls are going in this direction so the dependency order is you have to compute things lower down before you compute things up here
+40:11
+um and indeed down here is the base case where we write yes for the first problem
+40:16
+and no for all the others because we don't have any numbers we can't represent anything above zero okay and then we have these blue
+40:23
+lines i just drew them a different color so they stand out hopefully and they correspond to the
+40:30
+numbers here so our first choice is do we include a zero which is three so that's only possible if we're
+40:39
+trying to represent a number uh that's greater than or equal to three which reminds me i forgot to write down
+40:45
+in this dp i need to say this option is only an option
+40:53
+if a i is less than or equal to t
+40:58
+just move my comments here those are the same so this notation
+41:05
+means i put this item in this set that we take an or of only if this condition holds okay
+41:12
+otherwise i admit it because it's not a choice why is that important because i don't want to call x on a negative value of t
+41:19
+we only are allowed to call x here when t is between zero and capital t
+41:24
+so that's subtlety but important for a correct dp
+41:30
+so then that's why there's no edge from here for example that goes three to the left because there's no vertex there there's no sub problem so
+41:37
+only for uh little t from three onwards we have this edge that goes three back
+41:43
+and that's just the same pattern over and over then our next number is four and so we have these edges that are go
+41:49
+four to the right then our next number is three so we again have edges that go three to the right and then our next number is one so we
+41:55
+have these nice diagonal edges that go one to the right and then what's happening in here at each stage let's
+42:02
+take an interesting one maybe this vertex is we look at each of the incoming neighbors and we take the or
+42:08
+so the incoming neighbor here has a no incoming neighbor here has a yes
+42:13
+and so we write a yes here which means that given just these numbers three and one
+42:19
+we can represent the number three namely by taking this edge of weight three sorry of length
+42:27
+three and then just going straight down to a base case that's yes that's representing 0. so in
+42:33
+this case we this example i didn't draw the parent pointers here but they're in the notes this yes is possible not from going this
+42:41
+way but from going this way so we take the number three then we go down which means we skip the number
+42:48
+four and then we go left which means we take the number three and then we go down which means we skip the number one
+42:55
+okay so we can represent six as three plus three cool so subset sum not only can we solve
+43:02
+the decision problem but by following parent pointers in the yes instances we can actually find a valid subset
+43:07
+question you added that condition to the relation
+43:15
+good question um so ins uh it's it's a generally useful
+43:21
+technique to add if conditions to the cases to only when they apply you can write a lot of dps that way and
+43:27
+that's why i wanted to stress it you could instead of adding this condition
+43:32
+allow the case that little t is negative but you have to think about how negative would it be
+43:38
+you might say well maybe t between minus big t and plus big t is enough i don't think so it should be
+43:45
+um we're at some value t and we subtract some ai we don't know how the ai's
+43:51
+compared to big t probably they're less than or equal to big t because they're not useful if
+43:57
+they're bigger than big t so you could first prune the ais to guarantee all the ais are less than big t then minus big t to big t would work
+44:04
+otherwise it's like minus the maximum ai up to big t would be enough i think
+44:10
+yeah does this restrict to only the positive integers in the input ah do i i am implicitly assuming here
+44:19
+that all the ai's are positive uh i think you can solve it with negative numbers but it's not
+44:26
+uh and maybe we'll do it in recitation it is not as it's not a trivial change to this dp
+44:31
+i've definitely thought about it before yeah so i should have said positive integers
+44:39
+thank you cool all right so uh that's subset sum
+Is it polynomial time
+44:48
+but we come back to this question of is this a good algorithm is it polynomial time
+44:54
+so we have this running time n times t so a new question is is n times big t
+45:02
+polynomial
+45:08
+and the answer is no why because for this problem what is the
+45:15
+input size how many words of input do i have
+45:21
+well i have these n integers and then i also have the target sum so similar to up above our input size is
+45:28
+n plus one okay but now the labels really matter before it was l plus one
+45:34
+and and our running time was a function of l now our input size is just n plus one
+45:40
+but our running time is a function of both n and t
+45:46
+not polynomial in input size
+45:54
+n plus one you cannot write that n n times capital t is less than or equal to
+46:00
+n plus 1 to the 27th power because you just don't know how n and t relate
+46:05
+maybe t is at most n then we're happy but maybe it's not maybe t is 2 to the n why could it be 2 to the n
+46:12
+uh because what do we know about capital t we
+46:18
+assume implicitly throughout the course the t fits in a word that means it's a w bit number
+46:25
+so that means it's at most two to the w and you might think well we know about a relation between w
+46:31
+and n so we know t is at most 2 to the w
+46:39
+if it's w bits and we know that our assumption is
+46:45
+always that w is at least log n that's the word ram trans-dichotomous assumption
+46:51
+but notice we don't know anything about an upper bound on w in order to upper bound t in terms of n
+46:56
+i'd need to say that w is at most log n then this would be at most n and we'd be done but that's not very interesting and generally we allow
+47:03
+w to be arbitrarily large with respect to log n it just has to be at least log n just to be able to index stuff
+47:11
+so but w could be really big much bigger than log n for example
+47:18
+w equals n is not a crazy idea i mean if if i have a machine that can
+47:24
+represent n numbers why not represent n numbers each of which is n bits long and maybe it takes a little
+47:30
+more time to compute on those you might want to scale your running times but it's quite reasonable to think about n-bit numbers
+47:36
+and then this is like n times 2 to the n so this would actually be exponential
+47:41
+time and if w is 2 to the n n times t is exponential in the problem size
+47:52
+which is n plus 1. and that's just an example w could be bigger okay so this is not
+48:00
+what we call a polynomial algorithm or strongly polynomial algorithm but it's still pretty good right as long
+48:06
+as we know that capital t is not ginormous then this is a great algorithm
+48:12
+so it's and we capture that notion with a concept called pseudo-polynomial
+48:24
+it's not the best term but it's the established term it's like polynomial but not quite and the
+48:30
+definition of this term so we have the definition of strongly polynomial time uh now
+48:36
+uh pseudo-polynomial time this i'll write time here so you can measure other things
+48:42
+pseudopolynomial uh is that we're polynomial
+48:49
+uh in the input size just like before
+48:56
+and the input numbers input integers
+49:05
+okay so in this problem the input integers are capital t and a0 a1
+49:14
+up to a n minus 1. so we want now is a polynomial or what some people call a
+49:19
+multinomial where our variables are all of these integers and we want to be polynomial
+49:26
+in them so we're allowed to take some constant power of capital t
+49:31
+and some constant number of the ais we can't just take the product of all of them that would be big
+49:39
+so it's a i guess i should say constant degree polynomial
+Is it pseudopolynomial
+49:46
+and indeed this is a you might call it a quadratic polynomial in the input size and the and one of the
+49:52
+numbers so this is this running time is pseudo poly but not poly
+50:06
+and so while normally we think of polynomial time is good exponential time is bad pseudo-polynomial is what we
+50:11
+normally call pretty good to be informal
+50:19
+yeah so in particular pseudopolynomial implies polynomial in the special case
+50:30
+so if the input integers
+50:36
+are all at most polynomial
+50:42
+in the input size
+50:50
+this should sound familiar this is a constraint we've seen before this is the condition when radix sort
+50:56
+runs in linear time ready sort runs in linear time exactly when all the input integers are polynomially
+51:04
+bounded in n which is the size of the array which is the input size okay so same same condition is appearing
+51:11
+again so this is sort of a fundamental setting to think about and let's see
+51:20
+so in particular other structures we've seen like
+51:26
+counting sort and direct access arrays are also
+51:34
+pseudopolynomial any others fibonacci sorry
+51:42
+rate export yes technically also rate of sort
+51:50
+are all uh they're not strongly polynomial but they are pseudo-polynomial uh here
+51:57
+we thought about this as a dependence on you which we got rid of using hashing
+52:03
+but if you just use the order u running time for say build uh that u is is like are bound on the
+52:11
+input integers and that's only good when this is polynomial in general it's pseudo-polynomial same
+52:17
+with counting sort we had an order u now we improved this in radix sort to this running time that was
+52:22
+uh n times log base n of u
+52:28
+plus n if you want to be careful um
+52:34
+so or put a ceiling uh now this is a running time that's a
+52:40
+little bit better and this is usually called weekly polynomial don't want to spend much time on this
+52:47
+but weekly polynomial is just like pseudo-polynomial but instead of being polynomial the input size and the input integers
+52:54
+your polynomial in the log of the integers
+53:00
+so this is better and it's almost as good as polynomial as strongly polynomial okay we won't
+53:07
+really use this notion the only place that appears in this class is in rating sort but future classes you might care about
+53:14
+so the the nesting is the best thing you can be is strongly polynomial
+53:19
+we just call this polynomial in this class uh then we have weekly polynomial which
+53:24
+is almost as good but you have this logarithmic dependence on the numbers
+53:29
+and then the next level is pseudopolynomial this is not as good here this really only works
+53:35
+well if the numbers are small logarithmic dependence is pretty good because even if they're exponential this
+53:41
+is polynomial sounds funny but log of an exponential is polynomial
+53:47
+all right enough about pseudopoly the last thing i want to talk about is
+Characterization
+53:55
+reflecting on all of the dynamic programs we've seen so far and characterizing them according to the
+54:01
+the big techniques that we used in sort bot the first big technique was how do we
+54:07
+define our sub problems did we take prefixes and suffixes or substrings of a sequence did we have multiple
+54:14
+sequences and have to take products of those spaces did we have integers and have to take smaller versions of those integers
+54:20
+sometimes that leads to pseudo-polynomial algorithms sometimes not and sometimes we also had sub problems
+54:26
+that were defined in terms of vertices this just happened in shortest path problems because that's the only setting where we saw dp over graphs so
+54:33
+let me characterize all the dps we've seen in lecture not the recitation ones for now
+54:41
+in red so for example with the bowling problem
+54:47
+with bowling pins we only had to deal with prefixes or suffixes because
+54:54
+yeah we were only we could just think about what happened for the first couple of pins for example
+55:01
+also for lcs we had to take two different sequences but then we just
+55:07
+guessed what happened at the in with the first two items of each uh of each sequence and so that only
+55:14
+left us with suffixes uh with longest increasing subsequence
+55:20
+again we just guessed whether the first or maybe we assumed that the first item was in
+55:28
+the longest increasing subsequence and then we tried to guess what the next item was but that again eliminated everything in
+55:33
+between so we were just left with a suffix this leads me to another characterization
+55:39
+of the kind of dynamic programming techniques which is for in addition to these basic sub-problems
+55:45
+we often added constraints and expansion and lis is an example of what we call non-expansive constraint where
+55:52
+we just added a constraint to the problem which was i'd want this first item to be in my longest increasing
+55:57
+subsequence but that didn't actually change the number of sub-problems so it didn't expand the number of sub problems this is i
+56:03
+think the only example we saw with this feature most of the other times when we added a constraint we also
+56:10
+increased the number of sub problems which we'll get to okay also in a certain sense there's
+56:19
+multiple ways to think about this one floyd warshall is a problem
+56:24
+or we define subproblems based on prefixes of the vertices right we had vertices 1
+56:31
+through n we said is their shortest path using vertices just 1 to i so that's a prefix of the vertex
+56:38
+set in a particular order so you can think of floyd warshall as being as involving a prefix you can also think
+56:44
+of it as you're given an integer i and you're only allowed to use vertices less than or equal to i and so it's also kind of an integer sub
+56:50
+problem but i will leave it up there also the two examples we saw today rod
+56:56
+cutting kind of uh you could think of it as either a prefix
+57:03
+on the values or i would prefer to think of it down here
+57:10
+where we had an integer and we were considering smaller integers also
+57:17
+and but subset sum definitely had a suffix in addition to having an integer
+57:24
+subproblem so rod cutting you can put down here because we looked at smaller integers or
+57:30
+up here but subset sum really is up here and down here because we both looked at
+57:35
+suffixes and smaller values of t okay uh fibonacci also fits down here
+57:43
+fibonacci was another case where we had a number n and we looked at integers smaller than n ah
+57:50
+good i think i've done these now what problems involve substrings we saw two of them one was the alternating coin game
+57:58
+because we were taking from left or right and so we had to look at substrings in between and the other is parenthesization where
+58:05
+we had to guess something in the middle and that left the prefix before it and the suffix after both of those are typical
+58:10
+ways where you get substring problems uh okay so
+58:16
+pseudo poly both of these are pseudo poly
+58:22
+and those those are the ones that we've seen that are dynamic programs pseudopoly and then with vertices it's all the
+58:28
+shortest path uh problems where we also had a parameter which was a vertex these are natural
+58:34
+because in the goal of sort of single short shortest paths is distance to each vertex and so naturally we had a sub
+58:40
+problem for each vertex for dag shortest paths for bellman ford and for floyd warshall okay back to subproblem expansion we saw
+58:48
+a couple of examples alternating coin game and parenthesization
+58:53
+sorry not parenthesization uh yeah parenthesization sorry arithmetic parenthesization so here we
+58:59
+consider two different versions of each subproblem one where i go first and one where you go first and that was really handy
+59:05
+though not necessary for parenthesization it turned out we needed both min and max in order to solve max
+59:10
+so we really only cared about max so we doubled the number of sub problems to make it solvable for uh piano and guitar fingering
+59:19
+we increase the number of sub problems by a constant or f or some f to the f or some uh for
+59:25
+five fingers this is a reasonable constant um for some amount of state that we wanted to keep track of of the past
+59:33
+and one example where we had linear expansion sort of is bellman ford so here we were
+59:41
+expanding by how many edges are in the shortest path so we really only cared about finding shortest paths we said oh what about at
+59:48
+most eye edges so you can think of that as adding a constraint and then there's n different variations
+59:54
+of this these sub problems which leads to expansion what you could also think of it as just adding a single constraint which is i
+59:59
+care about the number of edges and that input is an integer and then we're looking at the natural subproblem
+1:00:05
+for integers which is we care about up to length n minus 1 and now let's consider all lengths smaller than
+1:00:11
+n minus 1. okay and finally the other main feature we had is in the
+1:00:18
+recurrence relation and all these shortest path tags how many incoming edges did we have how many
+1:00:25
+different branches did we have to consider and then uh combine in some way so we saw a lot
+1:00:31
+of examples with constant branching fibonacci where we just was the obvious two-way branching
+1:00:36
+bowling where we had a couple of choices at the beginning lcs longest common subsequence where we
+1:00:42
+had a couple choices what to do at the beginning alternating coin game similarly
+1:00:47
+do we take from the left or the right so just two choices floyd warshall there's two choices do we
+1:00:53
+use that vertex or not subset sum do we include this item in the subset or not okay
+1:00:58
+so that was all constant branching in a lot of the graph problems we got ordered degree branching which leads to an order
+1:01:04
+e term in the final running time namely dag shortest paths and bellman ford
+1:01:10
+and then a lot of examples had linear branching um in particular longest increasing subsequence where we didn't know what
+1:01:17
+the next increasing item was so there are n possible choices for it parenthesization where we had to choose
+1:01:22
+anybody in the middle as the last operator and rod cutting that we saw today we
+1:01:28
+could cut the first rod we cut could be any length and then finally once you've considered
+1:01:34
+all recursed on all these sub problems you have to combine them somehow and in a lot of the problems we
+1:01:40
+actually just take one the one best choice and that is our final solution
+1:01:46
+and in those problems the final solution ends up being finding some kind of shortest path in a dag
+1:01:52
+but there are a few cases where we actually took multiple solutions and combined them together to get the overall solution
+1:01:57
+and this includes fibonacci which is we added them not too interesting floyd warshall we
+1:02:03
+concatenated two paths and parenthesization is maybe the most interesting where we had to take
+1:02:09
+two parts the prefix and the suffix how to solve them and then multiply or add them together
+1:02:15
+and so these problems are not well represented by shortest path and a dag still a dag involved but it's like a
+1:02:21
+multi-path thing and then finally at the original problem
+1:02:26
+often it's just a single sub-problem is the original problem and there are a few examples namely dag
+1:02:31
+shortest paths and longest increasing subsequence and bellman ford
+1:02:37
+and floyd warshall these were the order that we covered them so the the three shortest paths and then
+1:02:42
+longest increasing subsequence where uh here because we added this condition we had to try all the possible choices
+1:02:48
+for this condition i think uh do we also have one here today no okay um
+1:02:57
+so in fact in retrospect or i mean this we knew this from the beginning but for you in retrospect
+1:03:02
+these four dp lectures were all about showing you these main techniques of dynamic programming
+1:03:08
+from how to set up simple sub problems to different types of basic sub problems to constraining or expanding those sub
+1:03:14
+problems and having initially very simple branching and then getting to bigger branching and different kinds of
+1:03:20
+combination we wanted to show you all these ideas in some order and if you look back at the sequence that we covered problems we're kind of
+1:03:27
+slowly adding these different main techniques to dp and that's why we
+1:03:32
+chose the examples we did there of course many more examples of dp very powerful technique
+1:03:37
+but that's the end
+1:03:44
+you
+18. Dynamic Programming, Part 4: Rods, Subset Sum, Pseudopolynomial
+MIT OpenCourseWare
+MIT OpenCourseWare
+구독자 657만명
+
+구독
+

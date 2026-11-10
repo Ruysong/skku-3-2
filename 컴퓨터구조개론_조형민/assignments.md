@@ -81,3 +81,16 @@
 | package | build artifact와 object file 제거, project file을 제출 directory 바로 아래에 둠 |
 | 협업/AI | 협업 금지. AI 보조는 허용되지만 본인 code의 originality와 설명 책임은 본인에게 있음 |
 | 마감 | 2026-10-16 금요일 23:59:59, 지각 제출 불가 |
+
+<!-- week11-api-20261109:start -->
+## 11주차 API 확인 (2026-11-09)
+
+| 항목 | 마감(KST) | 현재 조회 상태 |
+| --- | --- | --- |
+| [Proj2](https://canvas.skku.edu/courses/76835/assignments/2065807) | 2026-11-20 23:59:59 | API 미제출 |
+
+API 미제출은 확인 시점의 상태다. 아직 마감 전인 항목을 지각·누락으로 표시하지 않는다. 외부 UI 서버 코드 제출, 별도 보고서, 팀 과제의 개인 업로드는 같은 상태가 아니다.
+
+
+주간 목록: [11주차 study](./11주차/study.md). 현재 API 확인 결과가 아래·위의 과거 미확인 상태보다 최신이다.
+<!-- week11-api-20261109:end -->

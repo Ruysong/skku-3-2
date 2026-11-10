@@ -169,3 +169,93 @@ Hello, this is Algorithm TA Heejun Jang.
 출처: TA 장희준, `Notice for Algorithm Lecture Schedule for 09/28, 10/05, 10/12 and Syllabus`
 
 9월 28일과 10월 5일에는 강의를 진행하고, 10월 12일에는 강의가 없다. 강의 일정은 교수 일정에 따라 변경될 수 있으며, 수업계획서는 1주차 overview 슬라이드에서 확인한다.
+
+<!-- canvas-notice-656107-20261109:start -->
+## [Updated][Programming] Merge Sort: Scores and Grading Criteria (11/9 API 원문 확인)
+
+- 게시: 2026-10-27 13:14:12
+- 출처: https://canvas.skku.edu/courses/76112/discussion_topics/656107
+- 본문 전체를 API HTML에서 텍스트로 옮겼다. 문단·줄바꿈을 정돈했으며 원본 HTML은 로컬 API 스냅샷에 보관한다.
+
+### 원문
+
+This is a re-announcement regarding the merge sort assignment grades. Scores have been updated to reflect the quiz results, so please check your updated score. The grading criteria for the assignment itself remain the same as in the previous announcement.
+
+ 
+
+1. Policy on AI Use
+
+As the professor mentioned in the first class and as stated in the assignment PDF, the use of AI is permitted. However, you must follow these rules:
+
+- If you used AI, you must disclose it.
+
+- Most importantly, you must fully understand what the AI generated. You are responsible for the code you submit.
+
+ 
+
+2. Purpose of the October 26 Quiz
+
+There are many ways to implement merge sort. After reviewing the submissions, we found that only 8 students implemented it the way it was taught in class, while the remaining 57 used an approach that was not covered in class. To check how well each student understands their own submitted code, we gave a quiz on October 26.
+
+- The quiz is used only to check understanding of your own submission.
+
+- A score of 3 or higher out of 5 is taken to mean that you understand the code you submitted.
+
+ 
+
+3. How Final Scores Were Determined
+
+- The 8 students who implemented merge sort as taught in class: Your originally graded score was kept as is, regardless of the quiz score.
+
+- The other 57 students: Your originally graded score was kept only if your quiz score was 3 or higher. If your quiz score was below 3, only the document score was given.
+
+ 
+
+If you have any questions, please contact by email(kimsho98@naver.com).
+
+ 
+
+Best regards,
+
+Seungho Kim
+
+ 
+
+ 
+
+merge sort 점수 과제에 대해 다시 안내합니다. 퀴즈 결과를 반영하여 점수가 업데이트되었으니, 각자 업데이트된 점수를 확인해 주시기 바랍니다. 과제 자체의 평가 방식은 이전 공지와 동일합니다.
+
+ 
+
+1. AI 사용에 대한 안내
+
+첫 수업 시간에 교수님께서 말씀하셨고 과제 안내 PDF에도 명시되어 있듯이,  AI 사용은 허용됩니다. 다만 다음 사항을 반드시 지켜야 합니다.
+
+- AI를 사용했다면 사용 사실을 명시해야 합니다.
+
+- 무엇보다 중요한 것은 AI가 생성한 결과물을 충분히 이해하는 것입니다. 제출한 코드에 대한 책임은 제출자 본인에게 있습니다.
+
+ 
+
+2. 10월 26일 퀴즈의 목적
+
+merge sort는 구현 방식이 다양합니다. 제출물을 확인한 결과, 수업에서 다룬 방식대로 구현한 학생은 8명뿐이었고, 나머지 57명은 수업에서 다루지 않은 방식으로 구현했습니다. 이에 따라 각자 제출한 코드를 얼마나 이해하고 있는지 확인하기 위해 10월 26일에 퀴즈를 실시했습니다.
+
+- 이 퀴즈는 제출물에 대한 이해도를 확인하는 용도로만 사용됩니다.
+
+- 5점 만점에 3점 이상인 경우 제출한 코드를 이해한 것으로 판단합니다.
+
+ 
+
+3. 과제 최종 점수 반영 방식
+
+- 수업에서 다룬 방식대로 구현한 8명: 퀴즈 점수와 관계없이 원래 채점된 점수를 그대로 부여했습니다.
+
+- 그 외 57명: 퀴즈 점수가 3점 이상인 경우에만 원래 채점된 점수를 그대로 부여했습니다. 퀴즈 점수가 3점 미만인 경우에는 문서 점수만 부여했습니다.
+
+ 
+
+문의 사항이 있으면 메일로 연락바랍니다.
+
+첨부파일: [scoreboard.xlsx](https://canvas.skku.edu/courses/76112/files/11974125)
+<!-- canvas-notice-656107-20261109:end -->

@@ -1,0 +1,1380 @@
+
+동영상 정보
+
+
+
+챕터
+
+스크립트
+동영상에서 검색
+Introduction
+0:00
+dynamic programming is one of the most
+0:02
+powerful algorithmic techniques in
+0:03
+computer science
+0:05
+the basic premise centers around the
+0:07
+idea of solving a problem
+0:08
+by first identifying and solving
+0:10
+subproblems
+0:11
+and then bringing these sub-problems
+0:13
+together in some manner to solve the
+0:15
+larger problem
+0:16
+not surprisingly this process is easier
+0:18
+said than done
+0:20
+in fact dynamic programming problems can
+0:22
+be notoriously challenging to wrap your
+0:24
+head around
+0:25
+in this video i'll walk you through 5
+0:27
+steps that you can use to help tackle
+0:29
+dynamic programming problems
+0:31
+and show you how they work in the
+0:33
+context of two specific problems
+0:35
+the first problem is a pretty
+0:37
+fundamental one while the second one is
+0:39
+a more challenging extension
+0:41
+and at the end of this video we'll have
+0:44
+a discussion of general approaches to
+0:46
+dynamic programming beyond the examples
+0:48
+in this video
+0:49
+let's get started
+Longest Increasing Subsequence Problem
+1:01
+the first example we'll look at is the
+1:03
+longest increasing subsequence problem
+1:06
+let's say you're given a sequence of n
+1:08
+elements and you want to find the length
+1:10
+of the longest increasing subsequence an
+1:13
+increasing subsequence is just a
+1:15
+sequence of elements
+1:16
+where each subsequent element has both a
+1:18
+larger value and
+1:19
+index than the previous element here are
+1:21
+some examples to clarify what i mean
+1:23
+here
+1:23
+given the following sequence the longest
+1:26
+increasing subsequence is 1
+1:27
+followed by 2 followed by 5 with a total
+1:30
+length
+1:31
+of 3. now that the problem is more clear
+1:34
+take a second to see if you can find the
+1:36
+longest increasing subsequence and its
+1:38
+respective length for the following
+1:40
+sequence
+1:43
+the correct subsequence starts at 2
+1:45
+followed by 3
+1:46
+6 and 9 with a total length of 4.
+1:49
+now one important note for this problem
+1:51
+is that to keep things simple for now
+1:53
+we will focus on finding the length of
+1:55
+the sequence rather than finding the
+1:56
+sequence itself
+1:58
+the first step in solving dynamic
+1:59
+programming problems is to find a way to
+2:02
+visualize examples
+2:03
+visualization is a great way to see
+2:05
+connections and underlying patterns in
+2:07
+the problem that can later be relevant
+2:09
+to the solution
+2:10
+when solving this particular problem we
+2:12
+clearly have some restrictions on valid
+2:14
+sequences
+2:15
+so it makes sense to find a way to
+2:17
+diagram out what makes
+2:19
+a valid sequence a nice model that shows
+2:21
+up all the time in dynamic programming
+Finding an Appropriate Subproblem
+2:23
+is the directed acyclic graph imagine
+2:27
+each element of the sequence is a node
+2:29
+in a graph
+2:30
+and we construct a directed edge from
+2:32
+one node to another
+2:34
+if the node on the right contains a
+2:36
+larger value
+2:37
+here's what the directed acyclic graph
+2:39
+representation looks like for this
+2:41
+particular input sequence
+2:42
+what's nice about this representation is
+2:45
+that an increasing subsequence is just
+2:47
+another path in the graph
+2:50
+in fact going one step deeper the length
+2:53
+of the longest
+2:54
+increasing subsequence corresponds to a
+2:56
+length
+2:57
+of the longest path in this directed
+2:59
+acyclic graph
+3:00
+plus one since we are technically
+3:02
+counting nodes
+3:03
+solving this particular problem might be
+3:05
+a little bit more clear
+3:06
+and sometimes this shift in perspective
+3:09
+is the key to making challenging
+3:11
+problems more approachable
+3:12
+the next step for solving a dynamic
+3:14
+programming problem is to find an
+3:16
+appropriate sub problem a sub problem is
+3:18
+basically a simpler version of our
+3:20
+overall problem
+3:22
+finding subproblems can be tricky but
+3:24
+let's focus on what we know about this
+3:26
+problem
+3:26
+we know the longest increasing
+3:28
+subsequence is going to be a particular
+3:31
+subset
+3:32
+of our initial sequence one way to
+3:35
+specify this subset is through the
+3:36
+starting point
+3:37
+and the ending point every increasing
+3:40
+subsequence no matter how long
+3:42
+will have a starting and ending point
+3:43
+within the original sequence
+3:45
+so let's modify one of these variables
+3:47
+to create a sub-problem
+3:49
+turns out that you can solve this
+3:50
+particular problem with either choice
+3:52
+but i personally find focusing on the
+3:54
+ending point of a subsequence
+3:56
+as a little bit more intuitive let's
+3:59
+define a sub problem for the sequence as
+4:01
+lis at index k which would mean
+4:04
+the longest increasing subsequence
+4:06
+ending at index k
+4:08
+for example the lis ending at 3 would be
+4:11
+the sequence starting at 1
+4:13
+followed by 2 which has a length of 2.
+4:16
+remember that when i am referring to lis
+4:18
+in this particular problem it is
+4:20
+specifically with respect
+4:21
+to the length of the sequence okay so
+4:24
+now that we've identified one possible
+4:26
+subproblem the third step
+Finding Relationships among Subproblems
+4:28
+requires finding relationships among
+4:30
+sub-problems
+4:31
+it often helps to ask yourself questions
+4:33
+in this phase for example suppose you
+4:35
+want to solve the sub-problem of finding
+4:37
+the longest increasing subsequence
+4:39
+ending at index 4.
+4:41
+what subproblems are necessary to solve
+4:43
+this well the nice thing about this
+4:45
+graphical visualization
+4:46
+is that it makes it quite clear what sub
+4:48
+problems we need one path through index
+4:50
+4 must go through index 0
+4:52
+so we will need to know the length of
+4:54
+the longest increasing subsequence
+4:56
+ending at index 0 which happens to be 1.
+4:59
+another path comes through index 1 so
+5:02
+we'll need that subproblem as well
+5:03
+which also has length 1. the final
+5:06
+possible path and the
+5:07
+index 4 goes to index three and the
+5:09
+longest increasing subsequence ending at
+5:11
+index three has
+5:12
+length two now the nice relationship
+5:15
+here is that the length of the longest
+5:17
+increasing subsequence is just going to
+5:19
+be one plus
+5:20
+the max over all the necessary sub
+5:22
+problems which ends up
+5:24
+being 3. and this should intuitively
+5:26
+make sense right
+5:28
+if i want to find the longest increasing
+5:30
+subsequence ending at index 4
+5:33
+it does make sense that i would just add
+5:35
+1 to the longest increasing subsequence
+5:37
+over all subsequences
+5:39
+that eventually arrive at index four so
+5:42
+once you've found a reasonable
+5:43
+relationship among subproblems
+5:45
+we want to then generalize this
+5:46
+relationship let's look at our other
+5:48
+example
+5:49
+and see if we can come up with a similar
+5:51
+process to solve the longest increasing
+5:53
+subsequence ending at index 5.
+5:56
+the key idea here is that we're going to
+5:58
+choose subproblems ending at index k
+6:00
+if and only if k is less than 5 and the
+6:04
+value at index k
+6:05
+is less than the value at index five
+6:08
+seeing this relationship in action
+6:10
+we start at k equals zero and since the
+6:12
+value at index zero is less than six
+6:14
+we need to know the answers to this
+6:15
+sub-problem and we continue to go
+6:18
+through all possible k
+6:19
+values less than 5 and include sub
+6:21
+problems that satisfy the constraints
+6:23
+laid out by the problem
+6:26
+and in reality there's nothing special
+6:27
+about index 5.
+6:29
+this applies for any n so the general
+6:31
+relationship for finding the solution to
+6:33
+a sub
+6:34
+problem of the longest increasing
+6:35
+subsequence ending at index
+6:37
+n is just one plus the max over all k
+6:41
+that is less than n with values at index
+6:43
+k
+6:44
+less than values at the index n
+6:47
+now we are ready for implementation
+6:49
+which is the final step
+Implementation
+6:51
+implementing a dynamic programming
+6:52
+solution is just a matter of solving
+6:54
+subproblems in the appropriate order
+6:57
+what's most important is that before
+6:59
+solving a particular subproblem
+7:01
+all the necessary prerequisite
+7:02
+subproblems have been solved
+7:04
+in this problem the order is actually
+7:06
+fairly straightforward we have to solve
+7:08
+the sub problems from left
+7:09
+to right so let's now implement a
+7:11
+function
+7:12
+let's keep track of the lengths with the
+7:14
+list we can initialize all the lengths
+7:17
+as one since every increasing
+7:19
+subsequence will have at least
+7:21
+one element then for every index from
+7:24
+one to the length of the input list
+7:26
+we will first find the necessary
+7:28
+sub-problems and then we update
+7:30
+the length according to the
+7:31
+generalization that we have specified
+7:34
+and then at the end we return the
+7:35
+maximum length over the entire list of
+7:37
+lengths that we have just updated
+7:40
+there are many ways to implement this
+7:41
+function so don't get too bogged down in
+7:43
+the details
+7:44
+the important thing to remember here is
+7:46
+the thought process we use to identify
+7:48
+and solve the sub problems in the right
+7:50
+order
+7:51
+there's one last important question we
+7:53
+should address everything we have done
+Tracking Previous Indices
+7:55
+so far has been specifically with
+7:57
+respect to finding the length of the
+7:59
+longest increasing subsequence
+8:01
+but how do we actually find the
+8:03
+underlying sequence
+8:04
+the key idea here is actually fairly
+8:06
+simple all we have to do is keep track
+8:08
+of the previous indices
+8:10
+for a particular sub problem more
+8:12
+specifically if i solve the longest
+8:14
+increasing subsequence ending at index i
+8:17
+sub problem using the value of the
+8:19
+longest increasing subsequence at
+8:21
+index j i can say that the previous
+8:23
+index of
+8:24
+index i is index j let's look at a
+8:27
+specific example
+8:28
+for some clarification in this sequence
+8:30
+the previous index of index 0 can be
+8:33
+labeled as negative 1 since there is no
+8:35
+previous sequence value
+8:36
+that leads to index 0. same can be said
+8:39
+about the previous index
+8:40
+of index 1. for index 2 the previous
+8:43
+index is either index 0
+8:44
+or index 1 and it doesn't really matter
+8:46
+which one we choose since they both have
+8:48
+the same length values
+8:50
+for the previous index at index 3
+8:52
+there's only one choice
+8:53
+index one finally index four actually
+8:56
+only has
+8:56
+one choice because the sub problem
+8:58
+that's used to calculate the length at
+9:00
+index four
+9:01
+is the longest increasing subsequence
+9:03
+ending at index three
+9:05
+so the previous index is subsequently
+9:07
+also three
+9:08
+this type of pattern with tracking
+9:10
+previous sub problems is a common trick
+9:12
+used to solve dynamic programming
+9:13
+problems
+9:15
+let's now take a look at a more
+9:16
+challenging problem here's the problem
+9:19
+you're given n boxes each with the
+9:21
+length width and height
+9:22
+your goal is to find the height of the
+9:24
+tallest possible stack of boxes
+9:26
+with the constraint that a box can only
+9:28
+be stacked on top of another
+9:30
+if its length and width are both smaller
+9:33
+another assumption that we will make to
+9:34
+simplify things
+9:35
+is that boxes cannot be rotated at any
+9:38
+point during the process of stacking
+9:41
+so to make this more clear let's take a
+9:43
+look at a couple examples
+9:44
+given the following set of three boxes
+9:46
+the answer to this problem is six
+9:48
+the tallest possible stack is the green
+9:50
+box on top of the blue box
+9:52
+notice that we can stack the red and
+9:54
+green boxes on top of one another since
+9:57
+it does not satisfy the constraint given
+9:59
+in the problem
+10:00
+now as an exercise given the following
+10:02
+set of six boxes
+10:04
+see if you can figure out the solution
+10:05
+for this input i recommend pausing the
+10:07
+video here and seeing if you can figure
+10:09
+out the solution
+10:10
+okay so the solution in this case
+10:12
+actually ends up being the following
+10:13
+stack
+10:14
+with the red box at the bottom orange
+10:17
+box in the middle
+10:18
+and purple box on top we can get a total
+10:20
+height of seven
+10:21
+which is the best we can do make sure
+10:23
+you take a second to verify that this
+10:25
+is indeed the only solution to this
+10:27
+problem for the given input
+10:30
+all right let's get started on trying to
+10:31
+solve this problem the first step
+10:33
+as before is to visualize examples a lot
+10:36
+of times in dynamic programming type
+10:37
+problems
+10:38
+there can be a lot of information thrown
+10:40
+at you and it's sometimes helpful to
+10:41
+focus on one aspect of the problem at a
+10:44
+time
+10:44
+when solving a problem like this it
+10:46
+might help to first visualize the
+10:47
+particular constraint given for stacking
+10:49
+boxes
+10:51
+after all before we even figure out
+10:52
+what's the tallest possible stack
+10:54
+it makes sense to first identify which
+10:56
+boxes are able to be stacked on top of
+10:58
+one another
+10:59
+once again the concept of directed
+11:01
+acyclic graphs
+11:02
+is really helpful here for visualization
+11:04
+purposes let's connect a directed edge
+11:07
+between two boxes if the box on the left
+11:09
+can be stacked on top of the box on the
+11:12
+right
+11:12
+here's what the graph ends up looking
+11:14
+like if we apply the constraints between
+11:16
+all pairs of boxes
+11:18
+now the nice thing about this
+11:19
+representation is paths in this directed
+11:21
+acyclic graph have a nice intuitive
+11:23
+meaning
+11:24
+every path in the graph corresponds to a
+11:26
+stack of boxes
+11:28
+now the goal is just to find the path
+11:30
+that gives the greatest height
+11:33
+so now that we have a good way of
+11:34
+visualizing the problem our next step is
+11:36
+to figure out an appropriate sub-problem
+11:38
+this is another reason i love looking at
+11:40
+directed acyclic representations of
+11:42
+dynamic programming problems
+11:44
+if our final goal is to find the path
+11:46
+with the tallest stack
+11:48
+it makes sense that partial paths should
+11:50
+be a reasonable sub
+11:51
+problem what does a partial path
+11:53
+represent
+11:55
+a path ending at a particular box or
+11:58
+partial path
+11:58
+essentially means a stack where we force
+12:00
+that box to be the base of the stack
+12:03
+therefore our sub-problem that naturally
+12:05
+arises from this idea
+12:07
+is to find the best possible height of a
+12:09
+stack of boxes with a given box forced
+12:12
+to be at the bottom
+12:13
+this will allow us to find optimal
+12:15
+partial paths in this graph which will
+12:17
+then build into the eventual optimal
+12:19
+path
+12:20
+here are some examples of instances of
+12:21
+these subproblems the subproblem in
+12:24
+which the orange box is the base
+12:26
+has a stack with a maximum height of
+12:28
+four
+12:29
+another example is a sub problem ending
+12:31
+at the yellow box in which the best
+12:33
+possible height
+12:34
+is six there are actually two different
+12:37
+sets of stacks with heights of six
+12:39
+the easiest one to see is the green box
+12:41
+on top of the yellow box
+12:44
+and if we look at the sub problem that
+12:46
+ends with the red box at the bottom the
+12:48
+optimal height
+12:49
+is seven which is also the tallest
+12:51
+possible stack
+12:52
+for the set of boxes we've seen take a
+12:55
+second to make sure the formulation of
+12:56
+the sub problem
+12:57
+and how it works makes sense
+13:01
+the next step from here is to find
+13:02
+relationships among subproblems
+13:04
+as we have done before let's take a
+13:06
+particular sub problem and ask
+13:07
+what sub problems are needed to solve it
+13:10
+for example if we want to find the
+13:12
+optimal height of a stack of boxes
+13:14
+ending at the red box we have three
+13:16
+boxes that directly lead to the red box
+13:18
+so the sub problems that are necessary
+13:20
+are the optimal stack height ending at
+13:22
+the orange box
+13:23
+which we already saw was for the optimal
+13:26
+height of stacks ending at the blue box
+13:28
+which ended up being three and lastly
+13:31
+the optimal stack
+13:32
+ending at the purple box which happens
+13:35
+to only be 2 since no
+13:36
+other box can be stacked on top of it
+13:39
+the next question is then
+13:41
+if we know the answers to these
+13:42
+subproblems how do we get the solution
+13:45
+to the optimal height of stacks with the
+13:47
+red box as the bottom
+13:49
+and the answer to this is actually
+13:51
+fairly intuitive we
+13:52
+simply add the height of the red box to
+13:55
+the maximum height
+13:56
+of all the necessary sub problems what's
+13:59
+going on here is that we are taking our
+14:01
+current sub problem
+14:02
+finding all the necessary prerequisite
+14:05
+subproblems
+14:05
+picking the best one out of those and
+14:07
+adding the height of the current box to
+14:09
+the best height so far
+14:11
+let's generalize this relationship given
+14:14
+a new set of boxes let's ask ourselves
+14:16
+how do we solve the optimal height of a
+14:18
+stack with the blue box
+14:20
+as the base there are two steps involved
+14:23
+here
+14:23
+we first have to find the set of boxes
+14:25
+that can actually be stacked above the
+14:27
+blue box
+14:28
+and then the second step involves adding
+14:30
+the height of the blue box
+14:32
+to the tallest stack among all sub
+14:34
+problems
+14:35
+we can use this relationship to now
+14:37
+solve the sub problems one by one
+14:40
+the last piece of the puzzle involves
+14:42
+the order to solve the sub problems
+14:43
+order does matter
+14:45
+for example if you want to solve the sub
+14:46
+problem ending at the red box
+14:48
+we must first have the solution to the
+14:50
+sub problem ending at the orange box
+14:53
+so the next question is then how do we
+14:55
+ensure a correct ordering
+14:57
+if boxes are given to us in a completely
+14:59
+random order
+15:01
+well we know that the boxes that can be
+15:02
+stacked on top of each other are
+15:04
+entirely dependent on the length and
+15:06
+width of the boxes
+15:07
+with larger lengths and widths generally
+15:09
+being able to have more boxes stacked on
+15:12
+top of them
+15:13
+therefore a natural way to ensure we
+15:15
+solve sub problems in the correct order
+15:17
+is to first
+15:18
+sort boxes by length or width
+15:22
+with this final piece in place we are
+15:23
+now ready to implement the solution
+15:26
+given a list of boxes we will first sort
+15:28
+the boxes by their length
+15:29
+just so we are clear it doesn't matter
+15:31
+if we sort them by length or width
+15:33
+either one works
+15:34
+then to organize a mapping between
+15:36
+subproblems and their respective heights
+15:37
+we will construct a dictionary that maps
+15:39
+each box to the tallest stack height
+15:41
+possible
+15:42
+with that box as the base of the stack
+15:45
+we can initialize this dictionary with
+15:46
+each box mapped to its own height
+15:49
+then we iterate through indices from 1
+15:51
+to the number of boxes
+15:53
+select a specific box and then find the
+15:55
+set of boxes that can be stacked above
+15:57
+the current box
+15:59
+we can define a helper function can be
+16:01
+stacked which will essentially do a
+16:02
+quick check based on the given
+16:04
+constraint
+16:05
+now following the general relationship
+16:07
+that we have defined the tallest stack
+16:09
+with the current box as the base will be
+16:11
+the sum
+16:12
+of the current box height with the
+16:14
+maximum height
+16:15
+over the set of identified sub-problems
+16:18
+after iterating through and solving all
+16:19
+the sub-problems the tallest stack
+16:21
+is simply the maximum height found
+16:23
+amongst all sub-problems
+16:26
+again this is just one of the many ways
+16:27
+to solve the problem
+16:29
+the code for this problem has a lot of
+16:31
+parts so it's worth breaking it down to
+16:33
+see how it really works
+16:34
+given the example of boxes we've already
+16:36
+seen many times
+16:37
+we first sort the boxes by the length
+16:40
+giving us the following order
+16:42
+we then define the dictionary mapping
+16:44
+boxes to heights
+16:45
+which are currently set to each box's
+16:47
+own height
+16:49
+now starting from index 1 we start with
+16:51
+the sub problem
+16:52
+with the purple box as the base of the
+16:54
+stack it's pretty clear to us that there
+16:56
+are no valid boxes that can be stacked
+16:59
+on top of the purple box
+17:00
+so the set of sub problems s is empty
+17:04
+and therefore the best height of the sub
+17:06
+problem stays at 2
+17:07
+containing only the height of the purple
+17:10
+box
+17:11
+we now move index i to equal 2
+17:14
+which corresponds to the orange box
+17:17
+now we go through all the boxes before
+17:19
+the orange box
+17:20
+in our sorted list and find only one box
+17:23
+that can be stacked on top of the orange
+17:25
+box
+17:26
+therefore the answer to this sub problem
+17:28
+for the tallest stack
+17:29
+that can be created with the orange box
+17:31
+as the base is the height of the orange
+17:34
+box
+17:34
+plus the height of the purple box which
+17:37
+ends up being four
+17:38
+moving to i equals three we now look at
+17:41
+the sub problem ending at the blue box
+17:44
+once again the only valid box that can
+17:47
+be stacked on top of the blue box
+17:49
+is the purple box so the height of the
+17:51
+tallest stack with the blue box as the
+17:53
+base
+17:53
+is three things get a little more
+17:56
+interesting when we move to the sub
+17:57
+problem with the yellow box forced to be
+17:59
+the base
+18:01
+now the possible boxes that can be
+18:02
+stacked on top of the yellow box are the
+18:04
+green box
+18:05
+the purple box the orange box and the
+18:07
+blue box
+18:08
+the best height of all these sub
+18:10
+problems is four
+18:11
+so the height of the tallest possible
+18:13
+stack with the yellow box as the base
+18:16
+is six and finally moving to the last
+18:19
+index of i equals five which corresponds
+18:22
+to the red box
+18:23
+the set of valid subproblems consists of
+18:26
+the purple box
+18:26
+orange box and the blue box the best
+18:30
+possible height from these sub problems
+18:32
+comes from the stack ending at the
+18:34
+orange box with the height
+18:36
+of four so the answer to the sub problem
+18:38
+involving the red box ends up being the
+18:40
+height of the red box
+18:41
+plus 4 which is 7. at this point we have
+18:44
+finished iterating so we return the
+18:46
+maximum height
+18:47
+over all of subproblems and that ends up
+18:49
+being 7
+18:50
+so that is the final solution for this
+18:52
+input this problem at first looks pretty
+18:54
+challenging but following the steps
+18:56
+greatly helped us narrow our focus and
+18:58
+simplify the problem
+18:59
+and that's what ends up happening in a
+19:01
+lot of dynamic programming problems
+19:03
+in many ways the hardest part of dynamic
+19:05
+programming problems is
+19:06
+organizing the given information in the
+19:08
+right way to identify the
+19:10
+correct subproblem that's the part that
+19:12
+requires a lot of practice and
+19:14
+creativity and problem solving
+Common Subproblems
+19:16
+there is no doubt that finding the right
+19:18
+subproblem can be the most challenging
+19:20
+aspect of dynamic programming
+19:22
+i want to take a second to look at some
+19:24
+of the most common subproblems you will
+19:25
+encounter
+19:26
+while solving these types of problems
+19:28
+the most common type is as follows
+19:30
+you're given an input sequence of length
+19:32
+n and the subproblem
+19:34
+involves an ordered subsequence of
+19:36
+length i
+19:37
+as shown here this is exactly what was
+19:39
+the case in the longest increasing
+19:41
+subsequence problem
+19:43
+another similar version of a problem
+19:44
+like this that you might encounter
+19:46
+is a sequence of length n but given in a
+19:50
+random order where we first have to sort
+19:52
+the sequence in the right order
+19:54
+and then the sub problem is an eye
+19:56
+length subsequence
+19:57
+this is exactly the type of sub problem
+19:59
+we encountered in the box stacking
+20:01
+problem
+20:02
+some other examples of common
+20:03
+subproblems may involve the case where
+20:05
+you're given
+20:06
+two sequences and the subprompt involves
+20:08
+the appropriate subsequences of each of
+20:10
+these sequences
+20:12
+this is essentially a slightly more
+20:13
+complex version of what we've seen
+20:15
+already
+20:16
+a more unique type of subproblem may
+20:17
+involve a sequence of inputs where the
+20:19
+right
+20:20
+sub-problem is actually to expand from
+20:22
+the middle of the sequence
+20:23
+outwards these types of sub-problems are
+20:25
+not as common as the other examples but
+20:27
+they are worth noting
+20:29
+another important subproblem structure
+20:31
+to be aware of is when you're given a
+20:33
+two-dimensional array or matrix as an
+20:35
+input
+20:36
+and the most common sub-problem for this
+20:38
+type of input is
+20:39
+basically a sub-matrix of some dimension
+20:42
+less than the input dimensions these are
+20:45
+the most common sub-problems i've seen
+20:47
+in my experience and hopefully that will
+20:48
+give you some direction when you're
+20:50
+stuck
+20:50
+in a particularly challenging dynamic
+20:52
+programming problem at the end of the
+20:54
+day though
+20:54
+nothing beats practicing experience the
+20:56
+best way to improve your dynamic
+20:58
+programming skills
+20:59
+is through a lot of diligent work with
+21:01
+problems and examples
+Outro
+21:05
+that's all for this video and thanks for
+21:07
+watching if you enjoyed the content
+21:09
+please hit the like button so that this
+21:10
+content will be recommended to more
+21:12
+people
+21:13
+if you want to see more content like
+21:15
+this please don't forget to hit the
+21:16
+subscribe button
+21:17
+and if you want to more directly support
+21:19
+the work of this channel please check
+21:21
+out the patreon page linked in the
+21:23
+description below
+21:24
+i'll see you on the next video
+5 Simple Steps for Solving Dynamic Programming Problems
+Reducible
+Reducible
+구독자 33.8만명
+
+구독
+

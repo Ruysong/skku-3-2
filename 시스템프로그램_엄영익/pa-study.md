@@ -3,6 +3,7 @@
 | 과제 | 성격 | 보관·복습 |
 | --- | --- | --- |
 | Assignment 01 | Chap.2 연습문제 8개에 대한 서술·수식 풀이 | [범위와 제출물 목차](./Assignment/Assignment_1/study.md) |
+| Assignment 02 | Chap.3 Code Representation 문제 3-1~3-8: C/어셈블리, 배열, 구조체·union, 스택, 부동소수점 | [제출 조건·문제별 범위](./assignments.md#assignment-02---code-representation) |
 
 이 과목의 A01은 프로그램을 빌드해 제출하는 PA가 아니다. 최종 답안 PDF의 문제 번호·개념 범위를 공부용으로 연결했다. 실제 제출 답안을 수정하거나 새 풀이·코드를 추가하지 않았다. 제출 완료는 사용자 확인 기준이다.
 

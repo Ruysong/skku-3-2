@@ -6,19 +6,27 @@
 
 | 과목 | 과목 홈 | 공지 | 과제/퀴즈 | 현재 자료 |
 | --- | --- | --- | --- | --- |
-| 시스템프로그래밍실습 - 한환수 | [README](./시스템프로그래밍실습_한환수/README.md) | [notices](./시스템프로그래밍실습_한환수/notices.md) | [assignments](./시스템프로그래밍실습_한환수/assignments.md) | [9주차 세팅](./시스템프로그래밍실습_한환수/9주차/study.md) · 10/26~11/1 |
-| 시스템프로그램 - 엄영익 | [README](./시스템프로그램_엄영익/README.md) | [notices](./시스템프로그램_엄영익/notices.md) | [assignments](./시스템프로그램_엄영익/assignments.md) | [9주차 세팅](./시스템프로그램_엄영익/9주차/study.md) · 10/26~11/1 |
-| 알고리즘개론 - 김형식 | [README](./알고리즘개론_김형식/README.md) | [notices](./알고리즘개론_김형식/notices.md) | [assignments](./알고리즘개론_김형식/assignments.md) | [9주차 세팅](./알고리즘개론_김형식/9주차/study.md) · 10/26~11/1 |
-| 운영체제 - 신동군 | [README](./운영체제_신동군/README.md) | [notices](./운영체제_신동군/notices.md) | [assignments](./운영체제_신동군/assignments.md) | [9주차 세팅](./운영체제_신동군/9주차/study.md) · 10/26~11/1 |
-| 캡스톤설계프로젝트 - 타메르 | [README](./캡스톤설계프로젝트_타메르/README.md) | [notices](./캡스톤설계프로젝트_타메르/notices.md) | [assignments](./캡스톤설계프로젝트_타메르/assignments.md) | [9주차 세팅](./캡스톤설계프로젝트_타메르/9주차/study.md) · 10/26~11/1 |
-| 컴퓨터구조개론 - 조형민 | [README](./컴퓨터구조개론_조형민/README.md) | [notices](./컴퓨터구조개론_조형민/notices.md) | [assignments](./컴퓨터구조개론_조형민/assignments.md) | [9주차 세팅](./컴퓨터구조개론_조형민/9주차/study.md) · 10/26~11/1 |
+| 시스템프로그래밍실습 - 한환수 | [README](./시스템프로그래밍실습_한환수/README.md) | [notices](./시스템프로그래밍실습_한환수/notices.md) | [assignments](./시스템프로그래밍실습_한환수/assignments.md) | [11주차 세팅](./시스템프로그래밍실습_한환수/11주차/study.md) · 11/9~11/15 |
+| 시스템프로그램 - 엄영익 | [README](./시스템프로그램_엄영익/README.md) | [notices](./시스템프로그램_엄영익/notices.md) | [assignments](./시스템프로그램_엄영익/assignments.md) | [11주차 세팅](./시스템프로그램_엄영익/11주차/study.md) · 11/9~11/15 |
+| 알고리즘개론 - 김형식 | [README](./알고리즘개론_김형식/README.md) | [notices](./알고리즘개론_김형식/notices.md) | [assignments](./알고리즘개론_김형식/assignments.md) | [11주차 세팅](./알고리즘개론_김형식/11주차/study.md) · 11/9~11/15 |
+| 운영체제 - 신동군 | [README](./운영체제_신동군/README.md) | [notices](./운영체제_신동군/notices.md) | [assignments](./운영체제_신동군/assignments.md) | [11주차 세팅](./운영체제_신동군/11주차/study.md) · 11/9~11/15 |
+| 캡스톤설계프로젝트 - 타메르 | [README](./캡스톤설계프로젝트_타메르/README.md) | [notices](./캡스톤설계프로젝트_타메르/notices.md) | [assignments](./캡스톤설계프로젝트_타메르/assignments.md) | [11주차 세팅](./캡스톤설계프로젝트_타메르/11주차/study.md) · 11/9~11/15 |
+| 컴퓨터구조개론 - 조형민 | [README](./컴퓨터구조개론_조형민/README.md) | [notices](./컴퓨터구조개론_조형민/notices.md) | [assignments](./컴퓨터구조개론_조형민/assignments.md) | [11주차 세팅](./컴퓨터구조개론_조형민/11주차/study.md) · 11/9~11/15 |
 
 ## 전체 관리
+
+- [컴구 기말 대비 PDF 5개](./컴퓨터구조개론_조형민/final-prep/): 2020~2022 전체 RISC-V 변환본과 2023 기출·2024 샘플. 문제·해설 합본.
 
 - [전 과목 PA·구현 학습목차](./PA-학습목차.md)
 - [전체 할 일](./tasks.md)
 - [정리 프로토콜](./protocol.md)
 - [OCR 검수 엔진](./tools/ocr/README.md)
+- [iCampus API 조회 연결](./tools/icampus/README.md): 계정·수강 목록 연결 확인. 인증정보는 로컬 암호화·Git 제외.
+
+## 2026-11-07 알고리즘 DP 보충자료
+
+- [9주차 DP 학습지도](./알고리즘개론_김형식/9주차/study.md): 교수님 PDF 범위와 외부 영상 세 개를 구분하고, 배낭 두 방법·LIS·상자 쌓기·Rod Cutting·Subset Sum·유사 다항 시간을 정리했다.
+- 원문 대본 세 개는 수정 없이 보관했으며, DP 2 퀴즈의 실제 문제·제출 답안·평가 대기 상태를 함께 연결했다.
 
 ## 2026-10-28 자료 반영
 
@@ -45,8 +53,13 @@
 ├── protocol.md
 ├── tasks.md
 ├── tools/
+│   ├── icampus/
 │   └── ocr/
 ├── 시스템프로그래밍실습_한환수/
+│   ├── 11주차/
+│   │   └── study.md
+│   ├── 10주차/
+│   │   └── study.md
 │   ├── README.md
 │   ├── notices.md
 │   ├── assignments.md
@@ -58,6 +71,11 @@
 │   └── 7주차/
 │       └── study.md
 ├── 시스템프로그램_엄영익/
+│   ├── 11주차/
+│   │   ├── study.md
+│   │   └── SP05-3-FC.pdf
+│   ├── 10주차/
+│   │   └── study.md
 │   ├── README.md
 │   ├── notices.md
 │   ├── assignments.md
@@ -69,11 +87,22 @@
 │   └── 7주차/
 │       └── study.md
 ├── 알고리즘개론_김형식/
+│   ├── 11주차/
+│   │   └── study.md
+│   ├── 10주차/
+│   │   ├── study.md
+│   │   ├── Assignment_kDNA.pdf
+│   │   ├── msa.in
+│   │   └── msa.out
 │   ├── README.md
 │   ├── notices.md
 │   ├── assignments.md
 │   ├── 9주차/
-│   │   └── study.md
+│   │   ├── study.md
+│   │   ├── Dynamic Programming.pdf
+│   │   ├── Abdul-Bari-01-Knapsack-Two-Methods-script.txt
+│   │   ├── Reducible-5-Simple-Steps-DP-script.txt
+│   │   └── MIT-DP-Part4-script.txt
 │   ├── 1주차/
 │   │   ├── study.md
 │   │   ├── induction_교수님추천 참고예제.pdf
@@ -95,6 +124,10 @@
 │   └── 7주차/
 │       └── study.md
 ├── 운영체제_신동군/
+│   ├── 11주차/
+│   │   └── study.md
+│   ├── 10주차/
+│   │   └── study.md
 │   ├── README.md
 │   ├── notices.md
 │   ├── assignments.md
@@ -107,6 +140,10 @@
 │       ├── study.md
 │       └── OS08-PageReplacement.pdf
 ├── 캡스톤설계프로젝트_타메르/
+│   ├── 11주차/
+│   │   └── study.md
+│   ├── 10주차/
+│   │   └── study.md
 │   ├── README.md
 │   ├── notices.md
 │   ├── assignments.md
@@ -124,6 +161,17 @@
 │   └── 7주차/
 │       └── study.md
 └── 컴퓨터구조개론_조형민/
+    ├── final-prep/
+    │   ├── 2020-2_기말_RISC-V_최종.pdf
+    │   ├── 2021-1_기말_RISC-V_최종.pdf
+    │   ├── 2022-1_기말_RISC-V_최종.pdf
+    │   ├── 2023-1 컴퓨터구조개론 조형민 기말 및 답.pdf
+    │   └── 24-1final_exam_sample_questions.pdf
+    ├── PA/PA_2/CA_Proj2.pdf
+    ├── 11주차/
+    │   └── study.md
+    ├── 10주차/
+    │   └── study.md
     ├── README.md
     ├── notices.md
     ├── assignments.md

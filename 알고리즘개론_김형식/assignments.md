@@ -90,3 +90,48 @@
 - [문항 원문과 쉬운 영어 답변](./7주차/study.md#dynamic-programming-퀴즈-문항과-영어-답변)을 함께 보관한다. 공식 정답이나 채점 결과가 아니다.
 - 문항: SRTBOT, Merge Sort와 memoization, Fibonacci의 `O(n + n^2/w)` 시간 증명, Bowling DP와 시간복잡도.
 - 10/14 최종 시험 공지에 따라 DP 내용과 이 온라인 퀴즈는 중간고사에서 제외된다. 제출 면제라는 뜻은 아니다.
+
+## 9주차 외부 DP 영상과 Dynamic Programming 2 (11/7 정리)
+
+출처: 사용자 제공 iCampus 콘텐츠 목록과 퀴즈 제출 이력. 달력 주차와 별개로 전달된 이용 마감은 11/8이다.
+
+| 항목 | 분량/배점 | 마감 | 확인 상태 |
+| --- | --- | --- | --- |
+| 4.5 0/1 Knapsack - Two Methods - Dynamic Programming | 28:24 | 2026-11-08 23:59 | 전달 화면 완료 표시. 원문 대본·영상별 교안 보관 |
+| 5 Simple Steps for Solving Dynamic Programming Problems | 21:27 | 2026-11-08 23:59 | 전달 화면 완료 표시. 원문 대본·영상별 교안 보관 |
+| 18. Dynamic Programming, Part 4: Rods, Subset Sum, Pseudopolynomial | 1:03:45 | 2026-11-08 23:59 | 원문 대본·영상별 교안 보관. 전달 목록의 완료 표시는 미확인 |
+| Dynamic Programming 2 | 3문항·각 1점, 시간 제한 없음 | 2026-11-08 23:59 | **2026-11-04 11:39 제출 확인**, 세 문항 모두 평가 대기 |
+
+- [영상별 상세 정리·원문 연결·실제 퀴즈와 제출 답안](./9주차/study.md).
+- 실제 문항: Rod Cutting DP와 시간복잡도, Subset Sum DP와 시간복잡도, pseudo-polynomial time의 의미.
+- 퀴즈 주소: https://canvas.skku.edu/courses/76112/quizzes/84702 (module item 5845020).
+- 화면의 0/3은 평가 안 된 문항을 포함한 현재 표시값이다. 최종 0점·오답 확정으로 기록하지 않는다.
+- 영상 대본 보관과 교안 작성은 실제 수강 인정·개념 이해 완료와 구분한다.
+
+## 10주차 Greedy Algorithm 퀴즈 (11/8 전달)
+
+| 항목 | 배점 | 시작 표시 / 마감 | 상태 |
+| --- | --- | --- | --- |
+| Greedy Algorithm | 3문항·각 1점, 총 3점 | 시작 2026-11-08 12:04 / **마감 2026-11-08 23:59** | 실제 문항과 대화의 영어 참고 답변 보관. **제출 완료 미확인** |
+
+- 출처: 사용자 제공 iCampus https://canvas.skku.edu/courses/76112/quizzes/84703 응시 화면.
+- 전달 화면은 세 문항 모두 아직 답변하지 않음·저장 안 됨 상태다. 시간 제한·재시도 횟수는 미확인이다.
+- 문항: Huffman 최소 빈도 병합의 최적성 증명, earliest-finish Activity Selection의 최적성 증명, 0-1 Knapsack 비율 greedy의 반례.
+- [문항 원문·영어 참고 답변·증명 구조](./10주차/study.md#실제-퀴즈---greedy-algorithm).
+- 영어 답변은 공식 모범답안이나 실제 LMS 제출본으로 표시하지 않는다.
+
+<!-- week11-api-20261109:start -->
+## 11주차 API 확인 (2026-11-09)
+
+| 항목 | 마감(KST) | 현재 조회 상태 |
+| --- | --- | --- |
+| [[Programming] K DNA Sequences](https://canvas.skku.edu/courses/76112/assignments/2051467) | 2026-11-15 23:59:59 | API 미제출 |
+| [Dynamic Programming 2](https://canvas.skku.edu/courses/76112/assignments/2051457) | 2026-11-08 23:59:00 | 제출 확인·평가 대기 / 2026-11-04 11:39:10 |
+| [Greedy Algorithm](https://canvas.skku.edu/courses/76112/assignments/2051458) | 2026-11-08 23:59:00 | 제출 확인·평가 대기 / 2026-11-08 12:07:55 |
+| [Bellman-Ford algorithm](https://canvas.skku.edu/courses/76112/assignments/2051455) | 2026-11-15 23:59:00 | API 미제출 |
+
+API 미제출은 확인 시점의 상태다. 아직 마감 전인 항목을 지각·누락으로 표시하지 않는다. 외부 UI 서버 코드 제출, 별도 보고서, 팀 과제의 개인 업로드는 같은 상태가 아니다.
+
+
+주간 목록: [11주차 study](./11주차/study.md). 현재 API 확인 결과가 아래·위의 과거 미확인 상태보다 최신이다.
+<!-- week11-api-20261109:end -->

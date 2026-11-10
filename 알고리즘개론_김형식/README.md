@@ -15,11 +15,23 @@
 - [6주차 학습지도](./6주차/study.md)
 - [7주차 학습지도](./7주차/study.md)
 - [9주차 학습지도](./9주차/study.md)
+- [11주차 학습지도](./11주차/study.md)
+- [10주차 학습지도](./10주차/study.md)
+
+## 11주차 (11/9~11/15)
+
+- [이번 주 학습지도](./11주차/study.md): Graph·BFS·DFS·Bellman-Ford. 11/9 iCampus API 목록·마감·제출 상태 반영.
+
+## 10주차 (11/2~11/8)
+
+- [이번 주 학습지도](./10주차/study.md): Greedy·Huffman 자료 보관. DP 보충은 [9주차 영상별 상세 정리](./9주차/study.md)에서 이어간다.
+- [Greedy 실제 퀴즈 3문항·영어 참고 답변·증명 구조](./10주차/study.md#실제-퀴즈---greedy-algorithm)를 보관했다. **11/8 23:59 마감**, 제출 완료는 미확인이다.
 
 ## 9주차 (10/26~11/1)
 
-- [이번 주 학습지도](./9주차/study.md): 중간고사 이후 새 강의·MIT 보조 영상·퀴즈·PA를 출처별로 구분해 누적한다.
-- 현재 보관된 교수님 교안은 Dynamic Programming 69페이지이며 LCS와 0-1 Knapsack을 다룬다. 자료 보관·목차 확인과 상세 study 작성 상태는 구분한다.
+- [DP 학습지도](./9주차/study.md): 교수님 PDF 범위와 외부 영상 세 개를 나눠 정리했다. 배낭 Tabulation·Sets Method, LIS·상자 쌓기, MIT Rod Cutting·Subset Sum·유사 다항 시간, DP 설계 기법 종합을 다룬다.
+- 원문 대본 세 개는 9주차에 수정 없이 보관했다. 영상별 시간대 목차·수식·예제·복원·복잡도를 study에 연결했다. 교수님 PDF는 LCS·0-1 Knapsack이 중심이며 외부 영상의 모든 내용을 포함하지 않는다.
+- 전달된 외부 영상 마감은 **11/8 23:59**. `Dynamic Programming 2`는 **11/4 제출 확인·세 문항 평가 대기**이며 실제 문제·본인 답안을 학습지도에 보관했다.
 
 ## 7주차
 
@@ -42,7 +54,7 @@
 | 5주차 | [study.md](./5주차/study.md) | Count Sort<br>Radix Sort<br>Linear Sorting |
 | 6주차 | [study.md](./6주차/study.md) | Count sort.pdf<br>Radix sort.pdf<br>MIT Linear Sorting·Lecture 7 개별 교안·원문 대본<br>Linear Sorting 퀴즈·사용자 답변<br>Priority Queue 과제·공개 예제 |
 | 7주차 | [study.md](./7주차/study.md) | Median/Order Statistics·DP 수강 목록 연결; 새 원본 대기 |
-| 9주차 | [study.md](./9주차/study.md) | 중간 이후 교수님 교안·MIT 영상·퀴즈·PA 수집 |
+| 9주차 | [study.md](./9주차/study.md) | DP 교수님 PDF·외부 영상 3개 상세 정리와 원문 대본·DP 2 실제 퀴즈 및 제출 답안 |
 
 ## 바로 기억할 것
 

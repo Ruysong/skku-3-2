@@ -130,3 +130,54 @@ Several teams asked me about the contents of the Form, and here are the main poi
 - What specific outcomes (software/hardware) will be achieved by the end of the semester?
 
 Thank you.
+
+<!-- canvas-notice-659048-20261109:start -->
+## Week 10 (November 6, 2026) – No In-Person Class (11/9 API 원문 확인)
+
+- 게시: 2026-11-05 21:27:18
+- 출처: https://canvas.skku.edu/courses/76864/discussion_topics/659048
+- 본문 전체를 API HTML에서 텍스트로 옮겼다. 문단·줄바꿈을 정돈했으며 원본 HTML은 로컬 API 스냅샷에 보관한다.
+
+### 원문
+
+Dear Capstone Design Project Students,
+
+
+
+As previously announced, the Week 10 Midterm Presentation will be conducted through recorded video submissions instead of live in-class presentations.
+
+
+
+Therefore, there will be no in-person class on Friday, November 6, 2026 (Week 10).
+
+
+
+Please remember that the midterm video presentation submission deadline remains Friday, November 6, 2026, as specified in the previous announcement.
+
+
+
+Make sure your team completes and submits the presentation according to the previously shared guidelines.
+
+
+
+Wishing you all the best!
+<!-- canvas-notice-659048-20261109:end -->
+
+<!-- canvas-notice-656895-20261109:start -->
+## [261030]Offline Class Announcement (11/9 API 원문 확인)
+
+- 게시: 2026-10-29 15:11:54
+- 출처: https://canvas.skku.edu/courses/76864/discussion_topics/656895
+- 본문 전체를 API HTML에서 텍스트로 옮겼다. 문단·줄바꿈을 정돈했으며 원본 HTML은 로컬 API 스냅샷에 보관한다.
+
+### 원문
+
+Hello, this is TA.
+
+
+We will have an offline class tomorrow(261030). Please assume that classes will be held as scheduled unless otherwise announced.
+
+
+Thank you.
+Jaebin Lee
+<!-- canvas-notice-656895-20261109:end -->

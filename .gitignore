@@ -2,6 +2,9 @@
 # Browser partial downloads
 *.crdownload
 
+# Local credentials and private API cache
+.local/
+
 # Large downloaded textbook PDFs
 *libgen.li.pdf
 tmp/
@@ -15,5 +18,8 @@ tools/ocr/tessdata/*
 *.vcxproj.user
 **/x64/Debug/
 .codex-finalizer-flow/
+.codex_ppt_build/
+__pycache__/
+*.py[cod]
 __MACOSX/
 ._*
