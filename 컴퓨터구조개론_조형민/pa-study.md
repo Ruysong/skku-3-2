@@ -1,10 +1,10 @@
 # 컴퓨터구조 PA 구현목차
 
-| 과제 | 한 일 | 실제 근거·상태 | 설명 |
+| 과제 | 수행 내용 | 관련 파일 | 설명 |
 |---|---|---|---|
-| Project 1 | 37개 RV32I 명령어 해독, 비트 필드·immediate·부호 확장 | C++·Makefile 보관, 사용자 제출 완료 확인 | [PA1](./PA/PA_1/study.md) |
-| Project 2 | 27개 RV32I 실행, 레지스터·PC·데이터 메모리·I/O | C++·Makefile 보관, 11/16 서버 제출 완료 확인 | [PA2 구조·검증·차이 사례](./PA/PA_2/study.md) |
+| Project 1 | 37개 RV32I 명령어 해독, 비트 필드·immediate·부호 확장 | C++·Makefile | [PA1](./PA/PA_1/study.md) |
+| Project 2 | 27개 RV32I 실행, 레지스터·PC·메모리·I/O | C++·Makefile·reference 비교 기록 | [PA2](./PA/PA_2/study.md) |
 
-Project 1의 `riscv-sim` 실행파일 이름만 보고 명령 실행 기능이 있다고 판단하지 않는다. Project 2에서 실행 상태 관리를 추가했다. PA0은 제출 환경 연습 안내로 구분한다.
+Project 1에서 명령어를 해독하고, Project 2에서 실행 상태 관리로 확장했다. Proj2 공개 예제 11개를 reference와 비교하고 경계값·분기·jump·메모리 동작을 추가 시험했다.
 
-자소서·면접에서는 [C1/C2 경험 카드](../경험-근거지도.md#c1c2--risc-v-명령어-해독에서-실행-상태-관리로)를 먼저 읽고 두 과제의 실제 소스로 내려간다. 공식 채점과 자체/reference 검증은 구분한다.
+[C1/C2 경험 카드](../경험-근거지도.md#c1c2--risc-v-명령어-해독에서-실행-상태-관리로) → 구조·함수 설명 → 실제 소스 순서로 읽는다.

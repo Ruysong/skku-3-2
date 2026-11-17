@@ -1,10 +1,12 @@
 # 시스템프로그램 과제 학습목차
 
-| 과제 | 성격 | 보관·복습 |
-| --- | --- | --- |
-| Assignment 01 | Chap.2 연습문제 8개에 대한 서술·수식 풀이 | [범위와 제출물 목차](./Assignment/Assignment_1/study.md) |
-| Assignment 02 | Chap.3 Code Representation 문제 3-1~3-8: C/어셈블리, 배열, 구조체·union, 스택, 부동소수점 | [제출 조건·문제별 범위](./assignments.md#assignment-02---code-representation) |
+정보 표현과 C 프로그램의 실행 원리를 문제풀이·서술·수식으로 정리하는 과제를 수행했다.
 
-이 과목의 A01은 프로그램을 빌드해 제출하는 PA가 아니다. 최종 답안 PDF의 문제 번호·개념 범위를 공부용으로 연결했다. 실제 제출 답안을 수정하거나 새 풀이·코드를 추가하지 않았다. 제출 완료는 사용자 확인 기준이다.
+| 과제 | 수행 내용 | 관련 파일 |
+|---|---|---|
+| Assignment 01 | Chap.2 연습문제 8개: 비트·정수·부동소수점 표현과 변환 | [풀이 범위·제출물](./Assignment/Assignment_1/study.md) |
+| Assignment 02 | Chap.3 문제 3-1~3-8: C/어셈블리, 배열, 구조체·union, 스택, 부동소수점 | [문제별 범위](./assignments.md#assignment-02---code-representation), [답안·자료](./Assignment/Assignment_2/) |
 
-연결되는 수업: [2주차 정보 표현](./2주차/study.md), [3주차 정수·부동소수점](./3주차/study.md), [4주차 학습지도](./4주차/study.md). 과제의 Chap.2 범위와 이후 기계어 Chap.3 공부를 혼동하지 않는다.
+[2주차 정보 표현](./2주차/study.md), [3주차 정수·부동소수점](./3주차/study.md), [4주차](./4주차/study.md)와 이후 기계어·성능 학습을 연결한다.
+
+자소서·면접용 정리는 [P1 경험 카드](../경험-근거지도.md#p1--c-코드가-기계에서-실행되는-원리)에서 읽는다.
