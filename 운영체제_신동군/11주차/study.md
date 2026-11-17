@@ -1,5 +1,14 @@
 # 운영체제 11주차
 
+<!-- followup-20261116:start -->
+## 11/16 API·원본 후속 확인
+
+- OS11-CondVar.pdf와 OS11-CondVar-Quiz.pdf, OS12-Semaphore.pdf와 OS12-Semaphore-Quiz.pdf가 이 폴더에 모두 보관되어 있다. 아래 OS11 미보관 표시는11/9 당시 기록이다.
+- Quiz8은 **11/12 13:42:38 제출·채점 상태**다.
+- PA3는 **11/18 23:59:59 정규 마감**, 현재 LMS 보고서 미제출. UI 서버 코드 제출 상태는 별도다.
+- [12주차](../12주차/study.md): Deadlock·I/O Devices & SSD. 영상 마감은11/19 12:59:59다.
+<!-- followup-20261116:end -->
+
 기간: **2026-11-09~11-15** · iCampus API 확인일: **2026-11-09**, 한국 시간.
 
 이번 주 연결 주제: **Condition Variables·Semaphores**

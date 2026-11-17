@@ -1,5 +1,11 @@
 # 알고리즘개론 공지
 
+<!-- week12-notices-20261116:start -->
+## 12주차 공지 확인 — 2026-11-16
+
+11/9 이후 게시된 새 공지는 없다. 기존 공지는 아래에 보존하며 주차별 최신 자료·마감은 [12주차](./12주차/study.md)에서 본다.
+<!-- week12-notices-20261116:end -->
+
 ## Merge Sort: Scores and Grading Criteria
 
 - 출처: [iCampus 원문](https://canvas.skku.edu/courses/76112/discussion_topics/655085)

@@ -1,0 +1,19 @@
+{
+  "week": 12,
+  "period": [
+    "2026-11-16",
+    "2026-11-22"
+  ],
+  "course_id": 76864,
+  "checked_at_kst": "2026-11-16 10:27:13",
+  "sources": [
+    "Canvas API: modules, assignments with own submission, announcements, quizzes, tabs",
+    "LearningX authenticated student modules and commons downloads"
+  ],
+  "items": [],
+  "downloads": [],
+  "limitations": [
+    "quizzes: Canvas GET failed (HTTP 404). Credentials are not included in this error.",
+    "files: Canvas GET failed (HTTP 401). Credentials are not included in this error."
+  ]
+}

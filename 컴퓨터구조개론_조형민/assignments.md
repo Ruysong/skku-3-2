@@ -1,5 +1,21 @@
 # 컴퓨터구조개론 과제/퀴즈
 
+<!-- proj2-complete-20261116:start -->
+## Proj2 최신 확인 (11/16 16:28 KST)
+
+**11/16 사용자 서버 제출 완료 확인**. 소스·Makefile을 서버에서 컴파일하고 공개 11개 테스트를 통과한 뒤 제출했다. Canvas API의 unsubmitted 표시는 별도 외부 서버 제출의 실패 증거로 사용하지 않는다. 아래 오전 API 행은 당시 LMS 상태다.
+<!-- proj2-complete-20261116:end -->
+
+<!-- week12-assignments-20261116:start -->
+## 12주차 API 확인 (2026-11-16)
+
+| 항목 | 정규 마감(KST) | 현재 조회 상태·제출 시각 |
+| --- | --- | --- |
+| [Proj2](https://canvas.skku.edu/courses/76835/assignments/2065807) | 2026-11-20 23:59:59 | LMS 미제출 |
+
+[12주차 강의·제출 동선](./12주차/study.md). 현재 상태를 아래 과거 기록보다 우선한다. API 미제출과 서버 코드 제출은 구분한다.
+<!-- week12-assignments-20261116:end -->
+
 ## 평가 비율
 
 출처: `1주차/CA_Lecture_01.pdf`

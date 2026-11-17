@@ -1,6 +1,6 @@
 # 알고리즘개론 6주차 (2026-10-05~10-11)
 
-구현·제출물 연결: [Min-Max-Median PQ 상세 교안](./pa-study.md), [log factorial 증명 목차](../proof-study.md).
+구현·제출물 연결: [Min-Max-Median PQ 상세 교안](../Assingmnet/hw2/pa-study.md), [log factorial 증명 목차](../proof-study.md).
 
 이번 주의 질문은 **비교 정렬의 하한이 `Omega(n log n)`인데도, 정수의 구조를 이용하면 어떻게 선형 시간에 정렬할 수 있는가**이다. 교수님 자료와 외부 강의는 출처별로 구분한다. Jason Ku의 `Linear Sorting`은 Part B, 별도 영상 `Lecture 7`은 Part C, 실제 퀴즈와 사용자 답변은 Part E에서 본다.
 
@@ -1044,7 +1044,7 @@ Radix Sort는 j개 패스를 끝냈을 때 item들이 **낮은 j자리로 이루
 
 ## Part D. 과제와의 연결
 
-이번 강의에서 비교 결정 트리와 로그 팩토리얼은 증명 과제의 배경이 되고, key 범위·안정성·자리 수는 Linear Sorting 퀴즈를 이해하는 기준이 된다. Min-Max-Median Priority Queue는 삽입·조회·삭제를 계속 처리하는 자료구조 과제이므로 정렬 강의의 알고리즘 하나를 그대로 반복 실행하면 충분하다고 단정하지 않는다. 과제 조건은 [과제 PDF](./Assignment_Min_Max_Median_PQ.pdf)에서 따로 확인한다.
+이번 강의에서 비교 결정 트리와 로그 팩토리얼은 증명 과제의 배경이 되고, key 범위·안정성·자리 수는 Linear Sorting 퀴즈를 이해하는 기준이 된다. Min-Max-Median Priority Queue는 삽입·조회·삭제를 계속 처리하는 자료구조 과제이므로 정렬 강의의 알고리즘 하나를 그대로 반복 실행하면 충분하다고 단정하지 않는다. 과제 조건은 [과제 PDF](../Assingmnet/hw2/Assignment_Min_Max_Median_PQ.pdf)에서 따로 확인한다. 코드·보고서·예제·[구현 교안](../Assingmnet/hw2/pa-study.md)은 `Assingmnet/hw2/`에 모았다.
 
 최신 전달받은 프로그래밍 과제 화면은 정식 마감일이 `없음`이고 이용 가능 기간이 10/11 23:59까지로 표시된다. 이용 종료 뒤 제출 가능 여부를 추측하지 않고 그 전까지 제출하는 일정으로 관리하되, 이 교안의 내용과 실제 제출 완료 여부를 혼동하지 않는다.
 

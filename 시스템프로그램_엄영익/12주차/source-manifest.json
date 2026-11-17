@@ -1,0 +1,97 @@
+{
+  "week": 12,
+  "period": [
+    "2026-11-16",
+    "2026-11-22"
+  ],
+  "course_id": 74762,
+  "checked_at_kst": "2026-11-16 10:27:15",
+  "sources": [
+    "Canvas API: modules, assignments with own submission, announcements, quizzes, tabs",
+    "LearningX authenticated student modules and commons downloads",
+    "LearningX CourseResource student-filtered resource list"
+  ],
+  "items": [
+    {
+      "week": 12,
+      "module_item_id": 5907602,
+      "title": "SP05-3-S17-20",
+      "kind": "commons",
+      "asset_type": "movie",
+      "file_name": null,
+      "duration": 1121.46,
+      "opened": true,
+      "unlock_at": "2026-11-15T15:00:00Z",
+      "due_at": "2026-11-22T14:59:59Z",
+      "lock_at": null,
+      "use_attendance": true,
+      "download_status": "not-file"
+    },
+    {
+      "week": 12,
+      "module_item_id": 5907603,
+      "title": "SP05-3-S21-35#",
+      "kind": "commons",
+      "asset_type": "movie",
+      "file_name": null,
+      "duration": 3094.62,
+      "opened": true,
+      "unlock_at": "2026-11-15T15:00:00Z",
+      "due_at": "2026-11-22T14:59:59Z",
+      "lock_at": null,
+      "use_attendance": true,
+      "download_status": "not-file"
+    },
+    {
+      "week": 12,
+      "module_item_id": 5907604,
+      "title": "SP06-1-S01-17",
+      "kind": "commons",
+      "asset_type": "movie",
+      "file_name": null,
+      "duration": 1775,
+      "opened": true,
+      "unlock_at": "2026-11-15T15:00:00Z",
+      "due_at": "2026-11-22T14:59:59Z",
+      "lock_at": null,
+      "use_attendance": true,
+      "download_status": "not-file"
+    },
+    {
+      "week": 12,
+      "module_item_id": 5907605,
+      "title": "SP06-1-S18-44",
+      "kind": "commons",
+      "asset_type": "movie",
+      "file_name": null,
+      "duration": 2199.77,
+      "opened": true,
+      "unlock_at": "2026-11-15T15:00:00Z",
+      "due_at": "2026-11-22T14:59:59Z",
+      "lock_at": null,
+      "use_attendance": true,
+      "download_status": "not-file"
+    }
+  ],
+  "downloads": [
+    {
+      "title": "SP05-3-FC.pdf",
+      "name": "SP05-3-FC.pdf",
+      "path": "시스템프로그램_엄영익\\12주차\\SP05-3-FC.pdf",
+      "bytes": 1961910,
+      "sha256": "c70ccfa89b0aeaf9f8ef97753098c72f58fee5ee0c9b61e792138c1a7452801f",
+      "state": "downloaded"
+    },
+    {
+      "title": "SP06-1-FC.pdf",
+      "name": "SP06-1-FC.pdf",
+      "path": "시스템프로그램_엄영익\\12주차\\SP06-1-FC.pdf",
+      "bytes": 1438936,
+      "sha256": "021e7c6e29c877a6561c093258386c3f14674b1d7dd0822cf4c0c3026dfd09d9",
+      "state": "downloaded"
+    }
+  ],
+  "limitations": [
+    "files: Canvas GET failed (HTTP 401). Credentials are not included in this error."
+  ]
+}

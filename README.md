@@ -1,19 +1,33 @@
 # SKKU 3-2
 
+<!-- latest-submissions-20261116:start -->
+최신 제출 확인 (11/16 16:28 KST): **운체 PA3 코드·PDF 완료 / 컴구 Proj2 서버 제출 완료**. 시프 Assignment-02 **100점** 확인. [최신 일정과 공부 배치](./tasks.md)를 우선하며, 아래 오전·이전 주차의 미제출 표시는 당시 기록이다.
+<!-- latest-submissions-20261116:end -->
+
+<!-- week12-home-20261116:start -->
+## 12주차 최신 정리 (11/16 확인)
+
+- [전체 일정·제출 상태](./tasks.md): 시프실11/17, 운체PA3 11/18, 컴구Proj2 11/20. 운체 영상은11/19 12:59:59 마감.
+- [알고리즘 12주차 위상정렬·최단경로](./알고리즘개론_김형식/12주차/study.md). 오늘 수업용 Greedy 복습은 사용자 요청에 따라 채팅으로만 설명한다.
+- 전과목12주차 폴더·study·출처manifest 생성. 공개된 이번 주PDF9개와 시프실PA3 명세·스켈레톤·예제 보관. 시프실week12 코드는11/17 18:00 공개 전이다.
+<!-- week12-home-20261116:end -->
+
 2026년 2학기 과목별 공지, 과제, 퀴즈, 시험범위, 강의자료를 정리한 저장소입니다. 과목 폴더 안에는 `1주차`, `2주차`처럼 주차별 자료를 바로 보이게 두고, 긴 공부 정리는 각 주차의 `study.md`에 둡니다.
 
 ## 과목
 
 | 과목 | 과목 홈 | 공지 | 과제/퀴즈 | 현재 자료 |
 | --- | --- | --- | --- | --- |
-| 시스템프로그래밍실습 - 한환수 | [README](./시스템프로그래밍실습_한환수/README.md) | [notices](./시스템프로그래밍실습_한환수/notices.md) | [assignments](./시스템프로그래밍실습_한환수/assignments.md) | [11주차 세팅](./시스템프로그래밍실습_한환수/11주차/study.md) · 11/9~11/15 |
-| 시스템프로그램 - 엄영익 | [README](./시스템프로그램_엄영익/README.md) | [notices](./시스템프로그램_엄영익/notices.md) | [assignments](./시스템프로그램_엄영익/assignments.md) | [11주차 세팅](./시스템프로그램_엄영익/11주차/study.md) · 11/9~11/15 |
-| 알고리즘개론 - 김형식 | [README](./알고리즘개론_김형식/README.md) | [notices](./알고리즘개론_김형식/notices.md) | [assignments](./알고리즘개론_김형식/assignments.md) | [11주차 세팅](./알고리즘개론_김형식/11주차/study.md) · 11/9~11/15 |
-| 운영체제 - 신동군 | [README](./운영체제_신동군/README.md) | [notices](./운영체제_신동군/notices.md) | [assignments](./운영체제_신동군/assignments.md) | [11주차 세팅](./운영체제_신동군/11주차/study.md) · 11/9~11/15 |
-| 캡스톤설계프로젝트 - 타메르 | [README](./캡스톤설계프로젝트_타메르/README.md) | [notices](./캡스톤설계프로젝트_타메르/notices.md) | [assignments](./캡스톤설계프로젝트_타메르/assignments.md) | [11주차 세팅](./캡스톤설계프로젝트_타메르/11주차/study.md) · 11/9~11/15 |
-| 컴퓨터구조개론 - 조형민 | [README](./컴퓨터구조개론_조형민/README.md) | [notices](./컴퓨터구조개론_조형민/notices.md) | [assignments](./컴퓨터구조개론_조형민/assignments.md) | [11주차 세팅](./컴퓨터구조개론_조형민/11주차/study.md) · 11/9~11/15 |
+| 시스템프로그래밍실습 - 한환수 | [README](./시스템프로그래밍실습_한환수/README.md) | [notices](./시스템프로그래밍실습_한환수/notices.md) | [assignments](./시스템프로그래밍실습_한환수/assignments.md) | [12주차 세팅](./시스템프로그래밍실습_한환수/12주차/study.md) · 11/16~11/22 |
+| 시스템프로그램 - 엄영익 | [README](./시스템프로그램_엄영익/README.md) | [notices](./시스템프로그램_엄영익/notices.md) | [assignments](./시스템프로그램_엄영익/assignments.md) | [12주차 세팅](./시스템프로그램_엄영익/12주차/study.md) · 11/16~11/22 |
+| 알고리즘개론 - 김형식 | [README](./알고리즘개론_김형식/README.md) | [notices](./알고리즘개론_김형식/notices.md) | [assignments](./알고리즘개론_김형식/assignments.md) | [12주차 세팅](./알고리즘개론_김형식/12주차/study.md) · 11/16~11/22 |
+| 운영체제 - 신동군 | [README](./운영체제_신동군/README.md) | [notices](./운영체제_신동군/notices.md) | [assignments](./운영체제_신동군/assignments.md) | [12주차 세팅](./운영체제_신동군/12주차/study.md) · 11/16~11/22 |
+| 캡스톤설계프로젝트 - 타메르 | [README](./캡스톤설계프로젝트_타메르/README.md) | [notices](./캡스톤설계프로젝트_타메르/notices.md) | [assignments](./캡스톤설계프로젝트_타메르/assignments.md) | [12주차 세팅](./캡스톤설계프로젝트_타메르/12주차/study.md) · 11/16~11/22 |
+| 컴퓨터구조개론 - 조형민 | [README](./컴퓨터구조개론_조형민/README.md) | [notices](./컴퓨터구조개론_조형민/notices.md) | [assignments](./컴퓨터구조개론_조형민/assignments.md) | [12주차 세팅](./컴퓨터구조개론_조형민/12주차/study.md) · 11/16~11/22 |
 
 ## 전체 관리
+
+- [알고리즘 11주차 MIT Bellman-Ford 상세 교안](./알고리즘개론_김형식/11주차/study.md#mit-bellman-ford): 11/12 제공 대본 원본 보존, 간선 수 제한 DP·witness 증명·복제 DAG·복잡도·보충 예제. 교수님 PDF와 외부 강의를 분리했다.
 
 - [컴구 기말 대비 PDF 5개](./컴퓨터구조개론_조형민/final-prep/): 2020~2022 전체 RISC-V 변환본과 2023 기출·2024 샘플. 문제·해설 합본.
 
@@ -56,6 +70,9 @@
 │   ├── icampus/
 │   └── ocr/
 ├── 시스템프로그래밍실습_한환수/
+│   ├── 12주차/
+│   │   ├── study.md
+│   │   └── source-manifest.json
 │   ├── 11주차/
 │   │   └── study.md
 │   ├── 10주차/
@@ -71,6 +88,9 @@
 │   └── 7주차/
 │       └── study.md
 ├── 시스템프로그램_엄영익/
+│   ├── 12주차/
+│   │   ├── study.md
+│   │   └── source-manifest.json
 │   ├── 11주차/
 │   │   ├── study.md
 │   │   └── SP05-3-FC.pdf
@@ -87,13 +107,26 @@
 │   └── 7주차/
 │       └── study.md
 ├── 알고리즘개론_김형식/
+│   ├── 12주차/
+│   │   ├── study.md
+│   │   └── source-manifest.json
 │   ├── 11주차/
 │   │   └── study.md
 │   ├── 10주차/
-│   │   ├── study.md
+│   │   └── study.md
+│   ├── Assingmnet/hw2/
+│   │   ├── pq.c
+│   │   ├── Min_Max_Median_PQ_Report_2024315329.pdf
+│   │   ├── Assignment_Min_Max_Median_PQ.pdf
+│   │   ├── PQ_Examples.zip
+│   │   ├── PQ_Examples/
+│   │   └── pa-study.md
+│   ├── Assingmnet/hw3/
 │   │   ├── Assignment_kDNA.pdf
 │   │   ├── msa.in
-│   │   └── msa.out
+│   │   ├── msa.out
+│   │   ├── msa.c
+│   │   └── K_DNA_Report_2024315329_Junhyuk_Song.pdf
 │   ├── README.md
 │   ├── notices.md
 │   ├── assignments.md
@@ -118,12 +151,13 @@
 │   │   ├── Count sort.pdf
 │   │   ├── Radix sort.pdf
 │   │   ├── MIT-Linear-Sorting-script.txt
-│   │   ├── MIT-Lecture-7-Sorting-script.txt
-│   │   ├── Assignment_Min_Max_Median_PQ.pdf
-│   │   └── PQ_Examples.zip
+│   │   └── MIT-Lecture-7-Sorting-script.txt
 │   └── 7주차/
 │       └── study.md
 ├── 운영체제_신동군/
+│   ├── 12주차/
+│   │   ├── study.md
+│   │   └── source-manifest.json
 │   ├── 11주차/
 │   │   └── study.md
 │   ├── 10주차/
@@ -140,6 +174,9 @@
 │       ├── study.md
 │       └── OS08-PageReplacement.pdf
 ├── 캡스톤설계프로젝트_타메르/
+│   ├── 12주차/
+│   │   ├── study.md
+│   │   └── source-manifest.json
 │   ├── 11주차/
 │   │   └── study.md
 │   ├── 10주차/
@@ -206,3 +243,7 @@ PA 구현 설명은 각 과목의 `pa-study.md`에서 연결합니다. 개별 �
 - 시험범위, 과제 조건, 퀴즈 일정은 공지나 자료에 명시된 내용을 기준으로 정리합니다.
 - 파일이나 폴더 구조가 바뀌면 이 루트 README.md의 저장소 구조도 함께 갱신합니다.
 - 자세한 운영 방식은 [정리 프로토콜](./protocol.md)을 따릅니다.
+
+## 2026-11-17 점검
+
+- [11/17 전과목 자료·정크 점검](./tools/icampus/reports/2026-11-17.md)

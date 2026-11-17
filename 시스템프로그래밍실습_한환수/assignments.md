@@ -1,5 +1,16 @@
 # 시스템프로그래밍실습 - 한환수 과제/실습
 
+<!-- week12-assignments-20261116:start -->
+## 12주차 API 확인 (2026-11-16)
+
+| 항목 | 정규 마감(KST) | 현재 조회 상태·제출 시각 |
+| --- | --- | --- |
+| [week12 weekly assignment](https://canvas.skku.edu/courses/75630/assignments/2071543) | 2026-11-17 23:59:59 | LMS 미제출 |
+| [PA3 submit](https://canvas.skku.edu/courses/75630/assignments/2068885) | 2026-12-06 23:59:59 | LMS 미제출 |
+
+[12주차 강의·제출 동선](./12주차/study.md). 현재 상태를 아래 과거 기록보다 우선한다. API 미제출과 서버 코드 제출은 구분한다.
+<!-- week12-assignments-20261116:end -->
+
 ## 평가 방식
 
 | 항목 | 비율 | 메모 |
@@ -208,3 +219,10 @@ API 미제출은 확인 시점의 상태다. 아직 마감 전인 항목을 지�
 
 주간 목록: [11주차 study](./11주차/study.md). 현재 API 확인 결과가 아래·위의 과거 미확인 상태보다 최신이다.
 <!-- week11-api-20261109:end -->
+
+## 11/10 추가 확인: week11 weekly assignment
+
+- 제출 페이지: https://canvas.skku.edu/courses/75630/assignments/2070543
+- 제출 가능: **2026-11-10(화) 18:00~23:59:59**, 한국 시간.
+- 내용: pthreads를 이용한 다중 스레드 행렬–벡터 곱. 소스와 Makefile을 `[student_id]_w11.tar.zst`로 묶어 제출한다. `make`로 채점하며 컴파일 실패 시 0점이다.
+- [원본 PDF와 학습 목차](./11주차/study.md). PDF 다운로드는 완료했고 `week11_code.zip`은 조회 시 18:00 공개 전이었다. 사용자 제출물·VMShare는 변경하지 않았다.

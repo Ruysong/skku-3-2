@@ -1,5 +1,11 @@
 # 알고리즘개론 10주차
 
+<!-- followup-20261116:start -->
+## 11/16 후속 확인
+
+Greedy Algorithm은 **11/8 12:07:55 제출·평가 대기**, DP2는 **11/4 11:39:10 제출·평가 대기**다. 아래 “제출 미확인”은 당시 전달된 응시 화면의 상태이며 현재 상태가 아니다. K DNA도11/13 제출을 확인했다. 11/16 수업용 Greedy 복습은 채팅으로 설명한다.
+<!-- followup-20261116:end -->
+
 기간: 2026-11-02~11-08
 
 Greedy·Huffman 교안과 실제 Greedy Algorithm 퀴즈를 구분해 보관한다. 퀴즈 반영: 2026-11-08.
@@ -117,7 +123,7 @@ Activity Selection의 기준은 가장 짧은 활동이 아니라 **종료 시�
 <!-- kdna-download-20261109:start -->
 ## K DNA 과제 원본 보관 (11/9 확인)
 
-10주차 모듈의 [K DNA 과제](https://canvas.skku.edu/courses/76112/assignments/2051467)는 **11/15 23:59:59 마감**, 코드와 설명문서 제출이다. [명세](./Assignment_kDNA.pdf) · [공개 입력](./msa.in) · [공개 출력](./msa.out)을 원본으로 보관했다. 이번 주 관리는 [11주차](../11주차/study.md)에서 본다. 자세한 명세 분석·구현 완료를 의미하지 않는다.
+10주차 모듈의 [K DNA 과제](https://canvas.skku.edu/courses/76112/assignments/2051467)는 **11/15 23:59:59 마감**, 코드와 설명문서 제출이다. 11/13 과제 파일을 기존 과제 폴더 구조에 맞춰 `Assingmnet/hw3/`로 모았다. [명세](../Assingmnet/hw3/Assignment_kDNA.pdf) · [공개 입력](../Assingmnet/hw3/msa.in) · [공개 출력](../Assingmnet/hw3/msa.out)은 원본 그대로다. 제출용 [msa.c](../Assingmnet/hw3/msa.c)와 [영문 보고서](../Assingmnet/hw3/K_DNA_Report_2024315329_Junhyuk_Song.pdf)를 작성·로컬 검증했으며, LMS 제출 완료는 아직 확인하지 않았다. 이번 주 관리는 [11주차](../11주차/study.md)에서 본다.
 
 DP2와 Greedy는 11/9 API에서 제출 확인·평가 대기다. 기존 미확인 표시는 당시 화면 기록이다.
 <!-- kdna-download-20261109:end -->

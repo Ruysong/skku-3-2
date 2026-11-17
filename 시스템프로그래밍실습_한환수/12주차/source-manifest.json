@@ -1,0 +1,121 @@
+{
+  "week": 12,
+  "period": [
+    "2026-11-16",
+    "2026-11-22"
+  ],
+  "course_id": 75630,
+  "checked_at_kst": "2026-11-16 10:27:14",
+  "sources": [
+    "Canvas API: modules, assignments with own submission, announcements, quizzes, tabs",
+    "LearningX authenticated student modules and commons downloads"
+  ],
+  "items": [
+    {
+      "week": 12,
+      "module_item_id": 5936399,
+      "title": "week12",
+      "kind": "video_conference",
+      "asset_type": null,
+      "file_name": null,
+      "duration": 60,
+      "opened": true,
+      "unlock_at": "2026-11-17T09:00:00Z",
+      "due_at": null,
+      "lock_at": null,
+      "use_attendance": false,
+      "download_status": "not-file"
+    },
+    {
+      "week": 12,
+      "module_item_id": 5936407,
+      "title": "week12_concurrent_programming",
+      "kind": "commons",
+      "asset_type": "pdf",
+      "file_name": "week12_concurrent_programming.pdf",
+      "duration": null,
+      "opened": true,
+      "unlock_at": "2026-11-15T15:00:00Z",
+      "due_at": null,
+      "lock_at": null,
+      "use_attendance": false,
+      "download_status": "existing-identical"
+    },
+    {
+      "week": 12,
+      "module_item_id": 5936408,
+      "title": " week12 weekly assignment",
+      "kind": null,
+      "asset_type": null,
+      "file_name": null,
+      "duration": null,
+      "opened": null,
+      "unlock_at": "2026-11-16T15:00:00Z",
+      "due_at": "2026-11-17T14:59:59Z",
+      "lock_at": "2026-11-17T14:59:59Z",
+      "use_attendance": null,
+      "download_status": "not-file"
+    },
+    {
+      "week": 12,
+      "module_item_id": 5936409,
+      "title": "week12_code",
+      "kind": "commons",
+      "asset_type": "file",
+      "file_name": "week12.zip",
+      "duration": null,
+      "opened": false,
+      "unlock_at": "2026-11-17T09:00:00Z",
+      "due_at": null,
+      "lock_at": null,
+      "use_attendance": false,
+      "download_status": "not-open"
+    }
+  ],
+  "downloads": [
+    {
+      "title": "PA3.pdf",
+      "name": "PA3.pdf",
+      "path": "시스템프로그래밍실습_한환수\\PA\\PA_3\\PA3.pdf",
+      "bytes": 669606,
+      "sha256": "ff9f8f255b9e305175214f131c475db846b112295cc7ec4d73013518a2763f92",
+      "state": "downloaded"
+    },
+    {
+      "title": "week11_code.zip",
+      "name": "week11_code.zip",
+      "path": "시스템프로그래밍실습_한환수\\11주차\\week11_code.zip",
+      "bytes": 3089,
+      "sha256": "3683268726a98ccd1afb38869b617c40340baa5f15c2a91562c76acc107dc9b7",
+      "state": "existing-identical"
+    },
+    {
+      "title": "week12_concurrent_programming.pdf",
+      "name": "week12_concurrent_programming.pdf",
+      "path": "시스템프로그래밍실습_한환수\\12주차\\week12_concurrent_programming.pdf",
+      "bytes": 1237134,
+      "sha256": "d76be6459ded347599397b76c317905d8811da80c95efc2c6c3d42d6a43ec1a6",
+      "state": "existing-identical"
+    },
+    {
+      "title": "pa3_example1.tar.zst",
+      "name": "pa3_example1.tar.zst",
+      "path": "시스템프로그래밍실습_한환수\\PA\\PA_3\\pa3_example1.tar.zst",
+      "bytes": 499,
+      "sha256": "bb1db536745d8880c77b403d56b9d65b88580addd481479134071cb735516b4e",
+      "state": "downloaded"
+    },
+    {
+      "title": "pa3_skeleton_code.tar.zst",
+      "name": "pa3_skeleton_code.tar.zst",
+      "path": "시스템프로그래밍실습_한환수\\PA\\PA_3\\pa3_skeleton_code.tar.zst",
+      "bytes": 582072,
+      "sha256": "637fe391b0adbbce9daa4496118141adec7bc32548d51b9f39e81afa0d693856",
+      "state": "downloaded"
+    }
+  ],
+  "limitations": [
+    "quizzes: Canvas GET failed (HTTP 404). Credentials are not included in this error.",
+    "files: Canvas GET failed (HTTP 401). Credentials are not included in this error."
+  ]
+}

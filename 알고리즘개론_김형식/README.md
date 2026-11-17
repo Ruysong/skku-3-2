@@ -1,5 +1,12 @@
 # 알고리즘개론 - 김형식
 
+<!-- week12-current-20261116:start -->
+## 이번 주: 12주차 (11/16~11/22)
+
+- [12주차 학습지도](./12주차/study.md): 위상정렬·최단경로 새 진도.
+- iCampus API·LearningX 공개 교안과 본인 제출 상태를 11/16 확인했다. 이전 주차의 미확인 표시는 당시 기록이며 최신 내용은 위 학습지도를 따른다.
+<!-- week12-current-20261116:end -->
+
 [PA 구현·증명 제출물 공부](./pa-study.md)
 
 ## 과목 홈
@@ -20,7 +27,9 @@
 
 ## 11주차 (11/9~11/15)
 
-- [이번 주 학습지도](./11주차/study.md): Graph·BFS·DFS·Bellman-Ford. 11/9 iCampus API 목록·마감·제출 상태 반영.
+- K DNA 과제 보관: [Assingmnet/hw3](./Assingmnet/hw3/). 명세·공개 예제·제출용 코드·영문 보고서를 함께 모았다. 작성·로컬 검증 완료, LMS 제출은 미확인.
+- [이번 주 학습지도](./11주차/study.md): 교수님 Graph·BFS·DFS PDF 목차와 [MIT Bellman-Ford 상세 교안](./11주차/study.md#mit-bellman-ford)을 출처별로 분리했다. 간선 수 제한 DP·witness 증명·복제 DAG·복잡도·보충 실행 예제 포함. [대본 원본](./11주차/MIT-L12-Bellman-Ford-script.txt)은 그대로 보존했다(11/12 반영).
+- [실제 Bellman-Ford 퀴즈 4문항·4번 그래프](./11주차/study.md#실제-벨먼포드-퀴즈): 사용자 제공 문제 원문과 첨부 PNG 보관. 11/15 23:59 마감이며 답안·제출 완료로 표시하지 않는다.
 
 ## 10주차 (11/2~11/8)
 
@@ -40,6 +49,7 @@
 
 ## 6주차
 
+- Min-Max-Median PQ 과제 파일은 [Assingmnet/hw2](./Assingmnet/hw2/)에 모았다. [구현 교안](./Assingmnet/hw2/pa-study.md)에서 코드·보고서·명세·공개 예제로 연결한다.
 - iCampus 6주차에 열린 Linear Sorting 묶음은 [6주차 상세 교안](./6주차/study.md)에서 본다. Jason Ku의 `Linear Sorting`과 별도 `Lecture 7`을 각각 목차·시간대·예제별로 구분하고, 두 원문 대본과 실제 퀴즈·사용자 답변을 함께 보관한다. [초기 5주차 학습지도](./5주차/study.md)는 그대로 남긴다.
 - Count Sort, Radix Sort, Linear Sorting 영상과 퀴즈·증명·프로그래밍 과제는 10/11 23:59 마감.
 

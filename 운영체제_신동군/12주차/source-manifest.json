@@ -1,0 +1,96 @@
+{
+  "week": 12,
+  "period": [
+    "2026-11-16",
+    "2026-11-22"
+  ],
+  "course_id": 75500,
+  "checked_at_kst": "2026-11-16 10:27:13",
+  "sources": [
+    "Canvas API: modules, assignments with own submission, announcements, quizzes, tabs",
+    "LearningX authenticated student modules and commons downloads"
+  ],
+  "items": [
+    {
+      "week": 12,
+      "module_item_id": 5928742,
+      "title": "OS13-Deadlock",
+      "kind": "commons",
+      "asset_type": "pdf",
+      "file_name": "OS13-Deadlock.pdf",
+      "duration": null,
+      "opened": true,
+      "unlock_at": "2026-11-13T15:00:00Z",
+      "due_at": "2026-11-22T14:59:59Z",
+      "lock_at": null,
+      "use_attendance": false,
+      "download_status": "downloaded"
+    },
+    {
+      "week": 12,
+      "module_item_id": 5928745,
+      "title": "OS13-Deadlock",
+      "kind": "commons",
+      "asset_type": "movie",
+      "file_name": null,
+      "duration": 2383.97,
+      "opened": true,
+      "unlock_at": "2026-11-13T15:00:00Z",
+      "due_at": "2026-11-19T03:59:59Z",
+      "lock_at": null,
+      "use_attendance": true,
+      "download_status": "not-file"
+    },
+    {
+      "week": 12,
+      "module_item_id": 5928744,
+      "title": "OS14-IO Devices and SSD",
+      "kind": "commons",
+      "asset_type": "pdf",
+      "file_name": "OS14-IO Devices and SSD.pdf",
+      "duration": null,
+      "opened": true,
+      "unlock_at": "2026-11-13T15:00:00Z",
+      "due_at": "2026-11-22T14:59:59Z",
+      "lock_at": null,
+      "use_attendance": false,
+      "download_status": "downloaded"
+    },
+    {
+      "week": 12,
+      "module_item_id": 5928746,
+      "title": "OS14-IO Devices and SSD",
+      "kind": "commons",
+      "asset_type": "movie",
+      "file_name": null,
+      "duration": 3964.13,
+      "opened": true,
+      "unlock_at": "2026-11-13T15:00:00Z",
+      "due_at": "2026-11-19T03:59:59Z",
+      "lock_at": null,
+      "use_attendance": true,
+      "download_status": "not-file"
+    }
+  ],
+  "downloads": [
+    {
+      "title": "OS13-Deadlock.pdf",
+      "name": "OS13-Deadlock.pdf",
+      "path": "운영체제_신동군\\12주차\\OS13-Deadlock.pdf",
+      "bytes": 334308,
+      "sha256": "0e63443bb32d373189dd18be26584496db1d341da9030c95fb5a7b3f373bb524",
+      "state": "downloaded"
+    },
+    {
+      "title": "OS14-IO Devices and SSD.pdf",
+      "name": "OS14-IO Devices and SSD.pdf",
+      "path": "운영체제_신동군\\12주차\\OS14-IO Devices and SSD.pdf",
+      "bytes": 1436196,
+      "sha256": "c7fa50298e2b5f6e8c56a054ffa84ad59b6240200da67a1c2418ca4074a1c93f",
+      "state": "downloaded"
+    }
+  ],
+  "limitations": [
+    "files: Canvas GET failed (HTTP 401). Credentials are not included in this error."
+  ]
+}

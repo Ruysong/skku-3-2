@@ -1,5 +1,36 @@
 # 운영체제 - 신동군 공지
 
+<!-- week12-notices-20261116:start -->
+## 12주차 공지 확인 — 2026-11-16
+
+### 2026-11-12 18:58:39 [Notice] Mid-Term Exam Answer Sheet Review Location
+
+출처: [[Notice] Mid-Term Exam Answer Sheet Review Location](https://canvas.skku.edu/courses/75500/discussion_topics/661140)
+
+핵심: 중간고사 성적·시험지 확인 안내다. 시험지 확인은 **11/13 13:00~17:00, 반도체관 400309**로 이미 지난 일정이며 이번 주 할 일에 넣지 않는다.
+
+원문:
+
+중간고사 시험지 확인 장소는 반도체관 400309입니다.
+일시: 11월 13일(금) 오후 1시~5시
+
+
+The review will be held in Room 400309, Semiconductor Building.
+Date & Time: Friday, November 13, 1:00 PM – 5:00 PM
+
+### 2026-11-12 14:37:06 Mid-Term Exam Score
+
+출처: [Mid-Term Exam Score](https://canvas.skku.edu/courses/75500/discussion_topics/661026)
+
+핵심: 중간고사 성적·시험지 확인 안내다. 시험지 확인은 **11/13 13:00~17:00, 반도체관 400309**로 이미 지난 일정이며 이번 주 할 일에 넣지 않는다.
+
+원문:
+
+The score file is attached.
+
+You can review your answer sheet on Friday, November 13, from 1:00 PM to 5:00 PM.
+<!-- week12-notices-20261116:end -->
+
 ## 2026-09-03 수업 구두 안내 메모
 
 출처: 2026-09-03 목요일 운영체제 수업 중 구두 안내

@@ -1,5 +1,11 @@
 # 캡스톤설계프로젝트 - 타메르 공지
 
+<!-- week12-notices-20261116:start -->
+## 12주차 공지 확인 — 2026-11-16
+
+11/9 이후 게시된 새 공지는 없다. 기존 공지는 아래에 보존하며 주차별 최신 자료·마감은 [12주차](./12주차/study.md)에서 본다.
+<!-- week12-notices-20261116:end -->
+
 ## 2026-09-03 Welcome to Capstone Design - Fall 2026
 
 ### 핵심 체크
@@ -173,10 +179,12 @@ Wishing you all the best!
 ### 원문
 
 Hello, this is TA.
-
+
+
 
 We will have an offline class tomorrow(261030). Please assume that classes will be held as scheduled unless otherwise announced.
-
+
+
 
 Thank you.
 Jaebin Lee

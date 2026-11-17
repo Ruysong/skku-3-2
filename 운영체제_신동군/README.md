@@ -1,5 +1,12 @@
 # 운영체제 - 신동군
 
+<!-- week12-current-20261116:start -->
+## 이번 주: 12주차 (11/16~11/22)
+
+- [12주차 학습지도](./12주차/study.md): Deadlock·I/O Devices & SSD.
+- iCampus API·LearningX 공개 교안과 본인 제출 상태를 11/16 확인했다. 이전 주차의 미확인 표시는 당시 기록이며 최신 내용은 위 학습지도를 따른다.
+<!-- week12-current-20261116:end -->
+
 [PA 구현·보고서 공부](./pa-study.md)
 
 ## 과목 홈

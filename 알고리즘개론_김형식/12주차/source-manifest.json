@@ -1,0 +1,149 @@
+{
+  "week": 12,
+  "period": [
+    "2026-11-16",
+    "2026-11-22"
+  ],
+  "course_id": 76112,
+  "checked_at_kst": "2026-11-16 10:27:15",
+  "sources": [
+    "Canvas API: modules, assignments with own submission, announcements, quizzes, tabs",
+    "LearningX authenticated student modules and commons downloads"
+  ],
+  "items": [
+    {
+      "week": 12,
+      "module_item_id": 5936953,
+      "title": "Topological sort",
+      "kind": "commons",
+      "asset_type": "movie",
+      "file_name": null,
+      "duration": 588.07,
+      "opened": true,
+      "unlock_at": null,
+      "due_at": "2026-11-22T14:59:00Z",
+      "lock_at": null,
+      "use_attendance": true,
+      "download_status": "not-file"
+    },
+    {
+      "week": 12,
+      "module_item_id": 5845041,
+      "title": "Topological Sort",
+      "kind": "commons",
+      "asset_type": "pdf",
+      "file_name": null,
+      "duration": 0,
+      "opened": true,
+      "unlock_at": null,
+      "due_at": "2026-11-22T14:59:00Z",
+      "lock_at": null,
+      "use_attendance": false,
+      "download_status": "downloaded"
+    },
+    {
+      "week": 12,
+      "module_item_id": 5936957,
+      "title": "Shortest path (Bellman-Bord)",
+      "kind": "commons",
+      "asset_type": "movie",
+      "file_name": null,
+      "duration": 1543.8,
+      "opened": true,
+      "unlock_at": null,
+      "due_at": "2026-11-22T14:59:00Z",
+      "lock_at": null,
+      "use_attendance": true,
+      "download_status": "not-file"
+    },
+    {
+      "week": 12,
+      "module_item_id": 5936961,
+      "title": "Shortest path (Dijkstra)",
+      "kind": "commons",
+      "asset_type": "movie",
+      "file_name": null,
+      "duration": 1276.73,
+      "opened": true,
+      "unlock_at": null,
+      "due_at": "2026-11-22T14:59:00Z",
+      "lock_at": null,
+      "use_attendance": true,
+      "download_status": "not-file"
+    },
+    {
+      "week": 12,
+      "module_item_id": 5845042,
+      "title": "Single-Source Shortest Path",
+      "kind": "commons",
+      "asset_type": "pdf",
+      "file_name": null,
+      "duration": 0,
+      "opened": true,
+      "unlock_at": null,
+      "due_at": "2026-11-22T14:59:00Z",
+      "lock_at": null,
+      "use_attendance": false,
+      "download_status": "downloaded"
+    },
+    {
+      "week": 12,
+      "module_item_id": 5936962,
+      "title": "All-pairs shortest paths",
+      "kind": "commons",
+      "asset_type": "movie",
+      "file_name": null,
+      "duration": 2446.87,
+      "opened": true,
+      "unlock_at": null,
+      "due_at": "2026-11-22T14:59:00Z",
+      "lock_at": null,
+      "use_attendance": true,
+      "download_status": "not-file"
+    },
+    {
+      "week": 12,
+      "module_item_id": 5845044,
+      "title": "All-Pairs Shortest Paths",
+      "kind": "commons",
+      "asset_type": "pdf",
+      "file_name": null,
+      "duration": 0,
+      "opened": true,
+      "unlock_at": null,
+      "due_at": "2026-11-22T14:59:00Z",
+      "lock_at": null,
+      "use_attendance": false,
+      "download_status": "downloaded"
+    }
+  ],
+  "downloads": [
+    {
+      "title": "Topological Sort.pdf",
+      "name": "Topological Sort.pdf",
+      "path": "알고리즘개론_김형식\\12주차\\Topological Sort.pdf",
+      "bytes": 367253,
+      "sha256": "543b77de2acb34a78c603932c068a41080e3c27db368298de0d0b5acad4ebc80",
+      "state": "downloaded"
+    },
+    {
+      "title": "Single-Source Shortest Path.pdf",
+      "name": "Single-Source Shortest Path.pdf",
+      "path": "알고리즘개론_김형식\\12주차\\Single-Source Shortest Path.pdf",
+      "bytes": 999498,
+      "sha256": "f5ec0f891eca7d39402a706e99fa77235689d5e65d786bb86a28130835f21b88",
+      "state": "downloaded"
+    },
+    {
+      "title": "All-Pairs Shortest Paths.pdf",
+      "name": "All-Pairs Shortest Paths.pdf",
+      "path": "알고리즘개론_김형식\\12주차\\All-Pairs Shortest Paths.pdf",
+      "bytes": 528671,
+      "sha256": "b3dedee88a75b40f5f0c1144cd8b67f983d4dae9d398e3259ccc051200f8dbd4",
+      "state": "downloaded"
+    }
+  ],
+  "limitations": [
+    "files: Canvas GET failed (HTTP 401). Credentials are not included in this error."
+  ]
+}

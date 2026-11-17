@@ -5,7 +5,8 @@
 | 제출물 | 한 일 | 공부용 정리 |
 | --- | --- | --- |
 | Merge sorting | 레코드를 연결리스트에 저장하고 포인터를 재연결해 stable sort | [hw1 구현 교안](./Assingmnet/hw1/study.md) |
-| Min-Max-Median Priority Queue | 두 그룹·네 indexed heap으로 min/max/lower median 관리 | [PQ 구현 교안](./6주차/pa-study.md) |
+| Min-Max-Median Priority Queue | 두 그룹·네 indexed heap으로 min/max/lower median 관리 | [hw2 PQ 구현 교안](./Assingmnet/hw2/pa-study.md) |
+| K DNA Sequences | k차원 DP와 역추적으로 완전 일치 열 수를 최대화; 작성·로컬 검증, 제출 미확인 | [코드](./Assingmnet/hw3/msa.c) · [영문 보고서](./Assingmnet/hw3/K_DNA_Report_2024315329_Junhyuk_Song.pdf) · [명세](./Assingmnet/hw3/Assignment_kDNA.pdf) |
 | Insertion Sort correctness | inner·outer invariant와 permutation 설명 | [증명 제출물 목차](./proof-study.md) |
 | O/Omega/Theta 증명 | 상수와 시작 입력 크기를 지정한 부등식 증명 | [증명 제출물 목차](./proof-study.md) |
 | Recurrences | recursion tree 및 master method 적용 | [증명 제출물 목차](./proof-study.md) |

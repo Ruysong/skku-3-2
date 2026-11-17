@@ -1,8 +1,40 @@
 # 시스템프로그래밍실습 11주차
 
+<!-- followup-20261116:start -->
+## 11/16 API·원본 후속 확인
+
+- week11 weekly assignment는 **11/10 18:55:21 제출·채점 상태**, 첨부는2024315329_w11.tar.zst다.
+- week11_code.zip은 이미 공개·보관되어 있고 API 원본과 SHA-256이 같음을 재확인했다. 아래 공개 전 표시는11/10 이전 조회 기록이다.
+- [12주차](../12주차/study.md)의 concurrent server·poll 채팅방으로 연결한다. VMShare 원본과 제출 압축본은 변경하지 않았다.
+<!-- followup-20261116:end -->
+
 기간: **2026-11-09~11-15** · iCampus API 확인일: **2026-11-09**, 한국 시간.
 
-이번 주 연결 주제: **11주차 자료 공개 대기**
+이번 주 연결 주제: **POSIX Threads(pthreads)·다중 스레드 행렬–벡터 곱**
+
+## 11/10 자료 확보·최신 상태
+
+- [week11-pthreads.pdf](./week11-pthreads.pdf)를 iCampus 학생용 API와 학교가 제공한 다운로드 링크로 받았다. **20페이지, 800,463바이트**이며 PDF 헤더·페이지 수·표지와 실습 요구사항을 확인했다.
+- SHA-256: `48f71d42251520029519bc3368d97d2b73f478fda9e4826f40f1e32127dcccb0`.
+- `week11` 항목은 파일이 아니라 **11/10(화) 18:00 시작 Zoom 수업**이다.
+- `week11_code.zip`은 API에서 **11/10(화) 18:00 공개 예정**, `opened=false`, `content_id=not_open`으로 반환됐다. 아직 내려받지 않았고 제한을 우회하지 않았다.
+- [week11 weekly assignment](https://canvas.skku.edu/courses/75630/assignments/2070543): **11/10(화) 18:00~23:59:59**, 파일 제출. 제출 완료 여부는 이번 작업에서 확인하지 않았다.
+- 아래의 11/9 공개 대기 기록은 과거 조회 결과이며, 현재 자료 상태는 이 절을 우선한다.
+
+### PDF 목차와 공부 순서
+
+| 페이지 | 주제 |
+| --- | --- |
+| 1~4 | Threads vs Processes, POSIX Threads와 API 분류 |
+| 5~8 | pthread.h, `-pthread`, 자료형과 thread attributes, joinable/detached 상태 |
+| 9~11 | `pthread_create`, `pthread_exit`, `pthread_cancel` |
+| 12~16 | 예제, `pthread_join`, `pthread_detach`, `pthread_self` |
+| 17~19 | 다중 스레드 행렬–벡터 곱 실습, 제공 스켈레톤·Makefile, 디버그·메모리 검사 |
+| 20 | 소스·Makefile 압축 및 iCampus 제출 |
+
+실습은 인자로 받은 M×N 행렬과 N×1 벡터의 곱을 구한다. 무작위 `uint64_t` 데이터를 스레드로 0~9 범위에 줄이고, 각 스레드가 행 하나와 벡터의 내적을 계산한다. 코어 수 c개 단위의 배치로 실행하고 main은 모든 스레드 종료를 기다린다. `w11_debug`는 단일 스레드 결과와 비교하고 `make test`는 메모리 문제를 검사한다. 제출물은 소스와 Makefile을 담은 `[student_id]_w11.tar.zst`이며 `make` 컴파일 실패는 0점으로 안내한다.
+
+이번 갱신은 **자료 다운로드·목차·실습 안내 연결**이다. 모든 그림·코드를 검수한 전문 교안은 아니므로 1만자 미만이며, 제공 코드도 공개 전이어서 구현 분석을 완료했다고 표시하지 않는다. VMShare와 기존 제출물은 이동·수정하지 않았다.
 
 ## 목차
 

@@ -1,5 +1,15 @@
 # 캡스톤설계프로젝트 - 타메르 과제/퀴즈
 
+<!-- week12-assignments-20261116:start -->
+## 12주차 API 확인 (2026-11-16)
+
+| 항목 | 정규 마감(KST) | 현재 조회 상태·제출 시각 |
+| --- | --- | --- |
+| [Midterm Video Presentation](https://canvas.skku.edu/courses/76864/assignments/2064571) | 2026-11-06 23:59:59 | 제출 확인 / 2026-11-06 18:07:34 |
+
+[12주차 강의·제출 동선](./12주차/study.md). 현재 상태를 아래 과거 기록보다 우선한다. API 미제출과 서버 코드 제출은 구분한다.
+<!-- week12-assignments-20261116:end -->
+
 ## 과목 운영
 
 - Team project course.

@@ -1,0 +1,44 @@
+{
+  "week": 12,
+  "period": [
+    "2026-11-16",
+    "2026-11-22"
+  ],
+  "course_id": 76835,
+  "checked_at_kst": "2026-11-16 10:27:14",
+  "sources": [
+    "Canvas API: modules, assignments with own submission, announcements, quizzes, tabs",
+    "LearningX authenticated student modules and commons downloads"
+  ],
+  "items": [
+    {
+      "week": 12,
+      "module_item_id": 5936358,
+      "title": "CA_Lecture_12",
+      "kind": "commons",
+      "asset_type": "pdf",
+      "file_name": "CA_Lecture_12.pdf",
+      "duration": null,
+      "opened": true,
+      "unlock_at": "2026-11-15T15:00:00Z",
+      "due_at": "2026-11-22T14:59:59Z",
+      "lock_at": null,
+      "use_attendance": false,
+      "download_status": "downloaded"
+    }
+  ],
+  "downloads": [
+    {
+      "title": "CA_Lecture_12.pdf",
+      "name": "CA_Lecture_12.pdf",
+      "path": "컴퓨터구조개론_조형민\\12주차\\CA_Lecture_12.pdf",
+      "bytes": 1125622,
+      "sha256": "f817909050d3b11fc5f3e206b2b3ebed751afe0e8c8d972266172fe7a0cd8cfb",
+      "state": "downloaded"
+    }
+  ],
+  "limitations": [
+    "quizzes: Canvas GET failed (HTTP 404). Credentials are not included in this error.",
+    "files: Canvas GET failed (HTTP 401). Credentials are not included in this error."
+  ]
+}

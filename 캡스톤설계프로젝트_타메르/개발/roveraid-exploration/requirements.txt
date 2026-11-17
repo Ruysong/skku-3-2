@@ -1,0 +1,4 @@
+ultralytics==8.4.192
+lap>=0.5.12,<1
+Pillow>=11,<13
+numpy>=1.26,<3

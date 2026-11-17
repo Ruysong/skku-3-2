@@ -2,7 +2,7 @@
 
 **한 줄 결론:** 작은 절반 LOW와 큰 절반 HIGH를 나누고 각 그룹을 min/max 두 heap으로 관리하여, 세 종류의 조회는 `O(1)`, 삽입·삭제는 worst-case `O(log n)`으로 구현했다.
 
-근거: [pq.c](./pq.c), [과제 PDF](./Assignment_Min_Max_Median_PQ.pdf), [제출 보고서](./Min_Max_Median_PQ_Report_2024315329.pdf), [공식 예제 압축파일](./PQ_Examples.zip). 강의 정리는 [6주차 study](./study.md), 제출 완료 상태는 사용자 확인 기준이다.
+근거: [pq.c](./pq.c), [과제 PDF](./Assignment_Min_Max_Median_PQ.pdf), [제출 보고서](./Min_Max_Median_PQ_Report_2024315329.pdf), [공식 예제 압축파일](./PQ_Examples.zip). 강의 정리는 [6주차 study](../../6주차/study.md), 제출 완료 상태는 사용자 확인 기준이다. 2026-11-13 기존 과제 폴더 구조에 맞춰 `Assingmnet/hw2/`로 모았다.
 
 ## 목차
 
@@ -142,4 +142,4 @@ delete median:
 6. find와 delete가 같은 root를 읽는데 복잡도가 다른 이유는?
 7. live 원소가 1개여도 예약된 메모리가 작아지지 않는 이유는?
 
-[알고리즘 PA 목차](../pa-study.md)
+[알고리즘 PA 목차](../../pa-study.md)

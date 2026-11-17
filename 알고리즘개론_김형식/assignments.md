@@ -1,5 +1,30 @@
 # 알고리즘개론 과제/퀴즈
 
+<!-- week12-assignments-20261116:start -->
+## 12주차 API 확인 (2026-11-16)
+
+| 항목 | 정규 마감(KST) | 현재 조회 상태·제출 시각 |
+| --- | --- | --- |
+| [Dynamic Programming 2](https://canvas.skku.edu/courses/76112/assignments/2051457) | 2026-11-08 23:59:00 | 제출 확인·평가 대기 / 2026-11-04 11:39:10 |
+| [Greedy Algorithm](https://canvas.skku.edu/courses/76112/assignments/2051458) | 2026-11-08 23:59:00 | 제출 확인·평가 대기 / 2026-11-08 12:07:55 |
+| [[Programming] K DNA Sequences](https://canvas.skku.edu/courses/76112/assignments/2051467) | 2026-11-15 23:59:59 | 제출 확인 / 2026-11-13 16:36:29 |
+| [Bellman-Ford algorithm](https://canvas.skku.edu/courses/76112/assignments/2051455) | 2026-11-15 23:59:00 | 제출 확인·평가 대기 / 2026-11-12 21:08:03 |
+
+[12주차 강의·제출 동선](./12주차/study.md). 현재 상태를 아래 과거 기록보다 우선한다. API 미제출과 서버 코드 제출은 구분한다.
+
+12주차 신규 퀴즈/과제 현재 없음. 교수님 영상 4개는 **11/22 23:59** 수강 마감. K DNA·Bellman-Ford는 제출 확인.
+<!-- week12-assignments-20261116:end -->
+
+## Min-Max-Median PQ 파일 위치 (2026-11-13 정리)
+
+- 보관 폴더: `Assingmnet/hw2/`. `pq.c`, 보고서, 명세, 공개 예제 ZIP·압축 해제본, [구현 교안](./Assingmnet/hw2/pa-study.md)을 함께 모았다. 파일 위치 정리이며 새 제출·재채점을 뜻하지 않는다.
+
+## K DNA 제출용 파일 위치 (2026-11-13)
+
+- 보관 폴더: `Assingmnet/hw3/`. 명세와 공개 입출력 원본도 함께 보관한다.
+- 제출할 파일: [msa.c](./Assingmnet/hw3/msa.c), [영문 PDF 보고서](./Assingmnet/hw3/K_DNA_Report_2024315329_Junhyuk_Song.pdf).
+- 상태: 작성·로컬 검증 완료. LMS 제출 완료는 아직 확인하지 않았다.
+
 ## HW1 채점 공지 확인 (2026-10-28 보관)
 
 - [Merge Sort 채점 기준·AI check 안내 전문](./notices.md#merge-sort-scores-and-grading-criteria)
