@@ -1,79 +1,26 @@
-# 시스템프로그래밍실습 - 한환수
+# 시스템프로그래밍실습 — Linux 사용자 공간 시스템 프로그래밍
 
-<!-- week12-current-20261116:start -->
-## 이번 주: 12주차 (11/16~11/22)
+C로 파일 descriptor, 프로세스·시그널, IPC, TCP 소켓, POSIX thread를 다루는 실습과 PA를 보관한다. **제출 압축본에서 확인한 코드**, VMShare 작업본, 교수 제공 예제·스켈레톤을 구분해서 읽는다.
 
-- [12주차 학습지도](./12주차/study.md): Concurrent Server·poll 채팅방.
-- iCampus API·LearningX 공개 교안과 본인 제출 상태를 11/16 확인했다. 이전 주차의 미확인 표시는 당시 기록이며 최신 내용은 위 학습지도를 따른다.
-<!-- week12-current-20261116:end -->
+## 대표 구현과 읽을 순서
 
-[PA·주차별 제출 코드 공부](./pa-study.md)
+| 경험 | 핵심 기술 | 근거·확인 수준 |
+|---|---|---|
+| PA1 파일 검색기 | Unix I/O, 동적 line buffer, 네 질의, 출력 버퍼 | [구현 설명](./PA/PA_1/study.md) → [제출 소스](./PA/PA_1/submitted/)·manifest |
+| 2~7주 실습 | GCC/GDB·Makefile, fork/exec/wait, signal, pipe·redirection | [실습 구현 설명](./lab-study.md), 각 주차 `submitted/` |
+| 9주 메시지 큐 | System V queue, 채팅·ACK | [작업 코드](./VMShare/week9/w9.c), [주차 정리](./9주차/study.md) |
+| 10주 TCP 파일 전송 | client/server, 메시지·파일 I/O | [작업 소스](./10주차/SPLweek10Practice/), [교안·요구사항](./10주차/study.md). 제출본과의 동일성은 별도 |
+| 11주 pthreads | 행렬–벡터 곱, 작업 분할, create/join | [제출 소스](./11주차/submitted/)·[해시 근거](./11주차/submitted/source-manifest.json) |
+| PA2 shell | 제공 lexer/parser·작업 관리와 구현 과제 | [PA2 구분](./pa-study.md#pa2-스켈레톤-확인-2026-10-28). 현재 보관본은 TODO가 있는 스켈레톤 |
+| PA3 예약 서버 | worker·poll·mutex | [명세·스켈레톤](./PA/PA_3/study.md). 구현 완료로 분류하지 않음 |
 
-## 과목 홈
+자소서·면접 연결은 [S1/S2 경험 카드](../경험-근거지도.md#s1s2--linux-파일-처리프로세스ipc네트워크스레드), 전체 버전 선택은 [pa-study.md](./pa-study.md)를 읽는다. PA1의 단어 경계 처리 제한도 구현 설명에 남겼다.
 
-- [공지](./notices.md)
-- [과제/실습](./assignments.md)
-- [PA2 스켈레톤 소스·Makefile](./PA/PA_2/pa2_skeleton_code/) · [PA2 Q&A](./PA/PA_2/qa.md)
-- [1주차 학습지도](./1주차/study.md)
-- [2주차 학습지도](./2주차/study.md)
-- [3주차 학습지도](./3주차/study.md)
-- [4주차 학습지도](./4주차/study.md)
-- [5주차 학습지도](./5주차/study.md)
-- [6주차 학습지도](./6주차/study.md)
-- [7주차 학습지도](./7주차/study.md)
-- [9주차 학습지도](./9주차/study.md)
-- [11주차 학습지도](./11주차/study.md)
-- [10주차 학습지도](./10주차/study.md)
+## 수업 자료 찾기
 
-## 11주차 (11/9~11/15)
+[1주차](./1주차/study.md) · [2주차](./2주차/study.md) · [3주차](./3주차/study.md) · [4주차](./4주차/study.md) · [5주차](./5주차/study.md) · [6주차](./6주차/study.md) · [7주차](./7주차/study.md) · [9주차](./9주차/study.md) · [10주차](./10주차/study.md) · [11주차](./11주차/study.md) · [12주차](./12주차/study.md)
 
-- [이번 주 학습지도](./11주차/study.md): POSIX Threads와 다중 스레드 행렬–벡터 곱. [20페이지 PDF](./11주차/week11-pthreads.pdf) 다운로드 완료(11/10). 코드 ZIP은 11/10 18:00 공개 예정, 주간 실습은 같은 날 23:59 마감.
+- [공지 원문](./notices.md) · [과제·퀴즈·제출 기록](./assignments.md) · [전체 일정](../tasks.md)
+- [전체 경험·근거 지도](../경험-근거지도.md) · [저장소 홈](../README.md)
 
-## 10주차 (11/2~11/8)
-
-- [이번 주 학습지도](./10주차/study.md): TCP 소켓, Client/Server 호출 순서, Echo 코드, 파일 전송 Lab 정리.
-- [32페이지 원본](./10주차/week10_sockets.pdf): 파일명 입력 → 전송 → 서버의 `파일명_copy` 저장. `make`로 `server`, `client` 생성.
-
-## 9주차 (10/26~11/1)
-
-- [이번 주 학습지도](./9주차/study.md): 9주차 실습 자료와 제출본을 준비하고, 주간 실습과 PA2를 구분한다.
-
-## 7주차
-
-- [새 실습 자료·제출본 연결 공간](./7주차/study.md). VMShare 원본은 이동·덮어쓰기 없이 유지.
-- PA2 Command-line Shell은 11/1(일) 23:59 마감이며, 코드·Makefile 압축본과 PDF 보고서를 제출.
-
-## 6주차
-
-- 화요일 실습의 새 자료와 Lab Exercise 제출 조건을 확인.
-- PA1 File Search는 10/4 마감. 실제 마지막 제출본과 추가 Q&A를 복기.
-
-## 주차별 자료
-
-| 주차 | 공부 정리 | 원본 자료 |
-| --- | --- | --- |
-| 1주차 | [study.md](./1주차/study.md) | week1-course_overview.pdf |
-| 2주차 | [study.md](./2주차/study.md) | week2-gcc&gdb.pdf |
-| 3주차 | [study.md](./3주차/study.md) | 원본 자료 확인 대기 |
-| 4주차 | [study.md](./4주차/study.md) | Unix I/O 실습 |
-| 5주차 | [study.md](./5주차/study.md) | week5-process.pdf, skeleton code |
-| 6주차 | [study.md](./6주차/study.md) | 새 실습 자료 확인 대기 |
-| 7주차 | [study.md](./7주차/study.md) | 새 실습 원본 대기; PA2·VMShare 연결 |
-| 9주차 | [study.md](./9주차/study.md) | 주간 실습 자료 공간; PA2 11/1 마감 연결 |
-| 10주차 | [study.md](./10주차/study.md) | week10_sockets.pdf; TCP Echo와 파일 전송 서비스 |
-
-## 바로 기억할 것
-
-- 화요일 18:00-21:45 실습 수업입니다.
-- PDF에는 강의실이 `#85702`로 적혀 있습니다. 기존 수강신청표의 강의실과 다를 수 있으므로 iCampus/첫 수업 기준으로 확인합니다.
-- iCampus는 공지, 강의콘텐츠, 주간 실습 제출, Programming Assignment 제출, Q&A board에 사용합니다.
-- 평가는 출석 10%, Lab exercise 15%, Programming assignments 45%, Final exam 30%입니다.
-- 결석은 최대 2회까지 허용되고, 4회 결석 시 자동 F입니다.
-- 장기 일정과 PA 마감은 ARCS의 System Programming Lab 페이지를 함께 확인합니다. 강의 슬라이드는 iCampus가 기준입니다.
-
-## 운영 메모
-
-- 공지는 notices.md에 원문과 핵심 체크를 누적합니다.
-- 과제, 실습, 제출처, 평가 비율은 assignments.md에 따로 관리합니다.
-- 주차별 공부 흐름과 파일별 의미는 각 주차의 study.md에 정리합니다.
-- PDF/PPT 전문 텍스트화가 필요할 때만 같은 주차 폴더에 transcript-자료명.md를 추가합니다.
+최신 정리: 2026-11-17. 소스·보고서의 보관 상태와 수강·개인 학습 완료는 별도로 관리한다.

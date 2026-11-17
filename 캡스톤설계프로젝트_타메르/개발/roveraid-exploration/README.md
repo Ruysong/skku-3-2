@@ -81,8 +81,9 @@ and local-Qwen loop was exercised. GPU text reviews took roughly two seconds in 
 sample; this is an observed result, not a latency guarantee. Server interruption and
 recovery are recorded in the session events. `output/demo-readiness.json` summarizes the run.
 
-This working copy has not been pushed. Models, runtimes, environments, samples and
-outputs are excluded from Git.
+The source, tests and development notes are archived in this coursework repository.
+Models, runtimes, environments, samples and outputs are excluded from Git.
+The November 13 validation above is a recorded result, not a fresh run in this documentation update.
 
 ## Setup and sources
 

@@ -37,6 +37,9 @@
 | 7 | 단일 pipe 또는 redirection shell | [소스·helper·Makefile](./7주차/submitted/) | [7주차 구현](./lab-study.md#7주차-pipe와-redirection) |
 | 9 | System V 메시지 큐 기반 채팅·ACK | [VMShare 작업 소스](./VMShare/week9/w9.c), [Makefile](./VMShare/week9/Makefile), [제출용 압축본](./VMShare/week9/2024315329_w9.tar.zst) | [9주차 자료](./9주차/study.md). 압축본에는 Makefile과 w9.c가 있으며 LMS 제출 완료 여부는 별도 확인 |
 
+| 10 | TCP 파일 전송 client/server | [작업 코드](./10주차/SPLweek10Practice/) | [10주차 설명](./10주차/study.md). 작업본이며 제출 압축본 동일성은 별도 |
+| 11 | pthreads 행렬–벡터 곱 | [제출 소스](./11주차/submitted/), [해시·멤버 근거](./11주차/submitted/source-manifest.json) | 11/10 제출·채점 상태 확인. 제공 week11_code와 구분 |
+
 ## 버전 선택 규칙
 
 1. 각 `submitted/source-manifest.json`에 원본 압축파일 경로, 압축파일 SHA-256, 멤버명, 복사한 소스 SHA-256을 남겼다.

@@ -1,0 +1,19 @@
+{
+  "archive": "시스템프로그래밍실습_한환수/VMShare/week11/2024315329_w11.tar.zst",
+  "archive_sha256": "05064e992f8c38679db3d70763d54945e22f9f6c97aa9eddbe3f297af0a05f36",
+  "copied_at": "2026-11-17",
+  "verification": "Byte-for-byte archive extraction; no source modification or execution in this documentation update.",
+  "files": [
+    {
+      "member": "week11/w11.c",
+      "file": "w11.c",
+      "sha256": "4d287ada189b12af79d9fcc04b6bee6aac665cf35cd11d3bc65188e671caee3e"
+    },
+    {
+      "member": "week11/Makefile",
+      "file": "Makefile",
+      "sha256": "89f1af675c9d6a9948a032943b8d26d1120b627d289d7da74bdfcfba1537a6ab"
+    }
+  ],
+  "archive_path_basis": "repository root"
+}

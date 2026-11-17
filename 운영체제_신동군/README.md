@@ -1,72 +1,31 @@
-# 운영체제 - 신동군
+# 운영체제 — xv6 시스템콜·스케줄링·가상메모리
 
-<!-- week12-current-20261116:start -->
-## 이번 주: 12주차 (11/16~11/22)
+프로세스·스케줄링·가상메모리·동기화·I/O를 배우고, 교육용 xv6 커널을 확장하는 개인 과제를 수행했다. 현재 공개 저장소는 **보고서·명세·제출 기록 중심**이다.
 
-- [12주차 학습지도](./12주차/study.md): Deadlock·I/O Devices & SSD.
-- iCampus API·LearningX 공개 교안과 본인 제출 상태를 11/16 확인했다. 이전 주차의 미확인 표시는 당시 기록이며 최신 내용은 위 학습지도를 따른다.
-<!-- week12-current-20261116:end -->
+## 대표 과제와 근거
 
-[PA 구현·보고서 공부](./pa-study.md)
+| 과제 | 수행·학습 주제 | 확인 자료 |
+|---|---|---|
+| PA0 | xv6 빌드·부팅·메시지·서버 제출 | [부팅·제출 기록](./Assignment/PA0-booting-xv6.md) |
+| PA1 | nice 조회·설정, ps, 사용자→커널 시스템콜 연결 | [보고서 기반 설명](./Assignment/pa1/study.md) |
+| PA2 | nice/weight, runtime/vruntime, time slice·timer tick, CFS | [보고서 기반 설명](./Assignment/pa2/study.md) |
+| PA3 | mmap/munmap/freemem, eager/lazy 할당, page fault·권한, fork 공유·참조 수·해제 | [범위·검증 근거](./Assignment/pa3/study.md), [제출 보고서](./Assignment/pa3/PA3_Report_2024315329_Junhyuk_Song.pdf) |
 
-## 과목 홈
+PA3 코드·PDF 제출 완료를 확인했고 보고서에는 자체 통합 시험 30 PASS/0 FAIL이 기록돼 있다. **최종 xv6 수정 소스는 현재 공개 저장소에 보관되지 않았다.** 보고서 결과를 새 코드 검수나 공식 채점으로 바꾸지 않는다.
 
-- [공지](./notices.md)
-- [과제/퀴즈](./assignments.md)
-- [중간고사 준비: 교안·퀴즈·기출 모음](./midterm-prep/목차.md)
-- [PA0 - xv6 부팅](./Assignment/PA0-booting-xv6.md)
-- [1주차 학습지도](./1주차/study.md)
-- [2주차 학습지도](./2주차/study.md)
-- [3주차 학습지도](./3주차/study.md)
-- [4주차 학습지도](./4주차/study.md)
-- [5주차 학습지도](./5주차/study.md)
-- [6주차 학습지도](./6주차/study.md)
-- [7주차 학습지도](./7주차/study.md)
-- [8주차 Thread 교안·퀴즈 목차](./8주차/study.md)
-- [9주차 학습지도](./9주차/study.md)
-- [11주차 학습지도](./11주차/study.md)
-- [10주차 학습지도](./10주차/study.md)
+자소서·면접은 [O1/O2/O3 경험 카드](../경험-근거지도.md#o1o2o3--xv6-시스템콜스케줄링가상메모리), 상세 과제 선택은 [pa-study.md](./pa-study.md)에서 시작한다. 실제 Linux BSP·드라이버 개발 경력과 xv6 교육 과제는 구분한다.
 
-## 11주차 (11/9~11/15)
+## 학습 흐름
 
-- [이번 주 학습지도](./11주차/study.md): Condition Variables·Semaphores. 11/9 iCampus API 목록·마감·제출 상태 반영.
+프로세스 → CPU scheduling → 주소 공간·paging·replacement → thread·lock·condition variable·semaphore → deadlock → I/O·SSD → filesystem.
 
-## 10주차 (11/2~11/8)
+- [중간 대비 교안·퀴즈·과거 수업자료](./midterm-prep/목차.md). 파일에 퀴즈가 섞여 있어도 독립 시험지로 가정하지 않는다.
 
-- [이번 주 학습지도](./10주차/study.md): 11/5 중간고사 대비 자료를 연결한다.
+## 수업 자료 찾기
 
-## 9주차 (10/26~11/1)
+[1주차](./1주차/study.md) · [2주차](./2주차/study.md) · [3주차](./3주차/study.md) · [4주차](./4주차/study.md) · [5주차](./5주차/study.md) · [6주차](./6주차/study.md) · [7주차](./7주차/study.md) · [8주차](./8주차/study.md) · [9주차](./9주차/study.md) · [10주차](./10주차/study.md) · [11주차](./11주차/study.md) · [12주차](./12주차/study.md)
 
-- [이번 주 학습지도](./9주차/study.md): OS10 Locks 22페이지 원본과 탐색 목차, 11/5 중간고사 준비 연결.
-- [PA2 CFS 명세·보고서](./pa-study.md): 보고서 2페이지 보관. 실제 xv6 수정 소스·서버 제출 기록과 구분한다.
+- [공지 원문](./notices.md) · [과제·퀴즈·제출 기록](./assignments.md) · [전체 일정](../tasks.md)
+- [전체 경험·근거 지도](../경험-근거지도.md) · [저장소 홈](../README.md)
 
-## 7주차
-
-- [Page Replacement 목차와 기존 Paging 연결](./7주차/study.md). OS08-PageReplacement.pdf 원본 유지.
-- PA1 코드·보고서는 사용자 제출 완료 확인. 다음 PA 명세·마감은 미확인. 중간고사는 사용자 확정 기준 11/5(목).
-
-## 6주차
-
-- `OS07-Paging.pdf`가 6주차 폴더에 있다. 온라인 강의·퀴즈 범위는 iCampus에서 확인.
-- PA1 System call은 10/7(수) 23:59:59 마감. 제출 성공 여부 확인.
-
-## 주차별 자료
-
-| 주차 | 공부 정리 | 원본 자료 |
-| --- | --- | --- |
-| 1주차 | [study.md](./1주차/study.md) | OS01-OS intro.pdf |
-| 2주차 | [study.md](./2주차/study.md) | OS02-LimitedDirectExecution.pdf, OS03-Process.pdf |
-| 3주차 | [study.md](./3주차/study.md) | OS04-Scheduling1.pdf |
-| 4주차 | [study.md](./4주차/study.md) | OS05-Scheduling2.pdf |
-| 5주차 | [study.md](./5주차/study.md) | OS06-Memory.pdf |
-| 6주차 | [study.md](./6주차/study.md) | OS07-Paging.pdf |
-| 7주차 | [study.md](./7주차/study.md) | OS08-PageReplacement.pdf; 페이지별 탐색 목차 |
-| 8주차 | [study.md](./8주차/study.md) | OS09-Thread.pdf, OS09-Thread-Quiz.pdf |
-| 9주차 | [study.md](./9주차/study.md) | OS10-Locks.pdf; 11/5 중간고사 준비 연결 |
-
-## 운영 메모
-
-- 공지는 notices.md에 원문과 핵심 체크를 누적합니다.
-- 과제, 퀴즈, 제출처, 평가 비율은 assignments.md에 따로 관리합니다.
-- 주차별 공부 흐름과 파일별 의미는 각 주차의 study.md에 정리합니다.
-- PDF/PPT 전문 텍스트화가 필요할 때만 같은 주차 폴더에 transcript-자료명.md를 추가합니다.
+최신 정리: 2026-11-17. 소스·보고서의 보관 상태와 수강·개인 학습 완료는 별도로 관리한다.
